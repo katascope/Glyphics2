@@ -41,12 +41,14 @@ namespace GraphicsLib.Renderers
             var renderedTriangleSoup = new List<Triangle>();
             foreach (Rect rect in rects)
             {
-                if (rect.Properties.ShapeId >= trianglesList.Count)
-                    return null;
+                if (rect.Properties.ShapeId == 0 || rect.Properties.ShapeId >= trianglesList.Count)  
+                    rect.Properties.ShapeId = 1;
+                if (rect.Properties.ShapeId < trianglesList.Count)
+                {
+                    Triangles triangles = trianglesList.GetTriangles(rect.Properties.ShapeId);
 
-                Triangles triangles = trianglesList.GetTriangles(rect.Properties.ShapeId);
-
-                MapRectToTriangles(ref renderedTriangleSoup, triangles, rect);
+                    MapRectToTriangles(ref renderedTriangleSoup, triangles, rect);
+                }
             }
             Triangles triangleSet = new Triangles();
             Triangle[] triangleArray = renderedTriangleSoup.ToArray();

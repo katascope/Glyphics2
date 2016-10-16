@@ -51,3 +51,12 @@ Temporary Items
 *.pdb
 Apps/Simulator/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
 *.suo
+*.cache
+*.txt
+*.jbf
+*.txt
+*.suo
+Apps/Animator/obj/Debug/Animator.csproj.FileListAbsolute.txt
+Apps/GlyphicsCommandLine/obj/Debug/GlyphicsCommandLine.csproj.FileListAbsolute.txt
+Apps/DocumentationGenerator/obj/Debug/DocumentationGenerator.csproj.FileListAbsolute.txt
+RasterLib/obj/Debug/RasterLib.csproj.FileListAbsolute.txt

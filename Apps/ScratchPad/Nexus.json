@@ -1,0 +1,27 @@
+﻿
+
+
+{
+ "_FileNameInCode":"C:\\Github\\Glyphics2\\Glyph Cores\\Game.glyc",
+ "FileNameInImage": "c:\\github\\Mandela.png",
+
+ "FileNameOutIsometric":"..\\..\\MandelaIsometric.png",
+ "FileNameOutIsometricAnimated":false,
+ "IsometricCellWidth": "8",
+ "IsometricCellHeight": "8",
+ "IsometricBgRgba":[0,0,0,255],
+
+ "FileNameOutOrthogonalAnimated":false,
+ "_FileNameOutOrthogonal":"..\\..\\NexusOrtho.png",
+
+
+ "FileNameOutStl":"..\\..\\NexusStl.stl",
+ "_FileNameOutStlPreview":"..\\..\\NexusStlPreview.png",
+ "_FileNameInSTL":"..\\..\\archquad.stl",
+ "FileNamesInStlLibrary": 
+	[
+		"..\\..\\cube_ascii.stl",
+        "..\\..\\archquad.stl",
+        "..\\..\\pipesphere.stl"
+	]
+}

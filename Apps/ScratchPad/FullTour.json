@@ -1,0 +1,12 @@
+﻿{
+ "FileNameOutIsometric":"..\\..\\isometric.png",
+ "FileNameOutOrthogonal":"..\\..\\ortho.png",
+ "FileNameInCode":"C:\\Github\\Glyphics2\\Glyph Cores\\_Avatar.glyc",
+ "FileNameInImage":null,
+ "OutputTokens":true,
+ "OutputRectangles":true,
+ "OutputSceneGraph":true,
+ "OutputRenderedAscii":true,
+ "OutputBytes":true,
+ "Resize":[63,63,63]
+}

@@ -158,7 +158,8 @@ namespace GraphicsLib.Renderers
 
             for (int z = gridSrc.SizeZ - 1; z >= 0; z--)
             {
-                Console.Write("\r" +(int)(100 - (float)z/gridSrc.SizeZ * 100)+"%");
+                //Console.Write("\r" +(int)(100 - (float)z/gridSrc.SizeZ * 100)+"%");
+                DrawProgressBar((int) (100 - (float) z/gridSrc.SizeZ*100));
                 for (int y = 0; y < gridDst.SizeY; y++)
                 {
                     for (int x = gridSrc.SizeX - 1; x >= 0; x--)
@@ -177,6 +178,7 @@ namespace GraphicsLib.Renderers
                     }
                 }
             }
+            Console.WriteLine(" - done");
         }
 
         //Render Isometricly and return

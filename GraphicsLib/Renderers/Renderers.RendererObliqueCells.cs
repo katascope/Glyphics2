@@ -9,6 +9,8 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DRect, INDRect, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #endregion
+
+using System;
 using RasterLib;
 using RasterLib.Painters;
 
@@ -66,6 +68,19 @@ namespace GraphicsLib.Renderers
             painter.DrawLine2D(bgc, x + subSize - 1, y + cellSize - 1, x + cellSize - 1, y + subSize - 1, 0);
         }
 
+        private static void DrawProgressBar(int value)
+        {
+            int downscale = 4;
+            Console.Write("\r");
+            if (value < 10) Console.Write(" ");
+            Console.Write(value + "% [");
+            for (int i = 0; i <= value/downscale; i++)
+                Console.Write('#');
+            for (int i = value / downscale + 1; i < (100 / downscale); i++)
+                Console.Write('-');
+            Console.Write("]");
+        }
+
         //Render a grid into another grid with oblique perspective and iconic cells
         public static void RenderObliqueCellsSet(Grid gridSrc, Grid gridDst)
         {
@@ -76,6 +91,7 @@ namespace GraphicsLib.Renderers
 
             for (int y = 0; y < gridSrc.SizeY; y++)
             {
+                DrawProgressBar((int) ((float) y/gridSrc.SizeY*100));
                 for (int z = gridSrc.SizeZ; z >= 0; z--)
                 {
                     for (int x = 0; x < gridSrc.SizeX; x++)
@@ -94,6 +110,7 @@ namespace GraphicsLib.Renderers
                     }
                 }
             }
+            Console.WriteLine(" - done");
         }
 
         //Render obliquely and return

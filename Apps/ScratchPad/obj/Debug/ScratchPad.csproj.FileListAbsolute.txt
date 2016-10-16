@@ -6,3 +6,15 @@ C:\Github\Glyphics\Glyphics\Apps\ScratchPad\bin\Debug\GlyphicsLibrary.pdb
 C:\Github\Glyphics\Glyphics\Apps\ScratchPad\obj\Debug\ScratchPad.csprojResolveAssemblyReference.cache
 C:\Github\Glyphics\Glyphics\Apps\ScratchPad\obj\Debug\ScratchPad.exe
 C:\Github\Glyphics\Glyphics\Apps\ScratchPad\obj\Debug\ScratchPad.pdb
+C:\Github\Glyphics2\Apps\ScratchPad\bin\Debug\ScratchPad.exe.config
+C:\Github\Glyphics2\Apps\ScratchPad\bin\Debug\ScratchPad.exe
+C:\Github\Glyphics2\Apps\ScratchPad\bin\Debug\ScratchPad.pdb
+C:\Github\Glyphics2\Apps\ScratchPad\bin\Debug\GeneralLibrary.dll
+C:\Github\Glyphics2\Apps\ScratchPad\bin\Debug\GlyphicsLibrary.dll
+C:\Github\Glyphics2\Apps\ScratchPad\bin\Debug\GeneralLibrary.pdb
+C:\Github\Glyphics2\Apps\ScratchPad\bin\Debug\GlyphicsLibrary.pdb
+C:\Github\Glyphics2\Apps\ScratchPad\obj\Debug\ScratchPad.csprojResolveAssemblyReference.cache
+C:\Github\Glyphics2\Apps\ScratchPad\obj\Debug\ScratchPad.exe
+C:\Github\Glyphics2\Apps\ScratchPad\obj\Debug\ScratchPad.pdb
+C:\Github\Glyphics2\Apps\ScratchPad\bin\Debug\Newtonsoft.Json.dll
+C:\Github\Glyphics2\Apps\ScratchPad\bin\Debug\Newtonsoft.Json.xml

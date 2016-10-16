@@ -6,3 +6,13 @@ C:\Github\Glyphics\Glyphics\Apps\GlyphicsCommandLine\bin\Debug\GlyphicsLibrary.p
 C:\Github\Glyphics\Glyphics\Apps\GlyphicsCommandLine\obj\Debug\GlyphicsCommandLine.csprojResolveAssemblyReference.cache
 C:\Github\Glyphics\Glyphics\Apps\GlyphicsCommandLine\obj\Debug\glycmd.exe
 C:\Github\Glyphics\Glyphics\Apps\GlyphicsCommandLine\obj\Debug\glycmd.pdb
+C:\Github\Glyphics2\Apps\GlyphicsCommandLine\bin\Debug\glycmd.exe.config
+C:\Github\Glyphics2\Apps\GlyphicsCommandLine\bin\Debug\glycmd.exe
+C:\Github\Glyphics2\Apps\GlyphicsCommandLine\bin\Debug\glycmd.pdb
+C:\Github\Glyphics2\Apps\GlyphicsCommandLine\bin\Debug\GeneralLibrary.dll
+C:\Github\Glyphics2\Apps\GlyphicsCommandLine\bin\Debug\GlyphicsLibrary.dll
+C:\Github\Glyphics2\Apps\GlyphicsCommandLine\bin\Debug\GeneralLibrary.pdb
+C:\Github\Glyphics2\Apps\GlyphicsCommandLine\bin\Debug\GlyphicsLibrary.pdb
+C:\Github\Glyphics2\Apps\GlyphicsCommandLine\obj\Debug\GlyphicsCommandLine.csprojResolveAssemblyReference.cache
+C:\Github\Glyphics2\Apps\GlyphicsCommandLine\obj\Debug\glycmd.exe
+C:\Github\Glyphics2\Apps\GlyphicsCommandLine\obj\Debug\glycmd.pdb
