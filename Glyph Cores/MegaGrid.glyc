@@ -1,0 +1,19 @@
+MegaGrid,
+
+Size3D4 255 255 255
+
+Put castle 0 0 0
+Put ascent 64 0 0
+Put arena 128 0 0
+Put nexus 192 0 0
+
+Put chessboard 0 0 128
+Put Temple 64 0 128
+Put castle 128 0 128
+Put workspace 192 0 128
+
+
+Put Rings 0 0 192
+Put Simple 64 0 192
+Put Sphere 128 0 192
+Put mansion 192 0 192

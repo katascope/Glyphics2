@@ -1,0 +1,12 @@
+ChessBoard,
+
+Size3D4 64 16 64
+
+PenColorD4 127 15 15 255
+FillRect 0 0 0 63 0 63
+
+PenColorD4 0 0 0 255
+FillRect 0 0 0 7 0 7
+FillRect 16 0 0 23 0 7
+FillRect 32 0 0 39 0 7
+FillRect 48 0 0 55 0 7

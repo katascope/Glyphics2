@@ -1,0 +1,8 @@
+C:\Github\Glyphics\Glyphics\Apps\CodeScoper\bin\Debug\CodeScoper.exe.config
+C:\Github\Glyphics\Glyphics\Apps\CodeScoper\bin\Debug\CodeScoper.exe
+C:\Github\Glyphics\Glyphics\Apps\CodeScoper\bin\Debug\CodeScoper.pdb
+C:\Github\Glyphics\Glyphics\Apps\CodeScoper\bin\Debug\GlyphicsLibrary.dll
+C:\Github\Glyphics\Glyphics\Apps\CodeScoper\bin\Debug\GlyphicsLibrary.pdb
+C:\Github\Glyphics\Glyphics\Apps\CodeScoper\obj\Debug\CodeScoper.csprojResolveAssemblyReference.cache
+C:\Github\Glyphics\Glyphics\Apps\CodeScoper\obj\Debug\CodeScoper.exe
+C:\Github\Glyphics\Glyphics\Apps\CodeScoper\obj\Debug\CodeScoper.pdb

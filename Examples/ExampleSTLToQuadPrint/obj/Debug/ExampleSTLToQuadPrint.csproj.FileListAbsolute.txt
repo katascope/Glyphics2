@@ -1,0 +1,8 @@
+C:\Github\Glyphics\Glyphics\Examples\ExampleSTLToQuadPrint\bin\Debug\ExampleSTLToQuadPrint.exe.config
+C:\Github\Glyphics\Glyphics\Examples\ExampleSTLToQuadPrint\bin\Debug\ExampleSTLToQuadPrint.exe
+C:\Github\Glyphics\Glyphics\Examples\ExampleSTLToQuadPrint\bin\Debug\ExampleSTLToQuadPrint.pdb
+C:\Github\Glyphics\Glyphics\Examples\ExampleSTLToQuadPrint\bin\Debug\GlyphicsLibrary.dll
+C:\Github\Glyphics\Glyphics\Examples\ExampleSTLToQuadPrint\bin\Debug\GlyphicsLibrary.pdb
+C:\Github\Glyphics\Glyphics\Examples\ExampleSTLToQuadPrint\obj\Debug\ExampleSTLToQuadPrint.csprojResolveAssemblyReference.cache
+C:\Github\Glyphics\Glyphics\Examples\ExampleSTLToQuadPrint\obj\Debug\ExampleSTLToQuadPrint.exe
+C:\Github\Glyphics\Glyphics\Examples\ExampleSTLToQuadPrint\obj\Debug\ExampleSTLToQuadPrint.pdb

@@ -1,0 +1,7 @@
+PutTest,
+
+Size3D4 8 8 8
+
+PenGroup 9
+PenColorD4 127 127 127 255
+FillRect 0 0 0 7 7 7

@@ -1,0 +1,12 @@
+BlackKing,
+
+Size3D4 8 15 8
+
+PenColorD4 31 31 31 255
+
+FillRect 1 0 1 6 0 6
+FillRect 2 1 2 5 5 5
+FillRect 3 6 3 4 9 4
+FillRect 2 7 3 5 8 4
+
+

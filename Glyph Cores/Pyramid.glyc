@@ -1,0 +1,24 @@
+Pyramid,
+
+#Size of Grid
+Size3D4 64 64 64
+
+#End
+
+#Blue color ground
+PenPhysics 0
+PenColorD4 15 63 127 255
+WallCube 1
+
+PenColorD4 255 255 255 255
+Rect 0 0 0 63 0 63
+
+FillStairs 32 1 1 32 24 24 31 1 1
+FillStairs 31 1 62 31 24 39 31 1 1
+FillStairs 62 1 32 39 24 32 1 1 31
+FillStairs 1 1 32 24 24 32 1 1 31
+
+PenColorD4 0 0 0 0
+FillRect 0 16 0 63 63 63
+
+

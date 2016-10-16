@@ -1,0 +1,34 @@
+Nexus,
+Size3D4 64 64 64;
+Spawn 25 5 25;
+
+PenColorD4 31 127 255 255;WallCube 1;ImgEdge 255 255 255 255;
+PenColorD4 255 255 255 127;FillRect 0 0 31 63 0 32;FillRect 31 0 0 32 0 63;Rect 16 0 16 47 0 47;
+PenColorD4 255 255 255 127;Rect 0 0 0 63 63 63;Rect 16 0 16 47 31 47;
+PenColorD4 31 127 255 255;FillRect 17 0 17 46 0 46;FillRect 16 1 47 47 16 63;
+PenColorD4 0 0 0 0;FillRect 17 1 47 46 15 63;
+ImgEdgeX 255 255 255 255;ImgEdgeY 255 255 255 255;ImgEdgeZ 255 255 255 255;
+PenTex 0;PenShape 4;
+
+PenColorD3 127 255 127;
+FillRect 1 2 1 14 15 14;
+FillRect 49 2 1 62 15 14;
+
+PenColorD3 255 127 127;
+FillRect 1 2 16 14 15 29;
+FillRect 49 2 16 62 15 29;
+
+PenColorD3 255 127 255;
+FillRect 16 2 1 29 15 14;
+FillRect 34 2 1 47 15 14;
+PenColorD3 127 127 255;
+FillRect 49 2 34 62 15 47;
+FillRect 1 2 34 14 15 47;
+PenColorD3 255 255 127;
+FillRect 49 2 49 62 15 62;
+FillRect 1 2 49 14 15 62;
+
+#PenColorD4 255 255 255 255;
+#PenTex 24;
+#FillRect 25 18 49 39 32 63;
+

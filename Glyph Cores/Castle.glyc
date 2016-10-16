@@ -1,0 +1,16 @@
+Castle,
+
+Size3D4 64 64 64;Spawn 31 1 1;
+
+PenColorD3 127 255 127;PenTex 5;Clear;
+
+PenColorD3 0 0 0;FillRect 0 2 0 63 63 63;
+
+PenColorD3 127 127 255;PenTex 6;FillRect 6 0 6 57 1 57;
+PenColorD3 127 127 127;FillRect 12 0 12 51 14 52;
+PenColorD3 0 0 0;FillRect 18 1 18 45 15 45;FillRect 13 14 13 50 20 50;FillRect 29 2 10 34 8 20;
+
+PenColorD3 127 127 127;PenSize 5 1 1;Line 21 1 28 21 12 45;
+
+ImgEdgeX 224 224 224 255;ImgEdgeY 224 224 224 255;
+

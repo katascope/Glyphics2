@@ -1,0 +1,66 @@
+Workspace,
+
+#Size of Grid
+Size3D4 64 64 64
+
+#Blue color ground
+PenColorD4 148 148 148 255
+#FillRect 0 0 0 63 0 63
+#FillRect 0 0 63 63 63 63
+
+#White floor borders
+PenColorD4 127 127 127 255
+Line 0 0 0 63 0 0
+Line 0 0 8 63 0 8
+Line 0 0 16 63 0 16
+Line 0 0 24 63 0 24
+Line 0 0 32 63 0 32
+Line 0 0 40 63 0 40
+Line 0 0 48 63 0 48
+Line 0 0 56 63 0 56
+
+Line 0 0 0 0 0 63
+Line 8 0 0 8 0 63
+Line 16 0 0 16 0 63
+Line 24 0 0 24 0 63
+Line 32 0 0 32 0 63
+Line 40 0 0 40 0 63
+Line 48 0 0 48 0 63
+Line 56 0 0 56 0 63
+
+Line 0 0 63 0 63 63
+#Line 8 0 63 8 63 63
+Line 16 0 63 16 63 63
+#Line 24 0 63 24 63 63
+Line 32 0 63 32 63 63
+#Line 40 0 63 40 63 63
+Line 48 0 63 48 63 63
+#Line 56 0 63 56 63 63
+
+Line 0 0 63 63 0 63
+#Line 0 8 63 63 8 63
+Line 0 16 63 63 16 63
+#Line 0 24 63 63 24 63
+Line 0 32 63 63 32 63
+#Line 0 40 63 63 40 63
+Line 0 48 63 63 48 63
+#Line 0 56 63 63 56 63
+
+Line 63 0 0 63 0 63
+Line 63 16 0 63 16 63
+Line 63 32 0 63 32 63
+Line 63 48 0 63 48 63
+
+Line 63 0 0 63 63 0
+Line 63 0 16 63 63 16
+Line 63 0 32 63 63 32
+Line 63 0 48 63 63 48
+
+
+
+PenColorD4 162 162 162 255
+Line 0 0 32 63 0 32
+Line 32 0 0 32 0 63
+Line 32 0 63 32 63 63
+Line 0 32 63 63 32 63
+

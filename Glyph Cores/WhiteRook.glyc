@@ -1,0 +1,10 @@
+Pawn,
+
+Size3D4 8 8 8
+
+PenColorD4 255 255 255 255
+FillRect 1 0 1 6 8 6
+
+PenColorD4 0 0 0 0
+FillRect 0 7 2 7 7 5
+FillRect 2 7 0 5 7 7

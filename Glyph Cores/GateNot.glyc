@@ -1,0 +1,21 @@
+GateNot,
+
+#Size of Grid
+Size3D4 64 64 64
+
+
+#CircuitLine1
+PenPhysics 2
+PenColorD4 255 255 255 255
+Line 0 0 0 1 0 0
+
+#Junction
+PenPhysics 48
+#PenPhysics 5
+PenColorD4 255 0 255 255
+Line 2 0 0 3 0 0
+
+#CircuitLine3-Output
+PenPhysics 2
+PenColorD4 255 255 255 255
+Line 3 1 0 5 1 0

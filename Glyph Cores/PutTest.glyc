@@ -1,0 +1,10 @@
+PutTest,
+
+Size3D4 64 64 64
+
+PenGroup 0
+PenColorD4 0 31 127 255
+FillRect 0 0 0 63 0 63
+
+Put Thing 0 1 0
+

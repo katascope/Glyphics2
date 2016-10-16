@@ -1,0 +1,8 @@
+C:\Github\Glyphics\Glyphics\Examples\ExampleImageGeneration\bin\Debug\ExampleImageGeneration.exe.config
+C:\Github\Glyphics\Glyphics\Examples\ExampleImageGeneration\bin\Debug\ExampleImageGeneration.exe
+C:\Github\Glyphics\Glyphics\Examples\ExampleImageGeneration\bin\Debug\ExampleImageGeneration.pdb
+C:\Github\Glyphics\Glyphics\Examples\ExampleImageGeneration\bin\Debug\GlyphicsLibrary.dll
+C:\Github\Glyphics\Glyphics\Examples\ExampleImageGeneration\bin\Debug\GlyphicsLibrary.pdb
+C:\Github\Glyphics\Glyphics\Examples\ExampleImageGeneration\obj\Debug\ExampleImageGeneration.csprojResolveAssemblyReference.cache
+C:\Github\Glyphics\Glyphics\Examples\ExampleImageGeneration\obj\Debug\ExampleImageGeneration.exe
+C:\Github\Glyphics\Glyphics\Examples\ExampleImageGeneration\obj\Debug\ExampleImageGeneration.pdb

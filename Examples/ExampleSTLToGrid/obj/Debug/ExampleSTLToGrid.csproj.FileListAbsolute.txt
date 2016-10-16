@@ -1,0 +1,7 @@
+C:\Github\Glyphics\Glyphics\Examples\ExampleSTLToGrid\bin\Debug\ExampleSTLToGrid.exe.config
+C:\Github\Glyphics\Glyphics\Examples\ExampleSTLToGrid\bin\Debug\ExampleSTLToGrid.exe
+C:\Github\Glyphics\Glyphics\Examples\ExampleSTLToGrid\bin\Debug\ExampleSTLToGrid.pdb
+C:\Github\Glyphics\Glyphics\Examples\ExampleSTLToGrid\bin\Debug\GlyphicsLibrary.dll
+C:\Github\Glyphics\Glyphics\Examples\ExampleSTLToGrid\bin\Debug\GlyphicsLibrary.pdb
+C:\Github\Glyphics\Glyphics\Examples\ExampleSTLToGrid\obj\Debug\ExampleSTLToGrid.exe
+C:\Github\Glyphics\Glyphics\Examples\ExampleSTLToGrid\obj\Debug\ExampleSTLToGrid.pdb

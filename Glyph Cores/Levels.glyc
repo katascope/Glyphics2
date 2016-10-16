@@ -1,0 +1,13 @@
+Levels,
+
+#Size of Grid
+Size3D4 64 64 64
+
+PenColorD4 63 127 63 255
+FillRect 1 0 1 62 0 62
+
+Put Level 0 0 0 
+Put Level2 0 16 0 
+Put Level3 0 32 0 
+Put Level4 0 48 0
+

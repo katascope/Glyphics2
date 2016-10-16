@@ -1,0 +1,15 @@
+Simple,
+
+#Size of Grid
+Size3D4 32 32 32
+
+#Blue color ground
+PenPhysics 0
+PenColorD4 15 63 127 255
+FillRect 0 0 0 31 31 31
+
+#PenColorD4 255 255 255 255
+#Rect 0 0 0 63 8 63
+
+
+

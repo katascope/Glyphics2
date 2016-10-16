@@ -1,0 +1,63 @@
+Level,
+
+#Size of Grid
+Size3D4 64 64 64
+
+PenTex 4
+
+#Purple & Grey Floor
+PenColorD4 127 127 127 255
+FillRect 0 0 0 63 0 54
+FillRect 1 0 54 24 0 62
+PenColorD4 127 63 127 255
+Rect 0 0 0 63 0 63
+
+FillRect 48 15 54 62 15 62
+
+PenTex 4
+
+#Wall
+FillRect 15 1 54 48 15 54
+FillRect 0 1 0 0 15 63
+FillRect 0 0 63 63 15 63
+FillRect 63 0 0 63 15 63
+FillRect 0 1 0 63 15 0
+
+#Windows
+PenTex 0
+PenColorD4 63 63 127 192
+FillRect 0 5 10 0 10 53
+FillRect 63 5 10 63 10 53
+FillRect 10 5 0 53 10 0
+FillRect 10 5 63 20 10 63
+
+PenTex 1
+#ImgEdgeX 255 255 255 255
+#ImgEdgeY 255 255 255 255
+#ImgEdgeZ 255 255 255 255
+
+PenTex 4
+#Draw stairs to avoid img issues
+PenColorD4 127 63 127 255
+Stairs 17 1 58 47 14 58 1 1 10
+
+
+PenPhysics 5
+PenColorD4 127 127 255 255
+Plot 15 7 54
+
+#PenPhysics 2
+#PenColorD4 255 255 255 255
+#Plot 15 7 54
+
+PenPhysics 10
+PenColorD4 255 127 127 255
+Plot 15 8 54
+
+PenTex 3
+PenPhysics 16
+PenColorD4 127 127 127 255
+FillRect 1 1 54 14 15 54
+
+
+

@@ -1,0 +1,20 @@
+Couch,
+
+#Size of Grid
+Size3D4 16 16 16
+
+#Couch
+PenShape 8
+PenTex 7
+PenSize 1 1 1
+PenColorD4 63 31 63 255
+#FillRect 26 3 31 37 3 34
+#FillRect 26 1 31 26 4 34
+#FillRect 37 1 31 37 4 34
+#FillRect 26 3 34 37 5 34
+
+FillRect 0 3 0 11 3 3
+FillRect 0 1 0 0 4 3
+FillRect 11 1 0 11 4 3
+FillRect 0 3 3 11 5 3
+

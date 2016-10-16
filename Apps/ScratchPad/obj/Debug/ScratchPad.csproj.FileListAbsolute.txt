@@ -1,0 +1,8 @@
+C:\Github\Glyphics\Glyphics\Apps\ScratchPad\bin\Debug\ScratchPad.exe.config
+C:\Github\Glyphics\Glyphics\Apps\ScratchPad\bin\Debug\ScratchPad.exe
+C:\Github\Glyphics\Glyphics\Apps\ScratchPad\bin\Debug\ScratchPad.pdb
+C:\Github\Glyphics\Glyphics\Apps\ScratchPad\bin\Debug\GlyphicsLibrary.dll
+C:\Github\Glyphics\Glyphics\Apps\ScratchPad\bin\Debug\GlyphicsLibrary.pdb
+C:\Github\Glyphics\Glyphics\Apps\ScratchPad\obj\Debug\ScratchPad.csprojResolveAssemblyReference.cache
+C:\Github\Glyphics\Glyphics\Apps\ScratchPad\obj\Debug\ScratchPad.exe
+C:\Github\Glyphics\Glyphics\Apps\ScratchPad\obj\Debug\ScratchPad.pdb

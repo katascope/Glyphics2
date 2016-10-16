@@ -1,0 +1,10 @@
+avatar,
+
+Size3D4 16 16 16;
+
+PenColorD4 31 31 255 255;FillRect 5 0 6 6 2 8;FillRect 9 0 6 10 2 8;FillRect 4 6 4 5 7 5;FillRect 10 6 4 11 7 5;
+PenColorD4 255 255 255 255;FillRect 4 8 6 11 13 9;
+PenColorD4 31 31 63 255;FillRect 4 2 7 5 3 8;FillRect 10 2 7 11 3 8;FillRect 5 3 7 10 7 8;FillRect 10 6 6 11 7 9;FillRect 4 6 6 5 7 9;FillRect 11 13 7 12 15 8;FillRect 3 13 7 4 15 8;
+PenColorD4 31 31 255 255;FillRect 7 8 6 8 8 6;FillRect 9 9 6 9 9 6;FillRect 6 9 6 6 9 6;FillRect 5 11 6 6 12 6;FillRect 9 11 6 10 12 6;
+PenColorD4 31 31 255 31;FillRect 7 5 7 8 6 8;PenColorD4 0 0 0 0;FillRect 11 8 6 11 8 9;FillRect 4 8 6 4 8 9;
+

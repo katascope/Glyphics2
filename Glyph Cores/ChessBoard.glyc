@@ -1,0 +1,85 @@
+ChessBoard,
+
+Size3D4 64 16 64
+
+PenColorD4 127 15 15 255
+FillRect 0 0 0 63 0 63
+
+PenColorD4 0 0 0 255
+FillRect 0 0 0 7 0 7
+FillRect 16 0 0 23 0 7
+FillRect 32 0 0 39 0 7
+FillRect 48 0 0 55 0 7
+
+FillRect 8 0 8 15 0 15
+FillRect 24 0 8 31 0 15
+FillRect 40 0 8 47 0 15
+FillRect 56 0 8 63 0 15
+
+FillRect 0 0 16 7 0 23
+FillRect 16 0 16 23 0 23
+FillRect 32 0 16 39 0 23
+FillRect 48 0 16 55 0 23
+
+FillRect 8 0 24 15 0 31
+FillRect 24 0 24 31 0 31
+FillRect 40 0 24 47 0 31
+FillRect 56 0 24 63 0 31
+
+
+FillRect 0 0 32 7 0 39
+FillRect 16 0 32 23 0 39
+FillRect 32 0 32 39 0 39
+FillRect 48 0 32 55 0 39
+
+FillRect 8 0 40 15 0 47
+FillRect 24 0 40 31 0 47
+FillRect 40 0 40 47 0 47
+FillRect 56 0 40 63 0 47
+
+FillRect 0 0 48 7 0 55
+FillRect 16 0 48 23 0 55
+FillRect 32 0 48 39 0 55
+FillRect 48 0 48 55 0 55
+
+FillRect 8 0 56 15 0 63
+FillRect 24 0 56 31 0 63
+FillRect 40 0 56 47 0 63
+FillRect 56 0 56 63 0 63
+
+
+PutGroup WhitePawn 0 1 8 1
+PutGroup WhitePawn 8 1 8 2
+PutGroup WhitePawn 16 1 8 3
+PutGroup WhitePawn 24 1 8 4
+PutGroup WhitePawn 32 1 8 5
+PutGroup WhitePawn 40 1 8 6
+PutGroup WhitePawn 48 1 8 7
+PutGroup WhitePawn 56 1 8 8
+PutGroup WhiteRook 0 1 0 9
+PutGroup WhiteKnight 8 1 0 10
+PutGroup WhiteBishop 16 1 0 11
+PutGroup WhiteQueen 24 1 0 12
+PutGroup WhiteKing 32 1 0 13
+PutGroup WhiteBishop 40 1 0 14
+PutGroup WhiteKnight 48 1 0 15
+PutGroup WhiteRook 56 1 0 16
+
+PutGroup BlackPawn 0 1 48 17
+PutGroup BlackPawn 8 1 48 18
+PutGroup BlackPawn 16 1 48 19
+PutGroup BlackPawn 24 1 48 20
+PutGroup BlackPawn 32 1 48 21
+PutGroup BlackPawn 40 1 48 22
+PutGroup BlackPawn 48 1 48 23
+PutGroup BlackPawn 56 1 48 24
+PutGroup BlackRook 0 1 56 25
+PutGroup BlackKnight 8 1 56 26
+PutGroup BlackBishop 16 1 56 27
+PutGroup BlackQueen 24 1 56 28
+PutGroup BlackKing 32 1 56 29
+PutGroup BlackBishop 40 1 56 30
+PutGroup BlackKnight 48 1 56 31
+PutGroup BlackRook 56 1 56 32
+
+

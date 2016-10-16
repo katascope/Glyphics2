@@ -1,0 +1,21 @@
+First1,
+
+Size3D4 64 64 64;Spawn 25 4 7;
+
+PenColorD3 31 127 255;WallCube 1;PenColorD3 192 127 127;Circle2D 31 31 63 8;Circle2D 31 31 191 8;
+
+PenColorD3 192 192 127;PenSize 7 1 1;Line 25 3 0 25 3 20;Line 31 0 17 25 23 40;Line 31 23 50 31 23 191;Line 25 23 40 25 23 55;
+
+PenSize 7 7 1;PenColorD3 127 192 127;Rect 0 1 0 63 2 191;
+
+PenColorD3 127 192 192;FillCircle3D 20 22 58 6;
+
+PenColorD3 127 127 192;Circle2D 28 0 25 20;PenColorD3 192 127 192;Circle2D 28 0 20 20;
+
+PenColorD3 192 192 127;Circle2D 28 0 16 20;PenColorD3 127 192 127;Circle2D 28 0 12 20;
+PenColorD3 127 192 192;Line 51 0 51 51 30 51;Line 11 0 51 11 30 51;Line 51 0 11 51 20 11;Line 11 0 11 11 20 11;
+PenSize 1 1 1;PenColorD3 127 127 192;
+ExtrudeZ 11 28 37 61 5 6 6 0;ExtrudeY 11 1 31 30 6 6 6 0;ExtrudeX 0 31 31 5 6 6 6 0;
+PenSize 1 1 1;ImgEdgeX 255 255 255 255;ImgEdgeY 255 255 255 255;
+Text 1 58 63 72;Text 7 58 63 69;Text 13 58 63 76;Text 19 58 63 76;Text 25 58 63 79;Text 1 51 63 87;Text 1 51 63 76;Text 7 51 63 79;Text 13 51 63 82;Text 19 51 63 76;Text 25 51 63 68;
+

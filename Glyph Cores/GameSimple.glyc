@@ -1,0 +1,65 @@
+Game,
+
+#Size of Grid
+Size3D4 64 64 64
+
+#Blue color ground
+PenPhysics 0
+PenColorD4 31 127 255 255
+FillRect 0 0 0 63 20 63
+
+#Hollow/clear inner
+PenColorD4 0 0 0 0
+FillRect 1 1 1 62 62 62
+
+#Size/Door
+PenPhysics 13
+PenColorD4 200 200 255 255
+FillRect 16 1 0 48 15 0
+FillRect 0 1 16 0 15 48
+FillRect 63 1 16 63 15 48
+
+#Circuit
+PenPhysics 2
+PenColorD4 192 192 255 255
+FillRect 12 1 0 15 1 1
+
+#SensorClick
+PenPhysics 5
+PenColorD4 255 0 255 255
+FillRect 12 1 1 14 8 1
+
+#White borders
+PenPhysics 2
+PenColorD4 224 224 255 255
+Rect 0 0 0 31 0 31
+Rect 0 0 32 31 0 63
+Rect 32 0 0 63 0 31
+Rect 32 0 32 63 0 63
+Rect 16 0 16 48 0 48
+
+#Top border light
+PenSize 10 1 10
+Rect 0 20 0 63 20 63
+
+#Connector
+PenSize 1 1 1
+Rect 8 8 1 8 20 1
+
+#skylight
+PenPhysics 5
+PenColorD4 255 255 127 255
+Rect 8 6 1 8 8 1
+
+#stairs
+PenPhysics 0
+PenColorD4 255 255 255 255
+Stairs 56 1 39 56 19 59 3 1 1
+Stairs 31 20 58 31 39 31 2 1 1
+FillCircle2DXZ 32 39 23 8
+
+PenColorD4 31 127 255 255
+FillRect 27 40 21 29 41 22
+FillRect 34 40 21 36 41 22
+
+

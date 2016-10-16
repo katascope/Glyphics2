@@ -1,0 +1,61 @@
+Puzzle1,
+
+#Size of Grid
+Size3D4 16 16 16
+
+Put GateAnd 0 0 0
+PenPhysics 5
+PenColorD4 127 127 255 255
+Plot 0 1 0
+Plot 0 1 2
+
+Put GateNand 0 0 4
+PenPhysics 5
+PenColorD4 127 127 255 255
+Plot 0 1 4
+Plot 0 1 6
+
+
+Put GateAnd 6 0 2
+
+PenPhysics 2
+PenColorD4 255 255 255 255
+Line 5 0 1 5 0 2
+Line 5 0 4 5 0 5
+
+#Set 2
+
+Put GateAnd 0 0 8
+PenPhysics 5
+PenColorD4 127 127 255 255
+Plot 0 1 8
+Plot 0 1 10
+
+Put GateXor 0 0 12
+PenPhysics 5
+PenColorD4 127 127 255 255
+Plot 0 1 12
+Plot 0 1 14
+
+Put GateAnd 6 0 10
+
+PenPhysics 2
+PenColorD4 255 255 255 255
+Line 5 0 9 5 0 10
+Line 5 0 12 5 0 13
+
+#Set 3 combiner
+PenPhysics 2
+PenColorD4 255 255 255 255
+Line 11 0 8 11 0 11
+Line 11 0 3 11 0 6
+
+Put GateAnd 11 0 6
+
+PenPhysics 30
+PenColorD4 255 127 0 255
+Plot 16 1 7
+
+
+
+

@@ -1,0 +1,8 @@
+C:\Github\Glyphics\Glyphics\Apps\Animator\bin\Debug\Animator.exe.config
+C:\Github\Glyphics\Glyphics\Apps\Animator\bin\Debug\Animator.exe
+C:\Github\Glyphics\Glyphics\Apps\Animator\bin\Debug\Animator.pdb
+C:\Github\Glyphics\Glyphics\Apps\Animator\bin\Debug\GlyphicsLibrary.dll
+C:\Github\Glyphics\Glyphics\Apps\Animator\bin\Debug\GlyphicsLibrary.pdb
+C:\Github\Glyphics\Glyphics\Apps\Animator\obj\Debug\Animator.csprojResolveAssemblyReference.cache
+C:\Github\Glyphics\Glyphics\Apps\Animator\obj\Debug\Animator.exe
+C:\Github\Glyphics\Glyphics\Apps\Animator\obj\Debug\Animator.pdb

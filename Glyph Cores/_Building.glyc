@@ -1,0 +1,5 @@
+building,
+Size3D4 16 64 16;Spawn 8 16 8;PenColorD4 31 127 255 255;WallCube 1;
+PenColorD4 127 127 127 255;FillRect 0 0 0 15 63 15;PenColorD4 0 0 0 0;FillRect 1 1 1 14 62 14;
+PenColorD4 63 63 255 31;PenHatch 1 4 1;
+FillRect 1 4 15 6 59 15;FillRect 9 4 0 14 59 0;FillRect 15 4 14 15 59 9;FillRect 15 4 6 15 59 1;FillRect 0 4 6 0 59 1;FillRect 0 4 13 0 59 8;FillRect 2 4 0 7 59 0;FillRect 8 4 15 13 59 15;

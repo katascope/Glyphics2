@@ -1,0 +1,170 @@
+AndGate,
+
+#Size of Grid
+Size3D4 64 64 64
+
+#Blue color ground and white color BUG WITH COMMA PARSING
+PenColorD4 15 63 127 255
+FillRect 0 0 0 63 0 63
+PenColorD4 7 31 63 255
+Rect 0 0 0 63 0 63
+
+#Gate AND
+#Sensor1
+PenPhysics 5
+PenColorD4 255 127 0 255
+Plot 2 2 3
+#CircuitLine1
+PenPhysics 2
+PenColorD4 255 255 255 255
+Line 2 1 3 7 1 3
+
+#Sensor2
+PenPhysics 5
+PenColorD4 255 127 0 255
+Plot 2 2 5
+#CircuitLine2
+PenPhysics 2
+PenColorD4 255 255 255 255
+Line 2 1 5 7 1 5
+
+#Junction
+PenPhysics 49
+#PenPhysics 5
+PenColorD4 255 0 255 255
+Line 7 1 4 11 1 4
+
+#CircuitLine3-Output
+PenPhysics 2
+PenColorD4 127 127 127 255
+Line 11 2 4 13 2 4
+PenPhysics 30
+PenColorD4 255 255 0 255
+Plot 14 2 4
+
+
+#Gate OR
+#Sensor1
+PenPhysics 5
+PenColorD4 255 127 0 255
+Plot 2 2 13
+#CircuitLine1
+PenPhysics 2
+PenColorD4 255 255 255 255
+Line 2 1 13 7 1 13
+
+#Sensor2
+PenPhysics 5
+PenColorD4 255 127 0 255
+Plot 2 2 15
+#CircuitLine2
+PenPhysics 2
+PenColorD4 255 255 255 255
+Line 2 1 15 7 1 15
+
+#Junction
+PenPhysics 50
+#PenPhysics 5
+PenColorD4 255 0 255 255
+Line 7 1 14 11 1 14
+
+#CircuitLine3-Output
+PenPhysics 2
+PenColorD4 127 127 127 255
+Line 11 2 14 13 2 14
+PenPhysics 30
+PenColorD4 255 255 0 255
+Plot 14 2 14
+
+
+#Gate XOR
+#Sensor1
+PenPhysics 5
+PenColorD4 255 127 0 255
+Plot 2 2 23
+#CircuitLine1
+PenPhysics 2
+PenColorD4 255 255 255 255
+Line 2 1 23 7 1 23
+
+#Sensor2
+PenPhysics 5
+PenColorD4 255 127 0 255
+Plot 2 2 25
+#CircuitLine2
+PenPhysics 2
+PenColorD4 255 255 255 255
+Line 2 1 25 7 1 25
+
+#Junction
+PenPhysics 51
+#PenPhysics 5
+PenColorD4 255 0 255 255
+Line 7 1 24 11 1 24
+
+#CircuitLine3-Output
+PenPhysics 2
+PenColorD4 127 127 127 255
+Line 11 2 24 13 2 24
+PenPhysics 30
+PenColorD4 255 255 0 255
+Plot 14 2 24
+
+
+#Gate NAND
+#Sensor1
+PenPhysics 5
+PenColorD4 255 127 0 255
+Plot 2 2 33
+#CircuitLine1
+PenPhysics 2
+PenColorD4 255 255 255 255
+Line 2 1 33 7 1 33
+
+#Sensor2
+PenPhysics 5
+PenColorD4 255 127 0 255
+Plot 2 2 35
+#CircuitLine2
+PenPhysics 2
+PenColorD4 255 255 255 255
+Line 2 1 35 7 1 35
+
+#Junction
+PenPhysics 52
+PenColorD4 255 0 255 255
+Line 7 1 34 11 1 34
+
+#CircuitLine3-Output
+PenPhysics 2
+PenColorD4 127 127 127 255
+Line 11 2 34 13 2 34
+PenPhysics 30
+PenColorD4 255 255 0 255
+Plot 14 2 34
+
+
+
+#Gate NOT
+#Sensor1
+PenPhysics 5
+PenColorD4 255 127 0 255
+Plot 1 1 44
+#CircuitLine1
+PenPhysics 2
+PenColorD4 255 255 255 255
+Line 2 1 44 7 1 44
+
+#Junction
+PenPhysics 48
+#PenPhysics 5
+PenColorD4 255 0 255 255
+Line 7 1 44 9 1 44
+
+#CircuitLine3-Output
+PenPhysics 2
+PenColorD4 127 127 127 255
+Line 9 2 44 13 2 44
+PenPhysics 30
+PenColorD4 255 255 0 255
+Plot 14 2 44

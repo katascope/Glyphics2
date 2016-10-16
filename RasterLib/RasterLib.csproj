@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{09A70F33-B743-4E80-A572-FB063DF75422}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GlyphicsLibrary</RootNamespace>
+    <AssemblyName>GlyphicsLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Language\Language.ByteConverter.BytesToString.cs" />
+    <Compile Include="RasterApi.cs" />
+    <Compile Include="Language\Language.Code.cs" />
+    <Compile Include="Language\Language.CodeList.cs" />
+    <Compile Include="Language\Language.Codename.cs" />
+    <Compile Include="Language\Language.Glyph.cs" />
+    <Compile Include="Language\Language.CodeConverter.CodeToGrid.cs" />
+    <Compile Include="Language\Language.CodeConverter.CodeToRescaledCode.cs" />
+    <Compile Include="Language\Language.CodeConverter.CodeToTokens.cs" />
+    <Compile Include="Language\Language.CodeConverter.TokensToCode.cs" />
+    <Compile Include="Language\Language.CodeConverter.TokensToGrid.cs" />
+    <Compile Include="Language\Language.Token.cs" />
+    <Compile Include="Language\Language.TokenList.cs" />
+    <Compile Include="Language\Language.RasterLibError.cs" />
+    <Compile Include="Language\Language.GlyphTypes.cs" />
+    <Compile Include="Language\Language.Thumbnails.cs" />
+    <Compile Include="Language\Language.VGPU.cs" />
+    <Compile Include="Objects\Bytes.cs" />
+    <Compile Include="Objects\CellProperties.cs" />
+    <Compile Include="Objects\Double3.cs" />
+    <Compile Include="Objects\Grid.cs" />
+    <Compile Include="Objects\GridContext.cs" />
+    <Compile Include="Objects\GridLibrary.cs" />
+    <Compile Include="Objects\GridList.cs" />
+    <Compile Include="Objects\Pen.cs" />
+    <Compile Include="Objects\Rect.cs" />
+    <Compile Include="Objects\RectList.cs" />
+    <Compile Include="Objects\RectTouch.cs" />
+    <Compile Include="Painters\IPainter.cs" />
+    <Compile Include="Painters\Painter.Wire.cs" />
+    <Compile Include="Painters\Painters.Alien.cs" />
+    <Compile Include="Painters\Painters.Arc.cs" />
+    <Compile Include="Painters\Painters.ArchLine.cs" />
+    <Compile Include="Painters\Painters.ArchRect.cs" />
+    <Compile Include="Painters\Painters.Basic.cs" />
+    <Compile Include="Painters\Painters.BlitBlend.cs" />
+    <Compile Include="Painters\Painters.BlitPalette.cs" />
+    <Compile Include="Painters\Painters.Blitter.cs" />
+    <Compile Include="Painters\Painters.Circle.cs" />
+    <Compile Include="Painters\Painters.Circle3D.cs" />
+    <Compile Include="Painters\Painters.CircleFilled.cs" />
+    <Compile Include="Painters\Painters.Clear.cs" />
+    <Compile Include="Painters\Painters.Diamond.cs" />
+    <Compile Include="Painters\Painters.DrawString.cs" />
+    <Compile Include="Painters\Painters.EdgeCorners.cs" />
+    <Compile Include="Painters\Painters.Extrude.cs" />
+    <Compile Include="Painters\Painters.FillCA.cs" />
+    <Compile Include="Painters\Painters.Font.cs" />
+    <Compile Include="Painters\Painters.ImageFilter.cs" />
+    <Compile Include="Painters\Painters.ImagingColorize.cs" />
+    <Compile Include="Painters\Painters.ImagingEdge.cs" />
+    <Compile Include="Painters\Painters.ImagingFlip.cs" />
+    <Compile Include="Painters\Painters.ImagingGray.cs" />
+    <Compile Include="Painters\Painters.ImagingHSV.cs" />
+    <Compile Include="Painters\Painters.ImagingInvert.cs" />
+    <Compile Include="Painters\Painters.ImagingMirror.cs" />
+    <Compile Include="Painters\Painters.ImagingPalettize.cs" />
+    <Compile Include="Painters\Painters.ImagingRotate.cs" />
+    <Compile Include="Painters\Painters.ImagingShade.cs" />
+    <Compile Include="Painters\Painters.InlinePut.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Painters\Painters.Line.cs" />
+    <Compile Include="Painters\Painters.Line3D.cs" />
+    <Compile Include="Painters\Painters.LineHorizontal.cs" />
+    <Compile Include="Painters\Painters.MaskRect.cs" />
+    <Compile Include="Painters\Painters.Maze.cs" />
+    <Compile Include="Painters\Painters.Oval3D.cs" />
+    <Compile Include="Painters\Painters.Palette.cs" />
+    <Compile Include="Painters\Painters.PathFinder.cs" />
+    <Compile Include="Painters\Painters.Pen.cs" />
+    <Compile Include="Painters\Painters.Polygon.cs" />
+    <Compile Include="Painters\Painters.Pyramid3D.cs" />
+    <Compile Include="Painters\Painters.Quad.cs" />
+    <Compile Include="Painters\Painters.Rect.cs" />
+    <Compile Include="Painters\Painters.Shadows.cs" />
+    <Compile Include="Painters\Painters.ShapeToColor.cs" />
+    <Compile Include="Painters\Painters.Stairs.cs" />
+    <Compile Include="Painters\Painters.StairsAxis.cs" />
+    <Compile Include="Painters\Painters.Star.cs" />
+    <Compile Include="Painters\Painters.Supports.cs" />
+    <Compile Include="Painters\Painters.Triangle.cs" />
+    <Compile Include="Painters\Painters.WallCube.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\Compare.cs" />
+    <Compile Include="Utility\Converter.cs" />
+    <Compile Include="Utility\GridCreator.cs" />
+    <Compile Include="Utility\MathLerper.cs" />
+    <Compile Include="Utility\MathTrigonometry.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

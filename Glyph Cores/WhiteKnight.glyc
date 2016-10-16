@@ -1,0 +1,13 @@
+WhiteKnight,
+
+Size3D4 8 8 8
+
+PenColorD4 255 255 255 255
+FillRect 1 0 1 6 0 6
+
+FillRect 3 1 2 4 6 3
+Line 3 6 3 3 4 5
+Line 4 6 3 4 4 5
+FillRect 3 4 3 4 4 5
+
+

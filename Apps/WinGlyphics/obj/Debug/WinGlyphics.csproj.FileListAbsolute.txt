@@ -1,0 +1,11 @@
+C:\Github\Glyphics\Glyphics\Apps\WinGlyphics\bin\Debug\WinGlyphics.exe.config
+C:\Github\Glyphics\Glyphics\Apps\WinGlyphics\bin\Debug\WinGlyphics.exe
+C:\Github\Glyphics\Glyphics\Apps\WinGlyphics\bin\Debug\WinGlyphics.pdb
+C:\Github\Glyphics\Glyphics\Apps\WinGlyphics\bin\Debug\GlyphicsLibrary.dll
+C:\Github\Glyphics\Glyphics\Apps\WinGlyphics\bin\Debug\GlyphicsLibrary.pdb
+C:\Github\Glyphics\Glyphics\Apps\WinGlyphics\obj\Debug\WinGlyphics.csprojResolveAssemblyReference.cache
+C:\Github\Glyphics\Glyphics\Apps\WinGlyphics\obj\Debug\WinGlyphics.WinGlyphics.resources
+C:\Github\Glyphics\Glyphics\Apps\WinGlyphics\obj\Debug\WinGlyphics.Properties.Resources.resources
+C:\Github\Glyphics\Glyphics\Apps\WinGlyphics\obj\Debug\WinGlyphics.csproj.GenerateResource.Cache
+C:\Github\Glyphics\Glyphics\Apps\WinGlyphics\obj\Debug\WinGlyphics.exe
+C:\Github\Glyphics\Glyphics\Apps\WinGlyphics\obj\Debug\WinGlyphics.pdb

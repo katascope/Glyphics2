@@ -1,0 +1,21 @@
+inlineBox,
+
+#Size of Grid
+Size3D4 64 64 64
+
+PenColorD4 255 255 255 255
+
+#Floor
+FillRect 0 0 0 63 0 63
+
+#Left
+FillRect 0 0 0 0 31 63
+
+#Right
+FillRect 63 0 0 63 31 63 
+
+#Front
+FillRect 0 0 0 63 31 0
+
+#Back
+FillRect 0 0 63 63 31 63
