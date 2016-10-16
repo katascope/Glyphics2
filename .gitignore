@@ -50,3 +50,4 @@ Temporary Items
 *.dll
 *.pdb
 Apps/Simulator/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+*.suo
