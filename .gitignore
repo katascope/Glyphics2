@@ -60,3 +60,4 @@ Apps/Animator/obj/Debug/Animator.csproj.FileListAbsolute.txt
 Apps/GlyphicsCommandLine/obj/Debug/GlyphicsCommandLine.csproj.FileListAbsolute.txt
 Apps/DocumentationGenerator/obj/Debug/DocumentationGenerator.csproj.FileListAbsolute.txt
 RasterLib/obj/Debug/RasterLib.csproj.FileListAbsolute.txt
+*.cache

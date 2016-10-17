@@ -63,6 +63,7 @@
     <None Include="FullTour.json" />
     <None Include="Nexus.json" />
     <None Include="packages.config" />
+    <None Include="Scratch.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\GraphicsLib\GraphicsLib.csproj">
