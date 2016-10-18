@@ -3,3 +3,8 @@ C:\Github\Glyphics2\GlyphicsLibrary\bin\Debug\GlyphicsLibrary.pdb
 C:\Github\Glyphics2\GlyphicsLibrary\obj\Debug\RasterLib.csprojResolveAssemblyReference.cache
 C:\Github\Glyphics2\GlyphicsLibrary\obj\Debug\GlyphicsLibrary.dll
 C:\Github\Glyphics2\GlyphicsLibrary\obj\Debug\GlyphicsLibrary.pdb
+C:\Github\Glyphics2\RasterLib\bin\Debug\GlyphicsLibrary.dll
+C:\Github\Glyphics2\RasterLib\bin\Debug\GlyphicsLibrary.pdb
+C:\Github\Glyphics2\RasterLib\obj\Debug\RasterLib.csprojResolveAssemblyReference.cache
+C:\Github\Glyphics2\RasterLib\obj\Debug\GlyphicsLibrary.dll
+C:\Github\Glyphics2\RasterLib\obj\Debug\GlyphicsLibrary.pdb

@@ -1,17 +1,17 @@
-FileNameInCode: C:\Github\Glyphics2\Glyph Cores\PrintableNexus.glyc
-FileNameInStl: ..\..\archquad.stl
+FileNameInCode: C:\Github\Glyphics2\Glyph Cores\Nexus.glyc
+#FileNameInStl: ..\..\archquad.stl
 FileNamesInStlLibrary:
-	- ..\..\cube_ascii.stl
+- ..\..\cube_ascii.stl
 - ..\..\archquad.stl
 - ..\..\pipesphere.stl
-FileNameOutStl: ..\..\NexusStl.stl
-FileNameOutStlPreview: ..\..\NexusStlPreview.png
-FileNameOutIsometric: ..\..\MandelaIsometric.png
-IsometricCellWidth: 8
-IsometricCellHeight: 8
+#FileNameOutStl: ..\..\NexusStl.stl
+#FileNameOutStlPreview: ..\..\NexusStlPreview.png
+FileNameOutIsometric: ..\..\NexusIsometric.png
+IsometricCellWidth: 4
+IsometricCellHeight: 4
 IsometricBgRgba:
-- 0
-- 0
-- 0
+- 255
+- 255
+- 255
 - 255
 FileNameOutOrthogonal: ..\..\NexusOrtho.png

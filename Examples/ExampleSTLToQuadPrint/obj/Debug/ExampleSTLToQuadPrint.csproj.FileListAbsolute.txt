@@ -6,3 +6,12 @@ C:\Github\Glyphics\Glyphics\Examples\ExampleSTLToQuadPrint\bin\Debug\GlyphicsLib
 C:\Github\Glyphics\Glyphics\Examples\ExampleSTLToQuadPrint\obj\Debug\ExampleSTLToQuadPrint.csprojResolveAssemblyReference.cache
 C:\Github\Glyphics\Glyphics\Examples\ExampleSTLToQuadPrint\obj\Debug\ExampleSTLToQuadPrint.exe
 C:\Github\Glyphics\Glyphics\Examples\ExampleSTLToQuadPrint\obj\Debug\ExampleSTLToQuadPrint.pdb
+C:\Github\Glyphics2\Examples\ExampleSTLToQuadPrint\bin\Debug\ExampleSTLToQuadPrint.exe.config
+C:\Github\Glyphics2\Examples\ExampleSTLToQuadPrint\bin\Debug\ExampleSTLToQuadPrint.exe
+C:\Github\Glyphics2\Examples\ExampleSTLToQuadPrint\bin\Debug\ExampleSTLToQuadPrint.pdb
+C:\Github\Glyphics2\Examples\ExampleSTLToQuadPrint\bin\Debug\GeneralLibrary.dll
+C:\Github\Glyphics2\Examples\ExampleSTLToQuadPrint\bin\Debug\GlyphicsLibrary.dll
+C:\Github\Glyphics2\Examples\ExampleSTLToQuadPrint\bin\Debug\GeneralLibrary.pdb
+C:\Github\Glyphics2\Examples\ExampleSTLToQuadPrint\bin\Debug\GlyphicsLibrary.pdb
+C:\Github\Glyphics2\Examples\ExampleSTLToQuadPrint\obj\Debug\ExampleSTLToQuadPrint.exe
+C:\Github\Glyphics2\Examples\ExampleSTLToQuadPrint\obj\Debug\ExampleSTLToQuadPrint.pdb
