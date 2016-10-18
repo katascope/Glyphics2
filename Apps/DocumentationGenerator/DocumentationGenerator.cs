@@ -120,7 +120,9 @@ namespace DocumentationGenerator
                 foreach (string str in glyphNames)
                 {
                     file.WriteLine("<a href=\"" + str + ".html\">" + str + "</a>");
-                    file.WriteLine("<img src=\"" + str + ".png\"><br>");
+                    file.WriteLine("<img src=\"" + str + "-Ortho.png\">");
+                    file.WriteLine("<img src=\"" + str + "-Iso.png\">");
+                    file.WriteLine("<br>");
                 }
             }
         }
@@ -148,8 +150,13 @@ namespace DocumentationGenerator
             Grid grid = RasterApi.CodeToGrid(RasterApi.CreateCode(code));
             //            using ()
             {
-                Grid grid2 = renderer.RenderObliqueCells(grid);
-                GraphicsApi.SaveFlatPng(path + title + ".png", grid2);
+                Grid gridIso = RasterApi.CodeToGrid(RasterApi.CreateCode(code.Replace("WallCube 37", "WallCube 21")));
+
+                Grid gridIsometric = renderer.RenderIsometricCellsScaled(gridIso, 255, 255, 255, 255, 6, 6);
+                GraphicsApi.SaveFlatPng(path + title + "-Iso.png", gridIsometric);
+
+                Grid gridOrtho = renderer.RenderObliqueCells(grid);
+                GraphicsApi.SaveFlatPng(path + title + "-Ortho.png", gridOrtho);
 
                 int id = RasterApi.GetId(title);
                 if (id >= 0)
@@ -163,7 +170,8 @@ namespace DocumentationGenerator
                     string glyphDoc = "<title>" + title + "</title>"
                                      + "<h1>" + title + " Glyph function</h1>"
                                      + "<h3>Description:</h3>" + description
-                                     + "<br><img src=\"" + title + ".png\">"
+                                     + "<br><img src=\"" + title + "-Ortho.png\">"
+                                     + "<img src=\"" + title + "-Iso.png\">"
                                      ;
                     Console.WriteLine(glyphDoc + "\n");
 
@@ -223,8 +231,8 @@ namespace DocumentationGenerator
         {
             DocumentIndex(documentationPath);
 
-            DocumentByCode(documentationPath, "Alien", @"Genesis3D 64;PenColorD4 127 127 255 255;Alien 31 31 31 30");
-            DocumentByCode(documentationPath, "Star", @"Genesis3D 64;PenColorD4 127 127 255 255;Star 31 31 31 30");
+            DocumentByCode(documentationPath, "Alien", @"Genesis3D 32;PenColorD4 127 127 255 255;Alien 15 15 15 14");
+            DocumentByCode(documentationPath, "Star", @"Genesis3D 32;PenColorD4 127 127 255 255;Star 15 15 15 14");
 
             DocumentByCode(documentationPath, "Size1D1", @"Size1D1 16;PenColorD1 127;Clear");
             DocumentByCode(documentationPath, "Size2D1", @"Size2D1 16 16;PenColorD1 127;Clear");
