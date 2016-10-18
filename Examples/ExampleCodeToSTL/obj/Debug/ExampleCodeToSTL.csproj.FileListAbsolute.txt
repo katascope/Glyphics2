@@ -13,6 +13,6 @@ C:\Github\Glyphics2\Examples\ExampleCodeToSTL\bin\Debug\GeneralLibrary.dll
 C:\Github\Glyphics2\Examples\ExampleCodeToSTL\bin\Debug\GlyphicsLibrary.dll
 C:\Github\Glyphics2\Examples\ExampleCodeToSTL\bin\Debug\GeneralLibrary.pdb
 C:\Github\Glyphics2\Examples\ExampleCodeToSTL\bin\Debug\GlyphicsLibrary.pdb
+C:\Github\Glyphics2\Examples\ExampleCodeToSTL\obj\Debug\ExampleCodeToSTL.csprojResolveAssemblyReference.cache
 C:\Github\Glyphics2\Examples\ExampleCodeToSTL\obj\Debug\ExampleCodeToSTL.exe
 C:\Github\Glyphics2\Examples\ExampleCodeToSTL\obj\Debug\ExampleCodeToSTL.pdb
-C:\Github\Glyphics2\Examples\ExampleCodeToSTL\obj\Debug\ExampleCodeToSTL.csprojResolveAssemblyReference.cache

@@ -1,9 +1,6 @@
-﻿
-
-
-{
- "_FileNameInCode":"C:\\Github\\Glyphics2\\Glyph Cores\\Game.glyc",
- "FileNameInImage": "c:\\github\\Mandela.png",
+﻿{
+ "FileNameInCode":"C:\\Github\\Glyphics2\\Glyph Cores\\PrintableNexus.glyc",
+ "_FileNameInImage": "c:\\github\\Mandela.png",
 
  "FileNameOutIsometric":"..\\..\\MandelaIsometric.png",
  "FileNameOutIsometricAnimated":false,
@@ -12,12 +9,12 @@
  "IsometricBgRgba":[0,0,0,255],
 
  "FileNameOutOrthogonalAnimated":false,
- "_FileNameOutOrthogonal":"..\\..\\NexusOrtho.png",
+ "FileNameOutOrthogonal":"..\\..\\NexusOrtho.png",
 
 
  "FileNameOutStl":"..\\..\\NexusStl.stl",
- "_FileNameOutStlPreview":"..\\..\\NexusStlPreview.png",
- "_FileNameInSTL":"..\\..\\archquad.stl",
+ "FileNameOutStlPreview":"..\\..\\NexusStlPreview.png",
+ "FileNameInSTL":"..\\..\\archquad.stl",
  "FileNamesInStlLibrary": 
 	[
 		"..\\..\\cube_ascii.stl",

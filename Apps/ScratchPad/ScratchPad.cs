@@ -10,22 +10,44 @@ Redistribution and use in source and binary forms, with or without modification,
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DRect, INDRect, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #endregion
 using System;
+using System.IO;
 using ScratchPad.Scratch;
 using Newtonsoft.Json;
+using YamlDotNet.Serialization;
 
 namespace ScratchPad
 {
-    /* Example: ScratchPad */
     class ScratchPad
     {
         [STAThread]
         static void Main()
         {
-            ScratchControl scratch;
+            string filename = "..\\..\\Nexus.yml";
 
-            using (var file = new System.IO.StreamReader("..\\..\\Nexus.json"))
+            using (var file = new System.IO.StreamReader(filename))
             {
-                scratch = JsonConvert.DeserializeObject<ScratchControl>(file.ReadToEnd());
+                ScratchControl scratch = null;
+
+                if (filename.ToUpper().Contains(".YML"))
+                {
+                    Console.WriteLine("Reading Scratch config in YAML from " + filename);
+                    var inputStream = new StringReader(file.ReadToEnd());
+                    var ymlDeserializer = new YamlDotNet.Serialization.Deserializer();
+                    try
+                    {
+                        scratch = ymlDeserializer.Deserialize<ScratchControl>(inputStream);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Caught exception " + ex);
+                        return;
+                    }
+                }
+                if (filename.ToUpper().Contains(".JSON"))
+                {
+                    Console.WriteLine("Reading Scratch config in JSON from " + filename);
+                    scratch = JsonConvert.DeserializeObject<ScratchControl>(file.ReadToEnd());
+                }
                 ScratchLogic.SuperDebug(scratch);
                 ScratchLogic.Titler();
             }

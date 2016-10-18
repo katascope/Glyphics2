@@ -61,3 +61,5 @@ Apps/GlyphicsCommandLine/obj/Debug/GlyphicsCommandLine.csproj.FileListAbsolute.t
 Apps/DocumentationGenerator/obj/Debug/DocumentationGenerator.csproj.FileListAbsolute.txt
 RasterLib/obj/Debug/RasterLib.csproj.FileListAbsolute.txt
 *.cache
+*.cache
+*.cache
