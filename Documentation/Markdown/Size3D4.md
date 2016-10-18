@@ -3,7 +3,7 @@
 ##Description: Create 4-byte 3D grid of <width> <height> <depth>
 ##Arguments: w h d
 
-![](Size3D4.png)
+![](Size3D4-Iso.png)
 
 Figure Code:
 - [Size3D4](Size3D4.md) 16 16 16

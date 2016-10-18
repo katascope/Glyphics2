@@ -3,7 +3,7 @@
 ##Description: Create 2-byte 3D grid of <width> <height> <depth>
 ##Arguments: w h d
 
-![](Size3D2.png)
+![](Size3D2-Iso.png)
 
 Figure Code:
 - [Size3D2](Size3D2.md) 16 16 16

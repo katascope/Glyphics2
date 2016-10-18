@@ -3,7 +3,7 @@
 ##Description: Put Walls on Cube <bitmask>
 ##Arguments: f
 
-![](WallCube.png)
+![](WallCube-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

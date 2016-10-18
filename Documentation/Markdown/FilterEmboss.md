@@ -3,7 +3,7 @@
 ##Description: Emboss filter
 ##Arguments: 
 
-![](FilterEmboss.png)
+![](FilterEmboss-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

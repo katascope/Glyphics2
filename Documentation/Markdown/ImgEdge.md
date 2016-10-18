@@ -3,7 +3,7 @@
 ##Description: Set edge color <r> <g> <b> <a>
 ##Arguments: r g b a
 
-![](ImgEdge.png)
+![](ImgEdge-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

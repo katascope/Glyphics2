@@ -3,7 +3,7 @@
 ##Description: Draw 2D Letter <x> <y> <z> <letter>
 ##Arguments: x y z #
 
-![](Text.png)
+![](Text-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

@@ -3,7 +3,7 @@
 ##Description: Generate chaos <0..11> <x> <y> <z>
 ##Arguments: # x y z
 
-![](GenChaos.png)
+![](GenChaos-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

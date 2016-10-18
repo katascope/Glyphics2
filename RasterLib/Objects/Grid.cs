@@ -78,8 +78,7 @@ namespace RasterLib
         //Duplicate Object
         public Grid Clone()
         {
-            var newGrid = new Grid(_sizeX, _sizeY, _sizeZ, _bpp);
-            newGrid._scissor = _scissor;
+            var newGrid = new Grid(_sizeX, _sizeY, _sizeZ, _bpp) {_scissor = _scissor};
             newGrid.CopyFrom(this);
             return newGrid;
         }

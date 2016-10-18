@@ -3,7 +3,7 @@
 ##Description: Flip on Z axis
 ##Arguments: 
 
-![](ImgFlipZ.png)
+![](ImgFlipZ-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

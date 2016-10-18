@@ -3,7 +3,7 @@
 ##Description: Create 1-byte 1D grid of <width>
 ##Arguments: w
 
-![](Size1D1.png)
+![](Size1D1-Iso.png)
 
 Figure Code:
 - [Size1D1](Size1D1.md) 16

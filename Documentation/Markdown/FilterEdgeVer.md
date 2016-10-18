@@ -3,7 +3,7 @@
 ##Description: Edge vertical filter
 ##Arguments: 
 
-![](FilterEdgeVer.png)
+![](FilterEdgeVer-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

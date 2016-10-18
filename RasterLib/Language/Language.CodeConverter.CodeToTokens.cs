@@ -44,8 +44,7 @@ namespace RasterLib.Language
                     throw new RasterLibError(RasterLibErrorType.WrongArgumentCount, codeLine, line, "(Need " + glyph.Args + ", Found " + (parts.Length - 1) + ")");
                 }
             }
-            var token = new Token();
-            token.glyph = glyph;
+            var token = new Token {_glyph = glyph};
             var args = new byte[parts.Length - 1];
             var sargs = new string[parts.Length - 1];
 
@@ -115,7 +114,7 @@ namespace RasterLib.Language
                         Token token = TokenizeLine2Token(line, lineNumber);
                         if (token != null)
                         {
-                            if ((int)token.glyph.glyph == 0)
+                            if ((int)token._glyph.glyph == 0)
                             {
                                 throw new RasterLibError("No codeString");
                             }

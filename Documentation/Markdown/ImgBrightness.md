@@ -3,7 +3,7 @@
 ##Description: Adjust brightness <adjust %>
 ##Arguments: %
 
-![](ImgBrightness.png)
+![](ImgBrightness-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

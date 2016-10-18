@@ -3,7 +3,7 @@
 ##Description: Draw Line <x1> <y1> <z1> <x2> <y2> <z2>
 ##Arguments: x y z X Y Z
 
-![](Line.png)
+![](Line-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

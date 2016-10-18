@@ -15,10 +15,10 @@ namespace RasterLib.Language
     //Glyph class
     public class Glyph// : Glyph
     {
-        //The name of the glyph
+        //The name of the _glyph
         public string Name { get; set; }
 
-        //The glyph's id. 
+        //The _glyph's id. 
         public int Id { get; private set; }
 
         //Variable arguments. Used for PalFromVal
@@ -30,7 +30,7 @@ namespace RasterLib.Language
         //Description of syntax. i.e. "x y z s"
         public string Syntax { get; set; }
 
-        //Description of glyph. i.e. "Draws tornado at <x> <y> <z> <scale>"
+        //Description of _glyph. i.e. "Draws tornado at <x> <y> <z> <scale>"
         public string Desc { get; set; }
 
         //Enum of Glyph's ID

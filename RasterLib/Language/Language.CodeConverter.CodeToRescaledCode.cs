@@ -21,12 +21,12 @@ namespace RasterLib.Language
         {
             byte[] args = token.GetArgs();
 
-            if (token.glyph.Syntax.Length == 0)
+            if (token._glyph.Syntax.Length == 0)
                 return;
 
             for (int arg = 0; arg < args.Length; arg++)
             {
-                char syntax = token.glyph.Syntax[arg * 2];
+                char syntax = token._glyph.Syntax[arg * 2];
                 switch (syntax)
                 {
                     case 'w':

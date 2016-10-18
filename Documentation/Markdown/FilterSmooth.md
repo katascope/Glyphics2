@@ -3,7 +3,7 @@
 ##Description: Smooth filter
 ##Arguments: 
 
-![](FilterSmooth.png)
+![](FilterSmooth-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

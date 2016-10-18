@@ -3,7 +3,7 @@
 ##Description: Draw Oval at <x> <y> <z> <w> <h> <d>
 ##Arguments: x y z w h d
 
-![](Oval3D.png)
+![](Oval3D-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

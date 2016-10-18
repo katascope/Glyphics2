@@ -3,7 +3,7 @@
 ##Description: Draw 2D Arc <x> <y> <z> <radius> <startAngle> <sweepAngle>
 ##Arguments: x y z s # #
 
-![](ArcXZ.png)
+![](ArcXZ-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

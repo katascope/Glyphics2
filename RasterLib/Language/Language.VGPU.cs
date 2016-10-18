@@ -22,14 +22,14 @@ namespace RasterLib.Language
         //Keep a painter around by default
         private static readonly IPainter Painter = new CPainter();
 
-        //Execute a given Glyph on the IByteGridContext, tracked by codeString line, and arguments to the glyph
-        internal static void ExecuteGlyph(GridContext bgc, byte rasterCodeLine, Token token) //Glyph glyph)//, byte[] args)
+        //Execute a given Glyph on the IByteGridContext, tracked by codeString line, and arguments to the _glyph
+        internal static void ExecuteGlyph(GridContext bgc, byte rasterCodeLine, Token token) //Glyph _glyph)//, byte[] args)
         {
             //No context, nothing to do
             if (bgc == null) 
                 return;
 
-            Glyph glyph = token.glyph;
+            Glyph glyph = token._glyph;
             byte[] args = token.GetArgs();
 
             //If we have a grid, set the codeString tracker to the current line of codeString
@@ -252,7 +252,7 @@ namespace RasterLib.Language
             }
         }
 
-        //TokensToContext a list of glyph tokenList against a Grid context
+        //TokensToContext a list of _glyph tokenList against a Grid context
         public static void ExecuteGlyphTokens(GridContext bgc, TokenList glyphTokens)
         {
             byte line = 0;
@@ -262,9 +262,9 @@ namespace RasterLib.Language
 
             foreach (Token tok in glyphTokens)
             {
-                if (tok.glyph.glyph == GlyphId.End)
+                if (tok._glyph.glyph == GlyphId.End)
                     return;
-                ExecuteGlyph(bgc, line, tok);//tok.glyph, tok.GetArgs());
+                ExecuteGlyph(bgc, line, tok);//tok._glyph, tok.GetArgs());
                 line++;
             }
         }

@@ -3,7 +3,7 @@
 ##Description: Flip on Y axis
 ##Arguments: 
 
-![](ImgFlipY.png)
+![](ImgFlipY-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

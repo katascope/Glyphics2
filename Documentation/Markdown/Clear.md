@@ -3,7 +3,7 @@
 ##Description: Clear entire grid
 ##Arguments: 
 
-![](Clear.png)
+![](Clear-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

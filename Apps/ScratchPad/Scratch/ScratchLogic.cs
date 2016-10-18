@@ -125,7 +125,7 @@ namespace ScratchPad.Scratch
 
             //DownSolver ds = new GeneralLibrary.DownSolver(codeString);
 
-            if (ctl.OutputBytes)
+            if (ctl.OutputBytes && grid != null)
             {
                 string bytesDesc = RasterApi.BytesToString(grid.CloneData());
                 Console.WriteLine("GridBytes:\n{0}\n", bytesDesc);

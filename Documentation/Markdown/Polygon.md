@@ -3,7 +3,7 @@
 ##Description: Draw 2D Polygon <x> <y> <z> <radius> <sides>
 ##Arguments: x y z s #
 
-![](Polygon.png)
+![](Polygon-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

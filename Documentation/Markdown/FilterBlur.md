@@ -3,7 +3,7 @@
 ##Description: Blur filter
 ##Arguments: 
 
-![](FilterBlur.png)
+![](FilterBlur-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

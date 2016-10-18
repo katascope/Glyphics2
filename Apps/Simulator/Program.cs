@@ -14,8 +14,8 @@ namespace Simulator
     class Simulator
     {
         static readonly Avatar _avatar = new Avatar();
-        static char lastKey = ' ';
-        static int frameCount;
+        static char _lastKey = ' ';
+        static int _frameCount;
 
         static void BoundaryInhibit(Grid grid, Avatar avatar)
         {
@@ -29,10 +29,10 @@ namespace Simulator
 
         static void DisplayGrid(Grid grid)
         {
-            frameCount++;
+            _frameCount++;
             string desc = GraphicsApi.GridTo3DDescription(grid, (int)_avatar.x, (int)_avatar.y, (int)_avatar.z);
             Console.Clear();
-            Console.Write(desc + " Frame=" + frameCount + " Key=" + lastKey+ " Avatar="+_avatar.x+","+_avatar.y+","+_avatar.z);
+            Console.Write(desc + " Frame=" + _frameCount + " Key=" + _lastKey+ " Avatar="+_avatar.x+","+_avatar.y+","+_avatar.z);
             Thread.Sleep(50);
         }
         static void Simulate(Grid grid)
@@ -72,14 +72,17 @@ Stairs 5 0 2 5 5 7 3 1 1
   //              GraphicsApi.Renderer.RenderObliqueCells(
     //                RasterApi.CodeToGrid(rasterCode)));
 
-            while (true)
+            bool done = false;
+            while (!done)
             {
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
-                    lastKey = key.KeyChar;
+                    _lastKey = key.KeyChar;
+
+                    if (_lastKey == 27) done = true;
                     
-                    switch (lastKey)
+                    switch (_lastKey)
                     {
                         case 'a': _avatar.x--; break;
                         case 'd': _avatar.x++; break;

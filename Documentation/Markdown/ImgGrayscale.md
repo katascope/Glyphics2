@@ -3,7 +3,7 @@
 ##Description: Grayscale the image
 ##Arguments: 
 
-![](ImgGrayscale.png)
+![](ImgGrayscale-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

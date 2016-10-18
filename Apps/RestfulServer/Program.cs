@@ -153,11 +153,11 @@ namespace WebServer
             string myFolder = @"C:\Github\Glyphics2\JavascriptWebGLSDeserializer\";
 
             //create server with auto assigned port
-            //SimpleHTTPServer myServer = 
+            SimpleHttpServer myServer = 
                 new SimpleHttpServer(myFolder, 3838);
 
-
-            while (true) { }
+            if (myServer != null)
+                while (true) { }
         }
     }
 }

@@ -13,7 +13,6 @@ using System;
 using System.IO;
 using ScratchPad.Scratch;
 using Newtonsoft.Json;
-using YamlDotNet.Serialization;
 
 namespace ScratchPad
 {
@@ -24,7 +23,7 @@ namespace ScratchPad
         {
             string filename = "..\\..\\Nexus.yml";
 
-            using (var file = new System.IO.StreamReader(filename))
+            using (var file = new StreamReader(filename))
             {
                 ScratchControl scratch = null;
 

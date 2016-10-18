@@ -3,7 +3,7 @@
 ##Description: <x1> <y> <z> <x2> <Shape> <StartScale> <StopScale> <Skips>
 ##Arguments: x y z X f s S #
 
-![](ExtrudeX.png)
+![](ExtrudeX-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

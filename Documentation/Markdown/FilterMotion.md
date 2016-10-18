@@ -3,7 +3,7 @@
 ##Description: Motion filter
 ##Arguments: 
 
-![](FilterMotion.png)
+![](FilterMotion-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

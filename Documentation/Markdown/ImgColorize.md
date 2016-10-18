@@ -3,7 +3,7 @@
 ##Description: Colorize the image <hue> <saturation>
 ##Arguments: # #
 
-![](ImgColorize.png)
+![](ImgColorize-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

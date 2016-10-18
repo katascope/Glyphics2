@@ -3,7 +3,7 @@
 ##Description: Set Pen rgba <v>
 ##Arguments: v
 
-![](PenColorD1.png)
+![](PenColorD1-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

@@ -40,7 +40,7 @@ namespace DocumentationGenerator
                 file.WriteLine("#Glyph Functions\n");
                 foreach (string str in glyphNames)
                 {
-                    file.WriteLine("![](" + str + ".png)");
+                    file.WriteLine("![](" + str + "-Iso.png)");
                     file.WriteLine("[" + str + "](" + str + ".md)\n");
                 }
             }
@@ -52,7 +52,7 @@ namespace DocumentationGenerator
             string str = "";
             foreach (Token token in glyphTokens)
             {
-                str += "- [" + token.glyph.Name + "](" + token.glyph.Name + ".md)";
+                str += "- [" + token._glyph.Name + "](" + token._glyph.Name + ".md)";
                 str = token.GetArgs().Aggregate(str, (current, t) => current + (" " + t));
                 str += "\n";
             }
@@ -69,8 +69,12 @@ namespace DocumentationGenerator
             Grid grid = RasterApi.CodeToGrid(RasterApi.CreateCode(code));
             //            using ()
             {
-                Grid grid2 = renderer.RenderObliqueCells(grid);
-                GraphicsApi.SaveFlatPng(path + title + ".png", grid2);
+                Grid gridIso = RasterApi.CodeToGrid(RasterApi.CreateCode(code.Replace("WallCube 37", "WallCube 21")));
+                Grid gridIsometric = renderer.RenderIsometricCellsScaled(gridIso, 255, 255, 255, 255, 6, 6);
+                GraphicsApi.SaveFlatPng(path + title + "-Iso.png", gridIsometric);
+
+                Grid gridOrtho = renderer.RenderObliqueCells(grid);
+                GraphicsApi.SaveFlatPng(path + title + "-Ortho.png", gridOrtho);
 
                 int id = RasterApi.GetId(title);
                 if (id >= 0)
@@ -83,7 +87,7 @@ namespace DocumentationGenerator
                                      + "\n##Description: " + description
                                      + "\n##Arguments: " + glyph.Syntax
                                      + "\n"
-                                     + "\n![](" + title + ".png)\n"
+                                     + "\n![](" + title + "-Iso.png)\n"
                                      ;
                     Console.WriteLine(glyphDoc+"\n");
 
@@ -133,7 +137,7 @@ namespace DocumentationGenerator
             string str = "";
             foreach (Token token in glyphTokens)
             {
-                str += "<a href=\"" + token.glyph.Name + ".html\">" + token.glyph.Name + "</a>";
+                str += "<a href=\"" + token._glyph.Name + ".html\">" + token._glyph.Name + "</a>";
                 str = token.GetArgs().Aggregate(str, (current, t) => current + (" " + t));
                 str += "\n";
             }
@@ -151,7 +155,6 @@ namespace DocumentationGenerator
             //            using ()
             {
                 Grid gridIso = RasterApi.CodeToGrid(RasterApi.CreateCode(code.Replace("WallCube 37", "WallCube 21")));
-
                 Grid gridIsometric = renderer.RenderIsometricCellsScaled(gridIso, 255, 255, 255, 255, 6, 6);
                 GraphicsApi.SaveFlatPng(path + title + "-Iso.png", gridIsometric);
 

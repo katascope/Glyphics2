@@ -3,7 +3,7 @@
 ##Description: UpV <reps> <search r> <search g> <search b> <search a>
 ##Arguments: # # r g b a
 
-![](UpV.png)
+![](UpV-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

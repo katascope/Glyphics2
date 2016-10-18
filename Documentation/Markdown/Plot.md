@@ -3,7 +3,7 @@
 ##Description: Pen Plot at <x> <y> <z> value
 ##Arguments: x y z v
 
-![](Plot.png)
+![](Plot-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

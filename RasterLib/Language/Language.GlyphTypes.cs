@@ -413,7 +413,7 @@ namespace RasterLib.Language
                 
             };
 
-        //GetToken the glyph id of a name
+        //GetToken the _glyph id of a name
         public static int GetId(string str)
         {
             foreach (Glyph g in GlyphDefs)
@@ -431,7 +431,7 @@ namespace RasterLib.Language
             }
         }
 
-        //Get glyph at id, null if out of range
+        //Get _glyph at id, null if out of range
         //TODO: Optimize this
         public static Glyph GetGlyph(int id)
         {

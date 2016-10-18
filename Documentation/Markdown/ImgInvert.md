@@ -3,7 +3,7 @@
 ##Description: Invert the image
 ##Arguments: 
 
-![](ImgInvert.png)
+![](ImgInvert-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

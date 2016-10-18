@@ -3,7 +3,7 @@
 ##Description: Draw 2D Circle on y-Axis <x> <y> <z> <radius>
 ##Arguments: x y z s
 
-![](Circle2DXZ.png)
+![](Circle2DXZ-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

@@ -3,7 +3,7 @@
 ##Description: Flip on X axis
 ##Arguments: 
 
-![](ImgFlipX.png)
+![](ImgFlipX-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

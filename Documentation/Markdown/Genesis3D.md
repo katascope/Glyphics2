@@ -3,7 +3,7 @@
 ##Description: New grid of rgba, xyz <size and floor;person in center;CorNew;DekNew;ScnNew;EleNew
 ##Arguments: s
 
-![](Genesis3D.png)
+![](Genesis3D-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

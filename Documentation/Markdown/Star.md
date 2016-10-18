@@ -3,7 +3,7 @@
 ##Description: Draw <x> <y> <z> <scale>
 ##Arguments: x y z s
 
-![](Star.png)
+![](Star-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 32

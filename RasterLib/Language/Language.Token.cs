@@ -20,7 +20,7 @@ namespace RasterLib.Language
         private string[] _sargs;
 
         //Glyph operation
-        public Glyph glyph { get; set; }
+        public Glyph _glyph { get; set; }
 
         //Get Args
         public byte[] GetArgs()
@@ -49,8 +49,8 @@ namespace RasterLib.Language
         //Readable description
         public override string ToString()
         {
-            string result = glyph.Name;
-            for (int l = 0; l < glyph.Args; l++)
+            string result = _glyph.Name;
+            for (int l = 0; l < _glyph.Args; l++)
                 result += " " + _args[l];
             return result;
         }

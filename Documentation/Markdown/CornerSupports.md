@@ -3,7 +3,7 @@
 ##Description: Fill (cellular automata) <x> <y> <z> <x2> <y2> <z2>
 ##Arguments: x y z X Y Z
 
-![](CornerSupports.png)
+![](CornerSupports-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

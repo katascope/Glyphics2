@@ -3,7 +3,7 @@
 ##Description: Sharpen filter
 ##Arguments: 
 
-![](FilterSharpen.png)
+![](FilterSharpen-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

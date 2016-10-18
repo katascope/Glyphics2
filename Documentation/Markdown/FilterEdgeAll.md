@@ -3,7 +3,7 @@
 ##Description: Edge filteattenuate, r
 ##Arguments: 
 
-![](FilterEdgeAll.png)
+![](FilterEdgeAll-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

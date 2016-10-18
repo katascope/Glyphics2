@@ -3,7 +3,7 @@
 ##Description: Draw <x> <y> <z> <scale>
 ##Arguments: x y z s
 
-![](Alien.png)
+![](Alien-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 32

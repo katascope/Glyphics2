@@ -3,7 +3,7 @@
 ##Description: Mirror on X axis
 ##Arguments: 
 
-![](ImgMirrorX.png)
+![](ImgMirrorX-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

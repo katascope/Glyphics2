@@ -3,7 +3,7 @@
 ##Description: Set edge z color <r> <g> <b> <a>
 ##Arguments: r g b a
 
-![](ImgEdgeZ.png)
+![](ImgEdgeZ-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

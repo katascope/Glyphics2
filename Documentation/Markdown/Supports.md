@@ -3,7 +3,7 @@
 ##Description: Put Supports in world
 ##Arguments: 
 
-![](Supports.png)
+![](Supports-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

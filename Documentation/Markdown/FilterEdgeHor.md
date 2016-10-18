@@ -3,7 +3,7 @@
 ##Description: Edge horizontal filter
 ##Arguments: 
 
-![](FilterEdgeHor.png)
+![](FilterEdgeHor-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

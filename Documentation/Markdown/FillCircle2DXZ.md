@@ -3,7 +3,7 @@
 ##Description: Draw Filled 2D Circle on y-axis <x> <y> <z> <radius>
 ##Arguments: x y z s
 
-![](FillCircle2DXZ.png)
+![](FillCircle2DXZ-Iso.png)
 
 Figure Code:
 - [Genesis3D](Genesis3D.md) 16

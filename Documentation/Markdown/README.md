@@ -1,440 +1,440 @@
 #Glyph Functions
 
-![](Alien.png)
+![](Alien-Iso.png)
 [Alien](Alien.md)
 
-![](ArchLine.png)
+![](ArchLine-Iso.png)
 [ArchLine](ArchLine.md)
 
-![](ArchPut.png)
+![](ArchPut-Iso.png)
 [ArchPut](ArchPut.md)
 
-![](ArchRect.png)
+![](ArchRect-Iso.png)
 [ArchRect](ArchRect.md)
 
-![](ArcXY.png)
+![](ArcXY-Iso.png)
 [ArcXY](ArcXY.md)
 
-![](ArcXZ.png)
+![](ArcXZ-Iso.png)
 [ArcXZ](ArcXZ.md)
 
-![](ArcYZ.png)
+![](ArcYZ-Iso.png)
 [ArcYZ](ArcYZ.md)
 
-![](BlendBlit1D.png)
+![](BlendBlit1D-Iso.png)
 [BlendBlit1D](BlendBlit1D.md)
 
-![](BlendBlit2D.png)
+![](BlendBlit2D-Iso.png)
 [BlendBlit2D](BlendBlit2D.md)
 
-![](BlendBlit3D.png)
+![](BlendBlit3D-Iso.png)
 [BlendBlit3D](BlendBlit3D.md)
 
-![](Blit1D.png)
+![](Blit1D-Iso.png)
 [Blit1D](Blit1D.md)
 
-![](Blit2D.png)
+![](Blit2D-Iso.png)
 [Blit2D](Blit2D.md)
 
-![](Blit3D.png)
+![](Blit3D-Iso.png)
 [Blit3D](Blit3D.md)
 
-![](Circle2D.png)
+![](Circle2D-Iso.png)
 [Circle2D](Circle2D.md)
 
-![](Circle2DXY.png)
+![](Circle2DXY-Iso.png)
 [Circle2DXY](Circle2DXY.md)
 
-![](Circle2DXZ.png)
+![](Circle2DXZ-Iso.png)
 [Circle2DXZ](Circle2DXZ.md)
 
-![](Circle2DYZ.png)
+![](Circle2DYZ-Iso.png)
 [Circle2DYZ](Circle2DYZ.md)
 
-![](Circle3D.png)
+![](Circle3D-Iso.png)
 [Circle3D](Circle3D.md)
 
-![](Clear.png)
+![](Clear-Iso.png)
 [Clear](Clear.md)
 
-![](CornerSupports.png)
+![](CornerSupports-Iso.png)
 [CornerSupports](CornerSupports.md)
 
-![](Diamond2D.png)
+![](Diamond2D-Iso.png)
 [Diamond2D](Diamond2D.md)
 
-![](EdgeCorners.png)
+![](EdgeCorners-Iso.png)
 [EdgeCorners](EdgeCorners.md)
 
-![](End.png)
+![](End-Iso.png)
 [End](End.md)
 
-![](ExtrudeLine.png)
+![](ExtrudeLine-Iso.png)
 [ExtrudeLine](ExtrudeLine.md)
 
-![](ExtrudeX.png)
+![](ExtrudeX-Iso.png)
 [ExtrudeX](ExtrudeX.md)
 
-![](ExtrudeY.png)
+![](ExtrudeY-Iso.png)
 [ExtrudeY](ExtrudeY.md)
 
-![](ExtrudeZ.png)
+![](ExtrudeZ-Iso.png)
 [ExtrudeZ](ExtrudeZ.md)
 
-![](FillCircle2D.png)
+![](FillCircle2D-Iso.png)
 [FillCircle2D](FillCircle2D.md)
 
-![](FillCircle2DXY.png)
+![](FillCircle2DXY-Iso.png)
 [FillCircle2DXY](FillCircle2DXY.md)
 
-![](FillCircle2DXZ.png)
+![](FillCircle2DXZ-Iso.png)
 [FillCircle2DXZ](FillCircle2DXZ.md)
 
-![](FillCircle2DYZ.png)
+![](FillCircle2DYZ-Iso.png)
 [FillCircle2DYZ](FillCircle2DYZ.md)
 
-![](FillCircle3D.png)
+![](FillCircle3D-Iso.png)
 [FillCircle3D](FillCircle3D.md)
 
-![](FillRect.png)
+![](FillRect-Iso.png)
 [FillRect](FillRect.md)
 
-![](FillStairs.png)
+![](FillStairs-Iso.png)
 [FillStairs](FillStairs.md)
 
-![](FillTriangle.png)
+![](FillTriangle-Iso.png)
 [FillTriangle](FillTriangle.md)
 
-![](FillTriangle2D.png)
+![](FillTriangle2D-Iso.png)
 [FillTriangle2D](FillTriangle2D.md)
 
-![](FilterBlur.png)
+![](FilterBlur-Iso.png)
 [FilterBlur](FilterBlur.md)
 
-![](FilterEdgeAll.png)
+![](FilterEdgeAll-Iso.png)
 [FilterEdgeAll](FilterEdgeAll.md)
 
-![](FilterEdgeHor.png)
+![](FilterEdgeHor-Iso.png)
 [FilterEdgeHor](FilterEdgeHor.md)
 
-![](FilterEdgeVer.png)
+![](FilterEdgeVer-Iso.png)
 [FilterEdgeVer](FilterEdgeVer.md)
 
-![](FilterEmboss.png)
+![](FilterEmboss-Iso.png)
 [FilterEmboss](FilterEmboss.md)
 
-![](FilterMotion.png)
+![](FilterMotion-Iso.png)
 [FilterMotion](FilterMotion.md)
 
-![](FilterSharpen.png)
+![](FilterSharpen-Iso.png)
 [FilterSharpen](FilterSharpen.md)
 
-![](FilterSmooth.png)
+![](FilterSmooth-Iso.png)
 [FilterSmooth](FilterSmooth.md)
 
-![](GenChaos.png)
+![](GenChaos-Iso.png)
 [GenChaos](GenChaos.md)
 
-![](Genesis3D.png)
+![](Genesis3D-Iso.png)
 [Genesis3D](Genesis3D.md)
 
-![](ImgBrightness.png)
+![](ImgBrightness-Iso.png)
 [ImgBrightness](ImgBrightness.md)
 
-![](ImgColorize.png)
+![](ImgColorize-Iso.png)
 [ImgColorize](ImgColorize.md)
 
-![](ImgEdge.png)
+![](ImgEdge-Iso.png)
 [ImgEdge](ImgEdge.md)
 
-![](ImgEdgeX.png)
+![](ImgEdgeX-Iso.png)
 [ImgEdgeX](ImgEdgeX.md)
 
-![](ImgEdgeY.png)
+![](ImgEdgeY-Iso.png)
 [ImgEdgeY](ImgEdgeY.md)
 
-![](ImgEdgeZ.png)
+![](ImgEdgeZ-Iso.png)
 [ImgEdgeZ](ImgEdgeZ.md)
 
-![](ImgFlipX.png)
+![](ImgFlipX-Iso.png)
 [ImgFlipX](ImgFlipX.md)
 
-![](ImgFlipY.png)
+![](ImgFlipY-Iso.png)
 [ImgFlipY](ImgFlipY.md)
 
-![](ImgFlipZ.png)
+![](ImgFlipZ-Iso.png)
 [ImgFlipZ](ImgFlipZ.md)
 
-![](ImgGrayscale.png)
+![](ImgGrayscale-Iso.png)
 [ImgGrayscale](ImgGrayscale.md)
 
-![](ImgHueshift.png)
+![](ImgHueshift-Iso.png)
 [ImgHueshift](ImgHueshift.md)
 
-![](ImgInvert.png)
+![](ImgInvert-Iso.png)
 [ImgInvert](ImgInvert.md)
 
-![](ImgMirrorX.png)
+![](ImgMirrorX-Iso.png)
 [ImgMirrorX](ImgMirrorX.md)
 
-![](ImgMirrorY.png)
+![](ImgMirrorY-Iso.png)
 [ImgMirrorY](ImgMirrorY.md)
 
-![](ImgMirrorZ.png)
+![](ImgMirrorZ-Iso.png)
 [ImgMirrorZ](ImgMirrorZ.md)
 
-![](ImgPalettize.png)
+![](ImgPalettize-Iso.png)
 [ImgPalettize](ImgPalettize.md)
 
-![](ImgRotX.png)
+![](ImgRotX-Iso.png)
 [ImgRotX](ImgRotX.md)
 
-![](ImgRotY.png)
+![](ImgRotY-Iso.png)
 [ImgRotY](ImgRotY.md)
 
-![](ImgRotZ.png)
+![](ImgRotZ-Iso.png)
 [ImgRotZ](ImgRotZ.md)
 
-![](ImgSaturate.png)
+![](ImgSaturate-Iso.png)
 [ImgSaturate](ImgSaturate.md)
 
-![](ImgShadeX.png)
+![](ImgShadeX-Iso.png)
 [ImgShadeX](ImgShadeX.md)
 
-![](ImgShadeY.png)
+![](ImgShadeY-Iso.png)
 [ImgShadeY](ImgShadeY.md)
 
-![](ImgShadeZ.png)
+![](ImgShadeZ-Iso.png)
 [ImgShadeZ](ImgShadeZ.md)
 
-![](Line.png)
+![](Line-Iso.png)
 [Line](Line.md)
 
-![](MaskFillRect.png)
+![](MaskFillRect-Iso.png)
 [MaskFillRect](MaskFillRect.md)
 
-![](MaskRect.png)
+![](MaskRect-Iso.png)
 [MaskRect](MaskRect.md)
 
-![](Maze.png)
+![](Maze-Iso.png)
 [Maze](Maze.md)
 
-![](Nop.png)
+![](Nop-Iso.png)
 [Nop](Nop.md)
 
-![](Oval3D.png)
+![](Oval3D-Iso.png)
 [Oval3D](Oval3D.md)
 
-![](Pal1D.png)
+![](Pal1D-Iso.png)
 [Pal1D](Pal1D.md)
 
-![](Pal2D.png)
+![](Pal2D-Iso.png)
 [Pal2D](Pal2D.md)
 
-![](Pal3D.png)
+![](Pal3D-Iso.png)
 [Pal3D](Pal3D.md)
 
-![](PalFromGrid1D.png)
+![](PalFromGrid1D-Iso.png)
 [PalFromGrid1D](PalFromGrid1D.md)
 
-![](PalFromGrid2D.png)
+![](PalFromGrid2D-Iso.png)
 [PalFromGrid2D](PalFromGrid2D.md)
 
-![](PalFromGrid3D.png)
+![](PalFromGrid3D-Iso.png)
 [PalFromGrid3D](PalFromGrid3D.md)
 
-![](PalFromVal1D.png)
+![](PalFromVal1D-Iso.png)
 [PalFromVal1D](PalFromVal1D.md)
 
-![](PalFromVal2D.png)
+![](PalFromVal2D-Iso.png)
 [PalFromVal2D](PalFromVal2D.md)
 
-![](PalFromVal3D.png)
+![](PalFromVal3D-Iso.png)
 [PalFromVal3D](PalFromVal3D.md)
 
-![](PalGen1D1.png)
+![](PalGen1D1-Iso.png)
 [PalGen1D1](PalGen1D1.md)
 
-![](PalGen1D2.png)
+![](PalGen1D2-Iso.png)
 [PalGen1D2](PalGen1D2.md)
 
-![](PalGen1D3.png)
+![](PalGen1D3-Iso.png)
 [PalGen1D3](PalGen1D3.md)
 
-![](PalGen1D4.png)
+![](PalGen1D4-Iso.png)
 [PalGen1D4](PalGen1D4.md)
 
-![](PenColorD1.png)
+![](PenColorD1-Iso.png)
 [PenColorD1](PenColorD1.md)
 
-![](PenColorD2.png)
+![](PenColorD2-Iso.png)
 [PenColorD2](PenColorD2.md)
 
-![](PenColorD3.png)
+![](PenColorD3-Iso.png)
 [PenColorD3](PenColorD3.md)
 
-![](PenColorD4.png)
+![](PenColorD4-Iso.png)
 [PenColorD4](PenColorD4.md)
 
-![](PenDepth.png)
+![](PenDepth-Iso.png)
 [PenDepth](PenDepth.md)
 
-![](PenGroup.png)
+![](PenGroup-Iso.png)
 [PenGroup](PenGroup.md)
 
-![](PenHatch.png)
+![](PenHatch-Iso.png)
 [PenHatch](PenHatch.md)
 
-![](PenHeight.png)
+![](PenHeight-Iso.png)
 [PenHeight](PenHeight.md)
 
-![](PenPhysics.png)
+![](PenPhysics-Iso.png)
 [PenPhysics](PenPhysics.md)
 
-![](PenShape.png)
+![](PenShape-Iso.png)
 [PenShape](PenShape.md)
 
-![](PenSize.png)
+![](PenSize-Iso.png)
 [PenSize](PenSize.md)
 
-![](PenTex.png)
+![](PenTex-Iso.png)
 [PenTex](PenTex.md)
 
-![](PenWidth.png)
+![](PenWidth-Iso.png)
 [PenWidth](PenWidth.md)
 
-![](Plot.png)
+![](Plot-Iso.png)
 [Plot](Plot.md)
 
-![](Polygon.png)
+![](Polygon-Iso.png)
 [Polygon](Polygon.md)
 
-![](PrimaRect.png)
+![](PrimaRect-Iso.png)
 [PrimaRect](PrimaRect.md)
 
-![](PrimaRGBA.png)
+![](PrimaRGBA-Iso.png)
 [PrimaRGBA](PrimaRGBA.md)
 
-![](PrimaSize.png)
+![](PrimaSize-Iso.png)
 [PrimaSize](PrimaSize.md)
 
-![](Put.png)
+![](Put-Iso.png)
 [Put](Put.md)
 
-![](PutGroup.png)
+![](PutGroup-Iso.png)
 [PutGroup](PutGroup.md)
 
-![](Pyramid3D.png)
+![](Pyramid3D-Iso.png)
 [Pyramid3D](Pyramid3D.md)
 
-![](Quad2D.png)
+![](Quad2D-Iso.png)
 [Quad2D](Quad2D.md)
 
-![](Rect.png)
+![](Rect-Iso.png)
 [Rect](Rect.md)
 
-![](RectBlit1D.png)
+![](RectBlit1D-Iso.png)
 [RectBlit1D](RectBlit1D.md)
 
-![](RectBlit2D.png)
+![](RectBlit2D-Iso.png)
 [RectBlit2D](RectBlit2D.md)
 
-![](RectBlit3D.png)
+![](RectBlit3D-Iso.png)
 [RectBlit3D](RectBlit3D.md)
 
-![](ScalePut.png)
+![](ScalePut-Iso.png)
 [ScalePut](ScalePut.md)
 
-![](Scissor.png)
+![](Scissor-Iso.png)
 [Scissor](Scissor.md)
 
-![](Shadows.png)
+![](Shadows-Iso.png)
 [Shadows](Shadows.md)
 
-![](ShapeSmoothX.png)
+![](ShapeSmoothX-Iso.png)
 [ShapeSmoothX](ShapeSmoothX.md)
 
-![](ShapeSmoothY.png)
+![](ShapeSmoothY-Iso.png)
 [ShapeSmoothY](ShapeSmoothY.md)
 
-![](ShapeSmoothZ.png)
+![](ShapeSmoothZ-Iso.png)
 [ShapeSmoothZ](ShapeSmoothZ.md)
 
-![](ShapeToColor.png)
+![](ShapeToColor-Iso.png)
 [ShapeToColor](ShapeToColor.md)
 
-![](Size1D1.png)
+![](Size1D1-Iso.png)
 [Size1D1](Size1D1.md)
 
-![](Size1D2.png)
+![](Size1D2-Iso.png)
 [Size1D2](Size1D2.md)
 
-![](Size1D3.png)
+![](Size1D3-Iso.png)
 [Size1D3](Size1D3.md)
 
-![](Size1D4.png)
+![](Size1D4-Iso.png)
 [Size1D4](Size1D4.md)
 
-![](Size2D1.png)
+![](Size2D1-Iso.png)
 [Size2D1](Size2D1.md)
 
-![](Size2D2.png)
+![](Size2D2-Iso.png)
 [Size2D2](Size2D2.md)
 
-![](Size2D3.png)
+![](Size2D3-Iso.png)
 [Size2D3](Size2D3.md)
 
-![](Size2D4.png)
+![](Size2D4-Iso.png)
 [Size2D4](Size2D4.md)
 
-![](Size3D1.png)
+![](Size3D1-Iso.png)
 [Size3D1](Size3D1.md)
 
-![](Size3D2.png)
+![](Size3D2-Iso.png)
 [Size3D2](Size3D2.md)
 
-![](Size3D3.png)
+![](Size3D3-Iso.png)
 [Size3D3](Size3D3.md)
 
-![](Size3D4.png)
+![](Size3D4-Iso.png)
 [Size3D4](Size3D4.md)
 
-![](Spawn.png)
+![](Spawn-Iso.png)
 [Spawn](Spawn.md)
 
-![](Stairs.png)
+![](Stairs-Iso.png)
 [Stairs](Stairs.md)
 
-![](Star.png)
+![](Star-Iso.png)
 [Star](Star.md)
 
-![](String.png)
+![](String-Iso.png)
 [String](String.md)
 
-![](Supports.png)
+![](Supports-Iso.png)
 [Supports](Supports.md)
 
-![](Text.png)
+![](Text-Iso.png)
 [Text](Text.md)
 
-![](Triangle.png)
+![](Triangle-Iso.png)
 [Triangle](Triangle.md)
 
-![](TubeXY.png)
+![](TubeXY-Iso.png)
 [TubeXY](TubeXY.md)
 
-![](TubeXZ.png)
+![](TubeXZ-Iso.png)
 [TubeXZ](TubeXZ.md)
 
-![](TubeYZ.png)
+![](TubeYZ-Iso.png)
 [TubeYZ](TubeYZ.md)
 
-![](UpV.png)
+![](UpV-Iso.png)
 [UpV](UpV.md)
 
-![](WallCube.png)
+![](WallCube-Iso.png)
 [WallCube](WallCube.md)
 
-![](Wire.png)
+![](Wire-Iso.png)
 [Wire](Wire.md)
 

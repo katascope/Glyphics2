@@ -37,7 +37,7 @@ namespace GraphicsLib
     //Example: From GIS, for generating height maps
     //Example: From heightmaps..
 
-    //TODO: New glyph - TexFunc, generates a texture used by texture id
+    //TODO: New _glyph - TexFunc, generates a texture used by texture id
     //TODO: New Glyph - ShpFunc, generates a shape used by shape id
 
     //TODO: To JSON
