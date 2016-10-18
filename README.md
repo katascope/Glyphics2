@@ -36,14 +36,14 @@
 ## �Time-step of RasterLib code executing to create a grid
 ![](https://github.com/katascope/Glyphics2/blob/master/Documentation/NexusAnim.gif)
 
-## Example: STL-To-Grid (-To-Rendered-To-PNG)
-![](https://github.com/katascope/Glyphics/blob/master/Glyphics/Examples/ExampleSTLToGrid/test.png)
-
 ## Oblique view
-![](https://github.com/katascope/Glyphics2/blob/master/Documentation/NexusOblique.png)
+![](https://github.com/katascope/Glyphics2/blob/master/Documentation/NexusOrtho.png)
 
 ## Isometric view
 ![](https://github.com/katascope/Glyphics2/blob/master/Documentation/NexusIsometric.png)
+
+## Example: STL-To-Grid (-To-Rendered-To-PNG)
+![](https://github.com/katascope/Glyphics2/blob/master/Glyphics/Examples/ExampleSTLToGrid/test.png)
 
 ### STL file view
 ![](https://github.com/katascope/Glyphics2/blob/master/Documentation/NexusPrintPreview.png)
