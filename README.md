@@ -40,10 +40,10 @@
 ![](https://github.com/katascope/Glyphics/blob/master/Glyphics/Examples/ExampleSTLToGrid/test.png)
 
 ## Oblique view
-![](https://github.com/katascope/Glyphics/Documentation/NexusOblique.png)
+![](https://github.com/katascope/Glyphics2/blob/master/Documentation/NexusOblique.png)
 
 ## Isometric view
-![](https://github.com/katascope/Glyphics/Documentation/NexusIsometric.png)
+![](https://github.com/katascope/Glyphics2/blob/master/Documentation/NexusIsometric.png)
 
 ### STL file view
 ![](http://i.imgur.com/LDqSVAF.png)
