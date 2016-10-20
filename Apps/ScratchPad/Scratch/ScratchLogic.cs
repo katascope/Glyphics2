@@ -55,21 +55,30 @@ namespace ScratchPad.Scratch
         {
             Grid grid = null;
 
-            if (ctl.FileNameInCode == null && ctl.FileNameInImage == null && ctl.FileNameInStl==null)
+            if (ctl.FileNameInCode == null && ctl.FileNameInImage == null && ctl.FileNameInStl == null && ctl.FileNameInSvg == null)
             {
                 Console.WriteLine("Must have FileNameIn type.");
                 return;
             }
 
-            if (ctl.FileNameInStl != null)
+            if (ctl.FileNameInSvg != null)
+            {
+                Console.WriteLine("SVG Input filename: {0}", ctl.FileNameInSvg);
+                string codeString = Svg2Gly.ConvertSvg2Gly(ctl.FileNameInSvg);
+                Console.WriteLine("SVG:\n" + codeString);
+
+                Code code = RasterApi.CreateCode(codeString);
+                Console.WriteLine("Code: {0}\n", codeString);
+                grid = RasterApi.CodeToGrid(code);
+            }
+            else if (ctl.FileNameInStl != null)
             {
                 grid = RasterApi.CreateGrid(64, 64, 64, 4);
 
-                const string inputFilenameStl = "..\\..\\archquad.stl";
-                Console.WriteLine("Input filename: {0}", inputFilenameStl);
+                Console.WriteLine("STL Input filename: {0}", ctl.FileNameInStl);
 
                 //Load the triangles from the STL file and reduce to a unit 1x1x1 size
-                Triangles triangles = GraphicsApi.StlToTriangles(inputFilenameStl);
+                Triangles triangles = GraphicsApi.StlToTriangles(ctl.FileNameInStl);
                 triangles.ReduceToUnit();
                 Console.WriteLine("Triangle count: {0}", triangles.Count);
 

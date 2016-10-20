@@ -41,6 +41,7 @@ namespace RasterLib.Language
             {
                 if (glyph.Varargs == 0)
                 {
+                    Console.WriteLine("Could not find in : " + line);
                     throw new RasterLibError(RasterLibErrorType.WrongArgumentCount, codeLine, line, "(Need " + glyph.Args + ", Found " + (parts.Length - 1) + ")");
                 }
             }

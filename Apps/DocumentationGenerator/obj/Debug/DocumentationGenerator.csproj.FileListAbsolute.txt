@@ -6,13 +6,3 @@ C:\Github\Glyphics\Glyphics\Apps\DocumentationGenerator\bin\Debug\GlyphicsLibrar
 C:\Github\Glyphics\Glyphics\Apps\DocumentationGenerator\obj\Debug\DocumentationGenerator.csprojResolveAssemblyReference.cache
 C:\Github\Glyphics\Glyphics\Apps\DocumentationGenerator\obj\Debug\DocumentationGenerator.exe
 C:\Github\Glyphics\Glyphics\Apps\DocumentationGenerator\obj\Debug\DocumentationGenerator.pdb
-C:\Github\Glyphics2\Apps\DocumentationGenerator\bin\Debug\DocumentationGenerator.exe.config
-C:\Github\Glyphics2\Apps\DocumentationGenerator\bin\Debug\DocumentationGenerator.exe
-C:\Github\Glyphics2\Apps\DocumentationGenerator\bin\Debug\DocumentationGenerator.pdb
-C:\Github\Glyphics2\Apps\DocumentationGenerator\bin\Debug\GeneralLibrary.dll
-C:\Github\Glyphics2\Apps\DocumentationGenerator\bin\Debug\GlyphicsLibrary.dll
-C:\Github\Glyphics2\Apps\DocumentationGenerator\bin\Debug\GeneralLibrary.pdb
-C:\Github\Glyphics2\Apps\DocumentationGenerator\bin\Debug\GlyphicsLibrary.pdb
-C:\Github\Glyphics2\Apps\DocumentationGenerator\obj\Debug\DocumentationGenerator.csprojResolveAssemblyReference.cache
-C:\Github\Glyphics2\Apps\DocumentationGenerator\obj\Debug\DocumentationGenerator.exe
-C:\Github\Glyphics2\Apps\DocumentationGenerator\obj\Debug\DocumentationGenerator.pdb

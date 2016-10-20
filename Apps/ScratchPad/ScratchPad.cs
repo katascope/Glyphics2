@@ -21,7 +21,7 @@ namespace ScratchPad
         [STAThread]
         static void Main()
         {
-            string filename = "..\\..\\Nexus.yml";
+            string filename = "..\\..\\Testsvg.yml";
 
             using (var file = new StreamReader(filename))
             {

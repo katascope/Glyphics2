@@ -17,6 +17,7 @@ namespace ScratchPad.Scratch
         public string FileNameInCode { get; set; }
         public string FileNameInImage { get; set; }
         public string FileNameInStl { get; set; }
+        public string FileNameInSvg { get; set; }
 
         public string[] FileNamesInStlLibrary { get; set; }
         public string FileNameOutStl { get; set; }

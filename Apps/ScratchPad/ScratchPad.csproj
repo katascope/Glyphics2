@@ -59,6 +59,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scratch\ControlAnimator.cs" />
     <Compile Include="Scratch\ControlStl.cs" />
+    <Compile Include="Scratch\Svg2Gly.cs" />
+    <Compile Include="Scratch\WebColors2HexRGB.cs" />
     <Compile Include="Scratch\ScratchControl.cs" />
     <Compile Include="Scratch\ScratchLogic.cs" />
   </ItemGroup>
@@ -79,7 +81,10 @@
       <Name>RasterLib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Test.svg" />
+    <None Include="TestSVG.yml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,0 +1,11 @@
+﻿FileNameInSvg: ..\..\Test.svg
+FileNameOutIsometric: ..\..\..\..\Documentation\Svg2GlyIsometric.png
+IsometricCellWidth: 6
+IsometricCellHeight: 6
+IsometricBgRgba:
+- 255
+- 255
+- 255
+- 255
+FileNameOutOrthogonal: ..\..\..\..\Documentation\Svg2GlyOrtho.png
+
