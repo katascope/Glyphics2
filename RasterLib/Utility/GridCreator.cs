@@ -31,7 +31,7 @@ namespace RasterLib.Utility
         }
 
         //Create a grid dRectly from bytes
-        public static Grid CreateGridFromValues(int dimx, int dimy, int dimz, int bpp, byte[] vals)
+        public static Grid CreateGridFromValues(int dimx, int dimy, int dimz, int bpp, int[] vals)
         {
             Grid newgrid = new Grid(dimx, dimy, dimz, bpp);
             int offset = 0;
@@ -41,7 +41,7 @@ namespace RasterLib.Utility
             for (int z = 0; z < dimz; z++)
                 for (int y = 0; y < dimy; y++)
                     for (int x = 0; x < dimx; x++)
-                        newgrid.Plot(x, y, z, vals[offset++]);
+                        newgrid.Plot(x, y, z, (ulong)vals[offset++]);
             return newgrid;
         }
 

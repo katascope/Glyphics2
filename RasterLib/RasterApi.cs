@@ -51,7 +51,7 @@ namespace RasterLib
         public static Rect CreateRect(double minx, double miny, double minz, double maxx, double maxy, double maxz) { return new Rect(minx, miny, minz, maxx, maxy, maxz); }
         public static GridContext CreateContext(Grid grid) { return new GridContext(grid); }
         public static Grid CreateGrid(int x, int y, int z, int bpp) { return new Grid(x, y, z, bpp); }
-        public static Grid CreateGridFromValues(int dimx, int dimy, int dimz, int bpp, byte[] vals) { return GridCreator.CreateGridFromValues(dimx, dimy, dimz, bpp, vals); }
+        public static Grid CreateGridFromValues(int dimx, int dimy, int dimz, int bpp, int[] vals) { return GridCreator.CreateGridFromValues(dimx, dimy, dimz, bpp, vals); }
         public static Grid CreateGridFromRectangle(Grid src, int x1, int y1, int z1, int x2, int y2, int z2) { return GridCreator.CreateGridFromRectangle(src, x1, y1, z1, x2, y2, z2); }
 
         //RGBA-To

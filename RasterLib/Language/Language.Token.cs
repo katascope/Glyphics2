@@ -16,20 +16,20 @@ namespace RasterLib.Language
     public class Token
     {
         //Glyph operation arguments
-        private byte[] _args;
+        private int[] _args;
         private string[] _sargs;
 
         //Glyph operation
         public Glyph _glyph { get; set; }
 
         //Get Args
-        public byte[] GetArgs()
+        public int[] GetArgs()
         {
             return _args;
         }
 
         //Set args
-        public void SetArgs(byte[] args)
+        public void SetArgs(int[] args)
         {
             _args = args;
         }

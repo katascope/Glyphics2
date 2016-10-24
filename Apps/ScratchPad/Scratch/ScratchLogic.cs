@@ -68,6 +68,9 @@ namespace ScratchPad.Scratch
                 Console.WriteLine("SVG:\n" + codeString);
 
                 Code code = RasterApi.CreateCode(codeString);
+                if (ctl.Resize != null)
+                    code = RasterApi.CodeToRescaledCode(code, ctl.Resize[0], ctl.Resize[1], ctl.Resize[2]);
+
                 Console.WriteLine("Code: {0}\n", codeString);
                 grid = RasterApi.CodeToGrid(code);
             }
@@ -119,9 +122,7 @@ namespace ScratchPad.Scratch
                 }
 
                 if (ctl.Resize != null)
-                {
                     code = RasterApi.CodeToRescaledCode(code, ctl.Resize[0], ctl.Resize[1], ctl.Resize[2]);
-                }
 
                 grid = RasterApi.CodeToGrid(code);
                 Console.WriteLine("Grid: {0}\n", grid);

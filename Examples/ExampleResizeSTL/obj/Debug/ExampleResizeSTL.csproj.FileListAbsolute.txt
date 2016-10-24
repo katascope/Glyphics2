@@ -6,3 +6,13 @@ C:\Github\Glyphics\Glyphics\Examples\ExampleResizeSTL\bin\Debug\GlyphicsLibrary.
 C:\Github\Glyphics\Glyphics\Examples\ExampleResizeSTL\obj\Debug\ExampleResizeSTL.csprojResolveAssemblyReference.cache
 C:\Github\Glyphics\Glyphics\Examples\ExampleResizeSTL\obj\Debug\ExampleResizeSTL.exe
 C:\Github\Glyphics\Glyphics\Examples\ExampleResizeSTL\obj\Debug\ExampleResizeSTL.pdb
+C:\Github\Glyphics2\Examples\ExampleResizeSTL\bin\Debug\ExampleResizeSTL.exe.config
+C:\Github\Glyphics2\Examples\ExampleResizeSTL\bin\Debug\ExampleResizeSTL.exe
+C:\Github\Glyphics2\Examples\ExampleResizeSTL\bin\Debug\ExampleResizeSTL.pdb
+C:\Github\Glyphics2\Examples\ExampleResizeSTL\bin\Debug\GeneralLibrary.dll
+C:\Github\Glyphics2\Examples\ExampleResizeSTL\bin\Debug\GlyphicsLibrary.dll
+C:\Github\Glyphics2\Examples\ExampleResizeSTL\bin\Debug\GeneralLibrary.pdb
+C:\Github\Glyphics2\Examples\ExampleResizeSTL\bin\Debug\GlyphicsLibrary.pdb
+C:\Github\Glyphics2\Examples\ExampleResizeSTL\obj\Debug\ExampleResizeSTL.csprojResolveAssemblyReference.cache
+C:\Github\Glyphics2\Examples\ExampleResizeSTL\obj\Debug\ExampleResizeSTL.exe
+C:\Github\Glyphics2\Examples\ExampleResizeSTL\obj\Debug\ExampleResizeSTL.pdb

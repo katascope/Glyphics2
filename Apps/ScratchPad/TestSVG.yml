@@ -8,4 +8,7 @@ IsometricBgRgba:
 - 255
 - 255
 FileNameOutOrthogonal: ..\..\..\..\Documentation\Svg2GlyOrtho.png
-
+Resize:
+- 64
+- 64
+- 1

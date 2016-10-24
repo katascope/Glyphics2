@@ -19,7 +19,7 @@ namespace RasterLib.Language
         //Resize a token
         private static void RescaleGlyphToken(ref Token token, double scaleX, double scaleY, double scaleZ)
         {
-            byte[] args = token.GetArgs();
+            int[] args = token.GetArgs();
 
             if (token._glyph.Syntax.Length == 0)
                 return;
@@ -33,24 +33,24 @@ namespace RasterLib.Language
                     case 'x':
                     case 'X':
                         if (token.GetArgs()[arg] > 1)
-                            args[arg] = (byte)(args[arg] * scaleX);
+                            args[arg] = (int)(args[arg] * scaleX);
                         break;
                     case 'y':
                     case 'Y':
                     case 'h':
                         if (args[arg] > 1)
-                            args[arg] = (byte)(args[arg] * scaleY);
+                            args[arg] = (int)(args[arg] * scaleY);
                         break;
                     case 'z':
                     case 'Z':
                     case 'd':
                         if (args[arg] > 1)
-                            args[arg] = (byte)(args[arg] * scaleZ);
+                            args[arg] = (int)(args[arg] * scaleZ);
                         break;
                     case 's':
                     case 'S':
                         if (args[arg]  > 1)
-                            args[arg] = (byte)(args[arg] * scaleX);
+                            args[arg] = (int)(args[arg] * scaleX);
                         break;
                 }
             }
@@ -69,7 +69,7 @@ namespace RasterLib.Language
             double scaleZ;
 
             Token sizeToken = glyphTokens.GetToken(0);
-            byte[] args = sizeToken.GetArgs();
+            int[] args = sizeToken.GetArgs();
 
             switch (args.Length)
             {

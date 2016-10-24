@@ -46,14 +46,14 @@ namespace RasterLib.Language
                 }
             }
             var token = new Token {_glyph = glyph};
-            var args = new byte[parts.Length - 1];
+            var args = new int[parts.Length - 1];
             var sargs = new string[parts.Length - 1];
 
             for (int arg = 0; arg < parts.Length-1; arg++)
             {
                 if (ContainsCharacters(parts[arg + 1]))
                     sargs[arg] = parts[arg+1];
-                else args[arg] = (byte)Convert.ToInt16(parts[arg+1]);
+                else args[arg] = Convert.ToInt16(parts[arg+1]);
             }
             token.SetArgs(args);
             if (sargs.Length > 0)

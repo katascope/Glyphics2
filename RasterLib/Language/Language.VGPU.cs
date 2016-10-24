@@ -30,7 +30,7 @@ namespace RasterLib.Language
                 return;
 
             Glyph glyph = token._glyph;
-            byte[] args = token.GetArgs();
+            int[] args = token.GetArgs();
 
             //If we have a grid, set the codeString tracker to the current line of codeString
             if (bgc.Grid != null)
@@ -42,7 +42,7 @@ namespace RasterLib.Language
                 case GlyphId.PrimaNop: return;
 
                 case GlyphId.PrimaSize: bgc.Grid = new Grid(args[0], args[1], args[2], 4); return; //same as Size3D4
-                case GlyphId.PrimaRgba: bgc.Pen.SetColor(args[0], args[1], args[2], args[3]); return; //same as PenColorD4
+                case GlyphId.PrimaRgba: bgc.Pen.SetColor((byte)args[0], (byte)args[1], (byte)args[2], (byte)args[3]); return; //same as PenColorD4
                 case GlyphId.PrimaRect: Painter.DrawFillRect(bgc, args[0], args[1], args[2], args[3], args[4], args[5]); return; //same as FillRect
 
                 case GlyphId.Size1D1: bgc.Grid = new Grid(args[0], 1, 1, 1); return;
@@ -58,24 +58,24 @@ namespace RasterLib.Language
                 case GlyphId.Size2D4: bgc.Grid = new Grid(args[0], args[1], 1, 4); return;
                 case GlyphId.Size3D4: bgc.Grid = new Grid(args[0], args[1], args[2], 4); return;
 
-                case GlyphId.PenColorD1: bgc.Pen.SetColor(args[0]); return;
-                case GlyphId.PenColorD2: bgc.Pen.SetColor(args[0], args[1]); return;
-                case GlyphId.PenColorD3: bgc.Pen.SetColor(args[0], args[1], args[2]); return;
-                case GlyphId.PenColorD4: bgc.Pen.SetColor(args[0], args[1], args[2], args[3]); return;
+                case GlyphId.PenColorD1: bgc.Pen.SetColor((byte)args[0]); return;
+                case GlyphId.PenColorD2: bgc.Pen.SetColor((byte)args[0], (byte)args[1]); return;
+                case GlyphId.PenColorD3: bgc.Pen.SetColor((byte)args[0], (byte)args[1], (byte)args[2]); return;
+                case GlyphId.PenColorD4: bgc.Pen.SetColor((byte)args[0], (byte)args[1], (byte)args[2], (byte)args[3]); return;
                 case GlyphId.PenWidth: bgc.Pen.SetSize(args[0], bgc.Pen.Height, bgc.Pen.Depth); return;
                 case GlyphId.PenHeight: bgc.Pen.SetSize(bgc.Pen.Width, args[0], bgc.Pen.Depth); return;
                 case GlyphId.PenDepth: bgc.Pen.SetSize(bgc.Pen.Width, bgc.Pen.Height, args[0]); return;
                 case GlyphId.PenSize: bgc.Pen.SetSize(args[0], args[1], args[2]); return;
                 case GlyphId.PenHatch: bgc.Pen.SetHatch(args[0], args[1], args[2]); return;
-                case GlyphId.PenShape: bgc.Pen.SetShape(args[0]); return;
-                case GlyphId.PenTex: bgc.Pen.SetTexture(args[0]); return;
-                case GlyphId.PenGroup: bgc.Pen.SetGroup(args[0]); return;
-                case GlyphId.PenPhysics: bgc.Pen.SetPhysics(args[0]); return;
+                case GlyphId.PenShape: bgc.Pen.SetShape((byte)args[0]); return;
+                case GlyphId.PenTex: bgc.Pen.SetTexture((byte)args[0]); return;
+                case GlyphId.PenGroup: bgc.Pen.SetGroup((byte)args[0]); return;
+                case GlyphId.PenPhysics: bgc.Pen.SetPhysics((byte)args[0]); return;
 
                 case GlyphId.Plot: Painter.DrawPen(bgc, args[0], args[1], args[2]); return;
                 case GlyphId.Clear: Painter.DrawClear(bgc); return;
 
-                case GlyphId.WallCube: Painter.DrawWallCube(bgc, args[0]); return;
+                case GlyphId.WallCube: Painter.DrawWallCube(bgc, (byte)args[0]); return;
 
                 case GlyphId.Line: Painter.DrawLine3D(bgc, args[0], args[1], args[2], args[3], args[4], args[5]); return;
                 case GlyphId.Stairs: Painter.DrawStairs(bgc, args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7], args[8]); return;
@@ -98,8 +98,8 @@ namespace RasterLib.Language
                 case GlyphId.ArcYz: Painter.DrawArc(bgc, PenTwist.YZaxis, args[2], args[1], args[0], args[3], args[4], args[5]); return;
                 case GlyphId.ArcXz: Painter.DrawArc(bgc, PenTwist.XZaxis, args[0], args[2], args[1], args[3], args[4], args[5]); return;
 
-                case GlyphId.MaskRect: Painter.DrawMaskHollowRect(bgc, args[0], args[1], args[2], args[3], args[4], args[5], args[6]); return;
-                case GlyphId.MaskFillRect: Painter.DrawMaskFillRect(bgc, args[0], args[1], args[2], args[3], args[4], args[5], args[6]); return;
+                case GlyphId.MaskRect: Painter.DrawMaskHollowRect(bgc, args[0], args[1], args[2], args[3], args[4], args[5], (byte)args[6]); return;
+                case GlyphId.MaskFillRect: Painter.DrawMaskFillRect(bgc, args[0], args[1], args[2], args[3], args[4], args[5], (byte)args[6]); return;
                 case GlyphId.TubeXy: Painter.DrawMaskFillRect(bgc, args[0], args[1], args[2], args[3], args[4], args[5], (int)(CubeFaceMask.Left | CubeFaceMask.Right | CubeFaceMask.Top | CubeFaceMask.Bottom)); return;
                 case GlyphId.TubeYz: Painter.DrawMaskFillRect(bgc, args[0], args[1], args[2], args[3], args[4], args[5], (int)(CubeFaceMask.Left | CubeFaceMask.Right | CubeFaceMask.Front | CubeFaceMask.Back)); return;
                 case GlyphId.TubeXz: Painter.DrawMaskFillRect(bgc, args[0], args[1], args[2], args[3], args[4], args[5], (int)(CubeFaceMask.Front | CubeFaceMask.Back | CubeFaceMask.Top | CubeFaceMask.Bottom)); return;
@@ -121,7 +121,7 @@ namespace RasterLib.Language
                 case GlyphId.ExtrudeZ: Painter.ExtrudeZ(bgc, args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7]); return;
                 case GlyphId.ExtrudeLine: Painter.Extrude(bgc, args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7], args[8]); return;
 
-                case GlyphId.UpV: Painter.UpV(bgc, args[0], args[1], args[2], args[3], args[4]); return;
+                case GlyphId.UpV: Painter.UpV(bgc, args[0], (byte)args[1], (byte)args[2], (byte)args[3], (byte)args[4]); return;
 
                 case GlyphId.ImgFlipX: Painter.FlipX(bgc); return;
                 case GlyphId.ImgFlipY: Painter.FlipY(bgc); return;
@@ -141,17 +141,17 @@ namespace RasterLib.Language
                 case GlyphId.ImgSaturate: Painter.Saturation(bgc, args[0]); return;
                 case GlyphId.ImgBrightness: Painter.Brightness(bgc, args[0]); return;
 
-                case GlyphId.ImgShadeX: Painter.Shade(bgc, 0, args[0], args[1], args[2], args[3], args[4], args[5]); return;
-                case GlyphId.ImgShadeY: Painter.Shade(bgc, 1, args[0], args[1], args[2], args[3], args[4], args[5]); return;
-                case GlyphId.ImgShadeZ: Painter.Shade(bgc, 2, args[0], args[1], args[2], args[3], args[4], args[5]); return;
+                case GlyphId.ImgShadeX: Painter.Shade(bgc, 0, (byte)args[0], (byte)args[1], (byte)args[2], (byte)args[3], (byte)args[4], (byte)args[5]); return;
+                case GlyphId.ImgShadeY: Painter.Shade(bgc, 1, (byte)args[0], (byte)args[1], (byte)args[2], (byte)args[3], (byte)args[4], (byte)args[5]); return;
+                case GlyphId.ImgShadeZ: Painter.Shade(bgc, 2, (byte)args[0], (byte)args[1], (byte)args[2], (byte)args[3], (byte)args[4], (byte)args[5]); return;
                 case GlyphId.ImgEdge:
-                    Painter.EdgeColor(bgc, 0, args[0], args[1], args[2], args[3]);
-                    Painter.EdgeColor(bgc, 1, args[0], args[1], args[2], args[3]);
-                    Painter.EdgeColor(bgc, 2, args[0], args[1], args[2], args[3]);
+                    Painter.EdgeColor(bgc, 0, (byte)args[0], (byte)args[1], (byte)args[2], (byte)args[3]);
+                    Painter.EdgeColor(bgc, 1, (byte)args[0], (byte)args[1], (byte)args[2], (byte)args[3]);
+                    Painter.EdgeColor(bgc, 2, (byte)args[0], (byte)args[1], (byte)args[2], (byte)args[3]);
                     return;
-                case GlyphId.ImgEdgeX: Painter.EdgeColor(bgc, 0, args[0], args[1], args[2], args[3]); return;
-                case GlyphId.ImgEdgeY: Painter.EdgeColor(bgc, 1, args[0], args[1], args[2], args[3]); return;
-                case GlyphId.ImgEdgeZ: Painter.EdgeColor(bgc, 2, args[0], args[1], args[2], args[3]); return;
+                case GlyphId.ImgEdgeX: Painter.EdgeColor(bgc, 0, (byte)args[0], (byte)args[1], (byte)args[2], (byte)args[3]); break;
+                case GlyphId.ImgEdgeY: Painter.EdgeColor(bgc, 1, (byte)args[0], (byte)args[1], (byte)args[2], (byte)args[3]); break;
+                case GlyphId.ImgEdgeZ: Painter.EdgeColor(bgc, 2, (byte)args[0], (byte)args[1], (byte)args[2], (byte)args[3]); break;
 
                 case GlyphId.FilterBlur: Painter.ApplyFilterBlur(bgc); return;
                 case GlyphId.FilterMotion: Painter.ApplyFilterMotion(bgc); return;
@@ -171,10 +171,10 @@ namespace RasterLib.Language
                 case GlyphId.PalFromGrid1D: if (bgc.Grid != null) bgc.AddPalette(RasterApi.CreateGridFromRectangle(bgc.Grid, args[0], 0, 0, args[1], 1, 1)); return;
                 case GlyphId.PalFromGrid2D: if (bgc.Grid != null) bgc.AddPalette(RasterApi.CreateGridFromRectangle(bgc.Grid, args[0], args[1], 0, args[2], args[3], 1)); return;
                 case GlyphId.PalFromGrid3D: if (bgc.Grid != null) bgc.AddPalette(RasterApi.CreateGridFromRectangle(bgc.Grid, args[0], args[1], args[2], args[3], args[4], args[5])); return;
-                case GlyphId.PalGen1D1: Painter.PalGen1D(bgc.GetPalette(args[0]), args[1], 0, 0, 0, args[2], 0, 0, 0); return;
-                case GlyphId.PalGen1D2: Painter.PalGen1D(bgc.GetPalette(args[0]), args[1], args[2], 0, 0, args[3], args[4], 0, 0); return;
-                case GlyphId.PalGen1D3: Painter.PalGen1D(bgc.GetPalette(args[0]), args[1], args[2], args[3], 0, args[4], args[5], args[6], 0); return;
-                case GlyphId.PalGen1D4: Painter.PalGen1D(bgc.GetPalette(args[0]), args[1], args[2], args[3], args[4], args[5], args[6], args[7], args[8]); return;
+                case GlyphId.PalGen1D1: Painter.PalGen1D(bgc.GetPalette(args[0]), (byte)args[1], 0, 0, 0, (byte)args[2], 0, 0, 0); return;
+                case GlyphId.PalGen1D2: Painter.PalGen1D(bgc.GetPalette(args[0]), (byte)args[1], (byte)args[2], 0, 0, (byte)args[3], (byte)args[4], 0, 0); return;
+                case GlyphId.PalGen1D3: Painter.PalGen1D(bgc.GetPalette(args[0]), (byte)args[1], (byte)args[2], (byte)args[3], 0, (byte)args[4], (byte)args[5], (byte)args[6], 0); return;
+                case GlyphId.PalGen1D4: Painter.PalGen1D(bgc.GetPalette(args[0]), (byte)args[1], (byte)args[2], (byte)args[3], (byte)args[4], (byte)args[5], (byte)args[6], (byte)args[7], (byte)args[8]); return;
 
                 case GlyphId.Blit1D: Painter.Blit(bgc, bgc.GetPalette(args[0]), args[1], 0, 0); return;
                 case GlyphId.Blit2D: Painter.Blit(bgc, bgc.GetPalette(args[0]), args[1], args[2], 0); return;
@@ -217,9 +217,9 @@ namespace RasterLib.Language
                 case GlyphId.FillTriangle: Painter.DrawFillTriangle3D(bgc, args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7], args[8]); return;
 
                 case GlyphId.Shadows: Painter.DrawShadows(bgc); return;
-                case GlyphId.Maze: Painter.DrawMaze(bgc, args[0], args[1], args[2], args[3], args[4], args[5]); return;
+                case GlyphId.Maze: Painter.DrawMaze(bgc, (byte)args[0], args[1], args[2], args[3], args[4], args[5]); return;
 
-                case GlyphId.EdgeCorners: Painter.EdgeCorners(bgc, args[0], args[1], args[2], args[3]); return;
+                case GlyphId.EdgeCorners: Painter.EdgeCorners(bgc, (byte)args[0], (byte)args[1], (byte)args[2], (byte)args[3]); return;
                 case GlyphId.ShapeToColor: Painter.ShapeToColor(bgc, args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7]); return;
 
                 case GlyphId.ShapeSmoothX: Painter.ShapeSmoothX(bgc); return;
@@ -234,7 +234,7 @@ namespace RasterLib.Language
                     return;
 
                 case GlyphId.PutGroup:
-                    Painter.PutGroup(bgc, token.GetStringArgs()[0], args[1], args[2], args[3], args[4]);
+                    Painter.PutGroup(bgc, token.GetStringArgs()[0], args[1], args[2], args[3], (byte)args[4]);
                     return;
 
                 case GlyphId.ScalePut:
