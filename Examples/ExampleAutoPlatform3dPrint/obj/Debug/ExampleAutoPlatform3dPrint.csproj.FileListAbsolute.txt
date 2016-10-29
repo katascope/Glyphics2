@@ -6,13 +6,3 @@ C:\Github\Glyphics\Glyphics\Examples\ExampleAutoPlatform3dPrint\bin\Debug\Glyphi
 C:\Github\Glyphics\Glyphics\Examples\ExampleAutoPlatform3dPrint\obj\Debug\ExampleAutoPlatform3dPrint.csprojResolveAssemblyReference.cache
 C:\Github\Glyphics\Glyphics\Examples\ExampleAutoPlatform3dPrint\obj\Debug\ExampleAutoPlatform3dPrint.exe
 C:\Github\Glyphics\Glyphics\Examples\ExampleAutoPlatform3dPrint\obj\Debug\ExampleAutoPlatform3dPrint.pdb
-C:\Github\Glyphics2\Examples\ExampleAutoPlatform3dPrint\bin\Debug\ExampleAutoPlatform3dPrint.exe.config
-C:\Github\Glyphics2\Examples\ExampleAutoPlatform3dPrint\bin\Debug\ExampleAutoPlatform3dPrint.exe
-C:\Github\Glyphics2\Examples\ExampleAutoPlatform3dPrint\bin\Debug\ExampleAutoPlatform3dPrint.pdb
-C:\Github\Glyphics2\Examples\ExampleAutoPlatform3dPrint\bin\Debug\GeneralLibrary.dll
-C:\Github\Glyphics2\Examples\ExampleAutoPlatform3dPrint\bin\Debug\GlyphicsLibrary.dll
-C:\Github\Glyphics2\Examples\ExampleAutoPlatform3dPrint\bin\Debug\GeneralLibrary.pdb
-C:\Github\Glyphics2\Examples\ExampleAutoPlatform3dPrint\bin\Debug\GlyphicsLibrary.pdb
-C:\Github\Glyphics2\Examples\ExampleAutoPlatform3dPrint\obj\Debug\ExampleAutoPlatform3dPrint.csprojResolveAssemblyReference.cache
-C:\Github\Glyphics2\Examples\ExampleAutoPlatform3dPrint\obj\Debug\ExampleAutoPlatform3dPrint.exe
-C:\Github\Glyphics2\Examples\ExampleAutoPlatform3dPrint\obj\Debug\ExampleAutoPlatform3dPrint.pdb

@@ -8,13 +8,3 @@ C:\Github\Glyphics2\Simulator\bin\Debug\GlyphicsLibrary.pdb
 C:\Github\Glyphics2\Simulator\obj\Debug\Simulator.csprojResolveAssemblyReference.cache
 C:\Github\Glyphics2\Simulator\obj\Debug\Simulator.exe
 C:\Github\Glyphics2\Simulator\obj\Debug\Simulator.pdb
-C:\Github\Glyphics2\Apps\Simulator\bin\Debug\Simulator.exe.config
-C:\Github\Glyphics2\Apps\Simulator\bin\Debug\Simulator.exe
-C:\Github\Glyphics2\Apps\Simulator\bin\Debug\Simulator.pdb
-C:\Github\Glyphics2\Apps\Simulator\bin\Debug\GeneralLibrary.dll
-C:\Github\Glyphics2\Apps\Simulator\bin\Debug\GlyphicsLibrary.dll
-C:\Github\Glyphics2\Apps\Simulator\bin\Debug\GeneralLibrary.pdb
-C:\Github\Glyphics2\Apps\Simulator\bin\Debug\GlyphicsLibrary.pdb
-C:\Github\Glyphics2\Apps\Simulator\obj\Debug\Simulator.csprojResolveAssemblyReference.cache
-C:\Github\Glyphics2\Apps\Simulator\obj\Debug\Simulator.exe
-C:\Github\Glyphics2\Apps\Simulator\obj\Debug\Simulator.pdb
