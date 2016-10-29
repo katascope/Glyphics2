@@ -109,10 +109,6 @@ namespace GraphicsLib
     //Primary Glyphics API call - intended for use by other programs
     public class GraphicsApi
     {
-        //API-Level Renderer
-
-
-
         //File IO for PNG files
         public static Grid PngToGrid(string filename) { return FilePngRead.PngToGrid(filename); }
         public static void SaveFlatPng(string filename, Grid grid) { FilePngWrite.SaveFlatPng(filename, grid); }
@@ -128,38 +124,5 @@ namespace GraphicsLib
             if (filename.ToUpper().Contains(".PNG")) return PngToGrid(filename);
             return null;
         }
-
-/*
-        //Quad and QuadList
-        public static QuadList RectsToQuads(RectList rectSet) { return RectConverter.RectsToQuads(rectSet); }
-        public static int RemoveRedundantQuads(QuadList quads) { return RectConverter.RemoveRedundantQuads(quads); }
-
-        public static RectList CodeToRects(Code rasterCode) { return RectConverter.CodeToRects(rasterCode); }
-
-        //Grid-To
-        public static RectList GridToRects(Grid grid) { return GridConverter.GridToRects(grid); }
-
-        //Circuit
-        public static void BuildCircuit(RectList rects, bool verbose) { GridConverter.BuildCircuit(rects, verbose); }
-
-        //Rect(s)-To
-        public static Code RectsToCode(RectList rectSet) { if (rectSet == null) return null; return RectConverter.RectsToCode(rectSet); }
-        public static Rect RectsToBoundaries(RectList rectSet) { if (rectSet == null) return null; return rectSet.Boundaries; }
-
-        public static SerializedRects CreateSerializedRects(string serialized) { return new SerializedRects(serialized); }
-        public static SerializedRects RectsToSerializedRects(RectList rectSet) { return RectConverter.RectsToSerializedRects(rectSet); }
-        public static RectList SerializedRectsToRects(SerializedRects serializedRects) { return RectConverter.SerializedRectsToRects(serializedRects); }
-        public static SerializedRects RectsToSerializedRectsLimit255(RectList rectSet) { return new SerializedRects(RectConverter.SerializeLimit255(rectSet)); }
-
-        //Translates hex data in string format to byte array
-        public static byte[] HexDataToByteArray(string data) { return Transcode64.HexDataToByteArray(data); }
-        public static Bytes HexDataToBytes(string data) { return new Bytes(Transcode64.HexDataToByteArray(data)); }
-        */
-
-
-        // Codelist to Deck
-        //public static CodeList DeckToCodelist(Deck deck);
-        // Deck to Codelist 
-        //public static Deck CodelistToDeck(CodeList codelist);
     }
 }

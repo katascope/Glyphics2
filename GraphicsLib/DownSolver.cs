@@ -13,7 +13,6 @@ using System;
 using RasterApi;
 using RasterLib;
 using RasterLib.Language;
-using RasterLib.Renderers;
 
 namespace GraphicsLib
 {

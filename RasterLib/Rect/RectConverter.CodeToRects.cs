@@ -28,7 +28,7 @@ namespace RasterLib
                 string start = code.Substring(code.IndexOf('*'));
                 return SerializedRectsToRects(new SerializedRects(start));
             }
-            RectList rectSet = null;//GridConverter.GridToRects(RasterApi.TokensToGrid( RasterApi.CodeToTokens(rasterCode)));
+            RectList rectSet = GridConverter.GridToRects(RasterApi.TokensToGrid( RasterApi.CodeToTokens(rasterCode)));
             return rectSet;
         }
     }
