@@ -12,12 +12,16 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 using RasterLib.Language;
 using RasterLib.Painters;
+using RasterLib.Renderers;
 using RasterLib.Utility;
 
 namespace RasterLib
 {
     public static class RasterApi 
     {
+        private static readonly IRenderer RealRenderer = new Renderer();
+        public static IRenderer Renderer { get { return RealRenderer; } }
+
         //Versioning 
         public static string Version { get { return "2.01"; } }
         public static string VersionName { get { return "Transcendental"; } }
@@ -140,6 +144,11 @@ namespace RasterLib
         public static Rect ElementToRect(Element element) { return SceneConverter.ElementToRect(element); }
         public static Element RectToElement(Rect rect) { return SceneConverter.RectToElement(rect); }
 #endregion
+
+        public static string GridTo3DDescription(Grid grid, int ax, int ay, int az) { return RealRenderer.GridTo3DDescription(grid, ax, ay, az); }
+        public static string GridToHexDescription(Grid grid) { return Renderer.GridToHexDescription(grid); }
+
+        public static Grid CodeToObliqueCells(Code rasterCode) { return Renderer.RenderObliqueCells(RasterLib.RasterApi.CodeToGrid(rasterCode)); }
     }
 }
 

@@ -42,12 +42,12 @@ namespace ExampleSTLToGrid
             Console.WriteLine("Triangle count: {0}", triangles.Count);
 
             //Render the triangles to the grid, will autosize to grid size
-            GraphicsApi.Renderer.RenderTrianglesToGrid(triangles, grid);
+            RasterLib.RasterApi.Renderer.RenderTrianglesToGrid(triangles, grid);
 
             //At this point we've loaded and grid has the rendering. So let's make a pretty rendering.
 
             //Render the 3D grid to a new 2D grid, in oblique view
-            Grid gridObliqueRendering = GraphicsApi.Renderer.RenderObliqueCells(grid);
+            Grid gridObliqueRendering = RasterLib.RasterApi.Renderer.RenderObliqueCells(grid);
 
             //Write out a little bit about the grid
             Console.WriteLine("Grid: ({0},{1},{2})", grid.SizeX, grid.SizeY, grid.SizeZ);

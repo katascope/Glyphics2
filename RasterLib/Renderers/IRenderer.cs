@@ -11,7 +11,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using RasterLib;
 
-namespace GraphicsLib
+namespace RasterLib
 {
     //Set of rendering methods for top level drawing convenience
     public interface IRenderer
@@ -22,18 +22,11 @@ namespace GraphicsLib
         //Renders Grid to a new Grid using isometric cell sprites
         Grid RenderIsometricCellsScaled(Grid grid, byte bgR, byte bgG, byte bgB, byte bgA, int cellWidth, int cellHeight);
 
-        // Renders a grid out to a filename in isometric
-        void RenderIsometricScaled(string filename, Grid grid, byte bgR, byte bgG, byte bgB, byte bgA, int cellWidth, int cellHeight);
-
         //Renders Grid to a new Grid using oblique cell sprites
         Grid RenderObliqueCells(Grid grid);
 
         //Renders RectList to a new Grid using oblique cell sprites
         Grid RenderObliqueCellsRects(RectList rects);
-
-        //Renders Code directly out to a PNG filename
-        //void RenderObliqueOut(string fileName, Code rasterCode);
-        void RenderObliqueOut(string filename, Grid grid);
 
         //Renders RectList using TrianglesList to a new Triangles
         Triangles RenderRectsAsStlMapping(RectList rects, TrianglesList trianglesList);

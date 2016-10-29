@@ -34,7 +34,7 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TestRenderer()
         {
-            Assert.IsNotNull(GraphicsApi.Renderer);
+            Assert.IsNotNull(RasterLib.RasterApi.Renderer);
         }
 
         [TestMethod]
@@ -88,7 +88,7 @@ namespace GlyphicsUnitTests
         {
             Code code = RasterLib.RasterApi.CreateCode(FinalCubeCode);
             Grid grid = RasterLib.RasterApi.CodeToGrid(code);
-            IRenderer renderer = GraphicsApi.Renderer;
+            IRenderer renderer = RasterLib.RasterApi.Renderer;
             string desc = renderer.GridTo3DDescription(grid, 0, 0, 0);
 
             Assert.IsNotNull(desc);
@@ -150,7 +150,7 @@ namespace GlyphicsUnitTests
             Code code = RasterLib.RasterApi.CreateCode(FinalCubeCode);
             Grid grid = RasterLib.RasterApi.CodeToGrid(code);
 
-            IRenderer renderer = GraphicsApi.Renderer;
+            IRenderer renderer = RasterLib.RasterApi.Renderer;
             Grid renderedObliqueGrid = renderer.RenderObliqueCells(grid);
 
             Assert.IsTrue(renderedObliqueGrid.SizeX == 96);

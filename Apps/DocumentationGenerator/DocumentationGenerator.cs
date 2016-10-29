@@ -64,7 +64,7 @@ namespace DocumentationGenerator
         {
             string path = documentationPath;
 
-            IRenderer renderer = GraphicsApi.Renderer;
+            IRenderer renderer = RasterLib.RasterApi.Renderer;
 
             Grid grid = RasterLib.RasterApi.CodeToGrid(RasterLib.RasterApi.CreateCode(code));
             //            using ()
@@ -149,7 +149,7 @@ namespace DocumentationGenerator
         {
             string path = documentationPath;
 
-            IRenderer renderer = GraphicsApi.Renderer;
+            IRenderer renderer = RasterLib.RasterApi.Renderer;
 
             Grid grid = RasterLib.RasterApi.CodeToGrid(RasterLib.RasterApi.CreateCode(code));
             //            using ()

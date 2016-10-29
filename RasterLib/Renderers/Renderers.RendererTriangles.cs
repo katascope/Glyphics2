@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using RasterLib;
 using RasterLib.Painters;
 
-namespace GraphicsLib.Renderers
+namespace RasterLib.Renderers
 {
     //Partial class to render triangles
     internal partial class Renderer : IRenderer

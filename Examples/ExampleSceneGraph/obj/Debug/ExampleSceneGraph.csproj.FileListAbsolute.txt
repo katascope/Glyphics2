@@ -6,13 +6,3 @@ C:\Github\Glyphics\Glyphics\Examples\ExampleSceneGraph\bin\Debug\GlyphicsLibrary
 C:\Github\Glyphics\Glyphics\Examples\ExampleSceneGraph\obj\Debug\ExampleSceneGraph.csprojResolveAssemblyReference.cache
 C:\Github\Glyphics\Glyphics\Examples\ExampleSceneGraph\obj\Debug\ExampleSceneGraph.exe
 C:\Github\Glyphics\Glyphics\Examples\ExampleSceneGraph\obj\Debug\ExampleSceneGraph.pdb
-C:\Github\Glyphics2\Examples\ExampleSceneGraph\bin\Debug\ExampleSceneGraph.exe.config
-C:\Github\Glyphics2\Examples\ExampleSceneGraph\bin\Debug\ExampleSceneGraph.exe
-C:\Github\Glyphics2\Examples\ExampleSceneGraph\bin\Debug\ExampleSceneGraph.pdb
-C:\Github\Glyphics2\Examples\ExampleSceneGraph\bin\Debug\GeneralLibrary.dll
-C:\Github\Glyphics2\Examples\ExampleSceneGraph\bin\Debug\GlyphicsLibrary.dll
-C:\Github\Glyphics2\Examples\ExampleSceneGraph\bin\Debug\GeneralLibrary.pdb
-C:\Github\Glyphics2\Examples\ExampleSceneGraph\bin\Debug\GlyphicsLibrary.pdb
-C:\Github\Glyphics2\Examples\ExampleSceneGraph\obj\Debug\ExampleSceneGraph.csprojResolveAssemblyReference.cache
-C:\Github\Glyphics2\Examples\ExampleSceneGraph\obj\Debug\ExampleSceneGraph.exe
-C:\Github\Glyphics2\Examples\ExampleSceneGraph\obj\Debug\ExampleSceneGraph.pdb

@@ -27,7 +27,7 @@ namespace ScratchPad.Scratch
                 trianglesList.ImportAndReduceToUnit(filename);
 
             //Render the rectangles out as shapes(Triangles) to a new set of triangles
-            Triangles triangles = GraphicsApi.Renderer.RenderRectsAsStlMapping(rects, trianglesList);
+            Triangles triangles = RasterLib.RasterApi.Renderer.RenderRectsAsStlMapping(rects, trianglesList);
             Console.WriteLine("Rendering triangles to grid");
 
             //Reduce scale to 1x1x1, making it 1mm x 1mm x 1mm
@@ -54,11 +54,11 @@ namespace ScratchPad.Scratch
             Grid gridFromStl = RasterLib.RasterApi.CreateGrid(96, 96, 96, 4);
 
             Console.WriteLine("Rendering triangles to grid");
-            GraphicsApi.Renderer.RenderTrianglesToGrid(triangles, gridFromStl);
+            RasterLib.RasterApi.Renderer.RenderTrianglesToGrid(triangles, gridFromStl);
 
             //Then render to a new grid
             Console.WriteLine("Rendering grid to oblique preview grid");
-            Grid gridObliqueRendered = GraphicsApi.Renderer.RenderObliqueCells(gridFromStl);
+            Grid gridObliqueRendered = RasterLib.RasterApi.Renderer.RenderObliqueCells(gridFromStl);
 
             //Then save            
             if (ctl.FileNameOutStlPreview != null)

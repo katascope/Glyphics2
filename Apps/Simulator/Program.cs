@@ -30,7 +30,7 @@ namespace Simulator
         static void DisplayGrid(Grid grid)
         {
             _frameCount++;
-            string desc = GraphicsApi.GridTo3DDescription(grid, (int)_avatar.x, (int)_avatar.y, (int)_avatar.z);
+            string desc = RasterLib.RasterApi.Renderer.GridTo3DDescription(grid, (int)_avatar.x, (int)_avatar.y, (int)_avatar.z);
             Console.Clear();
             Console.Write(desc + " Frame=" + _frameCount + " Key=" + _lastKey+ " Avatar="+_avatar.x+","+_avatar.y+","+_avatar.z);
             Thread.Sleep(50);
@@ -69,7 +69,7 @@ Stairs 5 0 2 5 5 7 3 1 1
             
             //Execute, render, and save to png
 //            GraphicsApi.SaveFlatPng(filename,
-  //              GraphicsApi.Renderer.RenderObliqueCells(
+  //              RasterLib.RasterApi.Renderer.RenderObliqueCells(
     //                RasterApi.CodeToGrid(rasterCode)));
 
             bool done = false;

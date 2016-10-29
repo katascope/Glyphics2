@@ -9,45 +9,33 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DRect, INDRect, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #endregion
-using System;
-using System.Text;
-using RasterLib;
 
-namespace GraphicsLib.Renderers
+using RasterLib;
+using RasterLib.Painters;
+
+namespace RasterLib.Renderers
 {
+    //Partial class to render rects
     internal partial class Renderer
     {
-        //Input: Grid
-        //Output: Pseudo-rendering to text of Grid
-        public string GridTo3DDescription(Grid grid, int ax, int ay, int az)
+        //Render a set of rects into a grid as little filled 3d rectangles
+        public void RenderRectsToGrid(RectList rects, Grid grid)
         {
-            var builder = new StringBuilder("");
+            if (rects == null || grid == null) return;
 
-            string empty = "__";
-            if (grid.Bpp == 1) empty = "__";
-            if (grid.Bpp == 2) empty = "____";
-            if (grid.Bpp == 3) empty = "______";
-            if (grid.Bpp == 4) empty = "________";
+            GridContext bgc = new GridContext(grid);
+            IPainter painter = new CPainter();
 
-            for (int y = grid.SizeY - 1; y >= 0; y--)
+            //Draw background
+            painter.DrawFastFillRect(bgc, 0, 0, 0, bgc.Grid.SizeX, bgc.Grid.SizeY, bgc.Grid.SizeZ);
+
+            //Then draw each triangle, adjusting for inclusive numbering
+            const int inclusiveOffset = 1;
+            foreach (Rect rect in rects)
             {
-                for (int z = grid.SizeZ - 1; z >= 0; z--)
-                {
-                    for (int i = z; i > 0; i--) builder.Append(' ');
-                    for (int x = 0; x < grid.SizeX; x++)
-                    {
-                        if ((ax == x) && (ay == y) && (az == z))
-                            builder.Append("XX");
-                        else
-                        {
-                            ulong u = grid.GetRgba(x, y, z);
-                            builder.Append(u == 0 ? empty : String.Format("{0:X2}", grid.GetRgba(x, y, z)));
-                        }
-                    }
-                    builder.Append("\n");
-                }
+                bgc.Pen.SetColor(rect.Properties.Rgba);
+                painter.DrawFastFillRect(bgc, (int)rect.Pt1[0], (int)rect.Pt1[1], (int)rect.Pt1[2], (int)rect.Pt2[0] - inclusiveOffset, (int)rect.Pt2[1] - inclusiveOffset, (int)rect.Pt2[2] - inclusiveOffset);
             }
-            return builder.ToString();
         }
     }
 }

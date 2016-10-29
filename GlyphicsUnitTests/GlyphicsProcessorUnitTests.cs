@@ -46,7 +46,7 @@ namespace GlyphicsUnitTests
             Grid gridFromRects = grid.Clone();
             Assert.IsTrue(grid.IsEqualTo(gridFromRects));
 
-            GraphicsApi.Renderer.RenderRectsToGrid(rectsFromGrid, gridFromRects);
+            RasterLib.RasterApi.Renderer.RenderRectsToGrid(rectsFromGrid, gridFromRects);
             Assert.IsTrue(grid.IsEqualTo(gridFromRects));
 
             Scene sceneFromRects = RasterLib.RasterApi.RectsToScene(rectsFromGrid);
@@ -55,7 +55,7 @@ namespace GlyphicsUnitTests
             Assert.IsTrue(rectsFromGrid.IsEqualTo(rectsFromScene));
 
             Grid gridMega = grid.Clone();
-            GraphicsApi.Renderer.RenderRectsToGrid(rectsFromScene, gridMega);
+            RasterLib.RasterApi.Renderer.RenderRectsToGrid(rectsFromScene, gridMega);
 
             Assert.IsTrue(grid.IsEqualTo(gridMega));
         }

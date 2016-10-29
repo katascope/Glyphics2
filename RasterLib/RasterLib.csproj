@@ -139,6 +139,13 @@
     <Compile Include="Rect\RectsToQuads.cs" />
     <Compile Include="Rect\SerializedRects.cs" />
     <Compile Include="Rect\Transcode64.cs" />
+    <Compile Include="Renderers\IRenderer.cs" />
+    <Compile Include="Renderers\Renderers.GridTo3dDescription.cs" />
+    <Compile Include="Renderers\Renderers.GridToHex.cs" />
+    <Compile Include="Renderers\Renderers.RendererObliqueCells.cs" />
+    <Compile Include="Renderers\Renderers.RendererRects.cs" />
+    <Compile Include="Renderers\Renderers.RendererTriangles.cs" />
+    <Compile Include="Renderers\Renderers.RenderIsometricScaledCellls.cs" />
     <Compile Include="Scene\Deck.cs" />
     <Compile Include="Scene\Element.cs" />
     <Compile Include="Scene\Scene.cs" />

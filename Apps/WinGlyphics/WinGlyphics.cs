@@ -136,7 +136,7 @@ ImgMirrorX
             {
                 Triangles triangles =RasterLib.RasterApi.StlToTriangles(resultName);
                 Grid grid =RasterLib.RasterApi.CreateGrid(16, 16, 16, 4);
-                GraphicsApi.Renderer.RenderTrianglesToGrid(triangles, grid);
+                RasterLib.RasterApi.Renderer.RenderTrianglesToGrid(triangles, grid);
                 _hc = new DownSolver(grid);
                 UpdateDisplay();
             }

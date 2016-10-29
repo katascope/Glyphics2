@@ -13,7 +13,7 @@ using System;
 using RasterLib;
 using RasterLib.Painters;
 
-namespace GraphicsLib.Renderers
+namespace RasterLib.Renderers
 {
     //Partial class to render Isometric cells
     internal partial class Renderer

@@ -13,6 +13,7 @@ using System;
 using RasterApi;
 using RasterLib;
 using RasterLib.Language;
+using RasterLib.Renderers;
 
 namespace GraphicsLib
 {
@@ -96,7 +97,7 @@ namespace GraphicsLib
             else
                 scale = (int)((256) / (float)(Grid.SizeX ) * 1.3) & 254 ;
 
-            GridOblique = GraphicsApi.Renderer.RenderIsometricCellsScaled(Grid, 255, 255, 255, 255, scale,scale);
+            GridOblique = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(Grid, 255, 255, 255, 255, scale, scale);
 
             Rects = GridConverter.GridToRects(Grid);
             FromRects(Rects);

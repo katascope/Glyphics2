@@ -14,7 +14,7 @@ using System;
 using RasterLib;
 using RasterLib.Painters;
 
-namespace GraphicsLib.Renderers
+namespace RasterLib.Renderers
 {
     //Partial class to render oblique cells
     internal partial class Renderer

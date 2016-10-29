@@ -86,7 +86,7 @@ namespace GlyphicsUnitTests
             Grid grid = RasterLib.RasterApi.CodeToGrid(rasterCode);
 
             sw.Start();
-            RasterLib.RasterApi.Renderer.RenderObliqueCells(grid);
+            GraphicsApi.Renderer.RenderObliqueCells(grid);
             sw.Stop();
             long val = sw.ElapsedMilliseconds;
 

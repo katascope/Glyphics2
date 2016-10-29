@@ -86,7 +86,7 @@ namespace ScratchPad.Scratch
                 Console.WriteLine("Triangle count: {0}", triangles.Count);
 
                 //Render the triangles to the grid, will autosize to grid size
-                GraphicsApi.Renderer.RenderTrianglesToGrid(triangles, grid);
+                RasterLib.RasterApi.Renderer.RenderTrianglesToGrid(triangles, grid);
             }
             else if (ctl.FileNameInImage != null)
             {
@@ -99,7 +99,7 @@ namespace ScratchPad.Scratch
                 Console.WriteLine("Extruding");
                 Extrusion(grid, gridImg, div);
                 Console.WriteLine("Rendering");
-                Grid gridIsometricScaledQuick = GraphicsApi.Renderer.RenderIsometricCellsScaled(grid, 0, 0, 0, 0, 4, 4);
+                Grid gridIsometricScaledQuick = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(grid, 0, 0, 0, 0, 4, 4);
                 Console.WriteLine("Saving");
                 GraphicsApi.SaveFlatPng(ctl.FileNameOutIsometric, gridIsometricScaledQuick);
                 Console.WriteLine("Saved");
@@ -166,8 +166,8 @@ namespace ScratchPad.Scratch
 
             if (ctl.OutputRenderedAscii)
             {
-                Console.WriteLine("2d view:\n{0}", GraphicsApi.GridToHexDescription(grid));
-                Console.WriteLine("3d view:\n{0}", GraphicsApi.GridTo3DDescription(grid, 0, 0, 0));
+                Console.WriteLine("2d view:\n{0}", RasterLib.RasterApi.Renderer.GridToHexDescription(grid));
+                Console.WriteLine("3d view:\n{0}", RasterLib.RasterApi.Renderer.GridTo3DDescription(grid, 0, 0, 0));
             }
 
             if (ctl.OutputSceneGraph)
@@ -185,7 +185,7 @@ namespace ScratchPad.Scratch
             if (ctl.FileNameOutOrthogonal != null)
             {
                 Console.WriteLine("Orthogonal Rendering..");
-                Grid gridOrthogonal = GraphicsApi.Renderer.RenderObliqueCells(grid);
+                Grid gridOrthogonal = RasterLib.RasterApi.Renderer.RenderObliqueCells(grid);
                 GraphicsApi.SaveFlatPng(ctl.FileNameOutOrthogonal, gridOrthogonal);
             }
 
@@ -194,7 +194,7 @@ namespace ScratchPad.Scratch
                 Console.WriteLine("Isometric Rendering..");
                 if (ctl.IsometricCellWidth < 1) ctl.IsometricCellWidth = 1;
                 if (ctl.IsometricCellHeight < 1) ctl.IsometricCellHeight = 1;
-                Grid gridIsometricScaled = GraphicsApi.Renderer.RenderIsometricCellsScaled(grid, 
+                Grid gridIsometricScaled = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(grid, 
                     ctl.IsometricBgRgba[0],
                     ctl.IsometricBgRgba[1],
                     ctl.IsometricBgRgba[2],

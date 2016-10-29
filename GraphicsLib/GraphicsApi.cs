@@ -110,10 +110,7 @@ namespace GraphicsLib
     public class GraphicsApi
     {
         //API-Level Renderer
-        private static readonly IRenderer RealRenderer = new Renderer();
-        public static IRenderer Renderer { get { return RealRenderer; } }
 
-        public static Grid CodeToObliqueCells(Code rasterCode) { return Renderer.RenderObliqueCells(RasterLib.RasterApi.CodeToGrid(rasterCode)); }
 
 
         //File IO for PNG files
@@ -132,8 +129,6 @@ namespace GraphicsLib
             return null;
         }
 
-        public static string GridTo3DDescription(Grid grid, int ax, int ay, int az) { return RealRenderer.GridTo3DDescription(grid, ax, ay, az); }
-        public static string GridToHexDescription(Grid grid) { return Renderer.GridToHexDescription(grid); }
 /*
         //Quad and QuadList
         public static QuadList RectsToQuads(RectList rectSet) { return RectConverter.RectsToQuads(rectSet); }

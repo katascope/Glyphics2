@@ -49,7 +49,7 @@ PenColorD4 31 255 127 255;Text 6 3 8 65";
 
             //Execute, render, and save to png
             GraphicsApi.SaveFlatPng(filename,
-                GraphicsApi.Renderer.RenderObliqueCells(grid));
+                RasterLib.RasterApi.Renderer.RenderObliqueCells(grid));
 
             RectList rectsFromGrid =RasterLib.RasterApi.GridToRects(grid);
             Grid gridFromRects = grid.Clone();
@@ -59,7 +59,7 @@ PenColorD4 31 255 127 255;Text 6 3 8 65";
                 return;
             }
 
-            GraphicsApi.Renderer.RenderRectsToGrid(rectsFromGrid, gridFromRects);
+            RasterLib.RasterApi.Renderer.RenderRectsToGrid(rectsFromGrid, gridFromRects);
             if (grid.IsEqualTo(gridFromRects) == false)
             {
                 Console.WriteLine("Grids are diff");
@@ -76,7 +76,7 @@ PenColorD4 31 255 127 255;Text 6 3 8 65";
             }
 
             Grid gridMega = grid.Clone();
-            GraphicsApi.Renderer.RenderRectsToGrid(rectsFromScene, gridMega);
+            RasterLib.RasterApi.Renderer.RenderRectsToGrid(rectsFromScene, gridMega);
 
             if (grid.IsEqualTo(gridMega) == false)
             {

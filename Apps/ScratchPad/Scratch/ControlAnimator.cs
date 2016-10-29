@@ -32,10 +32,10 @@ namespace ScratchPad.Scratch
 
             //Save png's to each
             if (ctl.FileNameOutOrthogonalAnimated)
-                GraphicsApi.SaveFlatPng(filenameOrthogonal, GraphicsApi.Renderer.RenderObliqueCells(grid));
+                GraphicsApi.SaveFlatPng(filenameOrthogonal, RasterLib.RasterApi.Renderer.RenderObliqueCells(grid));
 
             if (ctl.FileNameOutIsometricAnimated)
-                GraphicsApi.SaveFlatPng(filenameIsometric, GraphicsApi.Renderer.RenderIsometricCellsScaled(grid,
+                GraphicsApi.SaveFlatPng(filenameIsometric, RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(grid,
                     ctl.IsometricBgRgba[0],
                     ctl.IsometricBgRgba[1],
                     ctl.IsometricBgRgba[2],
