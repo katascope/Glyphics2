@@ -50,12 +50,12 @@ namespace GraphicsLib
             if (filename.ToUpper().Contains(".PNG")) FromGrid(GraphicsApi.PngToGrid(filename));
             if (filename.ToUpper().Contains(".STL")) FromTriangles(RasterLib.RasterApi.StlToTriangles(filename));
             if (filename.ToUpper().Contains(".OBJ")) FromTriangles(RasterLib.RasterApi.ObjToTriangles(filename));
-            if (filename.ToUpper().Contains(".GIF"))
+/*            if (filename.ToUpper().Contains(".GIF"))
             {
                 Grids = GraphicsApi.GifToGrids(filename);
                 Grid = Grids.GetGrid(0);
                 FromGrid(Grid);
-            }
+            }*/
             if (filename.ToUpper().Contains(".GLY"))
             {
                 Codes = RasterLib.RasterApi.GlyToCodes(filename);

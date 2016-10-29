@@ -268,28 +268,28 @@ namespace RasterLib
             if (verbose) DisplayAdjacencyGraph(rects, graph);
 
             //2) Prep lists by putting all physics type of 0 into slot 0
-            Console.WriteLine("Adding physics ids to touchGraph");
+            if (verbose) Console.WriteLine("Adding physics ids to touchGraph");
             List<List<int>> touchGraph = CreateTouchGraphFromRects(rects);
 
             //3) From adjGraph, calculate touchGroup of circuits/sensors/effectors, isolating gates
-            Console.WriteLine("Calculating touchGraph paths");
+            if ( verbose) Console.WriteLine("Calculating touchGraph paths");
             CalculateTouchGraphPaths(graph, rects, touchGraph);
-            DisplayTouchGraph(touchGraph);
+            if (verbose) DisplayTouchGraph(touchGraph);
 
             //4) Assign circuit ID's to non-gate wires
-            Console.WriteLine("\nAssigning circuit ids to non-gate wires.");
+            if (verbose) Console.WriteLine("\nAssigning circuit ids to non-gate wires.");
             List<List<int>> circuitIds = new List<List<int>>();
             AssignCircuitIdsToNonGates(rects, touchGraph, circuitIds);
 
             //5) Assign circuit ID's to gates based on touching wires
-            Console.WriteLine("\nCircuit Ids-GATE");
+            if (verbose) Console.WriteLine("\nCircuit Ids-GATE");
             AssignCircuitIdsToGates(graph, rects, touchGraph, circuitIds);
-            DisplayCircuitIds(circuitIds);
+            if (verbose) DisplayCircuitIds(circuitIds);
 
             //6) Assign circuit ID's to rects
-            Console.WriteLine("\nAssigning to rects");
+            if (verbose) Console.WriteLine("\nAssigning to rects");
             AssignCircuitIdsToRects(rects, touchGraph, circuitIds);
-            DisplayRectCircuits(rects);
+            if (verbose) DisplayRectCircuits(rects);
         }
     }
 }

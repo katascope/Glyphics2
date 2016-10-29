@@ -114,13 +114,13 @@ namespace GraphicsLib
         public static void SaveFlatPng(string filename, Grid grid) { FilePngWrite.SaveFlatPng(filename, grid); }
 
         //File IO for GIF files
-        public static Grid GifToGrid(string filename) { return FileGifRead.GifToGrid(filename); }
-        public static GridList GifToGrids(string filename) { return FileGifRead.GifToGrids(filename); }
-        public static void SaveFlatGif(string filename, Grid grid) { FileGifWrite.SaveFlatGif(filename, grid); }
+        //public static Grid GifToGrid(string filename) { return FileGifRead.GifToGrid(filename); }
+        //public static GridList GifToGrids(string filename) { return FileGifRead.GifToGrids(filename); }
+        //public static void SaveFlatGif(string filename, Grid grid) { FileGifWrite.SaveFlatGif(filename, grid); }
 
         public static Grid FileToGrid(string filename)
         {
-            if (filename.ToUpper().Contains(".GIF")) return GifToGrid(filename);
+          //  if (filename.ToUpper().Contains(".GIF")) return GifToGrid(filename);
             if (filename.ToUpper().Contains(".PNG")) return PngToGrid(filename);
             return null;
         }
