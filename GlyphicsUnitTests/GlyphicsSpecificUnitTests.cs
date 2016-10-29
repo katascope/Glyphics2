@@ -9,9 +9,9 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DRect, INDRect, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #endregion
-using RasterLib;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GraphicsLib;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RasterLib;
 
 namespace GlyphicsUnitTests
 {
@@ -22,7 +22,7 @@ namespace GlyphicsUnitTests
         public void SpecificTest_PropertyRGBA()
         {
             const string code = @"Size3D4 8 1 8;Spawn 1 0 1;PenColorD4 31 127 255 255;PenGroup 2;Plot 1 0 1";
-            RectList rectSet = GraphicsApi.CodeToRects(RasterApi.CreateCode(code));
+            RectList rectSet = RasterLib.RasterApi.CodeToRects(RasterLib.RasterApi.CreateCode(code));
             Assert.IsTrue(rectSet.GetRect(0).Properties.Rgba == 0xffff7f1f);
         }
 
@@ -30,7 +30,7 @@ namespace GlyphicsUnitTests
         public void SpecificTest_PropertyShape()
         {
             const string code = @"Size3D4 8 1 8;Spawn 1 0 1;PenColorD1 17;PenShape 2;Plot 1 0 1";
-            RectList rectSet = GraphicsApi.CodeToRects(RasterApi.CreateCode(code));
+            RectList rectSet = RasterLib.RasterApi.CodeToRects(RasterLib.RasterApi.CreateCode(code));
             Assert.IsTrue(rectSet.GetRect(0).Properties.ShapeId == 2);
         }
 
@@ -38,7 +38,7 @@ namespace GlyphicsUnitTests
         public void SpecificTest_PropertyTexture()
         {
             const string code = @"Size3D4 8 1 8;Spawn 1 0 1;PenColorD1 17;PenTex 2;Plot 1 0 1";
-            RectList rectSet = GraphicsApi.CodeToRects(RasterApi.CreateCode(code));
+            RectList rectSet = RasterLib.RasterApi.CodeToRects(RasterLib.RasterApi.CreateCode(code));
             Assert.IsTrue(rectSet.GetRect(0).Properties.TextureId == 2);
         }
 
@@ -46,7 +46,7 @@ namespace GlyphicsUnitTests
         public void SpecificTest_PropertyAnim()
         {
             const string code = @"Size3D4 8 1 8;Spawn 1 0 1;PenColorD1 17;PenGroup 2;Plot 1 0 1";
-            RectList rectSet = GraphicsApi.CodeToRects(RasterApi.CreateCode(code));
+            RectList rectSet = RasterLib.RasterApi.CodeToRects(RasterLib.RasterApi.CreateCode(code));
             Assert.IsTrue(rectSet.GetRect(0).Properties.GroupId == 2);
         }
     }

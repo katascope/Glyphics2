@@ -14,7 +14,7 @@ using System;
 namespace RasterLib.Utility
 {
     //Comparisong utility class
-    internal class Compare
+    public class Compare
     {
         private Compare() { }
 

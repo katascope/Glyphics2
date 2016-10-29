@@ -3,7 +3,7 @@ using System.Text;
 using System.Net;
 using RasterLib;
 using RasterLib.Language;
-using GraphicsLib;
+
 /*
  * Need:
  *  Response hook
@@ -44,9 +44,9 @@ namespace WebServer
             {
                 string worldPart = query.Split('=')[1];
                 worldPart = WebUtility.UrlDecode(worldPart);
-                Code code = RasterApi.CreateCode(worldPart);
-                Grid grid = RasterApi.CodeToGrid(code);
-                SerializedRects srects = GraphicsApi.RectsToSerializedRects(GraphicsApi.GridToRects(grid));
+                Code code =RasterLib.RasterApi.CreateCode(worldPart);
+                Grid grid =RasterLib.RasterApi.CodeToGrid(code);
+                SerializedRects srects =RasterLib.RasterApi.RectsToSerializedRects(RasterLib.RasterApi.GridToRects(grid));
                 //response = srects.SerializedData;
                 string response = "<A href=\"deserializer.html?serialized=" + srects.SerializedData+"\">Viewer</a>";
                 QuickResponse(context, response);
@@ -97,8 +97,8 @@ namespace WebServer
             else if (url.Equals("/srects2html"))
             {
                 string serializedRectsString = query.Substring(1,query.Length-1);
-                SerializedRects srects = GraphicsApi.CreateSerializedRects(serializedRectsString);
-                RectList rects = GraphicsApi.SerializedRectsToRects(srects);
+                SerializedRects srects =RasterLib.RasterApi.CreateSerializedRects(serializedRectsString);
+                RectList rects =RasterLib.RasterApi.SerializedRectsToRects(srects);
 
                 string response = "<title>SerializedRects-to-HTML</title><body>";
                 foreach (Rect rect in rects)
@@ -110,8 +110,8 @@ namespace WebServer
             else if (url.Equals("/srects2json"))
             {
                 string serializedRectsString = query.Substring(1, query.Length - 1);
-                SerializedRects srects = GraphicsApi.CreateSerializedRects(serializedRectsString);
-                RectList rects = GraphicsApi.SerializedRectsToRects(srects);
+                SerializedRects srects =RasterLib.RasterApi.CreateSerializedRects(serializedRectsString);
+                RectList rects =RasterLib.RasterApi.SerializedRectsToRects(srects);
 
                 string response = "<title>SerializedRects-to-JSON</title>";
     /*            {"employees":[
@@ -147,7 +147,7 @@ namespace WebServer
             Console.WriteLine("Simple web server starting up");
 
             const string mediaPath = "\\GitHub\\Glyphics2\\Glyph Cores\\";
-            Codes = GraphicsApi.GlyToCodes(mediaPath + "default.gly");
+            Codes =RasterLib.RasterApi.GlyToCodes(mediaPath + "default.gly");
             Console.WriteLine("Glyphics core loaded");
 
             string myFolder = @"C:\Github\Glyphics2\JavascriptWebGLSDeserializer\";

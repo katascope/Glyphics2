@@ -11,9 +11,10 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RasterLib;
 using GraphicsLib;
+using RasterLib;
 using RasterLib.Language;
+using RasterApi = RasterLib.RasterApi;
 
 namespace GlyphicsUnitTests
 {
@@ -27,7 +28,7 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TestPainter()
         {
-            Assert.IsNotNull(RasterApi.Painter);
+            Assert.IsNotNull(RasterLib.RasterApi.Painter);
         }
 
         [TestMethod]
@@ -39,54 +40,54 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TestCreateContext()
         {
-            Code code = RasterApi.CreateCode(FinalCubeCode);
-            Grid grid = RasterApi.CodeToGrid(code);
-            Assert.IsNotNull(RasterApi.CreateContext(grid));
+            Code code = RasterLib.RasterApi.CreateCode(FinalCubeCode);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(code);
+            Assert.IsNotNull(RasterLib.RasterApi.CreateContext(grid));
         }
 
         [TestMethod]
         public void TestCreateCode()
         {
-            Assert.IsNotNull(RasterApi.CreateCode(FinalCubeCode));
+            Assert.IsNotNull(RasterLib.RasterApi.CreateCode(FinalCubeCode));
         }
 
         [TestMethod]
         public void TestCreateRect()
         {
-            Rect rect = RasterApi.CreateRect(0, 0, 0, 10, 10, 10);
-           
-            Assert.IsTrue(RasterApi.DoublesAreEqual(rect.Pt1[0], 0));
-            Assert.IsTrue(RasterApi.DoublesAreEqual(rect.Pt1[1], 0));
-            Assert.IsTrue(RasterApi.DoublesAreEqual(rect.Pt1[2], 0));
+            Rect rect = RasterLib.RasterApi.CreateRect(0, 0, 0, 10, 10, 10);
 
-            Assert.IsTrue(RasterApi.DoublesAreEqual(rect.Pt2[0], 10));
-            Assert.IsTrue(RasterApi.DoublesAreEqual(rect.Pt2[1], 10));
-            Assert.IsTrue(RasterApi.DoublesAreEqual(rect.Pt2[2], 10));
+            Assert.IsTrue(RasterLib.RasterApi.DoublesAreEqual(rect.Pt1[0], 0));
+            Assert.IsTrue(RasterLib.RasterApi.DoublesAreEqual(rect.Pt1[1], 0));
+            Assert.IsTrue(RasterLib.RasterApi.DoublesAreEqual(rect.Pt1[2], 0));
+
+            Assert.IsTrue(RasterLib.RasterApi.DoublesAreEqual(rect.Pt2[0], 10));
+            Assert.IsTrue(RasterLib.RasterApi.DoublesAreEqual(rect.Pt2[1], 10));
+            Assert.IsTrue(RasterLib.RasterApi.DoublesAreEqual(rect.Pt2[2], 10));
         }
 
         [TestMethod]
         public void TestCreateTriangles()
         {
-            Assert.IsNotNull(GraphicsApi.CreateTriangles());
+            Assert.IsNotNull(RasterLib.RasterApi.CreateTriangles());
         }
 
         [TestMethod]
         public void TestCreateTrianglesList()
         {
-            Assert.IsNotNull(GraphicsApi.CreateTrianglesList());
+            Assert.IsNotNull(RasterLib.RasterApi.CreateTrianglesList());
         }
 
         [TestMethod]
         public void TestCreateSerializedRects()
         {
-            Assert.IsNotNull(GraphicsApi.CreateSerializedRects(SerializedFinalCubeCode));
+            Assert.IsNotNull(RasterLib.RasterApi.CreateSerializedRects(SerializedFinalCubeCode));
         }
 
         [TestMethod]
         public void TestGridTo3DDescription()
         {
-            Code code = RasterApi.CreateCode(FinalCubeCode);
-            Grid grid = RasterApi.CodeToGrid(code);
+            Code code = RasterLib.RasterApi.CreateCode(FinalCubeCode);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(code);
             IRenderer renderer = GraphicsApi.Renderer;
             string desc = renderer.GridTo3DDescription(grid, 0, 0, 0);
 
@@ -96,8 +97,8 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TestCodeToCodename()
         {
-            Code code = RasterApi.CreateCode(FinalCubeCode);
-            Codename codename = RasterApi.CodeToCodename(code);
+            Code code = RasterLib.RasterApi.CreateCode(FinalCubeCode);
+            Codename codename = RasterLib.RasterApi.CodeToCodename(code);
 
             Assert.IsTrue(String.CompareOrdinal(codename.Name, "FinalCube") == 0);
         }
@@ -105,8 +106,8 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TestCodeToTokens()
         {
-            Code code = RasterApi.CreateCode(FinalCubeCode);
-            TokenList tokens = RasterApi.CodeToTokens(code);
+            Code code = RasterLib.RasterApi.CreateCode(FinalCubeCode);
+            TokenList tokens = RasterLib.RasterApi.CodeToTokens(code);
 
             Assert.IsTrue(tokens.Count == 3);
         }
@@ -114,8 +115,8 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TestCodeToGrid()
         {
-            Code code = RasterApi.CreateCode(FinalCubeCode);
-            Grid grid = RasterApi.CodeToGrid(code);
+            Code code = RasterLib.RasterApi.CreateCode(FinalCubeCode);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(code);
 
             Assert.IsTrue(grid.SizeX == 8);
             Assert.IsTrue(grid.SizeY == 8);
@@ -125,9 +126,9 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TestCodeToRects()
         {
-            Code code = RasterApi.CreateCode(FinalCubeCode);
-            Grid grid = RasterApi.CodeToGrid(code);
-            RectList rects = GraphicsApi.GridToRects(grid);
+            Code code = RasterLib.RasterApi.CreateCode(FinalCubeCode);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(code);
+            RectList rects = RasterLib.RasterApi.GridToRects(grid);
 
             Assert.IsTrue(rects.Count == 1);
         }
@@ -135,10 +136,10 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TestCodeToTriangles()
         {
-            Code code = RasterApi.CreateCode(FinalCubeCode);
-            Grid grid = RasterApi.CodeToGrid(code);
-            RectList rects = GraphicsApi.GridToRects(grid);
-            Triangles triangles = GraphicsApi.RectsToTrianglesCube(rects);
+            Code code = RasterLib.RasterApi.CreateCode(FinalCubeCode);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(code);
+            RectList rects = RasterLib.RasterApi.GridToRects(grid);
+            Triangles triangles = RasterLib.RasterApi.RectsToTrianglesCube(rects);
 
             Assert.IsTrue(triangles.GetTriangleArray().Length == 12);
         }
@@ -146,8 +147,8 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TestCodeToOblique()
         {
-            Code code = RasterApi.CreateCode(FinalCubeCode);
-            Grid grid = RasterApi.CodeToGrid(code);
+            Code code = RasterLib.RasterApi.CreateCode(FinalCubeCode);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(code);
 
             IRenderer renderer = GraphicsApi.Renderer;
             Grid renderedObliqueGrid = renderer.RenderObliqueCells(grid);
@@ -160,27 +161,27 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TestRectsToBoundaries()
         {
-            Code code = RasterApi.CreateCode(FinalCubeCode);
-            Grid grid = RasterApi.CodeToGrid(code);
-            RectList rects = GraphicsApi.GridToRects(grid);
-            Rect rect = GraphicsApi.RectsToBoundaries(rects);
+            Code code = RasterLib.RasterApi.CreateCode(FinalCubeCode);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(code);
+            RectList rects = RasterLib.RasterApi.GridToRects(grid);
+            Rect rect = RasterLib.RasterApi.RectsToBoundaries(rects);
 
-            Assert.IsTrue(RasterApi.DoublesAreEqual(rect.Pt1[0], 0));
-            Assert.IsTrue(RasterApi.DoublesAreEqual(rect.Pt1[1], 0));
-            Assert.IsTrue(RasterApi.DoublesAreEqual(rect.Pt1[2], 0));
+            Assert.IsTrue(RasterLib.RasterApi.DoublesAreEqual(rect.Pt1[0], 0));
+            Assert.IsTrue(RasterLib.RasterApi.DoublesAreEqual(rect.Pt1[1], 0));
+            Assert.IsTrue(RasterLib.RasterApi.DoublesAreEqual(rect.Pt1[2], 0));
 
-            Assert.IsTrue(RasterApi.DoublesAreEqual(rect.Pt2[0], 7));
-            Assert.IsTrue(RasterApi.DoublesAreEqual(rect.Pt2[1], 7));
-            Assert.IsTrue(RasterApi.DoublesAreEqual(rect.Pt2[2], 7));
+            Assert.IsTrue(RasterLib.RasterApi.DoublesAreEqual(rect.Pt2[0], 7));
+            Assert.IsTrue(RasterLib.RasterApi.DoublesAreEqual(rect.Pt2[1], 7));
+            Assert.IsTrue(RasterLib.RasterApi.DoublesAreEqual(rect.Pt2[2], 7));
         }
 
         [TestMethod]
         public void TestRectsToTrianglesCube()
         {
-            Code code = RasterApi.CreateCode(FinalCubeCode);
-            Grid grid = RasterApi.CodeToGrid(code);
-            RectList rects = GraphicsApi.GridToRects(grid);
-            Triangles triangles = GraphicsApi.RectsToTrianglesCube(rects);
+            Code code = RasterLib.RasterApi.CreateCode(FinalCubeCode);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(code);
+            RectList rects = RasterLib.RasterApi.GridToRects(grid);
+            Triangles triangles = RasterLib.RasterApi.RectsToTrianglesCube(rects);
 
             Assert.IsTrue(triangles.GetTriangleArray().Length == 12);
         }
@@ -188,10 +189,10 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TestRectsToSerialized()
         {
-            Code code = RasterApi.CreateCode(FinalCubeCode);
-            Grid grid = RasterApi.CodeToGrid(code);
-            RectList rects = GraphicsApi.GridToRects(grid);
-            SerializedRects serializedRects = GraphicsApi.RectsToSerializedRects(rects);
+            Code code = RasterLib.RasterApi.CreateCode(FinalCubeCode);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(code);
+            RectList rects = RasterLib.RasterApi.GridToRects(grid);
+            SerializedRects serializedRects = RasterLib.RasterApi.RectsToSerializedRects(rects);
 
             Assert.IsTrue((String.CompareOrdinal(serializedRects.SerializedData, SerializedFinalCubeCode) == 0));
         }
@@ -199,8 +200,8 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TestSerializedRectsToRects()
         {
-            SerializedRects serializedRects = GraphicsApi.CreateSerializedRects(SerializedFinalCubeCode);
-            RectList rects = GraphicsApi.SerializedRectsToRects(serializedRects);
+            SerializedRects serializedRects = RasterLib.RasterApi.CreateSerializedRects(SerializedFinalCubeCode);
+            RectList rects = RasterLib.RasterApi.SerializedRectsToRects(serializedRects);
 
             Assert.IsTrue(rects.Count == 1);
         }
@@ -208,10 +209,10 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TestCodeToRescaledCode()
         {
-            Code codeInitial = RasterApi.CreateCode(FinalCubeCode);
-            Code codeRescaled = RasterApi.CodeToRescaledCode(codeInitial, 38, 38, 38);
+            Code codeInitial = RasterLib.RasterApi.CreateCode(FinalCubeCode);
+            Code codeRescaled = RasterLib.RasterApi.CodeToRescaledCode(codeInitial, 38, 38, 38);
 
-            Grid grid = RasterApi.CodeToGrid(codeRescaled);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(codeRescaled);
 
             Assert.IsTrue(grid.SizeX == 38);
             Assert.IsTrue(grid.SizeY == 38);
@@ -221,7 +222,7 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TestRgba2Ulong()
         {
-            ulong val = RasterApi.Rgba2Ulong(255, 127, 63, 255);
+            ulong val = RasterLib.RasterApi.Rgba2Ulong(255, 127, 63, 255);
 
             Assert.IsTrue(val == 0xFF3F7FFF);
         }
@@ -230,7 +231,7 @@ namespace GlyphicsUnitTests
         public void TestUlong2Rgba()
         {
             byte r, g, b, a;
-            RasterApi.Ulong2Rgba(0xFF3F7FFF, out r, out g, out b, out a);
+            RasterLib.RasterApi.Ulong2Rgba(0xFF3F7FFF, out r, out g, out b, out a);
 
             Assert.IsTrue(r == 255);
             Assert.IsTrue(g == 127);

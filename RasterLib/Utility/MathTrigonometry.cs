@@ -16,7 +16,7 @@ using System;
 namespace RasterLib.Utility
 {
     //Utility Trigonometry class
-    internal static class MathTrigonometry
+    public static class MathTrigonometry
     {
         //Convert degrees to radians
         public static float DegreeToRadian(float angle)

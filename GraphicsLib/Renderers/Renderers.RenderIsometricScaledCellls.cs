@@ -26,13 +26,13 @@ namespace GraphicsLib.Renderers
             //const int subSize = 8;
             //const int tinSize = (cellSize - subSize);
             byte r, g, b, a;
-            RasterApi.Ulong2Rgba(color, out r, out g, out b, out a);
+            RasterLib.RasterApi.Ulong2Rgba(color, out r, out g, out b, out a);
 
             int ir = r;
             int ig = g;
             int ib = b;
-            
-            bgc.Pen.Rgba = RasterApi.Rgba2Ulong((byte)ir, (byte)ig, (byte)ib, 255);
+
+            bgc.Pen.Rgba = RasterLib.RasterApi.Rgba2Ulong((byte)ir, (byte)ig, (byte)ib, 255);
 
             bool skipWire = false;
             if (cellWidth == 1 && cellHeight == 1)
@@ -64,7 +64,7 @@ namespace GraphicsLib.Renderers
             ir = (byte)(r / 1.5);
             ig = (byte)(g / 1.5);
             ib = (byte)(b / 1.5);
-            bgc.Pen.Rgba = RasterApi.Rgba2Ulong((byte)ir, (byte)ig, (byte)ib, 255);
+            bgc.Pen.Rgba = RasterLib.RasterApi.Rgba2Ulong((byte)ir, (byte)ig, (byte)ib, 255);
             painter.DrawFillTriangle2D(bgc,
                 x + 0, y + cellHeight/4,
                 x + cellWidth / 2, y + cellHeight/2,
@@ -80,7 +80,7 @@ namespace GraphicsLib.Renderers
             ir = r / 2;
             ig = g / 2;
             ib = b / 2;
-            bgc.Pen.Rgba = RasterApi.Rgba2Ulong((byte)ir, (byte)ig, (byte)ib, 255);
+            bgc.Pen.Rgba = RasterLib.RasterApi.Rgba2Ulong((byte)ir, (byte)ig, (byte)ib, 255);
             painter.DrawFillTriangle2D(bgc,
                 x + cellWidth , y + cellHeight / 4,
                 x + cellWidth / 2+1, y + cellHeight / 2,
@@ -101,7 +101,7 @@ namespace GraphicsLib.Renderers
             ib = (byte)(b / 2.5);
 
             //Top side
-            bgc.Pen.Rgba = RasterApi.Rgba2Ulong((byte)ir, (byte)ig, (byte)ib, 255);
+            bgc.Pen.Rgba = RasterLib.RasterApi.Rgba2Ulong((byte)ir, (byte)ig, (byte)ib, 255);
             painter.DrawLine2D(bgc,
                 x + 0, y + cellWidth/4,
                 x + cellWidth/2-1, y + 0,
@@ -194,7 +194,7 @@ namespace GraphicsLib.Renderers
             int iy = (int)(maxSize * cellSizeY * 2.2);
             Grid grid2 = new Grid(ix, iy, 1, grid.Bpp);
 
-            GridContext bgc = new GridContext(grid2) {Pen = {Rgba = RasterApi.Rgba2Ulong(bgR, bgG, bgB, bgA)}};
+            GridContext bgc = new GridContext(grid2) { Pen = { Rgba = RasterLib.RasterApi.Rgba2Ulong(bgR, bgG, bgB, bgA) } };
 
             IPainter painter = new CPainter();
             painter.DrawFastFillRect(bgc, 0, 0, 0, grid2.SizeX, grid2.SizeY, 1);

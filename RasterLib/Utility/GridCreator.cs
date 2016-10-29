@@ -13,7 +13,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 namespace RasterLib.Utility
 {
     //General producer for various things
-    internal class GridCreator
+    public class GridCreator
     {
         private GridCreator() { }
 

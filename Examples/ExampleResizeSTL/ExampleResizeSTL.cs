@@ -11,7 +11,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 using RasterLib;
-using GraphicsLib;
+
 
 namespace ExampleResizeStl
 {
@@ -31,7 +31,7 @@ namespace ExampleResizeStl
             Console.WriteLine("Input filename: {0}", inputFilenameStl);
 
             //Load STL file
-            Triangles triangles = GraphicsApi.StlToTriangles(inputFilenameStl);
+            Triangles triangles = RasterLib.RasterApi.StlToTriangles(inputFilenameStl);
 
             //Write message if encountered problem
             if (triangles == null)
@@ -75,7 +75,7 @@ namespace ExampleResizeStl
 
             //Finally save out the resized triangles back to STL file
             Console.WriteLine("Writing file {0}", outputfilenameStl);
-            GraphicsApi.SaveTrianglesToStlAscii(outputfilenameStl, trianglesResized);
+           RasterLib.RasterApi.SaveTrianglesToStlAscii(outputfilenameStl, trianglesResized);
 
             
             Console.WriteLine("Done.");

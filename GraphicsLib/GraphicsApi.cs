@@ -1,6 +1,6 @@
-﻿using RasterLib;
+﻿using GraphicsLib.Renderers;
+using RasterLib;
 using RasterLib.Language;
-using GraphicsLib.Renderers;
 
 //WebGL - http://www.tutorialspoint.com/webgl/
 //THREE.js - actual 3d library
@@ -113,31 +113,8 @@ namespace GraphicsLib
         private static readonly IRenderer RealRenderer = new Renderer();
         public static IRenderer Renderer { get { return RealRenderer; } }
 
-        public static Grid CodeToObliqueCells(Code rasterCode) { return Renderer.RenderObliqueCells(RasterApi.CodeToGrid(rasterCode)); }
+        public static Grid CodeToObliqueCells(Code rasterCode) { return Renderer.RenderObliqueCells(RasterLib.RasterApi.CodeToGrid(rasterCode)); }
 
-        public static Triangle CreateTriangle(float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3) { return new Triangle(x1, y1, z1, x2, y2, z2, x3, y3, z3); }
-        public static Triangles CreateTriangles() { return new Triangles(); }
-        public static TrianglesList CreateTrianglesList() { return new TrianglesList(); }
-
-        //File IO for STL files
-        public static Triangles StlToTriangles(string filename) { return FileStlRead.ReadFile(filename); }
-        public static void SaveTrianglesToStl(string filename, Triangles triangles) { FileStlWrite.WriteFile(triangles, filename); }
-        public static void SaveTrianglesToStlAscii(string filename, Triangles triangles) { FileStlWrite.WriteAsciiFile(triangles, filename); }
-
-        public static Triangles QuadsToTriangles(QuadList quads) { return TriangleConverter.QuadsToTriangles(quads); }
-
-        //OBJ file
-        public static Triangles ObjToTriangles(string filename) { return FileObjRead.ReadfileAscii(filename); }
-
-        //Triangles-To
-        public static Triangles RectsToTrianglesCube(RectList rectSet) { return RectToTriangles.RectsToTrianglesCube(rectSet); }
-        public static string TrianglesToWebGl(Triangles triangles, string declarationName) { return TriangleConverter.TrianglesToWebGl(triangles, declarationName); }
-
-        //Text file
-        public static void SaveFlatText(string filename, string text) { FileTxtWrite.SaveFlatText(filename, text); }
-
-        //DAE Collada/Mesh file
-        public static void SaveDae(string filename, RectList rects) { FileDaeWrite.ExportRectsCollada.WriteMesh(filename, rects); }
 
         //File IO for PNG files
         public static Grid PngToGrid(string filename) { return FilePngRead.PngToGrid(filename); }
@@ -157,7 +134,7 @@ namespace GraphicsLib
 
         public static string GridTo3DDescription(Grid grid, int ax, int ay, int az) { return RealRenderer.GridTo3DDescription(grid, ax, ay, az); }
         public static string GridToHexDescription(Grid grid) { return Renderer.GridToHexDescription(grid); }
-
+/*
         //Quad and QuadList
         public static QuadList RectsToQuads(RectList rectSet) { return RectConverter.RectsToQuads(rectSet); }
         public static int RemoveRedundantQuads(QuadList quads) { return RectConverter.RemoveRedundantQuads(quads); }
@@ -182,33 +159,12 @@ namespace GraphicsLib
         //Translates hex data in string format to byte array
         public static byte[] HexDataToByteArray(string data) { return Transcode64.HexDataToByteArray(data); }
         public static Bytes HexDataToBytes(string data) { return new Bytes(Transcode64.HexDataToByteArray(data)); }
+        */
 
-        //File IO for GLY Glyphics files
-        public static bool CodesToGly(string filename, CodeList codes) { return GlyphicsFile.CodesToGly(filename, codes); }
-        public static CodeList GlyToCodes(string filename) { return GlyphicsFile.GlyToCodes(filename); }
-        public static string GlyCToCode(string filename) { return GlyphicsFile.GlyCToCode(filename); }
-        public static bool CodeToGlyC(string filename, string code) { return GlyphicsFile.CodeToGlyC(filename, code); }
-
-        public static bool LoadArchetypes(string filename) { return GlyphicsFile.LoadArchetypes(filename); }
-        public static void PreSerializeGlyphicsFile(string filename) { GlyphicsFile.PreSerializeGlyphicsFile(filename); }
-
-        #region SceneGraph
-        //Scenegraph Creational 
-        public static Transform CreateTransform() { return new Transform(); }
-        public static Element CreateElement() { return new Element(); }
-        public static Scene CreateScene() { return new Scene(); }
-        public static Deck CreateDeck() { return new Deck(); }
-
-        //Scenegraph functions
-        public static Scene RectsToScene(RectList rects) { return SceneConverter.RectsToScene(rects); }
-        public static RectList SceneToRects(Scene scene) { return SceneConverter.SceneToRects(scene); }
-        public static Rect ElementToRect(Element element) { return SceneConverter.ElementToRect(element); }
-        public static Element RectToElement(Rect rect) { return SceneConverter.RectToElement(rect); }
 
         // Codelist to Deck
         //public static CodeList DeckToCodelist(Deck deck);
         // Deck to Codelist 
         //public static Deck CodelistToDeck(CodeList codelist);
-        #endregion
     }
 }

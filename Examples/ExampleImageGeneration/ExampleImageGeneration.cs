@@ -10,8 +10,8 @@ Redistribution and use in source and binary forms, with or without modification,
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DRect, INDRect, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #endregion
 using System;
-using RasterLib;
 using GraphicsLib;
+using RasterLib;
 
 namespace ExampleImageGeneration
 {
@@ -40,7 +40,7 @@ namespace ExampleImageGeneration
                     var b = (byte)((sx * sx + sy * sy) / 25);
 
                     //Convert to ulong 
-                    ulong u = RasterApi.Rgba2Ulong(r, g, b, 255);
+                    ulong u = RasterLib.RasterApi.Rgba2Ulong(r, g, b, 255);
 
                     //And plot it
                     grid.Plot(x, y, 0, u);
@@ -51,7 +51,7 @@ namespace ExampleImageGeneration
         static void Main()
         {
             //Create a grid
-            Grid grid = RasterApi.CreateGrid(256, 256, 1, 4);
+            Grid grid = RasterLib.RasterApi.CreateGrid(256, 256, 1, 4);
 
             //Draw procedural image to grid
             DrawProceduralImage(grid);

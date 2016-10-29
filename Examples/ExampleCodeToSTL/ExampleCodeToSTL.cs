@@ -10,9 +10,10 @@ Redistribution and use in source and binary forms, with or without modification,
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DRect, INDRect, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #endregion
 using System;
-using RasterLib;
 using GraphicsLib;
+using RasterLib;
 using RasterLib.Language;
+
 
 namespace ExampleCodeToSTL
 {
@@ -87,10 +88,10 @@ ImgMirrorX
             Console.WriteLine("Code: {0}", code);
 
             //Glyphics codeString object
-            Code rasterCode = RasterApi.CreateCode(code);
+            Code rasterCode = RasterLib.RasterApi.CreateCode(code);
 
             //Extract codename from codeString object, to use for filename
-            Codename codename = RasterApi.CodeToCodename(rasterCode);
+            Codename codename = RasterLib.RasterApi.CodeToCodename(rasterCode);
 
             //Create filename
             string outputFilename = "..\\..\\" + codename.Name + ".STL";
@@ -98,15 +99,15 @@ ImgMirrorX
 
             //Convert the codeString to actual grid
             Console.WriteLine("Code to grid");
-            Grid grid = RasterApi.CodeToGrid(rasterCode);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(rasterCode);
 
             //Convert to rects
             Console.WriteLine("Grid to rects");
-            RectList rects = GraphicsApi.GridToRects(grid);
+            RectList rects = RasterLib.RasterApi.GridToRects(grid);
 
             //Then render that to triangles
             Console.WriteLine("Creating triangle library");
-            TrianglesList trianglesList = GraphicsApi.CreateTrianglesList();
+            TrianglesList trianglesList = RasterLib.RasterApi.CreateTrianglesList();
             const string filename1 = "..\\..\\cube_ascii.stl";
             const string filename2 = "..\\..\\archquad.stl";
             const string filename3 = "..\\..\\pipesphere.stl";
@@ -132,7 +133,7 @@ ImgMirrorX
             
             //Save final result to STL file
             Console.WriteLine("Saving triangles to {0}", outputFilename);
-            GraphicsApi.SaveTrianglesToStlAscii(outputFilename, triangles);
+            RasterLib.RasterApi.SaveTrianglesToStlAscii(outputFilename, triangles);
 
             //So.. as long as we are here.. let's make a preview
 
@@ -141,7 +142,7 @@ ImgMirrorX
 
             //Save a rendering out to a PNG, why not, too.
             Console.WriteLine("Creating preview grid");
-            Grid gridFromStl = RasterApi.CreateGrid(96,96,96, 4);
+            Grid gridFromStl = RasterLib.RasterApi.CreateGrid(96, 96, 96, 4);
 
             Console.WriteLine("Rendering triangles to grid");
             GraphicsApi.Renderer.RenderTrianglesToGrid(triangles, gridFromStl);

@@ -11,7 +11,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 using RasterLib;
-using GraphicsLib;
 
 namespace ExampleAutoPlatform3dPrint
 {
@@ -30,7 +29,7 @@ namespace ExampleAutoPlatform3dPrint
             Console.WriteLine("Input filename: {0}", inputFilenameStl);
 
             //Load STL file
-            Triangles triangles = GraphicsApi.StlToTriangles(inputFilenameStl);
+            Triangles triangles = RasterLib.RasterApi.StlToTriangles(inputFilenameStl);
 
             //Write message if encountered problem
             if (triangles == null)
@@ -56,7 +55,7 @@ namespace ExampleAutoPlatform3dPrint
             //Then write back to file
             const string outputFilenameStl = "..\\..\\archquad-AutoPlatform.stl";
             Console.WriteLine("Input filename: {0}", outputFilenameStl);
-            GraphicsApi.SaveTrianglesToStl(outputFilenameStl, triangles);
+            RasterLib.RasterApi.SaveTrianglesToStl(outputFilenameStl, triangles);
 
             Console.WriteLine("Done.");
         }

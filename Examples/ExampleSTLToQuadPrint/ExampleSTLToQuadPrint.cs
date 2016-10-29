@@ -11,7 +11,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 using RasterLib;
-using GraphicsLib;
 
 namespace ExampleSTLToQuadPrint
 {
@@ -33,7 +32,7 @@ namespace ExampleSTLToQuadPrint
             Console.WriteLine("Input filename: {0}", inputFilenameStl);
 
             //Load the triangles from the STL file and reduce to a unit 1x1x1 size
-            Triangles triangles = GraphicsApi.StlToTriangles(inputFilenameStl);
+            Triangles triangles = RasterLib.RasterApi.StlToTriangles(inputFilenameStl);
             Console.WriteLine("Triangle count: {0}", triangles.Count);
 
             //Say the dimensions of it too
@@ -51,7 +50,7 @@ namespace ExampleSTLToQuadPrint
             Triangles trianglesSw = triangles.Clone();
             Triangles trianglesSe = triangles.Clone();
 
-            Triangles trianglesQuad = GraphicsApi.CreateTriangles();
+            Triangles trianglesQuad =RasterLib.RasterApi.CreateTriangles();
 
             //Get the boundaries of the STL model, use that to calculate offset sizes
             Rect boundaries = trianglesNw.TrianglesBoundaries;
@@ -77,7 +76,7 @@ namespace ExampleSTLToQuadPrint
             //Write model
             const string outputFilenameStl = "..\\..\\ArchQuad-X4.stl";
             Console.WriteLine("Writing " + outputFilenameStl);
-            GraphicsApi.SaveTrianglesToStl(outputFilenameStl, trianglesQuad);
+           RasterLib.RasterApi.SaveTrianglesToStl(outputFilenameStl, trianglesQuad);
 
             Console.WriteLine("Done");
         }

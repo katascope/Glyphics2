@@ -21,14 +21,14 @@ namespace ScratchPad.Scratch
         static void ExecuteCodeToPng(ScratchControl ctl, string code)
         {
             //Glyphics codeString object
-            Code rasterCode = RasterApi.CreateCode(code);
+            Code rasterCode =RasterLib.RasterApi.CreateCode(code);
 
             //Save final result to PNG file
-            string filenameOrthogonal = "..\\..\\" + RasterApi.CodeToCodename(rasterCode).Name + "-Ortho.PNG";
-            string filenameIsometric = "..\\..\\" + RasterApi.CodeToCodename(rasterCode).Name + "-Isometric.PNG";
+            string filenameOrthogonal = "..\\..\\" +RasterLib.RasterApi.CodeToCodename(rasterCode).Name + "-Ortho.PNG";
+            string filenameIsometric = "..\\..\\" +RasterLib.RasterApi.CodeToCodename(rasterCode).Name + "-Isometric.PNG";
 
             //Execute, render, and save to png
-            Grid grid = RasterApi.CodeToGrid(rasterCode);
+            Grid grid =RasterLib.RasterApi.CodeToGrid(rasterCode);
 
             //Save png's to each
             if (ctl.FileNameOutOrthogonalAnimated)
@@ -47,8 +47,8 @@ namespace ScratchPad.Scratch
         {
             if (rawCode.Contains(",")) rawCode = rawCode.Split(',')[1].TrimStart();
             string codeString = prefix + "," + rawCode;
-            Code code = RasterApi.CreateCode(codeString);
-            TokenList tokens = RasterApi.CodeToTokens(code);
+            Code code =RasterLib.RasterApi.CreateCode(codeString);
+            TokenList tokens =RasterLib.RasterApi.CodeToTokens(code);
 
             int tokenId = 0;
             int actualCount = 1;

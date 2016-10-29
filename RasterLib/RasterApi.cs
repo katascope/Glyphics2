@@ -9,6 +9,7 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DRect, INDRect, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #endregion
+
 using RasterLib.Language;
 using RasterLib.Painters;
 using RasterLib.Utility;
@@ -67,6 +68,78 @@ namespace RasterLib
         public static void RotateX(float angle, ref float y, ref float z) { MathTrigonometry.RotateX(angle, ref y, ref z); }
         public static void RotateY(float angle, ref float x, ref float z) { MathTrigonometry.RotateY(angle, ref x, ref z); }
         public static void RotateZ(float angle, ref float x, ref float y) { MathTrigonometry.RotateZ(angle, ref x, ref y); }
+
+        //Quad and QuadList
+        public static QuadList RectsToQuads(RectList rectSet) { return RectConverter.RectsToQuads(rectSet); }
+        public static int RemoveRedundantQuads(QuadList quads) { return RectConverter.RemoveRedundantQuads(quads); }
+
+        public static RectList CodeToRects(Code rasterCode) { return RectConverter.CodeToRects(rasterCode); }
+
+        //Grid-To
+        public static RectList GridToRects(Grid grid) { return GridConverter.GridToRects(grid); }
+
+        //Circuit
+        public static void BuildCircuit(RectList rects, bool verbose) { GridConverter.BuildCircuit(rects, verbose); }
+
+        //Rect(s)-To
+        public static Code RectsToCode(RectList rectSet) { if (rectSet == null) return null; return RectConverter.RectsToCode(rectSet); }
+        public static Rect RectsToBoundaries(RectList rectSet) { if (rectSet == null) return null; return rectSet.Boundaries; }
+
+        public static SerializedRects CreateSerializedRects(string serialized) { return new SerializedRects(serialized); }
+        public static SerializedRects RectsToSerializedRects(RectList rectSet) { return RectConverter.RectsToSerializedRects(rectSet); }
+        public static RectList SerializedRectsToRects(SerializedRects serializedRects) { return RectConverter.SerializedRectsToRects(serializedRects); }
+        public static SerializedRects RectsToSerializedRectsLimit255(RectList rectSet) { return new SerializedRects(RectConverter.SerializeLimit255(rectSet)); }
+
+        //Translates hex data in string format to byte array
+        public static byte[] HexDataToByteArray(string data) { return Transcode64.HexDataToByteArray(data); }
+        public static Bytes HexDataToBytes(string data) { return new Bytes(Transcode64.HexDataToByteArray(data)); }
+
+        public static Triangle CreateTriangle(float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3) { return new Triangle(x1, y1, z1, x2, y2, z2, x3, y3, z3); }
+        public static Triangles CreateTriangles() { return new Triangles(); }
+        public static TrianglesList CreateTrianglesList() { return new TrianglesList(); }
+
+        //File IO for STL files
+        public static Triangles StlToTriangles(string filename) { return FileStlRead.ReadFile(filename); }
+        public static void SaveTrianglesToStl(string filename, Triangles triangles) { FileStlWrite.WriteFile(triangles, filename); }
+        public static void SaveTrianglesToStlAscii(string filename, Triangles triangles) { FileStlWrite.WriteAsciiFile(triangles, filename); }
+
+        public static Triangles QuadsToTriangles(QuadList quads) { return TriangleConverter.QuadsToTriangles(quads); }
+
+        //OBJ file
+        public static Triangles ObjToTriangles(string filename) { return FileObjRead.ReadfileAscii(filename); }
+
+        //Triangles-To
+        public static Triangles RectsToTrianglesCube(RectList rectSet) { return RectToTriangles.RectsToTrianglesCube(rectSet); }
+        public static string TrianglesToWebGl(Triangles triangles, string declarationName) { return TriangleConverter.TrianglesToWebGl(triangles, declarationName); }
+
+        //Text file
+        public static void SaveFlatText(string filename, string text) { FileTxtWrite.SaveFlatText(filename, text); }
+
+        //DAE Collada/Mesh file
+        public static void SaveDae(string filename, RectList rects) { FileDaeWrite.ExportRectsCollada.WriteMesh(filename, rects); }
+
+        //File IO for GLY Glyphics files
+        public static bool CodesToGly(string filename, CodeList codes) { return GlyphicsFile.CodesToGly(filename, codes); }
+        public static CodeList GlyToCodes(string filename) { return GlyphicsFile.GlyToCodes(filename); }
+        public static string GlyCToCode(string filename) { return GlyphicsFile.GlyCToCode(filename); }
+        public static bool CodeToGlyC(string filename, string code) { return GlyphicsFile.CodeToGlyC(filename, code); }
+
+        public static bool LoadArchetypes(string filename) { return GlyphicsFile.LoadArchetypes(filename); }
+        public static void PreSerializeGlyphicsFile(string filename) { GlyphicsFile.PreSerializeGlyphicsFile(filename); }
+
+        #region SceneGraph
+        //Scenegraph Creational 
+        public static Transform CreateTransform() { return new Transform(); }
+        public static Element CreateElement() { return new Element(); }
+        public static Scene CreateScene() { return new Scene(); }
+        public static Deck CreateDeck() { return new Deck(); }
+
+        //Scenegraph functions
+        public static Scene RectsToScene(RectList rects) { return SceneConverter.RectsToScene(rects); }
+        public static RectList SceneToRects(Scene scene) { return SceneConverter.SceneToRects(scene); }
+        public static Rect ElementToRect(Element element) { return SceneConverter.ElementToRect(element); }
+        public static Element RectToElement(Rect rect) { return SceneConverter.RectToElement(rect); }
+#endregion
     }
 }
 

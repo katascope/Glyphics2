@@ -9,9 +9,9 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DRect, INDRect, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #endregion
-using RasterLib;
 using GraphicsLib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RasterLib;
 using RasterLib.Language;
 
 namespace GlyphicsUnitTests
@@ -24,24 +24,24 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void ConvertCodeToGridToRectsToQuadsToTriangles()
         {
-            Code rasterCode = RasterApi.CreateCode(Code);
+            Code rasterCode = RasterLib.RasterApi.CreateCode(Code);
             Assert.IsNotNull(rasterCode);
-            Grid grid = RasterApi.CodeToGrid(rasterCode);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(rasterCode);
             Assert.IsNotNull(grid);
-            RectList rects = GraphicsApi.GridToRects(grid);
+            RectList rects = RasterLib.RasterApi.GridToRects(grid);
             Assert.IsNotNull(rects);
-            QuadList quads = GraphicsApi.RectsToQuads(rects);
+            QuadList quads = RasterLib.RasterApi.RectsToQuads(rects);
             Assert.IsNotNull(quads);
-            Triangles triangles = GraphicsApi.QuadsToTriangles(quads);
+            Triangles triangles = RasterLib.RasterApi.QuadsToTriangles(quads);
             Assert.IsNotNull(triangles);
         }
 
         [TestMethod]
         public void ConvertCodeToGridToRectsToScene()
         {
-            Code rasterCode = RasterApi.CreateCode(Code);
-            Grid grid = RasterApi.CodeToGrid(rasterCode);
-            RectList rectsFromGrid = GraphicsApi.GridToRects(grid);
+            Code rasterCode = RasterLib.RasterApi.CreateCode(Code);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(rasterCode);
+            RectList rectsFromGrid = RasterLib.RasterApi.GridToRects(grid);
 
             Grid gridFromRects = grid.Clone();
             Assert.IsTrue(grid.IsEqualTo(gridFromRects));
@@ -49,8 +49,8 @@ namespace GlyphicsUnitTests
             GraphicsApi.Renderer.RenderRectsToGrid(rectsFromGrid, gridFromRects);
             Assert.IsTrue(grid.IsEqualTo(gridFromRects));
 
-            Scene sceneFromRects = GraphicsApi.RectsToScene(rectsFromGrid);
-            RectList rectsFromScene = GraphicsApi.SceneToRects(sceneFromRects);
+            Scene sceneFromRects = RasterLib.RasterApi.RectsToScene(rectsFromGrid);
+            RectList rectsFromScene = RasterLib.RasterApi.SceneToRects(sceneFromRects);
 
             Assert.IsTrue(rectsFromGrid.IsEqualTo(rectsFromScene));
 

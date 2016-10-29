@@ -72,7 +72,7 @@ namespace GraphicsLib.Renderers
             float sy = grid.SizeY - 1;
             float sz = grid.SizeZ - 1;
 
-            bgc.Pen.Rgba = RasterApi.Rgba2Ulong(255, 255, 255, 255);
+            bgc.Pen.Rgba = RasterLib.RasterApi.Rgba2Ulong(255, 255, 255, 255);
             foreach (Triangle triangle in triangles.GetTriangleArray())
             {
                 var x1 = (int)((triangle.Vertex1[0] + 0.5f) * sx);

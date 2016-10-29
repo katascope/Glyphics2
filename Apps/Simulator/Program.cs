@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading;
+using GraphicsLib;
 using RasterLib;
 using RasterLib.Language;
-using GraphicsLib;
 
 namespace Simulator
 {
@@ -59,11 +59,11 @@ Stairs 5 0 2 5 5 7 3 1 1
 
 ";
             //Glyphics codeString object
-            Code rasterCode = RasterApi.CreateCode(code);
+            Code rasterCode =RasterLib.RasterApi.CreateCode(code);
 
             //Save final result to PNG file
 
-            Grid grid = RasterApi.CodeToGrid(rasterCode);
+            Grid grid =RasterLib.RasterApi.CodeToGrid(rasterCode);
 //            RectList rects = GraphicsApi.GridToRects(grid);
             //Scene scene = GraphicsApi.RectsToScene(rects);
             

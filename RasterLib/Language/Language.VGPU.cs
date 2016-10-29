@@ -11,6 +11,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 
 using RasterLib.Painters;
+using RasterLib.Utility;
 
 namespace RasterLib.Language
 {
@@ -165,12 +166,12 @@ namespace RasterLib.Language
                 case GlyphId.Pal1D: if (bgc.Grid != null) bgc.AddPalette(new Grid(args[0], 1, 1, bgc.Grid.Bpp)); return;
                 case GlyphId.Pal2D: if (bgc.Grid != null) bgc.AddPalette(new Grid(args[0], args[1], 1, bgc.Grid.Bpp)); return;
                 case GlyphId.Pal3D: if (bgc.Grid != null) bgc.AddPalette(new Grid(args[0], args[1], args[2], bgc.Grid.Bpp)); return;
-                case GlyphId.PalFromVal1D: if (bgc.Grid != null) bgc.AddPalette(RasterApi.CreateGridFromValues(args[0], 1, 1, bgc.Grid.Bpp, args)); return;
-                case GlyphId.PalFromVal2D: if (bgc.Grid != null) bgc.AddPalette(RasterApi.CreateGridFromValues(args[0], args[1], 1, bgc.Grid.Bpp, args)); return;
-                case GlyphId.PalFromVal3D: if (bgc.Grid != null) bgc.AddPalette(RasterApi.CreateGridFromValues(args[0], args[1], args[2], bgc.Grid.Bpp, args)); return;
-                case GlyphId.PalFromGrid1D: if (bgc.Grid != null) bgc.AddPalette(RasterApi.CreateGridFromRectangle(bgc.Grid, args[0], 0, 0, args[1], 1, 1)); return;
-                case GlyphId.PalFromGrid2D: if (bgc.Grid != null) bgc.AddPalette(RasterApi.CreateGridFromRectangle(bgc.Grid, args[0], args[1], 0, args[2], args[3], 1)); return;
-                case GlyphId.PalFromGrid3D: if (bgc.Grid != null) bgc.AddPalette(RasterApi.CreateGridFromRectangle(bgc.Grid, args[0], args[1], args[2], args[3], args[4], args[5])); return;
+                case GlyphId.PalFromVal1D: if (bgc.Grid != null) bgc.AddPalette(GridCreator.CreateGridFromValues(args[0], 1, 1, bgc.Grid.Bpp, args)); return;
+                case GlyphId.PalFromVal2D: if (bgc.Grid != null) bgc.AddPalette(GridCreator.CreateGridFromValues(args[0], args[1], 1, bgc.Grid.Bpp, args)); return;
+                case GlyphId.PalFromVal3D: if (bgc.Grid != null) bgc.AddPalette(GridCreator.CreateGridFromValues(args[0], args[1], args[2], bgc.Grid.Bpp, args)); return;
+                case GlyphId.PalFromGrid1D: if (bgc.Grid != null) bgc.AddPalette(GridCreator.CreateGridFromRectangle(bgc.Grid, args[0], 0, 0, args[1], 1, 1)); return;
+                case GlyphId.PalFromGrid2D: if (bgc.Grid != null) bgc.AddPalette(GridCreator.CreateGridFromRectangle(bgc.Grid, args[0], args[1], 0, args[2], args[3], 1)); return;
+                case GlyphId.PalFromGrid3D: if (bgc.Grid != null) bgc.AddPalette(GridCreator.CreateGridFromRectangle(bgc.Grid, args[0], args[1], args[2], args[3], args[4], args[5])); return;
                 case GlyphId.PalGen1D1: Painter.PalGen1D(bgc.GetPalette(args[0]), (byte)args[1], 0, 0, 0, (byte)args[2], 0, 0, 0); return;
                 case GlyphId.PalGen1D2: Painter.PalGen1D(bgc.GetPalette(args[0]), (byte)args[1], (byte)args[2], 0, 0, (byte)args[3], (byte)args[4], 0, 0); return;
                 case GlyphId.PalGen1D3: Painter.PalGen1D(bgc.GetPalette(args[0]), (byte)args[1], (byte)args[2], (byte)args[3], 0, (byte)args[4], (byte)args[5], (byte)args[6], 0); return;

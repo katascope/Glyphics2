@@ -11,8 +11,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RasterLib;
 using GraphicsLib;
+using RasterLib;
 using RasterLib.Language;
 
 namespace GlyphicsUnitTests
@@ -64,8 +64,8 @@ namespace GlyphicsUnitTests
             if (bpp == 4) cubeCode = cubeCode4;
 
             //Generate the triangles
-            Code code = RasterApi.CreateCode(cubeCode);
-            Grid gridOut = RasterApi.CodeToGrid(code);
+            Code code = RasterLib.RasterApi.CreateCode(cubeCode);
+            Grid gridOut = RasterLib.RasterApi.CodeToGrid(code);
 
             //Save and load
             GraphicsApi.SaveFlatPng(filename, gridOut);
@@ -105,16 +105,16 @@ namespace GlyphicsUnitTests
             const string filename = "test.stl";
 
             //Generate the triangles
-            Code code = RasterApi.CreateCode(cubeCode);
-            Grid grid = RasterApi.CodeToGrid(code);
-            RectList rects = GraphicsApi.GridToRects(grid);
-            Triangles trianglesOut = GraphicsApi.RectsToTrianglesCube(rects);
+            Code code = RasterLib.RasterApi.CreateCode(cubeCode);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(code);
+            RectList rects = RasterLib.RasterApi.GridToRects(grid);
+            Triangles trianglesOut = RasterLib.RasterApi.RectsToTrianglesCube(rects);
 
             //Write them out
-            GraphicsApi.SaveTrianglesToStl(filename, trianglesOut);
+            RasterLib.RasterApi.SaveTrianglesToStl(filename, trianglesOut);
 
             //Then read them back
-            Triangles trianglesIn = GraphicsApi.StlToTriangles(filename);
+            Triangles trianglesIn = RasterLib.RasterApi.StlToTriangles(filename);
 
             //First check initial sizes
             Assert.IsTrue(trianglesOut.GetTriangleArray().Length == trianglesIn.GetTriangleArray().Length);
@@ -125,16 +125,16 @@ namespace GlyphicsUnitTests
                 Triangle t1 = trianglesOut.GetTriangleArray()[i];
                 Triangle t2 = trianglesIn.GetTriangleArray()[i];
 
-                Assert.IsTrue(RasterApi.FloatsAreEqual(t1.Vertex1[0], t2.Vertex1[0]));
-                Assert.IsTrue(RasterApi.FloatsAreEqual(t1.Vertex1[1], t2.Vertex1[1]));
-                Assert.IsTrue(RasterApi.FloatsAreEqual(t1.Vertex1[2], t2.Vertex1[2]));
-                                                                    
-                Assert.IsTrue(RasterApi.FloatsAreEqual(t1.Vertex2[0], t2.Vertex2[0]));
-                Assert.IsTrue(RasterApi.FloatsAreEqual(t1.Vertex2[1], t2.Vertex2[1]));
-                Assert.IsTrue(RasterApi.FloatsAreEqual(t1.Vertex2[2], t2.Vertex2[2]));
-                                                                    
-                Assert.IsTrue(RasterApi.FloatsAreEqual(t1.Vertex3[0], t2.Vertex3[0]));
-                Assert.IsTrue(RasterApi.FloatsAreEqual(t1.Vertex3[1], t2.Vertex3[1]));
+                Assert.IsTrue(RasterLib.RasterApi.FloatsAreEqual(t1.Vertex1[0], t2.Vertex1[0]));
+                Assert.IsTrue(RasterLib.RasterApi.FloatsAreEqual(t1.Vertex1[1], t2.Vertex1[1]));
+                Assert.IsTrue(RasterLib.RasterApi.FloatsAreEqual(t1.Vertex1[2], t2.Vertex1[2]));
+
+                Assert.IsTrue(RasterLib.RasterApi.FloatsAreEqual(t1.Vertex2[0], t2.Vertex2[0]));
+                Assert.IsTrue(RasterLib.RasterApi.FloatsAreEqual(t1.Vertex2[1], t2.Vertex2[1]));
+                Assert.IsTrue(RasterLib.RasterApi.FloatsAreEqual(t1.Vertex2[2], t2.Vertex2[2]));
+
+                Assert.IsTrue(RasterLib.RasterApi.FloatsAreEqual(t1.Vertex3[0], t2.Vertex3[0]));
+                Assert.IsTrue(RasterLib.RasterApi.FloatsAreEqual(t1.Vertex3[1], t2.Vertex3[1]));
             }
         }
 
@@ -143,21 +143,21 @@ namespace GlyphicsUnitTests
         {
             const string filename = "test.gly";
 
-            CodeList codes = RasterApi.CreateCodes();
+            CodeList codes = RasterLib.RasterApi.CreateCodes();
 
             //Create some codeString
             const string cubeCode1 = "Testx4,Size3D4 4 4 4;PenColorD4 255 255 255 255;FillRect 0 0 0 4 4 4";
             const string cubeCode2 = "Testx8,Size3D4 8 8 8;PenColorD4 255 255 255 255;FillRect 0 0 0 8 8 8";
 
             //Add them to codes
-            codes.AddCode(RasterApi.CreateCode(cubeCode1));
-            codes.AddCode(RasterApi.CreateCode(cubeCode2));
+            codes.AddCode(RasterLib.RasterApi.CreateCode(cubeCode1));
+            codes.AddCode(RasterLib.RasterApi.CreateCode(cubeCode2));
 
             //Write them to file
-            GraphicsApi.CodesToGly(filename, codes);
+            RasterLib.RasterApi.CodesToGly(filename, codes);
 
             //Then read them back
-            CodeList codes2 = GraphicsApi.GlyToCodes(filename);
+            CodeList codes2 = RasterLib.RasterApi.GlyToCodes(filename);
 
             Assert.IsTrue(codes.Count == codes2.Count);
 

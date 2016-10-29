@@ -12,7 +12,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 namespace RasterLib.Language
 {
-    internal class Thumbnails
+    public class Thumbnails
     {
         //Generates a set of thumbnails of the codeString, down to 1 pixels size
         public static GridList CodeToThumbnailed(Code code)

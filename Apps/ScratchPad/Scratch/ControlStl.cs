@@ -21,7 +21,7 @@ namespace ScratchPad.Scratch
         {
             //Then render that to triangles
             Console.WriteLine("Creating triangle library");
-            TrianglesList trianglesList = GraphicsApi.CreateTrianglesList();
+            TrianglesList trianglesList = RasterLib.RasterApi.CreateTrianglesList();
 
             foreach (string filename in ctl.FileNamesInStlLibrary)
                 trianglesList.ImportAndReduceToUnit(filename);
@@ -42,7 +42,7 @@ namespace ScratchPad.Scratch
 
             //Save final result to STL file
             Console.WriteLine("Saving triangles to {0}", ctl.FileNameOutStl);
-            GraphicsApi.SaveTrianglesToStlAscii(ctl.FileNameOutStl, triangles);
+            RasterLib.RasterApi.SaveTrianglesToStlAscii(ctl.FileNameOutStl, triangles);
 
             //So.. as long as we are here.. let's make a preview
 
@@ -51,7 +51,7 @@ namespace ScratchPad.Scratch
 
             //Save a rendering out to a PNG, why not, too.
             Console.WriteLine("Creating preview grid");
-            Grid gridFromStl = RasterApi.CreateGrid(96, 96, 96, 4);
+            Grid gridFromStl = RasterLib.RasterApi.CreateGrid(96, 96, 96, 4);
 
             Console.WriteLine("Rendering triangles to grid");
             GraphicsApi.Renderer.RenderTrianglesToGrid(triangles, gridFromStl);

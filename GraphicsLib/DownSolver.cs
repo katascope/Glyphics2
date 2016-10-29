@@ -10,6 +10,7 @@ Redistribution and use in source and binary forms, with or without modification,
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DRect, INDRect, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #endregion
 using System;
+using RasterApi;
 using RasterLib;
 using RasterLib.Language;
 
@@ -47,8 +48,8 @@ namespace GraphicsLib
         public void FromFilename(string filename)
         {
             if (filename.ToUpper().Contains(".PNG")) FromGrid(GraphicsApi.PngToGrid(filename));
-            if (filename.ToUpper().Contains(".STL")) FromTriangles(GraphicsApi.StlToTriangles(filename));
-            if (filename.ToUpper().Contains(".OBJ")) FromTriangles(GraphicsApi.ObjToTriangles(filename));
+            if (filename.ToUpper().Contains(".STL")) FromTriangles(RasterLib.RasterApi.StlToTriangles(filename));
+            if (filename.ToUpper().Contains(".OBJ")) FromTriangles(RasterLib.RasterApi.ObjToTriangles(filename));
             if (filename.ToUpper().Contains(".GIF"))
             {
                 Grids = GraphicsApi.GifToGrids(filename);
@@ -57,7 +58,7 @@ namespace GraphicsLib
             }
             if (filename.ToUpper().Contains(".GLY"))
             {
-                Codes = GraphicsApi.GlyToCodes(filename);
+                Codes = RasterLib.RasterApi.GlyToCodes(filename);
                 code = Codes.GetCode(0);
                 FromCode(code);
             }
@@ -66,10 +67,10 @@ namespace GraphicsLib
         public void FromCode(Code inCode)
         {
             code = inCode;
-            codename = RasterApi.CodeToCodename(code);
+            codename = RasterLib.RasterApi.CodeToCodename(code);
             try
             {
-                Tokens = RasterApi.CodeToTokens(code);
+                Tokens = RasterLib.RasterApi.CodeToTokens(code);
                 FromTokens(Tokens);
             }
             catch (Exception ex)
@@ -81,7 +82,7 @@ namespace GraphicsLib
         public void FromTokens(TokenList inTokens)
         {
             Tokens = inTokens;
-            Grid = RasterApi.TokensToGrid(Tokens);
+            Grid = RasterLib.RasterApi.TokensToGrid(Tokens);
             FromGrid(Grid);
         }
         
@@ -104,10 +105,10 @@ namespace GraphicsLib
         public void FromRects(RectList inRects)
         {
             Rects = inRects;
-            SerializedRects = GraphicsApi.RectsToSerializedRects(Rects);
-            SerializedRectsLimit255 = GraphicsApi.RectsToSerializedRectsLimit255(Rects);
+            SerializedRects = RasterLib.RasterApi.RectsToSerializedRects(Rects);
+            SerializedRectsLimit255 = RasterLib.RasterApi.RectsToSerializedRectsLimit255(Rects);
 
-            Scene scene = GraphicsApi.RectsToScene(Rects);
+            Scene scene = RasterLib.RasterApi.RectsToScene(Rects);
             JSON = SceneToJson.Convert(scene);
 
             FromSerializedRects(SerializedRects);
@@ -116,8 +117,8 @@ namespace GraphicsLib
         public void FromSerializedRects(SerializedRects inSerializedRects)
         {
             SerializedRects = inSerializedRects;
-            Rects = GraphicsApi.SerializedRectsToRects(SerializedRects);
-            Quads = GraphicsApi.RectsToQuads(Rects);
+            Rects = RasterLib.RasterApi.SerializedRectsToRects(SerializedRects);
+            Quads = RasterLib.RasterApi.RectsToQuads(Rects);
             FromQuads(Quads);
         }
 

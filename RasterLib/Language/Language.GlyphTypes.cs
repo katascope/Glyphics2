@@ -223,7 +223,7 @@ namespace RasterLib.Language
         String
     };
 
-    internal static class Glyphs
+    public static class Glyphs
     {
         private static Dictionary<int, Glyph> _glyphIdLookupTable;
 

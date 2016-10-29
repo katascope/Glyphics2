@@ -14,7 +14,7 @@ using System;
 
 namespace RasterLib.Utility
 {
-    internal class Converter
+    public class Converter
     {        
         //Convert r/g/b/a to a ulong
         public static ulong Rgba2Ulong(byte r, byte g, byte b, byte a)

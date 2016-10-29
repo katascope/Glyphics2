@@ -11,8 +11,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 using System.Linq; //TODO: Get read of all Linq usage
-using RasterLib;
 using GraphicsLib;
+using RasterLib;
 using RasterLib.Language;
 
 namespace DocumentationGenerator
@@ -31,7 +31,7 @@ namespace DocumentationGenerator
         //Create Markdown document index
         public void DocumentIndex(string documentationPath)
         {
-            Glyph[] glyphs = RasterApi.GetGlyphDefs();
+            Glyph[] glyphs = RasterLib.RasterApi.GetGlyphDefs();
 
             var glyphNames = glyphs.Select(glyph => glyph.Name).ToList();
             glyphNames.Sort();
@@ -66,20 +66,20 @@ namespace DocumentationGenerator
 
             IRenderer renderer = GraphicsApi.Renderer;
 
-            Grid grid = RasterApi.CodeToGrid(RasterApi.CreateCode(code));
+            Grid grid = RasterLib.RasterApi.CodeToGrid(RasterLib.RasterApi.CreateCode(code));
             //            using ()
             {
-                Grid gridIso = RasterApi.CodeToGrid(RasterApi.CreateCode(code.Replace("WallCube 37", "WallCube 21")));
+                Grid gridIso = RasterLib.RasterApi.CodeToGrid(RasterLib.RasterApi.CreateCode(code.Replace("WallCube 37", "WallCube 21")));
                 Grid gridIsometric = renderer.RenderIsometricCellsScaled(gridIso, 255, 255, 255, 255, 6, 6);
                 GraphicsApi.SaveFlatPng(path + title + "-Iso.png", gridIsometric);
 
                 Grid gridOrtho = renderer.RenderObliqueCells(grid);
                 GraphicsApi.SaveFlatPng(path + title + "-Ortho.png", gridOrtho);
 
-                int id = RasterApi.GetId(title);
+                int id = RasterLib.RasterApi.GetId(title);
                 if (id >= 0)
                 {//Glyph description
-                    Glyph glyph = RasterApi.GetGlyph(id);
+                    Glyph glyph = RasterLib.RasterApi.GetGlyph(id);
 
                     string description = glyph.Desc;
 
@@ -91,7 +91,7 @@ namespace DocumentationGenerator
                                      ;
                     Console.WriteLine(glyphDoc+"\n");
 
-                    string crCode = TokensToHotlinkedCode(RasterApi.CodeToTokens(RasterApi.CreateCode(code)));
+                    string crCode = TokensToHotlinkedCode(RasterLib.RasterApi.CodeToTokens(RasterLib.RasterApi.CreateCode(code)));
                     glyphDoc += "\nFigure Code:\n" + crCode + "\nCondensed: " + code + "\n";
 
                     using (var file = new System.IO.StreamWriter(path + title + ".md"))
@@ -112,7 +112,7 @@ namespace DocumentationGenerator
         //Create html document index
         public void DocumentIndex(string documentationPath)
         {
-            Glyph[] glyphs = RasterApi.GetGlyphDefs();
+            Glyph[] glyphs = RasterLib.RasterApi.GetGlyphDefs();
 
             var glyphNames = glyphs.Select(glyph => glyph.Name).ToList();
             glyphNames.Sort();
@@ -151,20 +151,20 @@ namespace DocumentationGenerator
 
             IRenderer renderer = GraphicsApi.Renderer;
 
-            Grid grid = RasterApi.CodeToGrid(RasterApi.CreateCode(code));
+            Grid grid = RasterLib.RasterApi.CodeToGrid(RasterLib.RasterApi.CreateCode(code));
             //            using ()
             {
-                Grid gridIso = RasterApi.CodeToGrid(RasterApi.CreateCode(code.Replace("WallCube 37", "WallCube 21")));
+                Grid gridIso = RasterLib.RasterApi.CodeToGrid(RasterLib.RasterApi.CreateCode(code.Replace("WallCube 37", "WallCube 21")));
                 Grid gridIsometric = renderer.RenderIsometricCellsScaled(gridIso, 255, 255, 255, 255, 6, 6);
                 GraphicsApi.SaveFlatPng(path + title + "-Iso.png", gridIsometric);
 
                 Grid gridOrtho = renderer.RenderObliqueCells(grid);
                 GraphicsApi.SaveFlatPng(path + title + "-Ortho.png", gridOrtho);
 
-                int id = RasterApi.GetId(title);
+                int id = RasterLib.RasterApi.GetId(title);
                 if (id >= 0)
                 {//Glyph description
-                    Glyph glyph = RasterApi.GetGlyph(id);
+                    Glyph glyph = RasterLib.RasterApi.GetGlyph(id);
 
                     string description = glyph.Desc;
                     description = description.Replace("<", "&lt");
@@ -178,7 +178,7 @@ namespace DocumentationGenerator
                                      ;
                     Console.WriteLine(glyphDoc + "\n");
 
-                    string crCode = TokensToHotlinkedCode(RasterApi.CodeToTokens(RasterApi.CreateCode(code)));
+                    string crCode = TokensToHotlinkedCode(RasterLib.RasterApi.CodeToTokens(RasterLib.RasterApi.CreateCode(code)));
                     glyphDoc += "<h3>Figure Code</h3><pre>" + crCode + "</pre><h4>Condensed</h4><pre>" + code + "</pre><br>";
 
                     using (var file = new System.IO.StreamWriter(path + title + ".html"))
@@ -197,7 +197,7 @@ namespace DocumentationGenerator
                     exampleDoc += str + "\n";
 
 
-                    string crCode = TokensToHotlinkedCode(RasterApi.CodeToTokens(RasterApi.CreateCode(code)));
+                    string crCode = TokensToHotlinkedCode(RasterLib.RasterApi.CodeToTokens(RasterLib.RasterApi.CreateCode(code)));
                     exampleDoc += "<h3>Example Code</h3><pre>" + crCode + "</pre><h4>Condensed</h4><pre>" + code + "</pre><br>";
 
                     using (var file = new System.IO.StreamWriter(path + title + ".html"))
@@ -325,15 +325,15 @@ namespace DocumentationGenerator
 
         public static void DocumentByGlyphicsFile(string documentationPath, string filename)
         {
-            CodeList codes = GraphicsApi.GlyToCodes(filename);
+            CodeList codes = RasterLib.RasterApi.GlyToCodes(filename);
             foreach (Code code in codes)
             {
                 string name = code.codeString.Split(',')[0];
-                Code rasterCode = RasterApi.CreateCode(code.codeString);
+                Code rasterCode = RasterLib.RasterApi.CreateCode(code.codeString);
 
                 const int size = 192;
-                Console.WriteLine("Executing " + name); 
-                DocumentByCode(documentationPath, name, code.codeString.Contains("Size3D4 255") ? RasterApi.CodeToRescaledCode(rasterCode, size, size, size).codeString : rasterCode.codeString);
+                Console.WriteLine("Executing " + name);
+                DocumentByCode(documentationPath, name, code.codeString.Contains("Size3D4 255") ? RasterLib.RasterApi.CodeToRescaledCode(rasterCode, size, size, size).codeString : rasterCode.codeString);
             }
         }
     }
