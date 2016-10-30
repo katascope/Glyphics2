@@ -1,7 +1,6 @@
 ﻿using Mono.Unix;
 using Mono.Unix.Native;
-using Nancy;
-using Nancy.Hosting.Self;
+using Nancy.Hosting.Self; 
 using System;
 
 namespace NancyDemo
