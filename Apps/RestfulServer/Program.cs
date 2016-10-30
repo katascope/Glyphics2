@@ -57,20 +57,26 @@ namespace WebServer
                 StringBuilder sb = new StringBuilder();
 
                 string response;
-                Code code = Program.Codes.GetCode(0);
-                //foreach (Code codeString in Program.codes)
+                //Code code = Program.Codes.GetCode(0);
+                foreach (Code code in Program.Codes)
                 {
                     response = "";
                     string name = code.codeString.Split(',')[0];
                     //string worldPart = codeString.codeString.Split('*')[1];
 
                     int compressed = code.codeString.IndexOf('*');
-                    string worldPart = code.codeString.Substring(compressed);
-                    response += "<a href=\"World?name=" + name + "\">" + name+ "</a>";
-                    response += ", <a href=\"Execute?codeString=" + code.codeString + "\">" + code.codeString + "</a>";
-                    response += " - <a href=\"deserializer.html?serialized=" + worldPart + "\">Viewer " + name + "</a>";
+                    string worldPart = "";
+                    if (compressed >= 0)
+                        worldPart = code.codeString.Substring(compressed);
+
+                    response += "<a href=\"World?name=" + name + "\">" + name + "</a>";
+                   // response += ", <a href=\"Execute?codeString=" + code.codeString + "\">" + code.codeString +
+                     //           "</a>";
+                    //response += " - <a href=\"deserializer.html?serialized=" + worldPart + "\">Viewer " + name +
+                      //          "</a>";
                     response += "<br>";
                     sb.Append(response);
+                    
                 }
                 response = sb.ToString();
                 Console.WriteLine(response);
@@ -146,7 +152,7 @@ namespace WebServer
         {
             Console.WriteLine("Simple web server starting up");
 
-            const string mediaPath = "\\GitHub\\Glyphics2\\Glyph Cores\\";
+            const string mediaPath = "./";//"\\GitHub\\Glyphics2\\Glyph Cores\\";
             Codes =RasterLib.RasterApi.GlyToCodes(mediaPath + "default.gly");
             Console.WriteLine("Glyphics core loaded");
 

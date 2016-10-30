@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloModule", "Apps\HelloMo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlyView", "Apps\GlyView\GlyView.csproj", "{B55C2F87-01AC-4BB9-95EB-52F395A57A0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestfulServer", "Apps\RestfulServer\RestfulServer.csproj", "{0E8BC98D-0E43-4670-8791-BC415D42220D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B55C2F87-01AC-4BB9-95EB-52F395A57A0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B55C2F87-01AC-4BB9-95EB-52F395A57A0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B55C2F87-01AC-4BB9-95EB-52F395A57A0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E8BC98D-0E43-4670-8791-BC415D42220D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E8BC98D-0E43-4670-8791-BC415D42220D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E8BC98D-0E43-4670-8791-BC415D42220D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E8BC98D-0E43-4670-8791-BC415D42220D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
