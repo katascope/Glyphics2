@@ -9,7 +9,7 @@ namespace NancyDemo
     {
         static void Main(string[] args)
         {
-            var uri = "http://localhost:8888";
+            var uri = "http://127.0.0.1:8888";
             Console.WriteLine("Starting Nancy on " + uri);
 
             // initialize an instance of NancyHost
