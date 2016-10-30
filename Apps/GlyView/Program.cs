@@ -19,10 +19,9 @@ namespace GlyView
 {
     class Program
     {
+        //"../../../../Glyph Cores/Nexus.glyc" -sr
         static void Main(string[] args)
         {
-            string filename = args[0];
-            Options options = new Options();
             if (args.Length == 0)
             {
                 Console.WriteLine("Usage : GlyView <filename> ");
@@ -36,6 +35,9 @@ namespace GlyView
                 Console.WriteLine("  -ci : display circuit");
                 return;
             }
+
+            string filename = args[0];
+            Options options = new Options();
 
             for (int i = 0; i < args.Length; i++)
             {
