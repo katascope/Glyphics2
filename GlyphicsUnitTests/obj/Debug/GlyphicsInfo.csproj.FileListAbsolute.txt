@@ -1,8 +1,0 @@
-C:\Builds\Vernacular\Glyphics\CmdToolKit\GlyphicsInfo\bin\Debug\GlyphicsInfo.exe.config
-C:\Builds\Vernacular\Glyphics\CmdToolKit\GlyphicsInfo\bin\Debug\GlyphicsInfo.exe
-C:\Builds\Vernacular\Glyphics\CmdToolKit\GlyphicsInfo\bin\Debug\GlyphicsInfo.pdb
-C:\Builds\Vernacular\Glyphics\CmdToolKit\GlyphicsInfo\bin\Debug\GlyphicsLibrary.dll
-C:\Builds\Vernacular\Glyphics\CmdToolKit\GlyphicsInfo\bin\Debug\GlyphicsLibrary.pdb
-C:\Builds\Vernacular\Glyphics\CmdToolKit\GlyphicsInfo\obj\Debug\GlyphicsInfo.exe
-C:\Builds\Vernacular\Glyphics\CmdToolKit\GlyphicsInfo\obj\Debug\GlyphicsInfo.pdb
-C:\Builds\Vernacular\Glyphics\CmdToolKit\GlyphicsInfo\obj\Debug\GlyphicsInfo.csprojResolveAssemblyReference.cache

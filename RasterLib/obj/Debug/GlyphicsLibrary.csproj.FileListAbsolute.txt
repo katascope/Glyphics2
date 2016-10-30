@@ -1,4 +1,0 @@
-C:\Github\Glyphics2\GlyphicsLibrary\bin\Debug\GlyphicsLibrary.dll
-C:\Github\Glyphics2\GlyphicsLibrary\bin\Debug\GlyphicsLibrary.pdb
-C:\Github\Glyphics2\GlyphicsLibrary\obj\Debug\GlyphicsLibrary.dll
-C:\Github\Glyphics2\GlyphicsLibrary\obj\Debug\GlyphicsLibrary.pdb
