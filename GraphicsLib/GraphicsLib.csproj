@@ -42,7 +42,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DownSolver.cs" />
     <Compile Include="FileHandlers\FileGifRead.cs" />
     <Compile Include="FileHandlers\FileGifWrite.cs" />
     <Compile Include="FileHandlers\FilePngRead.cs" />

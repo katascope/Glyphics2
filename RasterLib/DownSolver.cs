@@ -11,10 +11,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 using RasterApi;
-using RasterLib;
 using RasterLib.Language;
 
-namespace GraphicsLib
+namespace RasterLib
 {
     //FlowSolver class, not really that efficient, but good for making inputs solve out to all possible outputs
     public class DownSolver
@@ -47,7 +46,7 @@ namespace GraphicsLib
 
         public void FromFilename(string filename)
         {
-            if (filename.ToUpper().Contains(".PNG")) FromGrid(GraphicsApi.PngToGrid(filename));
+            //if (filename.ToUpper().Contains(".PNG")) FromGrid(GraphicsApi.PngToGrid(filename));
             if (filename.ToUpper().Contains(".STL")) FromTriangles(RasterLib.RasterApi.StlToTriangles(filename));
             if (filename.ToUpper().Contains(".OBJ")) FromTriangles(RasterLib.RasterApi.ObjToTriangles(filename));
 /*            if (filename.ToUpper().Contains(".GIF"))

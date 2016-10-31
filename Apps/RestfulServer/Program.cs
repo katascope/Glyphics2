@@ -20,7 +20,7 @@ namespace WebServer
             context.Response.AddHeader("Date", DateTime.Now.ToString("r"));
             context.Response.AddHeader("Last-Modified", DateTime.Now.ToString("r"));
             context.Response.ContentLength64 = response.Length;
-            byte[] buffer = new byte[1024 * 16];
+            byte[] buffer = new byte[response.Length * 16];
             for (int i = 0; i < response.Length; i++)
             {
                 buffer[i] = (byte)response[i];
@@ -152,7 +152,7 @@ namespace WebServer
         {
             Console.WriteLine("Simple web server starting up");
 
-            const string mediaPath = "./";//"\\GitHub\\Glyphics2\\Glyph Cores\\";
+            const string mediaPath = "\\GitHub\\Glyphics2\\Glyph Cores\\";
             Codes =RasterLib.RasterApi.GlyToCodes(mediaPath + "default.gly");
             Console.WriteLine("Glyphics core loaded");
 
