@@ -33,6 +33,16 @@ namespace RasterLib
         public string JSON;
         public byte[] Rawbytes;
 
+        public void Report()
+        {
+            //Console.WriteLine("Code: " + code.codeString);
+            Console.WriteLine("Tokens: " + Tokens.Count);
+            Console.WriteLine("Rects: " + Rects.Count);
+            Console.WriteLine("Quads: " + Quads.Count);
+            Console.WriteLine("Triangles: " + Triangles.Count);
+            //Console.WriteLine("Rects: " + SerializedRects.SerializedData);
+        }
+
         public DownSolver() { }
         public DownSolver(Code inCode) { FromCode(inCode); }
         public DownSolver(string filename) { FromFilename(filename); }
@@ -49,13 +59,14 @@ namespace RasterLib
             //if (filename.ToUpper().Contains(".PNG")) FromGrid(GraphicsApi.PngToGrid(filename));
             if (filename.ToUpper().Contains(".STL")) FromTriangles(RasterLib.RasterApi.StlToTriangles(filename));
             if (filename.ToUpper().Contains(".OBJ")) FromTriangles(RasterLib.RasterApi.ObjToTriangles(filename));
-/*            if (filename.ToUpper().Contains(".GIF"))
+
+            if (filename.ToUpper().Contains(".GLYC"))
             {
-                Grids = GraphicsApi.GifToGrids(filename);
-                Grid = Grids.GetGrid(0);
-                FromGrid(Grid);
-            }*/
-            if (filename.ToUpper().Contains(".GLY"))
+                code = new Code(RasterLib.RasterApi.GlyCToCode(filename));
+                //code = Codes.GetCode(0);
+                FromCode(code);
+            }
+            else if (filename.ToUpper().Contains(".GLY"))
             {
                 Codes = RasterLib.RasterApi.GlyToCodes(filename);
                 code = Codes.GetCode(0);

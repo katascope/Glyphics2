@@ -1,4 +1,4 @@
-building,
+_Building,
 Size3D4 16 64 16;Spawn 8 16 8;PenColorD4 31 127 255 255;WallCube 1;
 PenColorD4 127 127 127 255;FillRect 0 0 0 15 63 15;PenColorD4 0 0 0 0;FillRect 1 1 1 14 62 14;
 PenColorD4 63 63 255 31;PenHatch 1 4 1;

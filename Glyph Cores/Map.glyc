@@ -3,14 +3,14 @@ Map,
 #Size of Grid
 Size3D4 64 64 64
 
-Put Simple 0 0 0 15 15 15
-Put game 16 0 0 31 15 15
-Put mansion 32 0 0 47 15 15
-Put nexus 48 0 0 63 15 15
+PutGroup Simple 0 0 0 0
+PutGroup game 16 0 0 1
+PutGroup mansion 32 0 0 2
+PutGroup nexus 48 0 0 3
 
-Put Temple 0 0 16 15 15 32
-Put Pyramid 16 0 16 31 15 32
-Put Castle 32 0 16 47 15 32
-Put Ascent 48 0 16 63 15 32
+PutGroup Pyramid 0 0 16 4
+PutGroup Pyramid 16 0 16 5
+PutGroup Castle 32 0 16 6
+PutGroup Ascent 48 0 16 7
 
-Put Arena 0 0 32 15 15 48
+PutGroup Arena 0 0 32 8

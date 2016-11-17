@@ -1,0 +1,8 @@
+Temple,
+
+Size3D4 64 64 64;
+
+
+Spawn 31 6 31;PenTex 5;PenColorD3 255 127 127;WallCube 1;ImgEdgeZ 224 224 224 255;Stairs 30 1 43 30 4 46 8 1 1;FillRect 21 0 47 40 4 62;PenTex 25;PenColorD4 31 127 255 191;
+FillRect 30 0 1 31 0 42;FillRect 4 0 48 58 3 62;FillRect 7 4 62 55 58 62;ImgEdgeX 224 224 224 255;ImgEdgeY 224 224 224 255;
+PenTex 7;PenSize 1 1 2;PenColorD3 127 192 127;PenHatch 1 1 4;PenSize 1 1 1;FillRect 2 1 1 25 1 44;FillRect 36 1 1 61 1 44;PenColorD3 255 127 127

@@ -7,7 +7,7 @@ Put ascent 64 0 0
 Put arena 128 0 0
 Put nexus 192 0 0
 
-Put chessboard 0 0 128
+Put Temple 0 0 128
 Put Temple 64 0 128
 Put castle 128 0 128
 Put workspace 192 0 128

@@ -1,4 +1,4 @@
-cabin,
+_Cabin,
 Genesis3D 16;PenColorD3 255 192 127;FillRect 7 1 7 8 8 8;
 PenColorD3 255 224 224;FillRect 1 1 2 13 13 13;PenColorD3 255 255 224;FillRect 2 0 2 12 0 12;PenColorD3 0 0 0;FillRect 2 1 3 12 12 12;FillRect 8 1 0 10 4 3;
 PenColorD4 127 127 255 31;FillRect 1 3 4 1 7 11;FillRect 13 3 4 13 7 11;FillRect 3 3 2 6 4 2;

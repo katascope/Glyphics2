@@ -67,7 +67,8 @@ namespace RasterLib.Painters
         {
             if (bgc == null) return;
 
-            string stringCode = ReadGlyc(@"C:\Github\Glyphics2\Glyph Cores\" + filename + ".glyc");
+            //@"C:\Github\Glyphics2\Glyph Cores\" +
+            string stringCode = ReadGlyc( filename + ".glyc");
             Grid newGrid = CodeConverter.CodeToGrid(stringCode);
 
             //DrawHollowRect(bgc, x1, y1, z1, x2, y2, z2);
@@ -79,7 +80,7 @@ namespace RasterLib.Painters
         {
             if (bgc == null) return;
 
-            string stringCode = ReadGlyc(@"C:\Github\Glyphics2\Glyph Cores\" + filename + ".glyc");
+            string stringCode = ReadGlyc(filename + ".glyc");
             Grid newGrid = CodeConverter.CodeToGrid(stringCode);
 
             //DrawHollowRect(bgc, x1, y1, z1, x2, y2, z2);
