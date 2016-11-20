@@ -1,0 +1,13 @@
+Null,
+
+Size3D4 64 64 64;
+Spawn 31 5 5;
+
+PenColorD3 127 127 127;WallCube 0;
+
+PenColorD3 31 127 255;Circle2DXY 31 31 31 25;
+PenColorD3 255 31 127;Circle2DXZ 31 31 31 25;
+PenColorD3 127 255 31;Circle2DYZ 31 31 31 25;
+PenColorD3 255 31 127;Circle2DXY 31 31 31 6;
+PenColorD3 127 255 31;Circle2DXZ 31 31 31 6;
+PenColorD3 31 131 255;Circle2DYZ 31 31 31 6;

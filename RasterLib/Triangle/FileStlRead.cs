@@ -13,7 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace RasterLib
+namespace GraphicsLib
 {
     //Utility class for reading STL files
     public class FileStlRead

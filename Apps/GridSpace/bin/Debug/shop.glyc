@@ -1,0 +1,11 @@
+Shop,
+
+
+Size3D4 64 64 64
+
+PenColorD4 31 31 63 255
+FillRect 0 0 0 63 1 63
+FillRect 1 1 1 62 2 62
+FillRect 2 2 2 61 3 61
+
+

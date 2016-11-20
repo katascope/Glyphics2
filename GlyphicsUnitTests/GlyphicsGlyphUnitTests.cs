@@ -11,7 +11,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using GraphicsLib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RasterLib;
+using GraphicsLib;
 
 namespace GlyphicsUnitTests
 {
@@ -758,12 +758,12 @@ namespace GlyphicsUnitTests
             if (code == null) validated = true;
             else
             {
-                Grid grid = RasterLib.RasterApi.TokensToGrid(RasterLib.RasterApi.CodeToTokens(RasterLib.RasterApi.CreateCode(code)));
+                Grid grid = GraphicsLib.RasterApi.TokensToGrid(GraphicsLib.RasterApi.CodeToTokens(GraphicsLib.RasterApi.CreateCode(code)));
 
                 if (grid != null)
                 {
                     var cloneData = grid.CloneData();
-                    if (BytesAreEqual(cloneData, RasterLib.RasterApi.HexDataToByteArray(expected)))
+                    if (BytesAreEqual(cloneData, GraphicsLib.RasterApi.HexDataToByteArray(expected)))
                         validated = true;
                 }
                 else validated = true;

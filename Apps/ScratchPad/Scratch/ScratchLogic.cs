@@ -12,8 +12,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 using System;
 using System.Windows.Forms;
 using GraphicsLib;
-using RasterLib;
-using RasterLib.Language;
+using GraphicsLib;
+using GraphicsLib.Language;
 
 namespace ScratchPad.Scratch
 {
@@ -38,7 +38,7 @@ namespace ScratchPad.Scratch
                     CellProperties cp = gridImage.GetProperty(x, y, 0);
 
                     byte r, g, b, a;
-                   RasterLib.RasterApi.Ulong2Rgba(cp.Rgba, out r, out g, out b, out a);
+                   GraphicsLib.RasterApi.Ulong2Rgba(cp.Rgba, out r, out g, out b, out a);
 
                     int lum = (r + g + b) / 3;
                     int height = (lum) / div;
@@ -67,64 +67,64 @@ namespace ScratchPad.Scratch
                 string codeString = Svg2Gly.ConvertSvg2Gly(ctl.FileNameInSvg);
                 Console.WriteLine("SVG:\n" + codeString);
 
-                Code code =RasterLib.RasterApi.CreateCode(codeString);
+                Code code =GraphicsLib.RasterApi.CreateCode(codeString);
                 if (ctl.Resize != null)
-                    code =RasterLib.RasterApi.CodeToRescaledCode(code, ctl.Resize[0], ctl.Resize[1], ctl.Resize[2]);
+                    code =GraphicsLib.RasterApi.CodeToRescaledCode(code, ctl.Resize[0], ctl.Resize[1], ctl.Resize[2]);
 
                 Console.WriteLine("Code: {0}\n", codeString);
-                grid =RasterLib.RasterApi.CodeToGrid(code);
+                grid =GraphicsLib.RasterApi.CodeToGrid(code);
             }
             else if (ctl.FileNameInStl != null)
             {
-                grid =RasterLib.RasterApi.CreateGrid(64, 64, 64, 4);
+                grid =GraphicsLib.RasterApi.CreateGrid(64, 64, 64, 4);
 
                 Console.WriteLine("STL Input filename: {0}", ctl.FileNameInStl);
 
                 //Load the triangles from the STL file and reduce to a unit 1x1x1 size
-                Triangles triangles =RasterLib.RasterApi.StlToTriangles(ctl.FileNameInStl);
+                Triangles triangles =GraphicsLib.RasterApi.StlToTriangles(ctl.FileNameInStl);
                 triangles.ReduceToUnit();
                 Console.WriteLine("Triangle count: {0}", triangles.Count);
 
                 //Render the triangles to the grid, will autosize to grid size
-                RasterLib.RasterApi.Renderer.RenderTrianglesToGrid(triangles, grid);
+                GraphicsLib.RasterApi.Renderer.RenderTrianglesToGrid(triangles, grid);
             }
             else if (ctl.FileNameInImage != null)
             {
                 Grid gridImg = GraphicsApi.FileToGrid(ctl.FileNameInImage);
                 GridContext gc = new GridContext(gridImg);
-               RasterLib.RasterApi.Painter.FlipY(gc);
+               GraphicsLib.RasterApi.Painter.FlipY(gc);
                 int div = 15;
-                grid =RasterLib.RasterApi.CreateGrid(gridImg.SizeX, 255 / div + 1, gridImg.SizeY, 4);
+                grid =GraphicsLib.RasterApi.CreateGrid(gridImg.SizeX, 255 / div + 1, gridImg.SizeY, 4);
 
                 Console.WriteLine("Extruding");
                 Extrusion(grid, gridImg, div);
                 Console.WriteLine("Rendering");
-                Grid gridIsometricScaledQuick = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(grid, 0, 0, 0, 0, 4, 4);
+                Grid gridIsometricScaledQuick = GraphicsLib.RasterApi.Renderer.RenderIsometricCellsScaled(grid, 0, 0, 0, 0, 4, 4);
                 Console.WriteLine("Saving");
                 GraphicsApi.SaveFlatPng(ctl.FileNameOutIsometric, gridIsometricScaledQuick);
                 Console.WriteLine("Saved");
             }
             else if (ctl.FileNameInCode != null)
             {
-                string codeString =RasterLib.RasterApi.GlyCToCode(ctl.FileNameInCode).Replace(';', '\n');
+                string codeString =GraphicsLib.RasterApi.GlyCToCode(ctl.FileNameInCode).Replace(';', '\n');
 
-                Code code =RasterLib.RasterApi.CreateCode(codeString);
+                Code code =GraphicsLib.RasterApi.CreateCode(codeString);
                 Console.WriteLine("Code: {0}\n", codeString);
 
-                Codename codename =RasterLib.RasterApi.CodeToCodename(code);
+                Codename codename =GraphicsLib.RasterApi.CodeToCodename(code);
                 Console.WriteLine("Codename: {0}\n", codename);
 
                 if (ctl.OutputTokens)
                 {
-                    TokenList glyphTokens =RasterLib.RasterApi.CodeToTokens(code);
+                    TokenList glyphTokens =GraphicsLib.RasterApi.CodeToTokens(code);
                     string tokenDesc = "Tokens:\n" + glyphTokens + "\n";
                     Console.WriteLine(tokenDesc);
                 }
 
                 if (ctl.Resize != null)
-                    code =RasterLib.RasterApi.CodeToRescaledCode(code, ctl.Resize[0], ctl.Resize[1], ctl.Resize[2]);
+                    code =GraphicsLib.RasterApi.CodeToRescaledCode(code, ctl.Resize[0], ctl.Resize[1], ctl.Resize[2]);
 
-                grid =RasterLib.RasterApi.CodeToGrid(code);
+                grid =GraphicsLib.RasterApi.CodeToGrid(code);
                 Console.WriteLine("Grid: {0}\n", grid);
 
                 if (ctl.FileNameOutOrthogonalAnimated || ctl.FileNameOutIsometricAnimated)
@@ -137,20 +137,20 @@ namespace ScratchPad.Scratch
 
             if (ctl.OutputBytes && grid != null)
             {
-                string bytesDesc =RasterLib.RasterApi.BytesToString(grid.CloneData());
+                string bytesDesc =GraphicsLib.RasterApi.BytesToString(grid.CloneData());
                 Console.WriteLine("GridBytes:\n{0}\n", bytesDesc);
             }
 
-            RectList rects =RasterLib.RasterApi.GridToRects(grid);
+            RectList rects =GraphicsLib.RasterApi.GridToRects(grid);
             if (ctl.OutputRectangles)//rects
             {
                 Console.WriteLine("Rects: {0}\n{1}", rects.Count, rects);
-               RasterLib.RasterApi.BuildCircuit(rects, true);
+               GraphicsLib.RasterApi.BuildCircuit(rects, true);
 
-                string serialized =RasterLib.RasterApi.RectsToSerializedRectsLimit255(rects).SerializedData;
+                string serialized =GraphicsLib.RasterApi.RectsToSerializedRectsLimit255(rects).SerializedData;
                 Console.WriteLine("Serialized Rects: (len={0})\n{1}\n", serialized.Length, serialized);
 
-               RasterLib.RasterApi.SaveFlatText("..\\..\\foo.txt", serialized);
+               GraphicsLib.RasterApi.SaveFlatText("..\\..\\foo.txt", serialized);
                 Clipboard.SetText(serialized);
                 SerializedRects serializedRects = new SerializedRects(serialized);
                 RectList rectsDecoded = RectConverter.SerializedRectsToRects(serializedRects);
@@ -166,15 +166,15 @@ namespace ScratchPad.Scratch
 
             if (ctl.OutputRenderedAscii)
             {
-                Console.WriteLine("2d view:\n{0}", RasterLib.RasterApi.Renderer.GridToHexDescription(grid));
-                Console.WriteLine("3d view:\n{0}", RasterLib.RasterApi.Renderer.GridTo3DDescription(grid, 0, 0, 0));
+                Console.WriteLine("2d view:\n{0}", GraphicsLib.RasterApi.Renderer.GridToHexDescription(grid));
+                Console.WriteLine("3d view:\n{0}", GraphicsLib.RasterApi.Renderer.GridTo3DDescription(grid, 0, 0, 0));
             }
 
             if (ctl.OutputSceneGraph)
             {
-                Scene scene =RasterLib.RasterApi.RectsToScene(rects); Console.WriteLine("Scene: {0}", scene);
-                QuadList quads =RasterLib.RasterApi.RectsToQuads(rects); Console.WriteLine("Quads: {0}", quads);
-                Triangles triangles =RasterLib.RasterApi.QuadsToTriangles(quads); Console.WriteLine("Triangles: {0}", triangles);
+                Scene scene =GraphicsLib.RasterApi.RectsToScene(rects); Console.WriteLine("Scene: {0}", scene);
+                QuadList quads =GraphicsLib.RasterApi.RectsToQuads(rects); Console.WriteLine("Quads: {0}", quads);
+                Triangles triangles =GraphicsLib.RasterApi.QuadsToTriangles(quads); Console.WriteLine("Triangles: {0}", triangles);
             }
 
             if (ctl.FileNameOutStl != null)
@@ -185,7 +185,7 @@ namespace ScratchPad.Scratch
             if (ctl.FileNameOutOrthogonal != null)
             {
                 Console.WriteLine("Orthogonal Rendering..");
-                Grid gridOrthogonal = RasterLib.RasterApi.Renderer.RenderObliqueCells(grid);
+                Grid gridOrthogonal = GraphicsLib.RasterApi.Renderer.RenderObliqueCells(grid);
                 GraphicsApi.SaveFlatPng(ctl.FileNameOutOrthogonal, gridOrthogonal);
             }
 
@@ -194,7 +194,7 @@ namespace ScratchPad.Scratch
                 Console.WriteLine("Isometric Rendering..");
                 if (ctl.IsometricCellWidth < 1) ctl.IsometricCellWidth = 1;
                 if (ctl.IsometricCellHeight < 1) ctl.IsometricCellHeight = 1;
-                Grid gridIsometricScaled = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(grid, 
+                Grid gridIsometricScaled = GraphicsLib.RasterApi.Renderer.RenderIsometricCellsScaled(grid, 
                     ctl.IsometricBgRgba[0],
                     ctl.IsometricBgRgba[1],
                     ctl.IsometricBgRgba[2],

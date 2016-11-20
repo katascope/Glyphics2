@@ -1,6 +1,6 @@
 ﻿using System.IO;
-using RasterLib;
-using RasterLib.Language;
+using GraphicsLib;
+using GraphicsLib.Language;
 
 namespace GlyToPov
 {
@@ -26,7 +26,7 @@ namespace GlyToPov
             file.WriteLine("        octaves 8");
             file.WriteLine("        color_map {");
             byte r, g, b, a;
-           RasterLib.RasterApi.Ulong2Rgba(cp.Rgba, out r, out g, out b, out a);
+           GraphicsLib.RasterApi.Ulong2Rgba(cp.Rgba, out r, out g, out b, out a);
             file.WriteLine("          [0.00 color rgb <{0}, {1}, {2}>]",
                 (float)r / (float)255,
                 (float)g / (float)255,
@@ -46,12 +46,12 @@ namespace GlyToPov
 
         static void Main(string[] args)
         {
-            string codeString =RasterLib.RasterApi.GlyCToCode("..\\..\\..\\..\\Glyph Cores\\PrintableNexus.glyc").Replace(';', '\n');
+            string codeString =GraphicsLib.RasterApi.GlyCToCode("..\\..\\..\\..\\Glyph Cores\\PrintableNexus.glyc").Replace(';', '\n');
 
             Code code = new Code(codeString);
-            code =RasterLib.RasterApi.CodeToRescaledCode(code, 31, 32, 31);
-            Grid grid =RasterLib.RasterApi.CodeToGrid(code);
-            RectList rects =RasterLib.RasterApi.GridToRects(grid);
+            code =GraphicsLib.RasterApi.CodeToRescaledCode(code, 31, 32, 31);
+            Grid grid =GraphicsLib.RasterApi.CodeToGrid(code);
+            RectList rects =GraphicsLib.RasterApi.GridToRects(grid);
 
 
             string headerfileName = "..\\..\\..\\..\\povHeader.povTemplate";

@@ -1,6 +1,6 @@
 ﻿using GraphicsLib.Renderers;
-using RasterLib;
-using RasterLib.Language;
+using GraphicsLib;
+using GraphicsLib.Language;
 
 //WebGL - http://www.tutorialspoint.com/webgl/
 //THREE.js - actual 3d library

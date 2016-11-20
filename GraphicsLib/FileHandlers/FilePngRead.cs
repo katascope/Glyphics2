@@ -15,7 +15,7 @@ using System.IO;
 using System.Windows.Media.Imaging;
 #endif
 
-using RasterLib;
+using GraphicsLib;
 
 namespace GraphicsLib
 {
@@ -52,7 +52,7 @@ namespace GraphicsLib
                     if (bitmapSource.Format.BitsPerPixel > 3)
                         a = originalPixels[(y * width * bytesPerPixel) + (x * bytesPerPixel + 3)];
 
-                    ulong u = RasterLib.RasterApi.Rgba2Ulong(r, g, b, a);
+                    ulong u = GraphicsLib.RasterApi.Rgba2Ulong(r, g, b, a);
                     grid.Plot(x, y, z, u);
                 }
             }

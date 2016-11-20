@@ -11,10 +11,10 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System.Collections.Generic;
 using System.Text;
-using RasterLib;
+using GraphicsLib;
 using System.Numerics;
 
-namespace RasterLib
+namespace GraphicsLib
 {
     //Serializer for rectangles
     public partial class RectConverter

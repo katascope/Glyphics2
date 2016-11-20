@@ -13,7 +13,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 using System.Collections;
 using System.Collections.Generic;
 
-namespace RasterLib.Language
+namespace GraphicsLib.Language
 {
     //Implementation of CodeList, see for usage
     public class CodeList : IEnumerable<Code>

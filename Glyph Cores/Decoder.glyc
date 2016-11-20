@@ -1,7 +1,7 @@
 Decoder,
 
 #Size of Grid
-Size3D4 36 36 36
+Size3D4 64 64 64
 
 #Blue color ground and white color BUG WITH COMMA PARSING
 PenColorD4 15 63 127 255

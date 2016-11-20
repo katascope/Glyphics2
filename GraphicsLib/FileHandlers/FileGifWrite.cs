@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 #endif
 
-using RasterLib;
+using GraphicsLib;
 
 namespace GraphicsLib
 {
@@ -45,7 +45,7 @@ namespace GraphicsLib
                     }
                     long offset = (y * grid.SizeX * pngBpp) + (x * pngBpp);
                     byte r, g, b, a;
-                    RasterLib.RasterApi.Ulong2Rgba(val, out r, out g, out b, out a);
+                    GraphicsLib.RasterApi.Ulong2Rgba(val, out r, out g, out b, out a);
 
                     if (grid.Bpp == 1)
                     {

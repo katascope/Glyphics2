@@ -10,8 +10,8 @@ Redistribution and use in source and binary forms, with or without modification,
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DRect, INDRect, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #endregion
 using System;
-using RasterLib;
-using RasterLib.Language;
+using GraphicsLib;
+using GraphicsLib.Language;
 
 namespace ExampleSceneGraph
 {
@@ -39,14 +39,14 @@ PenColorD4 255 31 127 255;FillRect 4 1 4 11 2 11;
 PenColorD4 31 255 127 255;Text 6 3 8 65";
 
             //Glyphics codeString object
-            Code rasterCode =RasterLib.RasterApi.CreateCode(code);
+            Code rasterCode =GraphicsLib.RasterApi.CreateCode(code);
 
             //Save final result to PNG file
-            string filename = "..\\..\\" +RasterLib.RasterApi.CodeToCodename(rasterCode).Name + ".PNG";
+            string filename = "..\\..\\" +GraphicsLib.RasterApi.CodeToCodename(rasterCode).Name + ".PNG";
 
-            Grid grid =RasterLib.RasterApi.CodeToGrid(rasterCode);
+            Grid grid =GraphicsLib.RasterApi.CodeToGrid(rasterCode);
 
-            RectList rectsFromGrid =RasterLib.RasterApi.GridToRects(grid);
+            RectList rectsFromGrid =GraphicsLib.RasterApi.GridToRects(grid);
             Grid gridFromRects = grid.Clone();
             if (grid.IsEqualTo(gridFromRects) == false)
             {
@@ -54,15 +54,15 @@ PenColorD4 31 255 127 255;Text 6 3 8 65";
                 return;
             }
 
-            RasterLib.RasterApi.Renderer.RenderRectsToGrid(rectsFromGrid, gridFromRects);
+            GraphicsLib.RasterApi.Renderer.RenderRectsToGrid(rectsFromGrid, gridFromRects);
             if (grid.IsEqualTo(gridFromRects) == false)
             {
                 Console.WriteLine("Grids are diff");
                 return;
             }
 
-            Scene sceneFromRects =RasterLib.RasterApi.RectsToScene(rectsFromGrid);
-            RectList rectsFromScene =RasterLib.RasterApi.SceneToRects(sceneFromRects);
+            Scene sceneFromRects =GraphicsLib.RasterApi.RectsToScene(rectsFromGrid);
+            RectList rectsFromScene =GraphicsLib.RasterApi.SceneToRects(sceneFromRects);
 
             if (rectsFromGrid.IsEqualTo(rectsFromScene) == false)
             {
@@ -71,7 +71,7 @@ PenColorD4 31 255 127 255;Text 6 3 8 65";
             }
 
             Grid gridMega = grid.Clone();
-            RasterLib.RasterApi.Renderer.RenderRectsToGrid(rectsFromScene, gridMega);
+            GraphicsLib.RasterApi.Renderer.RenderRectsToGrid(rectsFromScene, gridMega);
 
             if (grid.IsEqualTo(gridMega) == false)
             {

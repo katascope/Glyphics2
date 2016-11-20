@@ -58,6 +58,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderers.RendererOblique.cs" />
     <Compile Include="Renderers.RenderIsometricScaled.cs" />
+    <Compile Include="Simulation.cs" />
+    <Compile Include="SimulationModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RasterLib\RasterLib.csproj">

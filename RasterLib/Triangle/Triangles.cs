@@ -11,9 +11,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System.Text;
 using System.Collections.Generic;
-using RasterLib.Utility;
+using GraphicsLib.Utility;
 
-namespace RasterLib
+namespace GraphicsLib
 {
     //Implementation of Triangles, see for usage
     public class Triangles

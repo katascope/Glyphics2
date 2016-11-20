@@ -11,7 +11,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 using GraphicsLib;
-using RasterLib;
+using GraphicsLib;
 
 namespace ScratchPad.Scratch
 {
@@ -21,13 +21,13 @@ namespace ScratchPad.Scratch
         {
             //Then render that to triangles
             Console.WriteLine("Creating triangle library");
-            TrianglesList trianglesList = RasterLib.RasterApi.CreateTrianglesList();
+            TrianglesList trianglesList = GraphicsLib.RasterApi.CreateTrianglesList();
 
             foreach (string filename in ctl.FileNamesInStlLibrary)
                 trianglesList.ImportAndReduceToUnit(filename);
 
             //Render the rectangles out as shapes(Triangles) to a new set of triangles
-            Triangles triangles = RasterLib.RasterApi.Renderer.RenderRectsAsStlMapping(rects, trianglesList);
+            Triangles triangles = GraphicsLib.RasterApi.Renderer.RenderRectsAsStlMapping(rects, trianglesList);
             Console.WriteLine("Rendering triangles to grid");
 
             //Reduce scale to 1x1x1, making it 1mm x 1mm x 1mm
@@ -42,7 +42,7 @@ namespace ScratchPad.Scratch
 
             //Save final result to STL file
             Console.WriteLine("Saving triangles to {0}", ctl.FileNameOutStl);
-            RasterLib.RasterApi.SaveTrianglesToStlAscii(ctl.FileNameOutStl, triangles);
+            GraphicsLib.RasterApi.SaveTrianglesToStlAscii(ctl.FileNameOutStl, triangles);
 
             //So.. as long as we are here.. let's make a preview
 
@@ -51,14 +51,14 @@ namespace ScratchPad.Scratch
 
             //Save a rendering out to a PNG, why not, too.
             Console.WriteLine("Creating preview grid");
-            Grid gridFromStl = RasterLib.RasterApi.CreateGrid(96, 96, 96, 4);
+            Grid gridFromStl = GraphicsLib.RasterApi.CreateGrid(96, 96, 96, 4);
 
             Console.WriteLine("Rendering triangles to grid");
-            RasterLib.RasterApi.Renderer.RenderTrianglesToGrid(triangles, gridFromStl);
+            GraphicsLib.RasterApi.Renderer.RenderTrianglesToGrid(triangles, gridFromStl);
 
             //Then render to a new grid
             Console.WriteLine("Rendering grid to oblique preview grid");
-            Grid gridObliqueRendered = RasterLib.RasterApi.Renderer.RenderObliqueCells(gridFromStl);
+            Grid gridObliqueRendered = GraphicsLib.RasterApi.Renderer.RenderObliqueCells(gridFromStl);
 
             //Then save            
             if (ctl.FileNameOutStlPreview != null)

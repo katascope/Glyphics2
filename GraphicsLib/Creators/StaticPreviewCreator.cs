@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
-using RasterLib.Language;
+using GraphicsLib.Language;
 
 namespace GraphicsLib.Creators
 {

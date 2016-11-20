@@ -11,9 +11,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 using System.Text;
-using RasterLib;
+using GraphicsLib;
 
-namespace RasterLib.Renderers
+namespace GraphicsLib.Renderers
 {
     internal partial class Renderer
     {

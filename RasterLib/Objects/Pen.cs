@@ -11,7 +11,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 
-namespace RasterLib
+namespace GraphicsLib
 {
     //Axis that a pen can twist on when drawing
     public enum PenTwist { XYaxis, YZaxis, XZaxis };

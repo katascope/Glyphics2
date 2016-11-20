@@ -11,19 +11,19 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 
 using GraphicsLib;
-using RasterLib;
+using GraphicsLib;
 
-namespace RasterLib.Renderers
+namespace GraphicsLib.Renderers
 {
     //Partial class to render oblique pixels
-    internal partial class Renderer
+    public partial class Renderer
     {
         //Render glyphics code obliquely and save as fileName
         public void RenderIsometricScaled(string fileName, Grid grid, byte bgR, byte bgG, byte bgB, byte bgA, int cellWidth, int cellHeight)
         {
             if (fileName == null || grid == null) return;
 
-            Grid grid2 = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(grid, bgR, bgG, bgB, bgA, cellWidth, cellHeight, "");
+            Grid grid2 = GraphicsLib.RasterApi.Renderer.RenderIsometricCellsScaled(grid, bgR, bgG, bgB, bgA, cellWidth, cellHeight, "");
             FilePngWrite.SaveFlatPng(fileName, grid2);
         }
     }

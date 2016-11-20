@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RasterLib.Language
+namespace GraphicsLib.Language
 {
     public class CompiledCode
     {
@@ -25,8 +25,8 @@ namespace RasterLib.Language
         public int triCount { get; set; }
 
         public string SerializedRects { get; set; }
-        public RasterLib.QuadList Quads { get; set; }
-        public RasterLib.Triangles Triangles { get; set; }
+        public GraphicsLib.QuadList Quads { get; set; }
+        public GraphicsLib.Triangles Triangles { get; set; }
 
         public string isometricGridLargeFilename { get; set; }
         public string isometricGridFilename { get; set; }

@@ -11,9 +11,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System.Collections;
 using System.Collections.Generic;
-using RasterLib;
+using GraphicsLib;
 
-namespace RasterLib
+namespace GraphicsLib
 {
     //Implementation of TrianglesList, see for usage
     public class TrianglesList : IEnumerable<Triangles>

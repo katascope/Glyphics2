@@ -11,7 +11,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System.Text;
 
-namespace RasterLib
+namespace GraphicsLib
 {
     public partial class TriangleConverter
     {

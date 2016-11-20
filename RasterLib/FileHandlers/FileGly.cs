@@ -11,10 +11,10 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 
 using System;
-using RasterLib.Language;
-using RasterLib;
+using GraphicsLib.Language;
+using GraphicsLib;
 
-namespace RasterLib
+namespace GraphicsLib
 {
     //Static set of Glyphics file operations
     public class GlyphicsFile

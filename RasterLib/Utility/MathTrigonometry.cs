@@ -13,7 +13,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 using System;
 
-namespace RasterLib.Utility
+namespace GraphicsLib.Utility
 {
     //Utility Trigonometry class
     public static class MathTrigonometry

@@ -12,7 +12,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 using System;
 using System.Text;
 
-namespace RasterLib.Language
+namespace GraphicsLib.Language
 {
     //Convert bytes to serialized string, similar in function (but not result) to a CDATA
     public class ByteConverter

@@ -11,7 +11,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System.Collections.Generic;
 
-namespace RasterLib
+namespace GraphicsLib
 {
     //Implementation of GridContext, see for usage
     public class GridContext

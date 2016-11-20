@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using RasterLib;
-using RasterLib.Language;
+using GraphicsLib;
+using GraphicsLib.Language;
 using GraphicsLib;
 
 namespace Glynt

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RasterLib.Language
+namespace GraphicsLib.Language
 {
     public class Digest
     {

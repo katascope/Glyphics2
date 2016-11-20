@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
-using RasterLib.Language;
+using GraphicsLib.Language;
 
 namespace GraphicsLib
 {
@@ -16,7 +16,7 @@ namespace GraphicsLib
             return result;
         }
 
-        public static int Analyze(string inputFilenameWithPath, Digest digest, string outputFolder, RasterLib.DownSolver.enables enables)
+        public static int Analyze(string inputFilenameWithPath, Digest digest, string outputFolder, GraphicsLib.DownSolver.enables enables)
         {
             string filename = Path.GetFileNameWithoutExtension(inputFilenameWithPath);
             List<CodeCompilerError> results = new List<CodeCompilerError>();
@@ -42,7 +42,7 @@ namespace GraphicsLib
                     }
                     else fullcode += line + "\n";
                 }
-                RasterLib.DownSolver ds = new RasterLib.DownSolver(inputFilenameWithPath, enables);
+                GraphicsLib.DownSolver ds = new GraphicsLib.DownSolver(inputFilenameWithPath, enables);
 
                 CompiledCode ca = new CompiledCode();
                 ca.name = name;

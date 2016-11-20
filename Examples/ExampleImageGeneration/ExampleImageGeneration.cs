@@ -11,7 +11,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 using GraphicsLib;
-using RasterLib;
+using GraphicsLib;
 
 namespace ExampleImageGeneration
 {
@@ -40,7 +40,7 @@ namespace ExampleImageGeneration
                     var b = (byte)((sx * sx + sy * sy) / 25);
 
                     //Convert to ulong 
-                    ulong u = RasterLib.RasterApi.Rgba2Ulong(r, g, b, 255);
+                    ulong u = GraphicsLib.RasterApi.Rgba2Ulong(r, g, b, 255);
 
                     //And plot it
                     grid.Plot(x, y, 0, u);
@@ -51,7 +51,7 @@ namespace ExampleImageGeneration
         static void Main()
         {
             //Create a grid
-            Grid grid = RasterLib.RasterApi.CreateGrid(256, 256, 1, 4);
+            Grid grid = GraphicsLib.RasterApi.CreateGrid(256, 256, 1, 4);
 
             //Draw procedural image to grid
             DrawProceduralImage(grid);

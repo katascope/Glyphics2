@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GraphicsLib;
-using RasterLib;
+using GraphicsLib;
 
 namespace GlyphicsUnitTests
 {

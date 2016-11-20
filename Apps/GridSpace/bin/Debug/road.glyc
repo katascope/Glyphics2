@@ -1,0 +1,48 @@
+ChessBoard,
+
+Size3D4 64 64 64
+
+PenColorD4 0 0 63 255
+FillRect 0 0 0 63 0 63
+
+PenColorD4 0 0 0 255
+FillRect 0 0 0 7 0 7
+FillRect 16 0 0 23 0 7
+FillRect 32 0 0 39 0 7
+FillRect 48 0 0 55 0 7
+
+FillRect 8 0 8 15 0 15
+FillRect 24 0 8 31 0 15
+FillRect 40 0 8 47 0 15
+FillRect 56 0 8 63 0 15
+
+FillRect 0 0 16 7 0 23
+FillRect 16 0 16 23 0 23
+FillRect 32 0 16 39 0 23
+FillRect 48 0 16 55 0 23
+
+FillRect 8 0 24 15 0 31
+FillRect 24 0 24 31 0 31
+FillRect 40 0 24 47 0 31
+FillRect 56 0 24 63 0 31
+
+
+FillRect 0 0 32 7 0 39
+FillRect 16 0 32 23 0 39
+FillRect 32 0 32 39 0 39
+FillRect 48 0 32 55 0 39
+
+FillRect 8 0 40 15 0 47
+FillRect 24 0 40 31 0 47
+FillRect 40 0 40 47 0 47
+FillRect 56 0 40 63 0 47
+
+FillRect 0 0 48 7 0 55
+FillRect 16 0 48 23 0 55
+FillRect 32 0 48 39 0 55
+FillRect 48 0 48 55 0 55
+
+FillRect 8 0 56 15 0 63
+FillRect 24 0 56 31 0 63
+FillRect 40 0 56 47 0 63
+FillRect 56 0 56 63 0 63

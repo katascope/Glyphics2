@@ -11,7 +11,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using GraphicsLib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RasterLib;
+using GraphicsLib;
 
 namespace GlyphicsUnitTests
 {
@@ -22,7 +22,7 @@ namespace GlyphicsUnitTests
         public void SpecificTest_PropertyRGBA()
         {
             const string code = @"Size3D4 8 1 8;Spawn 1 0 1;PenColorD4 31 127 255 255;PenGroup 2;Plot 1 0 1";
-            RectList rectSet = RasterLib.RasterApi.CodeToRects(RasterLib.RasterApi.CreateCode(code));
+            RectList rectSet = GraphicsLib.RasterApi.CodeToRects(GraphicsLib.RasterApi.CreateCode(code));
             Assert.IsTrue(rectSet.GetRect(0).Properties.Rgba == 0xffff7f1f);
         }
 
@@ -30,7 +30,7 @@ namespace GlyphicsUnitTests
         public void SpecificTest_PropertyShape()
         {
             const string code = @"Size3D4 8 1 8;Spawn 1 0 1;PenColorD1 17;PenShape 2;Plot 1 0 1";
-            RectList rectSet = RasterLib.RasterApi.CodeToRects(RasterLib.RasterApi.CreateCode(code));
+            RectList rectSet = GraphicsLib.RasterApi.CodeToRects(GraphicsLib.RasterApi.CreateCode(code));
             Assert.IsTrue(rectSet.GetRect(0).Properties.ShapeId == 2);
         }
 
@@ -38,7 +38,7 @@ namespace GlyphicsUnitTests
         public void SpecificTest_PropertyTexture()
         {
             const string code = @"Size3D4 8 1 8;Spawn 1 0 1;PenColorD1 17;PenTex 2;Plot 1 0 1";
-            RectList rectSet = RasterLib.RasterApi.CodeToRects(RasterLib.RasterApi.CreateCode(code));
+            RectList rectSet = GraphicsLib.RasterApi.CodeToRects(GraphicsLib.RasterApi.CreateCode(code));
             Assert.IsTrue(rectSet.GetRect(0).Properties.TextureId == 2);
         }
 
@@ -46,7 +46,7 @@ namespace GlyphicsUnitTests
         public void SpecificTest_PropertyAnim()
         {
             const string code = @"Size3D4 8 1 8;Spawn 1 0 1;PenColorD1 17;PenGroup 2;Plot 1 0 1";
-            RectList rectSet = RasterLib.RasterApi.CodeToRects(RasterLib.RasterApi.CreateCode(code));
+            RectList rectSet = GraphicsLib.RasterApi.CodeToRects(GraphicsLib.RasterApi.CreateCode(code));
             Assert.IsTrue(rectSet.GetRect(0).Properties.GroupId == 2);
         }
     }

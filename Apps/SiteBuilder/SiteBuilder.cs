@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
-using RasterLib;
-using RasterLib.Language;
+using GraphicsLib;
+using GraphicsLib.Language;
 using GraphicsLib;
 
 namespace SiteBuilder
@@ -13,19 +13,13 @@ namespace SiteBuilder
             const string documentationOutputPath = "\\GitHub\\Glyphics2\\Site\\Documentation\\";
             const string staticPreviewOutputPath = "\\GitHub\\Glyphics2\\Site\\Digest\\";
             const string digestOutputPath = "\\GitHub\\Glyphics2\\Site\\Digest\\";
-
-            Console.WriteLine("Building site...");
+            string originalFolder = Directory.GetCurrentDirectory();
 
             Console.WriteLine("Documenting glyphs to " + documentationOutputPath + "\n");
-            //GraphicsLib.Creators.DocumentationCreator.DocumentByCode(documentationOutputPath);
-
+            GraphicsLib.Creators.DocumentationCreator.DocumentByCode(documentationOutputPath);
 
             Console.WriteLine("Creating digest at " + digestOutputPath + "\n");
-            string originalFolder = Directory.GetCurrentDirectory();
-            Digest digest = GraphicsLib.Creators.DigestCreator.Create(originalFolder, digestOutputPath,
-                DownSolver.enables.All
-                //DownSolver.enables.RenderIsometricThumb | DownSolver.enables.DoRects
-                );            
+            Digest digest = GraphicsLib.Creators.DigestCreator.Create(originalFolder, digestOutputPath, DownSolver.enables.All );
 
             Console.WriteLine("Creating static preview at " + staticPreviewOutputPath + "\n");
             GraphicsLib.Creators.StaticPreviewCreator.Create(digest, staticPreviewOutputPath);

@@ -2,9 +2,9 @@
 using System.Linq; //TODO: Get read of all Linq usage
 using System.IO;
 using System.Collections.Generic;
-using RasterLib.Language;
+using GraphicsLib.Language;
 using GraphicsLib;
-using RasterLib;
+using GraphicsLib;
 
 namespace GraphicsLib.Creators
 {
@@ -22,7 +22,7 @@ namespace GraphicsLib.Creators
         //Create Markdown document index
         public void DocumentIndex(string documentationPath)
         {
-            Glyph[] glyphs = RasterLib.RasterApi.GetGlyphDefs();
+            Glyph[] glyphs = GraphicsLib.RasterApi.GetGlyphDefs();
 
             var glyphNames = glyphs.Select(glyph => glyph.Name).ToList();
             glyphNames.Sort();
@@ -54,23 +54,23 @@ namespace GraphicsLib.Creators
         public void DocumentByCode(string documentationPath, string title, string code)
         {
             string path = documentationPath;
+            IRenderer renderer = GraphicsLib.RasterApi.Renderer;
+            Console.WriteLine(title);
 
-            IRenderer renderer = RasterLib.RasterApi.Renderer;
-
-            Grid grid = RasterLib.RasterApi.CodeToGrid(RasterLib.RasterApi.CreateCode(code));
+            Grid grid = GraphicsLib.RasterApi.CodeToGrid(GraphicsLib.RasterApi.CreateCode(code));
             //            using ()
             {
-                Grid gridIso = RasterLib.RasterApi.CodeToGrid(RasterLib.RasterApi.CreateCode(code.Replace("WallCube 37", "WallCube 21")));
+                Grid gridIso = GraphicsLib.RasterApi.CodeToGrid(GraphicsLib.RasterApi.CreateCode(code.Replace("WallCube 37", "WallCube 21")));
                 Grid gridIsometric = renderer.RenderIsometricCellsScaled(gridIso, 255, 255, 255, 255, 6, 6, "Isometric docs");
                 GraphicsApi.SaveFlatPng(path + title + "-Iso.png", gridIsometric);
 
                 Grid gridOrtho = renderer.RenderObliqueCells(grid);
                 GraphicsApi.SaveFlatPng(path + title + "-Ortho.png", gridOrtho);
 
-                int id = RasterLib.RasterApi.GetId(title);
+                int id = GraphicsLib.RasterApi.GetId(title);
                 if (id >= 0)
                 {//Glyph description
-                    Glyph glyph = RasterLib.RasterApi.GetGlyph(id);
+                    Glyph glyph = GraphicsLib.RasterApi.GetGlyph(id);
 
                     string description = glyph.Desc;
 
@@ -80,9 +80,9 @@ namespace GraphicsLib.Creators
                                      + "\n"
                                      + "\n![](" + title + "-Iso.png)\n"
                                      ;
-                    Console.WriteLine(glyphDoc + "\n");
+                    //Console.WriteLine(glyphDoc + "\n");
 
-                    string crCode = TokensToHotlinkedCode(RasterLib.RasterApi.CodeToTokens(RasterLib.RasterApi.CreateCode(code)));
+                    string crCode = TokensToHotlinkedCode(GraphicsLib.RasterApi.CodeToTokens(GraphicsLib.RasterApi.CreateCode(code)));
                     glyphDoc += "\nFigure Code:\n" + crCode + "\nCondensed: " + code + "\n";
 
                     using (var file = new System.IO.StreamWriter(path + title + ".md"))
@@ -103,7 +103,7 @@ namespace GraphicsLib.Creators
         //Create html document index
         public void DocumentIndex(string documentationPath)
         {
-            Glyph[] glyphs = RasterLib.RasterApi.GetGlyphDefs();
+            Glyph[] glyphs = GraphicsLib.RasterApi.GetGlyphDefs();
 
             var glyphNames = glyphs.Select(glyph => glyph.Name).ToList();
             glyphNames.Sort();
@@ -139,23 +139,24 @@ namespace GraphicsLib.Creators
         public void DocumentByCode(string documentationPath, string title, string code)
         {
             string path = documentationPath;
+            IRenderer renderer = GraphicsLib.RasterApi.Renderer;
 
-            IRenderer renderer = RasterLib.RasterApi.Renderer;
+            Console.WriteLine(title);
 
-            Grid grid = RasterLib.RasterApi.CodeToGrid(RasterLib.RasterApi.CreateCode(code));
+            Grid grid = GraphicsLib.RasterApi.CodeToGrid(GraphicsLib.RasterApi.CreateCode(code));
             //            using ()
             {
-                Grid gridIso = RasterLib.RasterApi.CodeToGrid(RasterLib.RasterApi.CreateCode(code.Replace("WallCube 37", "WallCube 21")));
+                Grid gridIso = GraphicsLib.RasterApi.CodeToGrid(GraphicsLib.RasterApi.CreateCode(code.Replace("WallCube 37", "WallCube 21")));
                 Grid gridIsometric = renderer.RenderIsometricCellsScaled(gridIso, 255, 255, 255, 255, 6, 6, "Isometric Docs");
                 GraphicsApi.SaveFlatPng(path + title + "-Iso.png", gridIsometric);
 
                 Grid gridOrtho = renderer.RenderObliqueCells(grid);
                 GraphicsApi.SaveFlatPng(path + title + "-Ortho.png", gridOrtho);
 
-                int id = RasterLib.RasterApi.GetId(title);
+                int id = GraphicsLib.RasterApi.GetId(title);
                 if (id >= 0)
                 {//Glyph description
-                    Glyph glyph = RasterLib.RasterApi.GetGlyph(id);
+                    Glyph glyph = GraphicsLib.RasterApi.GetGlyph(id);
 
                     string description = glyph.Desc;
                     description = description.Replace("<", "&lt");
@@ -167,9 +168,9 @@ namespace GraphicsLib.Creators
                                      + "<br><img src=\"" + title + "-Ortho.png\">"
                                      + "<img src=\"" + title + "-Iso.png\">"
                                      ;
-                    Console.WriteLine(glyphDoc + "\n");
+                    //Console.WriteLine(glyphDoc + "\n");
 
-                    string crCode = TokensToHotlinkedCode(RasterLib.RasterApi.CodeToTokens(RasterLib.RasterApi.CreateCode(code)));
+                    string crCode = TokensToHotlinkedCode(GraphicsLib.RasterApi.CodeToTokens(GraphicsLib.RasterApi.CreateCode(code)));
                     glyphDoc += "<h3>Figure Code</h3><pre>" + crCode + "</pre><h4>Condensed</h4><pre>" + code + "</pre><br>";
 
                     using (var file = new System.IO.StreamWriter(path + title + ".html"))
@@ -188,7 +189,7 @@ namespace GraphicsLib.Creators
                     exampleDoc += str + "\n";
 
 
-                    string crCode = TokensToHotlinkedCode(RasterLib.RasterApi.CodeToTokens(RasterLib.RasterApi.CreateCode(code)));
+                    string crCode = TokensToHotlinkedCode(GraphicsLib.RasterApi.CodeToTokens(GraphicsLib.RasterApi.CreateCode(code)));
                     exampleDoc += "<h3>Example Code</h3><pre>" + crCode + "</pre><h4>Condensed</h4><pre>" + code + "</pre><br>";
 
                     using (var file = new System.IO.StreamWriter(path + title + ".html"))
@@ -315,16 +316,16 @@ namespace GraphicsLib.Creators
 
         public static void DocumentByGlyphicsFile(string documentationPath, string filename)
         {
-            CodeList codes = RasterLib.RasterApi.GlyToCodes(filename);
+            CodeList codes = GraphicsLib.RasterApi.GlyToCodes(filename);
             foreach (Code code in codes)
             {
                 string name = code.codeString.Split(',')[0];
                 string actualCode = code.codeString.Split(',')[1];
-                Code rasterCode = RasterLib.RasterApi.CreateCode(actualCode);
+                Code rasterCode = GraphicsLib.RasterApi.CreateCode(actualCode);
 
                 const int size = 192;
                 Console.WriteLine("Executing " + name);
-                DocumentByCode(documentationPath, name, code.codeString.Contains("Size3D4 255") ? RasterLib.RasterApi.CodeToRescaledCode(rasterCode, size, size, size).codeString : rasterCode.codeString);
+                DocumentByCode(documentationPath, name, code.codeString.Contains("Size3D4 255") ? GraphicsLib.RasterApi.CodeToRescaledCode(rasterCode, size, size, size).codeString : rasterCode.codeString);
             }
         }
     }

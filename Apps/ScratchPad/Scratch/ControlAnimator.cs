@@ -11,8 +11,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 using GraphicsLib;
-using RasterLib;
-using RasterLib.Language;
+using GraphicsLib;
+using GraphicsLib.Language;
 
 namespace ScratchPad.Scratch
 {
@@ -21,21 +21,21 @@ namespace ScratchPad.Scratch
         static void ExecuteCodeToPng(ScratchControl ctl, string code)
         {
             //Glyphics codeString object
-            Code rasterCode =RasterLib.RasterApi.CreateCode(code);
+            Code rasterCode =GraphicsLib.RasterApi.CreateCode(code);
 
             //Save final result to PNG file
-            string filenameOrthogonal = "..\\..\\" +RasterLib.RasterApi.CodeToCodename(rasterCode).Name + "-Ortho.PNG";
-            string filenameIsometric = "..\\..\\" +RasterLib.RasterApi.CodeToCodename(rasterCode).Name + "-Isometric.PNG";
+            string filenameOrthogonal = "..\\..\\" +GraphicsLib.RasterApi.CodeToCodename(rasterCode).Name + "-Ortho.PNG";
+            string filenameIsometric = "..\\..\\" +GraphicsLib.RasterApi.CodeToCodename(rasterCode).Name + "-Isometric.PNG";
 
             //Execute, render, and save to png
-            Grid grid =RasterLib.RasterApi.CodeToGrid(rasterCode);
+            Grid grid =GraphicsLib.RasterApi.CodeToGrid(rasterCode);
 
             //Save png's to each
             if (ctl.FileNameOutOrthogonalAnimated)
-                GraphicsApi.SaveFlatPng(filenameOrthogonal, RasterLib.RasterApi.Renderer.RenderObliqueCells(grid));
+                GraphicsApi.SaveFlatPng(filenameOrthogonal, GraphicsLib.RasterApi.Renderer.RenderObliqueCells(grid));
 
             if (ctl.FileNameOutIsometricAnimated)
-                GraphicsApi.SaveFlatPng(filenameIsometric, RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(grid,
+                GraphicsApi.SaveFlatPng(filenameIsometric, GraphicsLib.RasterApi.Renderer.RenderIsometricCellsScaled(grid,
                     ctl.IsometricBgRgba[0],
                     ctl.IsometricBgRgba[1],
                     ctl.IsometricBgRgba[2],
@@ -47,8 +47,8 @@ namespace ScratchPad.Scratch
         {
             if (rawCode.Contains(",")) rawCode = rawCode.Split(',')[1].TrimStart();
             string codeString = prefix + "," + rawCode;
-            Code code =RasterLib.RasterApi.CreateCode(codeString);
-            TokenList tokens =RasterLib.RasterApi.CodeToTokens(code);
+            Code code =GraphicsLib.RasterApi.CreateCode(codeString);
+            TokenList tokens =GraphicsLib.RasterApi.CodeToTokens(code);
 
             int tokenId = 0;
             int actualCount = 1;

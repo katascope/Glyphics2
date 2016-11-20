@@ -11,8 +11,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using GraphicsLib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RasterLib;
-using RasterLib.Utility;
+using GraphicsLib;
+using GraphicsLib.Utility;
 
 namespace GlyphicsUnitTests
 {
@@ -44,7 +44,7 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TriangleTest_Translate()
         {
-            Triangle triangle = RasterLib.RasterApi.CreateTriangle(0, 0, 0, 1, 1, 0, 1, 0, 0);
+            Triangle triangle = GraphicsLib.RasterApi.CreateTriangle(0, 0, 0, 1, 1, 0, 1, 0, 0);
             triangle.Translate(1,2,3);
             CompareVertices(triangle, 1, 2, 3, 2, 3, 3, 2, 2, 3);
         }
@@ -52,7 +52,7 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TriangleTest_RotateX()
         {
-            Triangle triangle = RasterLib.RasterApi.CreateTriangle(0, 0, 0, 1, 1, 0, 1, 0, 0);
+            Triangle triangle = GraphicsLib.RasterApi.CreateTriangle(0, 0, 0, 1, 1, 0, 1, 0, 0);
             triangle.RotateX(90);
             CompareVertices(triangle, 0, 0, 0, 1, 0, 1, 1, 0, 0);
         }
@@ -60,7 +60,7 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TriangleTest_RotateY()
         {
-            Triangle triangle = RasterLib.RasterApi.CreateTriangle(0, 0, 0, 1, 1, 0, 1, 0, 0);
+            Triangle triangle = GraphicsLib.RasterApi.CreateTriangle(0, 0, 0, 1, 1, 0, 1, 0, 0);
             triangle.RotateY(90);
             CompareVertices(triangle, 0, 0, 0, -1, 1, 0, -1, 0, 0);
         }
@@ -68,7 +68,7 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TriangleTest_RotateZ()
         {
-            Triangle triangle = RasterLib.RasterApi.CreateTriangle(0, 0, 0, 1, 1, 0, 1, 0, 0);
+            Triangle triangle = GraphicsLib.RasterApi.CreateTriangle(0, 0, 0, 1, 1, 0, 1, 0, 0);
             triangle.RotateZ(90);
             CompareVertices(triangle, 0, 0, 0, -1, 1, 0, 0, 1, 0);
         }
@@ -76,7 +76,7 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TriangleTest_Scale()
         {
-            Triangle triangle = RasterLib.RasterApi.CreateTriangle(1, 1, 1, 1, 1, 1, 1, 1, 1);
+            Triangle triangle = GraphicsLib.RasterApi.CreateTriangle(1, 1, 1, 1, 1, 1, 1, 1, 1);
             triangle.Scale(1,2,3);
             CompareVertex(triangle.Vertex1[0], triangle.Vertex1[1], triangle.Vertex1[2], 1, 2, 3);
         }
@@ -84,7 +84,7 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TriangleTest_MirrorX()
         {
-            Triangle triangle = RasterLib.RasterApi.CreateTriangle(0, 0, 0, 1, 1, 0, 1, 0, 0);
+            Triangle triangle = GraphicsLib.RasterApi.CreateTriangle(0, 0, 0, 1, 1, 0, 1, 0, 0);
             triangle.MirrorX();
             CompareVertices(triangle, 1,0,0, 0,1,0, 0,0,0);
         }
@@ -92,7 +92,7 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TriangleTest_MirrorY()
         {
-            Triangle triangle = RasterLib.RasterApi.CreateTriangle(0, 0, 0, 1, 1, 0, 1, 0, 0);
+            Triangle triangle = GraphicsLib.RasterApi.CreateTriangle(0, 0, 0, 1, 1, 0, 1, 0, 0);
             triangle.MirrorY();
             CompareVertices(triangle, 0, 0, 0, 1, -1, 0, 1, 0, 0);
         }
@@ -100,7 +100,7 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void TriangleTest_MirrorZ()
         {
-            Triangle triangle = RasterLib.RasterApi.CreateTriangle(0, 0, 0, 1, 1, 0, 1, 0, 0);
+            Triangle triangle = GraphicsLib.RasterApi.CreateTriangle(0, 0, 0, 1, 1, 0, 1, 0, 0);
             triangle.MirrorZ();
             CompareVertices(triangle, 0, 0, 0, 1, 1, 0, 1, 0, 0);
         } 

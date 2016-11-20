@@ -11,9 +11,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System.Collections.Generic;
 using System.Numerics;
-using RasterLib.Utility;
+using GraphicsLib.Utility;
 
-namespace RasterLib
+namespace GraphicsLib
 {
 
     /*

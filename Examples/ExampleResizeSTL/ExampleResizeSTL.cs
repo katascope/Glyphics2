@@ -10,7 +10,7 @@ Redistribution and use in source and binary forms, with or without modification,
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DRect, INDRect, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #endregion
 using System;
-using RasterLib;
+using GraphicsLib;
 
 
 namespace ExampleResizeStl
@@ -31,7 +31,7 @@ namespace ExampleResizeStl
             Console.WriteLine("Input filename: {0}", inputFilenameStl);
 
             //Load STL file
-            Triangles triangles = RasterLib.RasterApi.StlToTriangles(inputFilenameStl);
+            Triangles triangles = GraphicsLib.RasterApi.StlToTriangles(inputFilenameStl);
 
             //Write message if encountered problem
             if (triangles == null)
@@ -75,7 +75,7 @@ namespace ExampleResizeStl
 
             //Finally save out the resized triangles back to STL file
             Console.WriteLine("Writing file {0}", outputfilenameStl);
-           RasterLib.RasterApi.SaveTrianglesToStlAscii(outputfilenameStl, trianglesResized);
+           GraphicsLib.RasterApi.SaveTrianglesToStlAscii(outputfilenameStl, trianglesResized);
 
             
             Console.WriteLine("Done.");

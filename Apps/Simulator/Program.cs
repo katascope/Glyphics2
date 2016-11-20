@@ -1,100 +1,149 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using GraphicsLib;
-using RasterLib;
-using RasterLib.Language;
+using GraphicsLib;
+using GraphicsLib.Language;
+using GraphicsLib.Simulator;
 
 namespace Simulator
 {
-    class Avatar
-    {
-        public double x, y, z;
-    }
-
     class Simulator
     {
-        static readonly Avatar _avatar = new Avatar();
-        static char _lastKey = ' ';
-        static int _frameCount;
-
-        static void BoundaryInhibit(Grid grid, Avatar avatar)
-        {
-            if (avatar.x < 0) avatar.x = 0;
-            if (avatar.x > grid.SizeX - 1) avatar.x = grid.SizeX - 1;
-            if (avatar.y < 0) avatar.y = 0;
-            if (avatar.y > grid.SizeY - 1) avatar.y = grid.SizeY - 1;
-            if (avatar.z < 0) avatar.z = 0;
-            if (avatar.z > grid.SizeZ - 1) avatar.z = grid.SizeZ - 1;
-        }
-
-        static void DisplayGrid(Grid grid)
-        {
-            _frameCount++;
-            string desc = RasterLib.RasterApi.Renderer.GridTo3DDescription(grid, (int)_avatar.x, (int)_avatar.y, (int)_avatar.z);
-            Console.Clear();
-            Console.Write(desc + " Frame=" + _frameCount + " Key=" + _lastKey+ " Avatar="+_avatar.x+","+_avatar.y+","+_avatar.z);
-            Thread.Sleep(50);
-        }
-        static void Simulate(Grid grid)
-        {
-            BoundaryInhibit(grid, _avatar);
-        }
         static void Main()
         {
-            string code =
-                @"Simulation,
-
-#Spawn point
-Spawn 2 2 2
+            string code =@"
+Timer,
 
 #Size of Grid
-Size3D1 32 4 16;
+Size3D4 36 36 36
 
-#White border around ground's edge
-PenColorD1 255;FillRect 0 0 0 31 31 15;
-PenColorD1 0;FillRect 1 1 1 30 30 14;
+#Blue color ground and white color BUG WITH COMMA PARSING
+PenColorD4 15 63 127 255
+FillRect 0 0 0 35 0 35
+PenColorD4 7 31 63 255
+Rect 0 0 0 35 0 35
 
-PenColorD1 127;
-Stairs 5 0 2 5 5 7 3 1 1
+#Inputs
+PenColorD4 255 127 0 255
+PenPhysics 5
+Plot 1 1 30
+PenPhysics 4
+Plot 1 1 28
 
+#PenColorD4 255 255 0 255
+PenPhysics 2
+
+#Gate 1
+PenPhysics 2
+PenColorD4 127 127 127 255
+Line 3 1 4 16 1 4
+Line 5 1 6 16 1 6
+PenPhysics 49
+PenColorD4 255 0 255 255
+Line 16 1 5 18 1 5
+PenPhysics 2
+PenColorD4 127 127 127 255
+Line 18 2 5 32 2 5
+Line 32 2 5 32 7 5
+PenPhysics 30
+PenColorD4 127 255 127 255
+Plot 32 8 5
+
+
+#Gate 2
+PenPhysics 2
+PenColorD4 127 127 127 255
+Line 15 1 12 16 1 12
+Line 5 1 14 16 1 14
+PenPhysics 49
+PenColorD4 255 0 255 255
+Line 16 1 13 18 1 13
+PenPhysics 2
+PenColorD4 127 127 127 255
+Line 18 2 13 32 2 13
+Line 32 2 13 32 7 13
+PenPhysics 30
+PenColorD4 127 255 127 255
+Plot 32 8 13
+
+#Gate 3
+PenPhysics 2
+PenColorD4 127 127 127 255
+Line 12 1 20 16 1 20
+Line 3 1 22 16 1 22
+PenPhysics 49
+PenColorD4 255 0 255 255
+Line 16 1 21 18 1 21
+PenPhysics 2
+PenColorD4 127 127 127 255
+Line 18 2 21 32 2 21
+Line 32 2 21 32 7 21
+PenPhysics 30
+PenColorD4 127 255 127 255
+Plot 32 8 21
+
+#Gate 4
+PenPhysics 2
+PenColorD4 127 127 127 255
+Line 2 1 28 7 1 28
+Line 10 1 28 16 1 28
+Line 11 1 30 16 1 30
+PenPhysics 49
+PenColorD4 255 0 255 255
+Line 16 1 29 18 1 29
+PenPhysics 2
+PenColorD4 127 127 127 255
+Line 18 2 29 32 2 29
+Line 32 2 29 32 7 29
+PenPhysics 30
+PenColorD4 127 255 127 255
+Plot 32 8 29
+
+#NotGate1
+PenPhysics 2
+PenColorD4 127 127 127 255
+Line 2 1 30 7 1 30
+PenPhysics 48
+PenColorD4 255 0 127 255
+Line 7 1 30 8 1 30
+PenPhysics 2
+PenColorD4 127 127 127 255
+Wire 8 2 30 11 2 30 1
+
+#NotGate2
+PenPhysics 2
+PenColorD4 127 127 127 255
+Line 2 1 28 6 1 28
+PenPhysics 48
+PenColorD4 255 0 127 255
+Line 7 1 28 8 1 28
+PenPhysics 2
+PenColorD4 127 127 127 255
+Wire 8 2 28 10 2 28 1
+
+
+PenPhysics 2
+PenColorD4 127 127 127 255
+Line 3 1 4 3 1 21
+
+Wire 3 1 22 3 1 30 2
+Wire 5 1 6 5 1 28 2
+Wire 5 1 6 5 1 14 2
+Wire 14 1 12 14 1 30 2
+Wire 12 1 28 12 1 20 2
 ";
-            //Glyphics codeString object
-            Code rasterCode =RasterLib.RasterApi.CreateCode(code);
+            Code rasterCode =GraphicsLib.RasterApi.CreateCode(code);
+            Grid grid =GraphicsLib.RasterApi.CodeToGrid(rasterCode);
+            RectList rects = GraphicsLib.RasterApi.GridToRects(grid);
 
-            //Save final result to PNG file
-
-            Grid grid =RasterLib.RasterApi.CodeToGrid(rasterCode);
-//            RectList rects = GraphicsApi.GridToRects(grid);
-            //Scene scene = GraphicsApi.RectsToScene(rects);
+            SimulationModel model = new SimulationModel();
+            model.grid = grid;
+            model.rects = rects;
+            model.Build();
             
-            //Execute, render, and save to png
-//            GraphicsApi.SaveFlatPng(filename,
-  //              RasterLib.RasterApi.Renderer.RenderObliqueCells(
-    //                RasterApi.CodeToGrid(rasterCode)));
-
-            bool done = false;
-            while (!done)
-            {
-                if (Console.KeyAvailable)
-                {
-                    ConsoleKeyInfo key = Console.ReadKey();
-                    _lastKey = key.KeyChar;
-
-                    if (_lastKey == 27) done = true;
-                    
-                    switch (_lastKey)
-                    {
-                        case 'a': _avatar.x--; break;
-                        case 'd': _avatar.x++; break;
-                        case 'w': _avatar.z++; break;
-                        case 's': _avatar.z--; break;
-                        case 'e': _avatar.y++; break;
-                        case 'q': _avatar.y--; break;
-                    }
-                }
-                Simulate(grid);
-                DisplayGrid(grid);
-            }
+            Simulation.RunSimulation(model);
         }
     }
 }
+
