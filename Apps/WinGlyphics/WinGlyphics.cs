@@ -47,7 +47,7 @@ ImgMirrorX
 ";
             textBoxMain.Text = codeString;
 
-            _hc = new DownSolver("..\\..\\..\\..\\Glyph Cores\\default.gly");
+            _hc = new DownSolver("..\\..\\..\\..\\Glyph Cores\\default.gly", DownSolver.enables.None);
 
             foreach (Code code in _hc.Codes)
             {
@@ -60,8 +60,8 @@ ImgMirrorX
         {
             _bitmap = new CBitmap();
 
-            if (_hc.GridOblique != null)
-                _bitmap.GridToBitmap(_hc.GridOblique);
+            if (_hc.GridIsometric != null)
+                _bitmap.GridToBitmap(_hc.GridIsometric);
 
             textBoxTokens.Text = (_hc.Tokens == null) ? null : _hc.Tokens.ToString();
             textBoxSerializedRects.Text = (_hc.SerializedRects == null) ? null : _hc.SerializedRects.ToString();
@@ -147,7 +147,7 @@ ImgMirrorX
             string resultName = FileIo.GetSaveAsFilename("Save a PNG Image File", "PNG Image|*.png|All files (*.*)|*.*");
             if (resultName != null)
             {
-                _hc = new DownSolver(resultName);
+                _hc = new DownSolver(resultName, DownSolver.enables.None);
                 UpdateDisplay();
             }
         }

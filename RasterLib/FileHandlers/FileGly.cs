@@ -44,8 +44,7 @@ namespace RasterLib
                 while ((line = file.ReadLine()) != null)
                 {
                     string codeString = line;
-                    if (!line.Contains(","))
-                        codeString = "noname," + codeString;
+                    //if (!line.Contains(",")) codeString = "noname," + codeString;
 
                     Console.WriteLine("Loading "+codeString.Split('*')[0].Split(',')[0]);
                     Code code = new Code(codeString);

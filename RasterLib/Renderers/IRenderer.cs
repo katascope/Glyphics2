@@ -20,7 +20,7 @@ namespace RasterLib
         void RenderRectsToGrid(RectList rects, Grid grid);
 
         //Renders Grid to a new Grid using isometric cell sprites
-        Grid RenderIsometricCellsScaled(Grid grid, byte bgR, byte bgG, byte bgB, byte bgA, int cellWidth, int cellHeight);
+        Grid RenderIsometricCellsScaled(Grid grid, byte bgR, byte bgG, byte bgB, byte bgA, int cellWidth, int cellHeight, string title = "");
 
         //Renders Grid to a new Grid using oblique cell sprites
         Grid RenderObliqueCells(Grid grid);

@@ -68,17 +68,18 @@ namespace RasterLib.Renderers
             painter.DrawLine2D(bgc, x + subSize - 1, y + cellSize - 1, x + cellSize - 1, y + subSize - 1, 0);
         }
 
-        private static void DrawProgressBar(int value)
+        private static void DrawProgressBar(string title, int value)
         {
             int downscale = 4;
             Console.Write("\r");
+            if (value < 100) Console.Write(" ");
             if (value < 10) Console.Write(" ");
             Console.Write(value + "% [");
             for (int i = 0; i <= value/downscale; i++)
                 Console.Write('#');
-            for (int i = value / downscale + 1; i < (100 / downscale); i++)
+            for (int i = value / downscale ; i < (100 / downscale); i++)
                 Console.Write('-');
-            Console.Write("]");
+            Console.Write("] {0}", title);
         }
 
         //Render a grid into another grid with oblique perspective and iconic cells
@@ -88,10 +89,10 @@ namespace RasterLib.Renderers
 
             const int cellSize = 7;
             const int tinSize = 4;
-
+            string title = "Rendering Oblique";
             for (int y = 0; y < gridSrc.SizeY; y++)
             {
-                DrawProgressBar((int) ((float) y/gridSrc.SizeY*100));
+                DrawProgressBar(title, (int) ((float) y/gridSrc.SizeY*100));
                 for (int z = gridSrc.SizeZ; z >= 0; z--)
                 {
                     for (int x = 0; x < gridSrc.SizeX; x++)
@@ -110,7 +111,8 @@ namespace RasterLib.Renderers
                     }
                 }
             }
-            Console.WriteLine(" - done");
+            DrawProgressBar(title, 100);
+            Console.WriteLine();
         }
 
         //Render obliquely and return

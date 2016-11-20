@@ -18,13 +18,35 @@ namespace RasterLib
     //FlowSolver class, not really that efficient, but good for making inputs solve out to all possible outputs
     public class DownSolver
     {
+        [Flags]
+        public enum enables
+        {
+            None = 0,
+            All  = 0xFFFFFF,
+            RenderOrthogonal = 1,
+            RenderIsometricThumb  = 2,
+            RenderIsometricRegular = 4,
+            RenderIsometricLarge = 8,
+            DoRects = 16,
+            DoQuads = 32,
+            DoTriangles = 64,
+            DoScene = 128,
+            DoPov = 256,
+            DoStl = 512,
+            DoCode = 1024
+        };
+        public enables enableFlags { get; set; }
+
         public CodeList Codes;
         public GridList Grids;
         public Code code;
         public Codename codename;
         public TokenList Tokens;
         public Grid Grid;
-        public Grid GridOblique;
+        public Grid GridIsometricLarge;
+        public Grid GridIsometric;
+        public Grid GridIsometricThumb;
+        public Grid GridOrthogonal;
         public RectList Rects;
         public SerializedRects SerializedRects;
         public SerializedRects SerializedRectsLimit255;
@@ -45,7 +67,7 @@ namespace RasterLib
 
         public DownSolver() { }
         public DownSolver(Code inCode) { FromCode(inCode); }
-        public DownSolver(string filename) { FromFilename(filename); }
+        public DownSolver(string filename, enables ef) { enableFlags = ef; FromFilename(filename); }
         public DownSolver(Codename inCodename) { codename = inCodename; }
         public DownSolver(TokenList inTokens) { FromTokens(inTokens); }
         public DownSolver(Grid inGrid) { FromGrid(inGrid); }
@@ -87,6 +109,7 @@ namespace RasterLib
             {
                 Console.WriteLine("Exception " + ex);
             }
+
         }
 
         public void FromTokens(TokenList inTokens)
@@ -106,10 +129,21 @@ namespace RasterLib
             else
                 scale = (int)((256) / (float)(Grid.SizeX ) * 1.3) & 254 ;
 
-            GridOblique = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(Grid, 255, 255, 255, 255, scale, scale);
+            if ((enableFlags & enables.RenderIsometricThumb) == enables.RenderIsometricThumb)
+                GridIsometricThumb = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(Grid, 0, 0, 0, 0, 1, 1, "Render Isometric (Thumbnail) ");
+            if ((enableFlags & enables.RenderIsometricRegular) == enables.RenderIsometricRegular)
+                GridIsometric = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(Grid, 0, 0, 0, 0, scale, scale, "Render Isometric (Regular) ");
+            if ((enableFlags & enables.RenderIsometricLarge) == enables.RenderIsometricLarge)
+                GridIsometricLarge = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(Grid, 0, 0, 0, 0, 8, 8, "Render Isometric (Large) ");
 
-            Rects = GridConverter.GridToRects(Grid);
-            FromRects(Rects);
+            if ((enableFlags & enables.RenderOrthogonal) == enables.RenderOrthogonal)
+                GridOrthogonal = RasterLib.RasterApi.Renderer.RenderObliqueCells(Grid);
+
+            if ((enableFlags & enables.DoRects) == enables.DoRects)
+            {
+                Rects = GridConverter.GridToRects(Grid);
+                FromRects(Rects);
+            }
         }
         
         public void FromRects(RectList inRects)
@@ -118,18 +152,22 @@ namespace RasterLib
             SerializedRects = RasterLib.RasterApi.RectsToSerializedRects(Rects);
             SerializedRectsLimit255 = RasterLib.RasterApi.RectsToSerializedRectsLimit255(Rects);
 
-            Scene scene = RasterLib.RasterApi.RectsToScene(Rects);
-            JSON = SceneToJson.Convert(scene);
+            JSON = SceneToJson.Convert(RasterLib.RasterApi.RectsToScene(Rects));
 
-            FromSerializedRects(SerializedRects);
+            if ((enableFlags & enables.DoScene) == enables.DoScene)
+                FromSerializedRects(SerializedRects);
         }
 
         public void FromSerializedRects(SerializedRects inSerializedRects)
         {
             SerializedRects = inSerializedRects;
             Rects = RasterLib.RasterApi.SerializedRectsToRects(SerializedRects);
-            Quads = RasterLib.RasterApi.RectsToQuads(Rects);
-            FromQuads(Quads);
+            
+            if ((enableFlags & enables.DoQuads) == enables.DoQuads) 
+                Quads = RasterLib.RasterApi.RectsToQuads(Rects);
+
+            if ((enableFlags & enables.DoTriangles) == enables.DoTriangles) 
+                FromQuads(Quads);
         }
 
         public void FromQuads(QuadList quads)

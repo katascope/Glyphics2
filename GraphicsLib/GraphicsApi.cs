@@ -124,5 +124,6 @@ namespace GraphicsLib
             if (filename.ToUpper().Contains(".PNG")) return PngToGrid(filename);
             return null;
         }
+        
     }
 }

@@ -23,7 +23,7 @@ namespace RasterLib.Renderers
         {
             if (fileName == null || grid == null) return;
 
-            Grid grid2 = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(grid, bgR, bgG, bgB, bgA, cellWidth, cellHeight);
+            Grid grid2 = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(grid, bgR, bgG, bgB, bgA, cellWidth, cellHeight, "");
             FilePngWrite.SaveFlatPng(fileName, grid2);
         }
     }

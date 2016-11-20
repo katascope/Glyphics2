@@ -149,7 +149,7 @@ namespace RasterLib.Renderers
         }
 
         //Render a grid into another grid with Isometric perspective and iconic cells
-        private static void RenderIsometricCellsSetScaled(Grid gridSrc, Grid gridDst, int tileW, int tileH)
+        private static void RenderIsometricCellsSetScaled(Grid gridSrc, Grid gridDst, int tileW, int tileH, string title)
         {
             GridContext bgc = new GridContext(gridDst);
 
@@ -159,7 +159,7 @@ namespace RasterLib.Renderers
             for (int z = gridSrc.SizeZ - 1; z >= 0; z--)
             {
                 //Console.Write("\r" +(int)(100 - (float)z/gridSrc.SizeZ * 100)+"%");
-                DrawProgressBar((int) (100 - (float) z/gridSrc.SizeZ*100));
+                DrawProgressBar(title,(int) (100 - (float) z/gridSrc.SizeZ*100));
                 for (int y = 0; y < gridDst.SizeY; y++)
                 {
                     for (int x = gridSrc.SizeX - 1; x >= 0; x--)
@@ -178,11 +178,12 @@ namespace RasterLib.Renderers
                     }
                 }
             }
-            Console.WriteLine(" - done");
+            DrawProgressBar(title, 100);
+            Console.WriteLine();
         }
 
         //Render Isometricly and return
-        public Grid RenderIsometricCellsScaled(Grid grid, byte bgR, byte bgG, byte bgB, byte bgA, int cellWidth, int cellHeight)
+        public Grid RenderIsometricCellsScaled(Grid grid, byte bgR, byte bgG, byte bgB, byte bgA, int cellWidth, int cellHeight, string title = "")
         {
             if (grid == null) return null;
 
@@ -199,7 +200,7 @@ namespace RasterLib.Renderers
             IPainter painter = new CPainter();
             painter.DrawFastFillRect(bgc, 0, 0, 0, grid2.SizeX, grid2.SizeY, 1);
 
-            RenderIsometricCellsSetScaled(grid, grid2, cellSizeX, cellSizeY);
+            RenderIsometricCellsSetScaled(grid, grid2, cellSizeX, cellSizeY, title);
             return grid2;
         }
     }

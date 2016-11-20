@@ -1,8 +1,10 @@
 ﻿using System;
-using RasterApi;
-using RasterLib.Language;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Glynt
+namespace RasterLib.Language
 {
     public class CompiledCode
     {
@@ -26,6 +28,11 @@ namespace Glynt
         public RasterLib.QuadList Quads { get; set; }
         public RasterLib.Triangles Triangles { get; set; }
 
+        public string isometricGridLargeFilename { get; set; }
+        public string isometricGridFilename { get; set; }
+        public string isometricGridThumbFilename { get; set; }
+        public string orthogonalGridFilename { get; set; }
+
         public string unified
         {
             get
@@ -35,15 +42,6 @@ namespace Glynt
         }
         public CompiledCode()
         {
-
         }
-        public CompiledCode(string n, string minCode, string fn, string p, DateTime lastWrite)
-        {
-            name = n;
-            minimalCode = minCode;
-            filename = fn;
-            path = p;
-            timestamp = lastWrite;
-        }       
     }
 }

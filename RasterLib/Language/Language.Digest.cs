@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Glynt
+namespace RasterLib.Language
 {
-    public class CompiledCodeDigest
+    public class Digest
     {
         public List<CompiledCode> codes { get; set; }
-        public CompiledCodeDigest()
+        public Digest()
         {
             codes = new List<CompiledCode>();
         }
@@ -24,5 +27,5 @@ namespace Glynt
             }
             return null;
         }
-    }
+    }    
 }

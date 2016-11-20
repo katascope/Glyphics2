@@ -1,15 +1,15 @@
 ﻿using System;
 
-namespace Glynt
+namespace RasterLib.Language
 {
-    public class CodeAnalyzerError
+    public class CodeCompilerError
     {
         public enum Severity { None, Ok, Error, Warning };
         public string filename;
         public int line;
         public Severity severity = Severity.None;
         public string msg;
-        public CodeAnalyzerError(string f, int l, string m, Severity s)
+        public CodeCompilerError(string f, int l, string m, Severity s)
         {
             filename = f;
             line = l;

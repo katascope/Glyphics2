@@ -38,10 +38,12 @@
     <Compile Include="FileHandlers\FileDaeWrite.cs" />
     <Compile Include="FileHandlers\FileGly.cs" />
     <Compile Include="FileHandlers\FileTxtWrite.cs" />
+    <Compile Include="Language\Language.CodeCompilerError.cs" />
     <Compile Include="Language\Language.ByteConverter.BytesToString.cs" />
     <Compile Include="Language\Language.Code.cs" />
     <Compile Include="Language\Language.CodeList.cs" />
     <Compile Include="Language\Language.Codename.cs" />
+    <Compile Include="Language\Language.Digest.cs" />
     <Compile Include="Language\Language.Glyph.cs" />
     <Compile Include="Language\Language.CodeConverter.CodeToGrid.cs" />
     <Compile Include="Language\Language.CodeConverter.CodeToRescaledCode.cs" />
@@ -163,6 +165,9 @@
     <Compile Include="Utility\GridCreator.cs" />
     <Compile Include="Utility\MathLerper.cs" />
     <Compile Include="Utility\MathTrigonometry.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Language\Language.Compiledcode.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
