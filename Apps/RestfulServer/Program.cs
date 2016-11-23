@@ -24,6 +24,7 @@ namespace WebServer
             WebResponder.responseHandlers.Add("/api/code2srects", new WebHandler_code2srects());
             WebResponder.responseHandlers.Add("/api/simulation",  new WebHandler_simulation());
             WebResponder.responseHandlers.Add("/api/digest",      new WebHandler_digest());
+            WebResponder.responseHandlers.Add("/api/srects",      new WebHandler_srects());
             //WebResponder.responseHandlers.Add("/api/srects2html", new WebHandler_srects2html());
             //WebResponder.responseHandlers.Add("/api/srects2json", new WebHandler_srects2json());
 

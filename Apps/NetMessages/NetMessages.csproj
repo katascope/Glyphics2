@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthRequestHandler.cs" />
+    <Compile Include="AuthResultHandler.cs" />
+    <Compile Include="MessageDispatcher.cs" />
+    <Compile Include="LocRequestHandler.cs" />
+    <Compile Include="LocResultHandler.cs" />
+    <Compile Include="NMsg.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

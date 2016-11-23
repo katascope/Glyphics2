@@ -1,10 +1,29 @@
 ﻿using UnityEngine;
+using System;
+using System.IO;
+using System.Net;
+using System.Text;
 using System.Collections;
 
 //http://stackoverflow.com/questions/35851228/adding-multiple-cubes-in-unity
 
+
 public class Glyphics
 {
+    public static string HttpGet(string url)
+    {
+        HttpWebRequest req = (HttpWebRequest)System.Net.WebRequest.Create(url)
+                             as HttpWebRequest;
+        string result = null;
+        using (HttpWebResponse resp = req.GetResponse()
+                                      as HttpWebResponse)
+        {
+            StreamReader reader =
+                new StreamReader(resp.GetResponseStream());
+            result = reader.ReadToEnd();
+        }
+        return result;
+    }
     public class Rect
     {
         public float[] Pt1 { get; set; }
@@ -19,8 +38,6 @@ public class Glyphics
 
         //Assignment constructor
         public Rect(float nx1, float ny1, float nz1, float nx2, float ny2, float nz2) { Set(nx1, ny1, nz1, nx2, ny2, nz2); }
-
-
 
         //Set dimensions of Rect
         private void Set(float nx1, float ny1, float nz1, float nx2, float ny2, float nz2)
@@ -63,9 +80,6 @@ public class Glyphics
             return true;
         }
 
-
-
-
         //If both touch each other
         public bool Touches(Rect rectB)
         {
@@ -100,7 +114,6 @@ public class Glyphics
         var index = (byte)Lookup64.IndexOf(val);
         return index;
     }
-
 
     const int MaxCubes = 1024;
     static GameObject[] gameObjects = new GameObject[MaxCubes];
@@ -242,7 +255,7 @@ public class Glyphics
         for (int i = 0; i < MaxCubes; i++)
         {
             //GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            Object.Destroy(gameObjects[i]);
+            UnityEngine.Object.Destroy(gameObjects[i]);
 
         }
     }
@@ -277,7 +290,9 @@ public class GlyphicsMicroCore : MonoBehaviour
         Glyphics.DestroyObjects();
         Glyphics.DecodeToGrid(nexusSerialized);
 
-
+    //    Glyphics.DestroyObjects();
+  //      string digest = Glyphics.HttpGet("http://localhost:3838/api/digest");
+//
         //GameObject.CreatePrimitive(PrimitiveType.Cube);
         //GameObject.DestroyObject()
 
@@ -295,29 +310,43 @@ public class GlyphicsMicroCore : MonoBehaviour
         if (Input.GetKeyDown("1"))
         {
             Glyphics.DestroyObjects();
-            Glyphics.DecodeToGrid(nexusSerialized);
+            Glyphics.DecodeToGrid(Glyphics.HttpGet("http://localhost:3838/api/srects?PrintableNexus"));
         }
         if (Input.GetKeyUp("2"))
         {
             Glyphics.DestroyObjects();
-            Glyphics.DecodeToGrid(decoder);
+            Glyphics.DecodeToGrid(Glyphics.HttpGet("http://localhost:3838/api/srects?Decoder"));
         }
         if (Input.GetKeyUp("3"))
         {
             Glyphics.DestroyObjects();
-            Glyphics.DecodeToGrid(chessboard);
+            Glyphics.DecodeToGrid(Glyphics.HttpGet("http://localhost:3838/api/srects?PinkGreenArena"));
         }
         if (Input.GetKeyUp("4"))
         {
             Glyphics.DestroyObjects();
-            Glyphics.DecodeToGrid(megagrid);
+            Glyphics.DecodeToGrid(Glyphics.HttpGet("http://localhost:3838/api/srects?Ascent"));
         }
         if (Input.GetKeyUp("5"))
         {
             Glyphics.DestroyObjects();
-            Glyphics.DecodeToGrid(first);
+            Glyphics.DecodeToGrid(Glyphics.HttpGet("http://localhost:3838/api/srects?Arena"));
         }
-
+        if (Input.GetKeyUp("6"))
+        {
+            Glyphics.DestroyObjects();
+            Glyphics.DecodeToGrid(Glyphics.HttpGet("http://localhost:3838/api/srects?Workspace"));
+        }
+        if (Input.GetKeyUp("7"))
+        {
+            Glyphics.DestroyObjects();
+            Glyphics.DecodeToGrid(Glyphics.HttpGet("http://localhost:3838/api/srects?MegaGrid"));
+        }
+        if (Input.GetKeyUp("8"))
+        {
+            Glyphics.DestroyObjects();
+            Glyphics.DecodeToGrid(Glyphics.HttpGet("http://localhost:3838/api/srects?Map"));
+        }
     }
 }
 

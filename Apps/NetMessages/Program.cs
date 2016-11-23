@@ -4,62 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Protos
+namespace NMsg
 {
-    interface NMsg
-    {
-        string type { get; }
-    }
-    class NMsgAuthRequest : NMsg
-    {
-        public string type { get { return GetType().ToString(); } }
-        public string name { get; set; }
-        public string password { get; set; }
-    }
-    class NMsgAuthResult : NMsg
-    {
-        public string type { get { return GetType().ToString(); } }
-        public int status { get; set; }
-        public string bearerToken { get; set; }
-    }
     class Program
     {
-        public static NMsg ServerReceive(NMsg nm)
-        {
-            Console.WriteLine("ServerReceive:" + nm.type);
-
-            if (nm.type == "Protos.NMsgAuthRequest")
-            {
-                NMsgAuthResult nm_as = new NMsgAuthResult()
-                {
-                    status = 1,
-                    bearerToken = "foobar"
-                };
-                return nm_as;
-            }
-            return null;
-        }
-
-        public static NMsg ClientReceive(NMsg nm)
-        {
-            Console.WriteLine("ClientReceive:" + nm.type);
-
-            if (nm.type == "Protos.NMsgAuthResponse")
-            {
-                Console.WriteLine("Got result");
-            }
-            return null;
-        }
-
         static void Main(string[] args)
         {
-            NMsgAuthRequest nm_as = new NMsgAuthRequest() { name = "test", password = "pwd" };
+            MessageDispatcher serverDispatcher = new MessageDispatcher();
+            serverDispatcher.AddHandler(new AuthRequestHandler());
+            serverDispatcher.AddHandler(new LocRequestHandler());
 
-            string serToken = Newtonsoft.Json.JsonConvert.SerializeObject(nm_as);
-            Console.WriteLine("GOt token" + serToken);
+            MessageDispatcher clientDispatcher = new MessageDispatcher();
+            clientDispatcher.AddHandler(new AuthResultHandler());
+            clientDispatcher.AddHandler(new LocResultHandler());
 
-            NMsg msg = ServerReceive(nm_as);
-            ClientReceive(msg);
+            AuthRequest nm_as = new AuthRequest() { name = "test", password = "pwd" };
+            NMsg msg = serverDispatcher.Dispatch(nm_as);
+            if (msg != null) msg = clientDispatcher.Dispatch(msg);
+            if (msg != null) msg = serverDispatcher.Dispatch(msg);
+            if (msg != null) msg = clientDispatcher.Dispatch(msg);
+            if (msg != null) msg = serverDispatcher.Dispatch(msg);
         }
     }
 }

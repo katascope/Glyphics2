@@ -50,6 +50,7 @@
     <Compile Include="WebHandler_code2srects.cs" />
     <Compile Include="WebHandler_digest.cs" />
     <Compile Include="WebHandler_simulation.cs" />
+    <Compile Include="WebHandler_srects.cs" />
     <Compile Include="WebHandler_srects2html.cs" />
     <Compile Include="WebHandler_srects2json.cs" />
     <Compile Include="WebHandler_ping.cs" />

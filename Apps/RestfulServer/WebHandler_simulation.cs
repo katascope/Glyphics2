@@ -13,6 +13,8 @@ namespace WebServer
     {
         public string GetResponse(string query)
         {
+            if (query.Length == 0)
+                return "No world";
             string worldPart = query.Split('?')[1];
             if (worldPart == null) return "";
             worldPart = WebUtility.UrlDecode(worldPart);

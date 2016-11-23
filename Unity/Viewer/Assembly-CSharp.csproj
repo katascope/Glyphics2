@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\GlyphicsMicroCore.cs" />
      <Compile Include="Assets\SmoothMouseLook.cs" />
+     <Compile Include="Assets\WebRequest.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>F:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
