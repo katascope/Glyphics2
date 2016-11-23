@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GraphicsLib.Language
+namespace RasterLib.Language
 {
     public class CodeCompilerError
     {

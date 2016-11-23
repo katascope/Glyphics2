@@ -11,8 +11,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 using GraphicsLib;
-using GraphicsLib;
-using RasterApi =GraphicsLib.RasterApi;
+using RasterLib;
+using RasterApi =RasterLib.RasterApi;
 
 namespace ExampleSTLToGrid
 {
@@ -31,23 +31,23 @@ namespace ExampleSTLToGrid
         static void Main()
         {
             //Manually create 64x64x64 grid to draw STL to
-            Grid grid =GraphicsLib.RasterApi.CreateGrid(64, 64, 64, 4);
+            Grid grid =RasterLib.RasterApi.CreateGrid(64, 64, 64, 4);
 
             const string inputFilenameStl = "..\\..\\archquad.stl";
             Console.WriteLine("Input filename: {0}", inputFilenameStl);
 
             //Load the triangles from the STL file and reduce to a unit 1x1x1 size
-            Triangles triangles =GraphicsLib.RasterApi.StlToTriangles(inputFilenameStl);            
+            Triangles triangles =RasterLib.RasterApi.StlToTriangles(inputFilenameStl);            
             triangles.ReduceToUnit();            
             Console.WriteLine("Triangle count: {0}", triangles.Count);
 
             //Render the triangles to the grid, will autosize to grid size
-            GraphicsLib.RasterApi.Renderer.RenderTrianglesToGrid(triangles, grid);
+            RasterLib.RasterApi.Renderer.RenderTrianglesToGrid(triangles, grid);
 
             //At this point we've loaded and grid has the rendering. So let's make a pretty rendering.
 
             //Render the 3D grid to a new 2D grid, in oblique view
-            Grid gridObliqueRendering = GraphicsLib.RasterApi.Renderer.RenderObliqueCells(grid);
+            Grid gridObliqueRendering = RasterLib.RasterApi.Renderer.RenderObliqueCells(grid);
 
             //Write out a little bit about the grid
             Console.WriteLine("Grid: ({0},{1},{2})", grid.SizeX, grid.SizeY, grid.SizeZ);

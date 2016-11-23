@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Threading;
 using GraphicsLib;
-using GraphicsLib;
-using GraphicsLib.Language;
+using RasterLib;
+using RasterLib.Language;
 using GraphicsLib.Simulator;
 
 namespace Simulator
@@ -133,9 +133,9 @@ Wire 5 1 6 5 1 14 2
 Wire 14 1 12 14 1 30 2
 Wire 12 1 28 12 1 20 2
 ";
-            Code rasterCode =GraphicsLib.RasterApi.CreateCode(code);
-            Grid grid =GraphicsLib.RasterApi.CodeToGrid(rasterCode);
-            RectList rects = GraphicsLib.RasterApi.GridToRects(grid);
+            Code rasterCode =RasterLib.RasterApi.CreateCode(code);
+            Grid grid =RasterLib.RasterApi.CodeToGrid(rasterCode);
+            RectList rects = RasterLib.RasterApi.GridToRects(grid);
 
             SimulationModel model = new SimulationModel();
             model.grid = grid;

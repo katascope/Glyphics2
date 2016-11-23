@@ -10,7 +10,7 @@ Redistribution and use in source and binary forms, with or without modification,
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DRect, INDRect, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #endregion
 using System;
-using GraphicsLib;
+using RasterLib;
 
 namespace ExampleSTLToQuadPrint
 {
@@ -32,7 +32,7 @@ namespace ExampleSTLToQuadPrint
             Console.WriteLine("Input filename: {0}", inputFilenameStl);
 
             //Load the triangles from the STL file and reduce to a unit 1x1x1 size
-            Triangles triangles = GraphicsLib.RasterApi.StlToTriangles(inputFilenameStl);
+            Triangles triangles = RasterLib.RasterApi.StlToTriangles(inputFilenameStl);
             Console.WriteLine("Triangle count: {0}", triangles.Count);
 
             //Say the dimensions of it too
@@ -50,7 +50,7 @@ namespace ExampleSTLToQuadPrint
             Triangles trianglesSw = triangles.Clone();
             Triangles trianglesSe = triangles.Clone();
 
-            Triangles trianglesQuad =GraphicsLib.RasterApi.CreateTriangles();
+            Triangles trianglesQuad = RasterLib.RasterApi.CreateTriangles();
 
             //Get the boundaries of the STL model, use that to calculate offset sizes
             Rect boundaries = trianglesNw.TrianglesBoundaries;
@@ -76,7 +76,7 @@ namespace ExampleSTLToQuadPrint
             //Write model
             const string outputFilenameStl = "..\\..\\ArchQuad-X4.stl";
             Console.WriteLine("Writing " + outputFilenameStl);
-           GraphicsLib.RasterApi.SaveTrianglesToStl(outputFilenameStl, trianglesQuad);
+           RasterLib.RasterApi.SaveTrianglesToStl(outputFilenameStl, trianglesQuad);
 
             Console.WriteLine("Done");
         }

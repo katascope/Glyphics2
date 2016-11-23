@@ -11,9 +11,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 using System.Text;
-using GraphicsLib;
+using RasterLib;
 
-namespace GraphicsLib.Renderers
+namespace RasterLib.Renderers
 {
     //Convert bytes to serialized string, similar in function (but not result) to a CDATA
     internal partial class Renderer

@@ -12,7 +12,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 using System.Collections;
 using System.Collections.Generic;
 
-namespace GraphicsLib.Language
+namespace RasterLib.Language
 {
     //Implementation of TokenList, see for usage
     public class TokenList : IEnumerable<Token>

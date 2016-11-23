@@ -12,7 +12,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 using System;
 using System.Runtime.Serialization;
 
-namespace GraphicsLib.Language
+namespace RasterLib.Language
 {
     //Type of errors 
     public enum RasterLibErrorType

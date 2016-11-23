@@ -11,9 +11,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 using RasterApi;
-using GraphicsLib.Language;
+using RasterLib.Language;
 
-namespace GraphicsLib
+namespace RasterLib
 {
     //FlowSolver class, not really that efficient, but good for making inputs solve out to all possible outputs
     public class DownSolver
@@ -79,18 +79,18 @@ namespace GraphicsLib
         public void FromFilename(string filename)
         {
             //if (filename.ToUpper().Contains(".PNG")) FromGrid(GraphicsApi.PngToGrid(filename));
-            if (filename.ToUpper().Contains(".STL")) FromTriangles(GraphicsLib.RasterApi.StlToTriangles(filename));
-            if (filename.ToUpper().Contains(".OBJ")) FromTriangles(GraphicsLib.RasterApi.ObjToTriangles(filename));
+            if (filename.ToUpper().Contains(".STL")) FromTriangles(RasterLib.RasterApi.StlToTriangles(filename));
+            if (filename.ToUpper().Contains(".OBJ")) FromTriangles(RasterLib.RasterApi.ObjToTriangles(filename));
 
             if (filename.ToUpper().Contains(".GLYC"))
             {
-                code = new Code(GraphicsLib.RasterApi.GlyCToCode(filename));
+                code = new Code(RasterLib.RasterApi.GlyCToCode(filename));
                 //code = Codes.GetCode(0);
                 FromCode(code);
             }
             else if (filename.ToUpper().Contains(".GLY"))
             {
-                Codes = GraphicsLib.RasterApi.GlyToCodes(filename);
+                Codes = RasterLib.RasterApi.GlyToCodes(filename);
                 code = Codes.GetCode(0);
                 FromCode(code);
             }
@@ -99,10 +99,10 @@ namespace GraphicsLib
         public void FromCode(Code inCode)
         {
             code = inCode;
-            codename = GraphicsLib.RasterApi.CodeToCodename(code);
+            codename = RasterLib.RasterApi.CodeToCodename(code);
             try
             {
-                Tokens = GraphicsLib.RasterApi.CodeToTokens(code);
+                Tokens = RasterLib.RasterApi.CodeToTokens(code);
                 FromTokens(Tokens);
             }
             catch (Exception ex)
@@ -115,7 +115,7 @@ namespace GraphicsLib
         public void FromTokens(TokenList inTokens)
         {
             Tokens = inTokens;
-            Grid = GraphicsLib.RasterApi.TokensToGrid(Tokens);
+            Grid = RasterLib.RasterApi.TokensToGrid(Tokens);
             FromGrid(Grid);
         }
         
@@ -130,14 +130,14 @@ namespace GraphicsLib
                 scale = (int)((256) / (float)(Grid.SizeX ) * 1.3) & 254 ;
 
             if ((enableFlags & enables.RenderIsometricThumb) == enables.RenderIsometricThumb)
-                GridIsometricThumb = GraphicsLib.RasterApi.Renderer.RenderIsometricCellsScaled(Grid, 0, 0, 0, 0, 1, 1, "Render Isometric (Thumbnail) ");
+                GridIsometricThumb = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(Grid, 0, 0, 0, 0, 1, 1, "Render Isometric (Thumbnail) ");
             if ((enableFlags & enables.RenderIsometricRegular) == enables.RenderIsometricRegular)
-                GridIsometric = GraphicsLib.RasterApi.Renderer.RenderIsometricCellsScaled(Grid, 0, 0, 0, 0, scale, scale, "Render Isometric (Regular) ");
+                GridIsometric = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(Grid, 0, 0, 0, 0, scale, scale, "Render Isometric (Regular) ");
             if ((enableFlags & enables.RenderIsometricLarge) == enables.RenderIsometricLarge)
-                GridIsometricLarge = GraphicsLib.RasterApi.Renderer.RenderIsometricCellsScaled(Grid, 0, 0, 0, 0, 8, 8, "Render Isometric (Large) ");
+                GridIsometricLarge = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(Grid, 0, 0, 0, 0, 8, 8, "Render Isometric (Large) ");
 
             if ((enableFlags & enables.RenderOrthogonal) == enables.RenderOrthogonal)
-                GridOrthogonal = GraphicsLib.RasterApi.Renderer.RenderObliqueCells(Grid);
+                GridOrthogonal = RasterLib.RasterApi.Renderer.RenderObliqueCells(Grid);
 
             if ((enableFlags & enables.DoRects) == enables.DoRects)
             {
@@ -149,10 +149,10 @@ namespace GraphicsLib
         public void FromRects(RectList inRects)
         {
             Rects = inRects;
-            SerializedRects = GraphicsLib.RasterApi.RectsToSerializedRects(Rects);
-            SerializedRectsLimit255 = GraphicsLib.RasterApi.RectsToSerializedRectsLimit255(Rects);
+            SerializedRects = RasterLib.RasterApi.RectsToSerializedRects(Rects);
+            SerializedRectsLimit255 = RasterLib.RasterApi.RectsToSerializedRectsLimit255(Rects);
 
-            JSON = SceneToJson.Convert(GraphicsLib.RasterApi.RectsToScene(Rects));
+            JSON = SceneToJson.Convert(RasterLib.RasterApi.RectsToScene(Rects));
 
             if ((enableFlags & enables.DoScene) == enables.DoScene)
                 FromSerializedRects(SerializedRects);
@@ -161,10 +161,10 @@ namespace GraphicsLib
         public void FromSerializedRects(SerializedRects inSerializedRects)
         {
             SerializedRects = inSerializedRects;
-            Rects = GraphicsLib.RasterApi.SerializedRectsToRects(SerializedRects);
+            Rects = RasterLib.RasterApi.SerializedRectsToRects(SerializedRects);
             
             if ((enableFlags & enables.DoQuads) == enables.DoQuads) 
-                Quads = GraphicsLib.RasterApi.RectsToQuads(Rects);
+                Quads = RasterLib.RasterApi.RectsToQuads(Rects);
 
             if ((enableFlags & enables.DoTriangles) == enables.DoTriangles) 
                 FromQuads(Quads);

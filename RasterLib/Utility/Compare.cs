@@ -11,7 +11,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 
-namespace GraphicsLib.Utility
+namespace RasterLib.Utility
 {
     //Comparisong utility class
     public class Compare

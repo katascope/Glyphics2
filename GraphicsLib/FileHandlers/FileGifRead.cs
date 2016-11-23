@@ -15,7 +15,7 @@ using System;
 using System.Windows.Media.Imaging;
 #endif
 
-using GraphicsLib;
+using RasterLib;
 
 namespace GraphicsLib
 {
@@ -61,7 +61,7 @@ namespace GraphicsLib
 
                     if (a == 255)
                     {
-                        ulong u = GraphicsLib.RasterApi.Rgba2Ulong(r, g, b, a);
+                        ulong u = RasterLib.RasterApi.Rgba2Ulong(r, g, b, a);
 
                         grid.Plot(x + top, y + left, 0, u);
                     }

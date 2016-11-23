@@ -11,8 +11,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 //using GraphicsLib;
-using GraphicsLib;
-using GraphicsLib.Language;
+using RasterLib;
+using RasterLib.Language;
 
 
 namespace ExampleCodeToSTL
@@ -88,10 +88,10 @@ ImgMirrorX
             Console.WriteLine("Code: {0}", code);
 
             //Glyphics codeString object
-            Code rasterCode = GraphicsLib.RasterApi.CreateCode(code);
+            Code rasterCode = RasterLib.RasterApi.CreateCode(code);
 
             //Extract codename from codeString object, to use for filename
-            Codename codename = GraphicsLib.RasterApi.CodeToCodename(rasterCode);
+            Codename codename = RasterLib.RasterApi.CodeToCodename(rasterCode);
 
             //Create filename
             string outputFilename = "..\\..\\" + codename.Name + ".STL";
@@ -99,15 +99,15 @@ ImgMirrorX
 
             //Convert the codeString to actual grid
             Console.WriteLine("Code to grid");
-            Grid grid = GraphicsLib.RasterApi.CodeToGrid(rasterCode);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(rasterCode);
 
             //Convert to rects
             Console.WriteLine("Grid to rects");
-            RectList rects = GraphicsLib.RasterApi.GridToRects(grid);
+            RectList rects = RasterLib.RasterApi.GridToRects(grid);
 
             //Then render that to triangles
             Console.WriteLine("Creating triangle library");
-            TrianglesList trianglesList = GraphicsLib.RasterApi.CreateTrianglesList();
+            TrianglesList trianglesList = RasterLib.RasterApi.CreateTrianglesList();
             const string filename1 = "..\\..\\cube_ascii.stl";
             const string filename2 = "..\\..\\archquad.stl";
             const string filename3 = "..\\..\\pipesphere.stl";
@@ -118,7 +118,7 @@ ImgMirrorX
             trianglesList.ImportAndReduceToUnit(filename3);
 
            //Render the rectangles out as shapes(Triangles) to a new set of triangles
-            Triangles triangles = GraphicsLib.RasterApi.Renderer.RenderRectsAsStlMapping(rects, trianglesList);
+            Triangles triangles = RasterLib.RasterApi.Renderer.RenderRectsAsStlMapping(rects, trianglesList);
             Console.WriteLine("Rendering triangles to grid");
              
             //Reduce scale to 1x1x1, making it 1mm x 1mm x 1mm
@@ -133,7 +133,7 @@ ImgMirrorX
             
             //Save final result to STL file
             Console.WriteLine("Saving triangles to {0}", outputFilename);
-            GraphicsLib.RasterApi.SaveTrianglesToStlAscii(outputFilename, triangles);
+            RasterLib.RasterApi.SaveTrianglesToStlAscii(outputFilename, triangles);
 
             //So.. as long as we are here.. let's make a preview
 
@@ -142,14 +142,14 @@ ImgMirrorX
 
             //Save a rendering out to a PNG, why not, too.
             Console.WriteLine("Creating preview grid");
-            Grid gridFromStl = GraphicsLib.RasterApi.CreateGrid(96, 96, 96, 4);
+            Grid gridFromStl = RasterLib.RasterApi.CreateGrid(96, 96, 96, 4);
 
             Console.WriteLine("Rendering triangles to grid");
-            GraphicsLib.RasterApi.Renderer.RenderTrianglesToGrid(triangles, gridFromStl);
+            RasterLib.RasterApi.Renderer.RenderTrianglesToGrid(triangles, gridFromStl);
 
             //Then render to a new grid
             Console.WriteLine("Rendering grid to oblique preview grid");
-            Grid gridObliqueRendered = GraphicsLib.RasterApi.Renderer.RenderObliqueCells(gridFromStl);
+            Grid gridObliqueRendered = RasterLib.RasterApi.Renderer.RenderObliqueCells(gridFromStl);
 
             //Then save            
             //const string filenamePreview = "..\\..\\preview.png";

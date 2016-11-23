@@ -11,9 +11,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 using System.Collections.Generic;
-using GraphicsLib;
+using RasterLib;
 
-namespace GraphicsLib
+namespace RasterLib
 {
     //Utility class for creating a set of rectangles from a grid, then reducing them to a minimal set
     public partial class GridConverter

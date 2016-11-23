@@ -12,7 +12,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 using System;
 
 
-namespace GraphicsLib.Language
+namespace RasterLib.Language
 {
     //Tokenizer class for parsing codeString into tokens
     public partial class CodeConverter

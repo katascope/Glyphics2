@@ -12,7 +12,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 using System;
 
-namespace GraphicsLib.Utility
+namespace RasterLib.Utility
 {
     public class Converter
     {        

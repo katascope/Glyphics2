@@ -12,8 +12,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GraphicsLib;
-using GraphicsLib;
-using GraphicsLib.Language;
+using RasterLib;
+using RasterLib.Language;
 
 namespace GlyphicsUnitTests
 {
@@ -28,8 +28,8 @@ namespace GlyphicsUnitTests
             var sw = new Stopwatch();
             sw.Start();
             //Code rasterCode = RasterApi.CreateCode(complexCode);
-            Code rasterCode = GraphicsLib.RasterApi.CreateCode(ComplexCode);
-            GraphicsLib.RasterApi.CodeToGrid(rasterCode);
+            Code rasterCode = RasterLib.RasterApi.CreateCode(ComplexCode);
+            RasterLib.RasterApi.CodeToGrid(rasterCode);
             sw.Stop();
             long val = sw.ElapsedMilliseconds;
 
@@ -40,9 +40,9 @@ namespace GlyphicsUnitTests
         public void TestCodeToGridTime()
         {
             var sw = new Stopwatch();
-            Code rasterCode = GraphicsLib.RasterApi.CreateCode(ComplexCode);
+            Code rasterCode = RasterLib.RasterApi.CreateCode(ComplexCode);
             sw.Start();
-            GraphicsLib.RasterApi.CodeToGrid(rasterCode);
+            RasterLib.RasterApi.CodeToGrid(rasterCode);
             sw.Stop();
             long val = sw.ElapsedMilliseconds;
             
@@ -53,10 +53,10 @@ namespace GlyphicsUnitTests
         public void TestGridToRectsTime()
         {
             var sw = new Stopwatch();
-            Code rasterCode = GraphicsLib.RasterApi.CreateCode(ComplexCode);
-            Grid grid = GraphicsLib.RasterApi.CodeToGrid(rasterCode);
+            Code rasterCode = RasterLib.RasterApi.CreateCode(ComplexCode);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(rasterCode);
             sw.Start();
-            GraphicsLib.RasterApi.GridToRects(grid);
+            RasterLib.RasterApi.GridToRects(grid);
             sw.Stop();
             long val = sw.ElapsedMilliseconds;
 
@@ -67,11 +67,11 @@ namespace GlyphicsUnitTests
         public void TestRectsToTrianglesCubeTime()
         {
             var sw = new Stopwatch();
-            Code rasterCode = GraphicsLib.RasterApi.CreateCode(ComplexCode);
-            Grid grid = GraphicsLib.RasterApi.CodeToGrid(rasterCode);
-            RectList rects = GraphicsLib.RasterApi.GridToRects(grid);
+            Code rasterCode = RasterLib.RasterApi.CreateCode(ComplexCode);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(rasterCode);
+            RectList rects = RasterLib.RasterApi.GridToRects(grid);
             sw.Start();
-            GraphicsLib.RasterApi.RectsToTrianglesCube(rects);
+            RasterLib.RasterApi.RectsToTrianglesCube(rects);
             sw.Stop();
             long val = sw.ElapsedMilliseconds;
 
@@ -82,11 +82,11 @@ namespace GlyphicsUnitTests
         public void TestRenderObliqueCellsTime()
         {
             var sw = new Stopwatch();
-            Code rasterCode = GraphicsLib.RasterApi.CreateCode(ComplexCode);
-            Grid grid = GraphicsLib.RasterApi.CodeToGrid(rasterCode);
+            Code rasterCode = RasterLib.RasterApi.CreateCode(ComplexCode);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(rasterCode);
 
             sw.Start();
-            GraphicsLib.RasterApi.Renderer.RenderObliqueCells(grid);
+            RasterLib.RasterApi.Renderer.RenderObliqueCells(grid);
             sw.Stop();
             long val = sw.ElapsedMilliseconds;
 

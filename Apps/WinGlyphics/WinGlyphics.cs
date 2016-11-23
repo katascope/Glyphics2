@@ -2,7 +2,8 @@
 using System.Drawing;
 using System.Windows.Forms;
 using GraphicsLib;
-using GraphicsLib.Language;
+using RasterLib;
+using RasterLib.Language;
 
 namespace WinGlyphics
 {
@@ -68,7 +69,7 @@ ImgMirrorX
             textBoxRects.Text = (_hc.Rects == null) ? null : _hc.Rects.ToString();
             textBoxQuads.Text = (_hc.Quads == null) ? null : _hc.Quads.ToString();
             textBoxTriangles.Text = (_hc.Triangles == null) ? null : _hc.Triangles.ToString();
-            textBoxIndexedTriangles.Text = (_hc.Triangles == null) ? null :GraphicsLib.RasterApi.TrianglesToWebGl(_hc.Triangles, "Name");
+            textBoxIndexedTriangles.Text = (_hc.Triangles == null) ? null :RasterLib.RasterApi.TrianglesToWebGl(_hc.Triangles, "Name");
             textBoxJSON.Text = _hc.JSON;
 
             Refresh();
@@ -111,7 +112,7 @@ ImgMirrorX
 
             textBoxMain.Text = textBoxMain.Text.Replace(";", "\r\n");
 
-            Code code =GraphicsLib.RasterApi.CreateCode(strCode);
+            Code code =RasterLib.RasterApi.CreateCode(strCode);
 
             //codeString = RasterApi.CodeToRescaledCode(codeString, 64, 64, 64);
 
@@ -123,7 +124,7 @@ ImgMirrorX
         private void buttonExecute_Click(object sender, EventArgs e)
         {
             string strCode = textBoxMain.Text.Replace(";;",";");
-            Code code =GraphicsLib.RasterApi.CreateCode(strCode);
+            Code code =RasterLib.RasterApi.CreateCode(strCode);
             _hc = new DownSolver(code);
             UpdateDisplay();
         }
@@ -133,9 +134,9 @@ ImgMirrorX
             string resultName = FileIo.GetOpenFilename("Open a model File", "Stereolithography file (*.STL)|*.stl|OBJ file (*.OBJ)|*.obj|All files (*.*)|*.*");
             if (resultName != null)
             {
-                Triangles triangles =GraphicsLib.RasterApi.StlToTriangles(resultName);
-                Grid grid =GraphicsLib.RasterApi.CreateGrid(16, 16, 16, 4);
-                GraphicsLib.RasterApi.Renderer.RenderTrianglesToGrid(triangles, grid);
+                Triangles triangles =RasterLib.RasterApi.StlToTriangles(resultName);
+                Grid grid =RasterLib.RasterApi.CreateGrid(16, 16, 16, 4);
+                RasterLib.RasterApi.Renderer.RenderTrianglesToGrid(triangles, grid);
                 _hc = new DownSolver(grid);
                 UpdateDisplay();
             }
@@ -161,7 +162,7 @@ ImgMirrorX
         {
             if (_hc.Triangles != null)
             {
-                string webglTriangles =GraphicsLib.RasterApi.TrianglesToWebGl(_hc.Triangles, "Tester");
+                string webglTriangles =RasterLib.RasterApi.TrianglesToWebGl(_hc.Triangles, "Tester");
                 Clipboard.SetText(webglTriangles);
             }
         }
@@ -177,7 +178,7 @@ ImgMirrorX
             if (filename != null && filename.Length > 1)
             {
                 //filename = @"C:\Github\Glyphics2\Glyph Cores\Game.glyc";
-                string strCode =GraphicsLib.RasterApi.GlyCToCode(filename);
+                string strCode =RasterLib.RasterApi.GlyCToCode(filename);
 
 
                 textBoxMain.Text = strCode;// strCode.Split('*')[0];
@@ -186,7 +187,7 @@ ImgMirrorX
                 strCode = Linearize(strCode);
 
 //                strCode = strCode.Replace(';','\n');
-                Code code =GraphicsLib.RasterApi.CreateCode(strCode);
+                Code code =RasterLib.RasterApi.CreateCode(strCode);
                 _hc = new DownSolver(code);
                 UpdateDisplay();
             }
@@ -211,7 +212,7 @@ ImgMirrorX
             string filename = FileIo.GetSaveAsFilename("Open a GlyphC File", "Glyphics file (*.GLYC)|*.glyc|All files (*.*)|*.*");
             if (filename != null && filename.Length > 1)
             {
-               GraphicsLib.RasterApi.CodeToGlyC(filename, textBoxMain.Text);
+               RasterLib.RasterApi.CodeToGlyC(filename, textBoxMain.Text);
             }
         }
 
@@ -258,7 +259,7 @@ ImgMirrorX
                         {
                             ulong v = grid.GetRgba(x, y, z);
                             byte r, g, b, a;
-                           GraphicsLib.RasterApi.Ulong2Rgba(v, out r, out g, out b, out a);
+                           RasterLib.RasterApi.Ulong2Rgba(v, out r, out g, out b, out a);
                             Plot(data.Scan0, data.Stride, x, y, z, r, g, b);
                         }
                 _bitmap.UnlockBits(data);

@@ -13,7 +13,7 @@ using System.Text;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace GraphicsLib
+namespace RasterLib
 {
     //Implementation of QuadList, see for usage
     public class QuadList : IEnumerable<Quad>

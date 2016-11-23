@@ -11,10 +11,10 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System.Collections.Generic;
 using System.Linq;
-using GraphicsLib.Utility;
-using GraphicsLib;
+using RasterLib.Utility;
+using RasterLib;
 
-namespace GraphicsLib
+namespace RasterLib
 {
     public class FileDaeWrite
     {

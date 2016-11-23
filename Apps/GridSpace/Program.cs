@@ -5,8 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GraphicsLib;
-using GraphicsLib.Renderers;
+using RasterLib.Renderers;
+using RasterLib;
 using Newtonsoft.Json;
+
 
 
 namespace GridSpace
@@ -108,7 +110,7 @@ namespace GridSpace
                     "PenColorD4 255 255 255 255\r\n" +
                     "Rect 0 0 0 63 1 63\r\n";
 
-                GraphicsLib.RasterApi.CodeToGlyC(kvp.Value + ".glyc", code);
+                RasterLib.RasterApi.CodeToGlyC(kvp.Value + ".glyc", code);
             }
             */
             
@@ -132,6 +134,35 @@ namespace GridSpace
             z = Convert.ToInt32(parts[2], 16);
             return "";
         }
+        static void RenderMegaGrid(GridSpace gridspace, Grid GridMega)
+        {
+            foreach (KeyValuePair<string, string> kvp in gridspace.grids)
+            {
+                Console.WriteLine("Processing " + kvp.Key + " : " + kvp.Value);
+                string stringCode = RasterLib.RasterApi.GlyCToCode(kvp.Value + ".glyc");
+                RasterLib.Language.Code code = new RasterLib.Language.Code(stringCode);
+                Grid grid = RasterLib.RasterApi.CodeToGrid(code);
+
+                Int32 ox, oy, oz;
+                GetGridSpaceAddressFromString(kvp.Key.ToString(), out ox, out oy, out oz);
+                ox += 5;
+                oz += 5;
+                Console.WriteLine("Offset {0} {1} {2}", ox, oy, oz);
+
+                //Now copy the grid into the xyz location * 64
+                for (int z = 0; z < 64; z++)
+                {
+                    for (int y = 0; y < 64; y++)
+                    {
+                        for (int x = 0; x < 64; x++)
+                        {
+                            CellProperties cp = grid.GetProperty(x, y, z);
+                            GridMega.Plot(x + ox * 64, y, z + oz * 64, cp);
+                        }
+                    }
+                }
+            }
+        }
         static void Main(string[] args)
         {
             GridSpace gridspace = new GridSpace();
@@ -146,34 +177,10 @@ namespace GridSpace
             Console.WriteLine("Rendering mega grid");
             if (true)//render mega grid
             {
-                foreach (KeyValuePair<string, string> kvp in gridspace.grids)
-                {
-                    Console.WriteLine("Processing " + kvp.Key + " : " + kvp.Value);
-                    string stringCode = GraphicsLib.RasterApi.GlyCToCode(kvp.Value + ".glyc");
-                    GraphicsLib.Language.Code code = new GraphicsLib.Language.Code(stringCode);
-                    Grid grid = GraphicsLib.RasterApi.CodeToGrid(code);
+                RenderMegaGrid(gridspace, GridMega);
 
-                    Int32 ox, oy, oz;
-                    GetGridSpaceAddressFromString(kvp.Key.ToString(), out ox, out oy, out oz);
-                    ox += 5;
-                    oz += 5;
-                    Console.WriteLine("Offset {0} {1} {2}", ox, oy, oz);
-
-                    //Now copy the grid into the xyz location * 64
-                    for (int z = 0; z < 64; z++)
-                    {
-                        for (int y = 0; y < 64; y++)
-                        {
-                            for (int x = 0; x < 64; x++)
-                            {
-                                CellProperties cp = grid.GetProperty(x, y, z);
-                                GridMega.Plot(x + ox * 64, y, z + oz * 64, cp);
-                            }
-                        }
-                    }
-                }
                 GraphicsLib.Renderers.Renderer renderer = new GraphicsLib.Renderers.Renderer();
-                Grid gridIsometric = GraphicsLib.RasterApi.Renderer.RenderIsometricCellsScaled(GridMega, 0, 0, 0, 255, 2, 2, "GridSpace");
+                Grid gridIsometric = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(GridMega, 0, 0, 0, 255, 2, 2, "GridSpace");
                 FilePngWrite.SaveFlatPng("megagrid.png", gridIsometric);
             }
         

@@ -1,166 +1,38 @@
 ﻿using System;
+using System.IO;
+using System.Collections.Generic;
 using System.Text;
 using System.Net;
 using GraphicsLib;
-using GraphicsLib.Language;
+using RasterLib.Language;
+using Newtonsoft.Json;
+using GraphicsLib.Simulator;
 
-/*
- * Need:
- *  Response hook
- *  SerializedRectsToJson
- */
 namespace WebServer
 {
-    class WebResponder
-    {
-        private static void QuickResponse(HttpListenerContext context, string response)
-        {
-            context.Response.ContentType = "text/html";
-
-            context.Response.AddHeader("Date", DateTime.Now.ToString("r"));
-            context.Response.AddHeader("Last-Modified", DateTime.Now.ToString("r"));
-            context.Response.ContentLength64 = response.Length;
-            byte[] buffer = new byte[response.Length * 16];
-            for (int i = 0; i < response.Length; i++)
-            {
-                buffer[i] = (byte)response[i];
-            }
-            context.Response.OutputStream.Write(buffer, 0, response.Length);
-        }
-
-        public static bool GetResponse(HttpListenerContext context)
-        {
-            string url = context.Request.Url.AbsolutePath;
-            string query = context.Request.Url.Query;
-            Console.WriteLine("url={0} : Query={1}", url, query);
-
-            if (url.Equals("/Test"))
-            {
-                string response = "<title>This is a page</title><body>I know Foo!\nTest successful</body>";
-                QuickResponse(context, response);
-                return true;
-            }
-            else if (url.Equals("/Execute"))
-            {
-                string worldPart = query.Split('=')[1];
-                worldPart = WebUtility.UrlDecode(worldPart);
-                Code code =GraphicsLib.RasterApi.CreateCode(worldPart);
-                Grid grid =GraphicsLib.RasterApi.CodeToGrid(code);
-                SerializedRects srects =GraphicsLib.RasterApi.RectsToSerializedRects(GraphicsLib.RasterApi.GridToRects(grid));
-                //response = srects.SerializedData;
-                string response = "<A href=\"deserializer.html?serialized=" + srects.SerializedData+"\">Viewer</a>";
-                QuickResponse(context, response);
-                return true;
-            }
-            else if (url.Equals("/Worlds"))
-            {
-                StringBuilder sb = new StringBuilder();
-
-                string response;
-                //Code code = Program.Codes.GetCode(0);
-                foreach (Code code in Program.Codes)
-                {
-                    response = "";
-                    string name = code.codeString.Split(',')[0];
-                    //string worldPart = codeString.codeString.Split('*')[1];
-
-                    int compressed = code.codeString.IndexOf('*');
-                    string worldPart = "";
-                    if (compressed >= 0)
-                        worldPart = code.codeString.Substring(compressed);
-
-                    response += "<a href=\"World?name=" + name + "\">" + name + "</a>";
-                   // response += ", <a href=\"Execute?codeString=" + code.codeString + "\">" + code.codeString +
-                     //           "</a>";
-                    //response += " - <a href=\"deserializer.html?serialized=" + worldPart + "\">Viewer " + name +
-                      //          "</a>";
-                    response += "<br>";
-                    sb.Append(response);
-                    
-                }
-                response = sb.ToString();
-                Console.WriteLine(response);
-                QuickResponse(context, response);
-                return true;
-            }
-            else if (url.Equals("/World"))
-            {
-                //http://localhost:3838/World?name=Ascent
-                string response = "";
-                string worldPart = query.Split('=')[1];
-                foreach (Code code in Program.Codes)
-                {
-                    string name = code.codeString.Split(',')[0];
-                    if (name.Equals(worldPart))
-                    {
-                        response += code.codeString;
-                        QuickResponse(context, response);
-                        return true;
-                    }
-                }
-                return false;
-            }
-            else if (url.Equals("/srects2html"))
-            {
-                string serializedRectsString = query.Substring(1,query.Length-1);
-                SerializedRects srects =GraphicsLib.RasterApi.CreateSerializedRects(serializedRectsString);
-                RectList rects =GraphicsLib.RasterApi.SerializedRectsToRects(srects);
-
-                string response = "<title>SerializedRects-to-HTML</title><body>";
-                foreach (Rect rect in rects)
-                    response += rect + "<br>";
-                response += "</body>";
-                QuickResponse(context, response);
-                return true;
-            }
-            else if (url.Equals("/srects2json"))
-            {
-                string serializedRectsString = query.Substring(1, query.Length - 1);
-                SerializedRects srects =GraphicsLib.RasterApi.CreateSerializedRects(serializedRectsString);
-                RectList rects =GraphicsLib.RasterApi.SerializedRectsToRects(srects);
-
-                string response = "<title>SerializedRects-to-JSON</title>";
-    /*            {"employees":[
-    {"firstName":"John", "lastName":"Doe"},
-    {"firstName":"Anna", "lastName":"Smith"},
-    {"firstName":"Peter", "lastName":"Jones"}
-]}*/
-                response += "{\"rects\":[<br>\n";
-
-                StringBuilder sb = new StringBuilder();
-
-                foreach (Rect rect in rects)
-                {
-                    string str = "{\"Pt1\":\"" + rect.Pt1 + "\"," +
-                                  "\"Pt2\":\"" + rect.Pt2 + "\"," +
-                                  "\"RGBA\":\"" + rect.Properties.Rgba + "\"}<br>\n";
-                    
-                    sb.Append(str);
-                }
-                response += sb.ToString();
-                response += "]}";
-                QuickResponse(context, response);
-                return true;
-            }
-            return false;
-        }
-    }
     class Program
     {
-        public static CodeList Codes;
+        static public Digest digest;
+        static public Dictionary<string, SimulationModel> simulations = new Dictionary<string, SimulationModel>();
+
         static void Main()
         {
-            Console.WriteLine("Simple web server starting up");
+            Console.WriteLine("Restful Glyphic Server");
+            string myFolder = @"C:\Github\Glyphics2\Site\";
 
-            const string mediaPath = "\\GitHub\\Glyphics2\\Glyph Cores\\";
-            Codes =GraphicsLib.RasterApi.GlyToCodes(mediaPath + "default.gly");
-            Console.WriteLine("Glyphics core loaded");
+            WebResponder.responseHandlers.Add("/ping",            new WebHandler_ping());
+            WebResponder.responseHandlers.Add("/api/code2srects", new WebHandler_code2srects());
+            WebResponder.responseHandlers.Add("/api/simulation",  new WebHandler_simulation());
+            WebResponder.responseHandlers.Add("/api/digest",      new WebHandler_digest());
+            //WebResponder.responseHandlers.Add("/api/srects2html", new WebHandler_srects2html());
+            //WebResponder.responseHandlers.Add("/api/srects2json", new WebHandler_srects2json());
 
-            string myFolder = @"C:\Github\Glyphics2\JavascriptWebGLSDeserializer\";
+            //Only have to simulate one thing at a time?
+            var file = new StreamReader(myFolder+"\\Digest\\digest.json");
+            digest = JsonConvert.DeserializeObject<Digest>(file.ReadToEnd());
 
             //create server with auto assigned port
-            SimpleHttpServer myServer = 
-                new SimpleHttpServer(myFolder, 3838);
+            SimpleHttpServer myServer = new SimpleHttpServer(myFolder, 3838);
 
             if (myServer != null)
                 while (true) { }

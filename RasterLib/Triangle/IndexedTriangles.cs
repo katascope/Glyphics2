@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using GraphicsLib.Utility;
-using GraphicsLib;
+using RasterLib.Utility;
+using RasterLib;
 
-namespace GraphicsLib
+namespace RasterLib
 {
     class IndexedTriangles
     {

@@ -11,8 +11,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using GraphicsLib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using GraphicsLib;
-using GraphicsLib.Language;
+using RasterLib;
+using RasterLib.Language;
 
 namespace GlyphicsUnitTests
 {
@@ -24,38 +24,38 @@ namespace GlyphicsUnitTests
         [TestMethod]
         public void ConvertCodeToGridToRectsToQuadsToTriangles()
         {
-            Code rasterCode = GraphicsLib.RasterApi.CreateCode(Code);
+            Code rasterCode = RasterLib.RasterApi.CreateCode(Code);
             Assert.IsNotNull(rasterCode);
-            Grid grid = GraphicsLib.RasterApi.CodeToGrid(rasterCode);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(rasterCode);
             Assert.IsNotNull(grid);
-            RectList rects = GraphicsLib.RasterApi.GridToRects(grid);
+            RectList rects = RasterLib.RasterApi.GridToRects(grid);
             Assert.IsNotNull(rects);
-            QuadList quads = GraphicsLib.RasterApi.RectsToQuads(rects);
+            QuadList quads = RasterLib.RasterApi.RectsToQuads(rects);
             Assert.IsNotNull(quads);
-            Triangles triangles = GraphicsLib.RasterApi.QuadsToTriangles(quads);
+            Triangles triangles = RasterLib.RasterApi.QuadsToTriangles(quads);
             Assert.IsNotNull(triangles);
         }
 
         [TestMethod]
         public void ConvertCodeToGridToRectsToScene()
         {
-            Code rasterCode = GraphicsLib.RasterApi.CreateCode(Code);
-            Grid grid = GraphicsLib.RasterApi.CodeToGrid(rasterCode);
-            RectList rectsFromGrid = GraphicsLib.RasterApi.GridToRects(grid);
+            Code rasterCode = RasterLib.RasterApi.CreateCode(Code);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(rasterCode);
+            RectList rectsFromGrid = RasterLib.RasterApi.GridToRects(grid);
 
             Grid gridFromRects = grid.Clone();
             Assert.IsTrue(grid.IsEqualTo(gridFromRects));
 
-            GraphicsLib.RasterApi.Renderer.RenderRectsToGrid(rectsFromGrid, gridFromRects);
+            RasterLib.RasterApi.Renderer.RenderRectsToGrid(rectsFromGrid, gridFromRects);
             Assert.IsTrue(grid.IsEqualTo(gridFromRects));
 
-            Scene sceneFromRects = GraphicsLib.RasterApi.RectsToScene(rectsFromGrid);
-            RectList rectsFromScene = GraphicsLib.RasterApi.SceneToRects(sceneFromRects);
+            Scene sceneFromRects = RasterLib.RasterApi.RectsToScene(rectsFromGrid);
+            RectList rectsFromScene = RasterLib.RasterApi.SceneToRects(sceneFromRects);
 
             Assert.IsTrue(rectsFromGrid.IsEqualTo(rectsFromScene));
 
             Grid gridMega = grid.Clone();
-            GraphicsLib.RasterApi.Renderer.RenderRectsToGrid(rectsFromScene, gridMega);
+            RasterLib.RasterApi.Renderer.RenderRectsToGrid(rectsFromScene, gridMega);
 
             Assert.IsTrue(grid.IsEqualTo(gridMega));
         }

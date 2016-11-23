@@ -11,7 +11,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System.Collections.Generic;
 
-namespace GraphicsLib
+namespace RasterLib
 {
     //Set of painting functions to draw to an Grid or IByteGridContext(which has an Grid)
     public interface IPainter

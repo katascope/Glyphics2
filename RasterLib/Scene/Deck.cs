@@ -12,7 +12,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 using System.Collections;
 using System.Collections.Generic;
 
-namespace GraphicsLib
+namespace RasterLib
 {
     //Implementation of Deck, see for usage
     public class Deck : IEnumerable<Scene>

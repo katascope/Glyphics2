@@ -1,7 +1,7 @@
 ﻿using System;
-using GraphicsLib;
-using GraphicsLib.Language;
-using RasterApi = GraphicsLib.RasterApi;
+using RasterLib;
+using RasterLib.Language;
+using RasterApi = RasterLib.RasterApi;
 
 // https://github.com/NancyFx/Nancy/wiki/Hosting-Nancy-with-Nginx-on-Ubuntu
 class Options
@@ -49,11 +49,11 @@ namespace GlyView
                 if (args[i] == "-sg") options.displaySceneGraph = true;
                 if (args[i] == "-ci") options.displayCircuit = true;
             }
-            string codeString = GraphicsLib.RasterApi.GlyCToCode(filename);
+            string codeString = RasterLib.RasterApi.GlyCToCode(filename);
             Code code = new Code(codeString);
             if (options.displayCode) Console.WriteLine("Code: "+codeString);
 
-            Grid grid = GraphicsLib.RasterApi.CodeToGrid(code);
+            Grid grid = RasterLib.RasterApi.CodeToGrid(code);
 
             if (grid != null)
             {
@@ -61,15 +61,15 @@ namespace GlyView
                 //Console.WriteLine("GridBytes:\n{0}\n", bytesDesc);
             }
 
-            RectList rects = GraphicsLib.RasterApi.GridToRects(grid);
+            RectList rects = RasterLib.RasterApi.GridToRects(grid);
             //rects
             {
                 if (options.displayRects)
                     Console.WriteLine("Rects: {0}\n{1}", rects.Count, rects);
 
-                GraphicsLib.RasterApi.BuildCircuit(rects, options.displayCircuit);
+                RasterLib.RasterApi.BuildCircuit(rects, options.displayCircuit);
 
-                string serialized = GraphicsLib.RasterApi.RectsToSerializedRectsLimit255(rects).SerializedData;
+                string serialized = RasterLib.RasterApi.RectsToSerializedRectsLimit255(rects).SerializedData;
                 if (options.displaySerializedRects)
                     Console.WriteLine("{0}\n",serialized);
                     //Console.WriteLine("Serialized Rects: (len={0})\n{1}\n", serialized.Length, serialized);
@@ -86,15 +86,15 @@ namespace GlyView
 
             //if (ctl.OutputSceneGraph)
             {
-                Scene scene = GraphicsLib.RasterApi.RectsToScene(rects);
+                Scene scene = RasterLib.RasterApi.RectsToScene(rects);
                 if (options.displaySceneGraph)
                     Console.WriteLine("Scene: {0}", scene);
 
-                QuadList quads = GraphicsLib.RasterApi.RectsToQuads(rects);
+                QuadList quads = RasterLib.RasterApi.RectsToQuads(rects);
                 if (options.displayQuads)
                     Console.WriteLine("Quads: {0}", quads);
 
-                Triangles triangles = GraphicsLib.RasterApi.QuadsToTriangles(quads);
+                Triangles triangles = RasterLib.RasterApi.QuadsToTriangles(quads);
                 if (options.displayTriangles)
                     Console.WriteLine("Triangles: {0}", triangles);
             }

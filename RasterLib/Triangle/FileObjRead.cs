@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace GraphicsLib
+namespace RasterLib
 {
     //Utility class for reading OBJ files
     public class FileObjRead

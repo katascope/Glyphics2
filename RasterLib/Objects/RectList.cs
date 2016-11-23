@@ -13,7 +13,7 @@ using System.Text;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace GraphicsLib
+namespace RasterLib
 {
     //Implementation of RectList, see for usage
     public class RectList : IEnumerable<Rect>

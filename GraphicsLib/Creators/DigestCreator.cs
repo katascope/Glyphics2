@@ -1,13 +1,13 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
-using GraphicsLib.Language;
+using RasterLib.Language;
 
 namespace GraphicsLib.Creators
 {
     public class DigestCreator
     {
-        public static Digest Create(string rootFolder, string outputFolder, GraphicsLib.DownSolver.enables enables)
+        public static Digest Create(string rootFolder, string outputFolder, RasterLib.DownSolver.enables enables)
         {
             DateTime startTime = DateTime.Now;
             Console.WriteLine("Starting at {0}", startTime);

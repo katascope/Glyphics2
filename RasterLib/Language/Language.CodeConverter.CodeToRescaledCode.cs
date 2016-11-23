@@ -11,7 +11,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 
-namespace GraphicsLib.Language
+namespace RasterLib.Language
 {
     //Rescales the arguments to functions in a set of tokens, allows rescaling (up or down) of codeString to grids
     public partial class CodeConverter

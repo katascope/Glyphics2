@@ -10,12 +10,12 @@ Redistribution and use in source and binary forms, with or without modification,
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DRect, INDRect, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #endregion
 
-using GraphicsLib.Language;
-using GraphicsLib.Painters;
-using GraphicsLib.Renderers;
-using GraphicsLib.Utility;
+using RasterLib.Language;
+using RasterLib.Painters;
+using RasterLib.Renderers;
+using RasterLib.Utility;
 
-namespace GraphicsLib
+namespace RasterLib
 {
     public static class RasterApi 
     {
@@ -148,7 +148,7 @@ namespace GraphicsLib
         public static string GridTo3DDescription(Grid grid, int ax, int ay, int az) { return RealRenderer.GridTo3DDescription(grid, ax, ay, az); }
         public static string GridToHexDescription(Grid grid) { return Renderer.GridToHexDescription(grid); }
 
-        public static Grid CodeToObliqueCells(Code rasterCode) { return Renderer.RenderObliqueCells(GraphicsLib.RasterApi.CodeToGrid(rasterCode)); }
+        public static Grid CodeToObliqueCells(Code rasterCode) { return Renderer.RenderObliqueCells(RasterLib.RasterApi.CodeToGrid(rasterCode)); }
     }
 }
 
