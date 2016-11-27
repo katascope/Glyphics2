@@ -33,7 +33,8 @@ namespace RasterLib
             DoScene = 128,
             DoPov = 256,
             DoStl = 512,
-            DoCode = 1024
+            DoCode = 1024,
+            DoDocs = 2048
         };
         public enables enableFlags { get; set; }
 

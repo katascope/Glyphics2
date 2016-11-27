@@ -38,6 +38,7 @@
     <Compile Include="FileHandlers\FileDaeWrite.cs" />
     <Compile Include="FileHandlers\FileGly.cs" />
     <Compile Include="FileHandlers\FileTxtWrite.cs" />
+    <Compile Include="GridSpaceAddress.cs" />
     <Compile Include="Language\Language.CodeCompilerError.cs" />
     <Compile Include="Language\Language.ByteConverter.BytesToString.cs" />
     <Compile Include="Language\Language.Code.cs" />

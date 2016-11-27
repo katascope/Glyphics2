@@ -150,7 +150,7 @@ namespace WebServer
         private void Process(HttpListenerContext context)
         {
             string filename = context.Request.Url.AbsolutePath;
-            Console.WriteLine(filename);
+            //Console.WriteLine(filename);
             filename = filename.Substring(1);
 
             if (string.IsNullOrEmpty(filename))

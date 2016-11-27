@@ -14,23 +14,28 @@ namespace WebServer
     {
         static public Digest digest;
         static public Dictionary<string, SimulationModel> simulations = new Dictionary<string, SimulationModel>();
+        static public Dictionary<string, string> megagridAddressDictionary;
 
         static void Main()
         {
             Console.WriteLine("Restful Glyphic Server");
             string myFolder = @"C:\Github\Glyphics2\Site\";
 
-            WebResponder.responseHandlers.Add("/ping",            new WebHandler_ping());
-            WebResponder.responseHandlers.Add("/api/code2srects", new WebHandler_code2srects());
-            WebResponder.responseHandlers.Add("/api/simulation",  new WebHandler_simulation());
-            WebResponder.responseHandlers.Add("/api/digest",      new WebHandler_digest());
-            WebResponder.responseHandlers.Add("/api/srects",      new WebHandler_srects());
+            WebResponder.responseHandlers.Add("/ping",              new WebHandler_ping());
+            WebResponder.responseHandlers.Add("/api/code2srects",   new WebHandler_code2srects());
+            WebResponder.responseHandlers.Add("/api/simulation",    new WebHandler_simulation());
+            WebResponder.responseHandlers.Add("/api/digest",        new WebHandler_digest());
+            WebResponder.responseHandlers.Add("/api/srects",        new WebHandler_srects());
+            WebResponder.responseHandlers.Add("/api/megagrid",      new WebHandler_megagrid());
             //WebResponder.responseHandlers.Add("/api/srects2html", new WebHandler_srects2html());
             //WebResponder.responseHandlers.Add("/api/srects2json", new WebHandler_srects2json());
 
             //Only have to simulate one thing at a time?
             var file = new StreamReader(myFolder+"\\Digest\\digest.json");
             digest = JsonConvert.DeserializeObject<Digest>(file.ReadToEnd());
+
+            file = new StreamReader(@"C:\Github\Glyphics2\Apps\GridSpace\bin\Debug\megagrid.json");
+            megagridAddressDictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(file.ReadToEnd());
 
             //create server with auto assigned port
             SimpleHttpServer myServer = new SimpleHttpServer(myFolder, 3838);

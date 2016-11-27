@@ -93,7 +93,8 @@ namespace GraphicsLib
                     GraphicsApi.SaveFlatPng(ca.orthogonalGridFilename, ds.GridOrthogonal);
                 }
 
-                GraphicsLib.Creators.DocumentationCreator.DocumentByCode(outputFolder, name, ca.minimalCode);
+                if ((enables & RasterLib.DownSolver.enables.DoDocs) != 0)
+                    GraphicsLib.Creators.DocumentationCreator.DocumentByCode(outputFolder, name, ca.minimalCode);
 
                 foreach (CodeCompilerError result in results)
                 {

@@ -17,8 +17,8 @@ namespace Glynt
             Console.WriteLine("Creating digest at " + digestOutputPath + "\n");
 
             string originalFolder = Directory.GetCurrentDirectory();
-            Digest digest = GraphicsLib.Creators.DigestCreator.Create(originalFolder, digestOutputPath, 
-                DownSolver.enables.All
+            Digest digest = GraphicsLib.Creators.DigestCreator.Create(originalFolder, digestOutputPath,
+                DownSolver.enables.DoRects
                 //DownSolver.enables.RenderIsometricThumb | DownSolver.enables.DoRects
                 );
 

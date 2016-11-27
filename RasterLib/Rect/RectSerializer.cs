@@ -128,7 +128,7 @@ namespace RasterLib
             string str = "";
             string runStr = "";
 
-            bool mode2D = RectsAre2D(rectSet);
+            bool mode2D = false;// RectsAre2D(rectSet);
 
             foreach (List<Rect> rectList in superRects)
             {
@@ -155,7 +155,7 @@ namespace RasterLib
         {
             var sb = new StringBuilder();
 
-            bool mode2D = RectsAre2D(rectSet);
+            bool mode2D = false;// RectsAre2D(rectSet);
 
             //Sort the rectlist into sets of rectlists where rects have same properties
             IEnumerable<List<Rect>> superRects = SuperSortByProperties(rectSet);

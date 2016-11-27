@@ -13,25 +13,6 @@ using Newtonsoft.Json;
 
 namespace GridSpace
 {
-    class GridSpaceAddress
-    {
-        Int32 X;
-        Int32 Y;
-        Int32 Z;
-        public GridSpaceAddress(Int32 x, Int32 y, Int32 z)
-        {
-            X = x;
-            Y = y;
-            Z = z;
-        }
-        public override string ToString()
-        {
-            return "@"
-                + String.Format("{0:X8}_", X)
-                + String.Format("{0:X8}_", Y)
-                + String.Format("{0:X8}", Z) + "";
-        }
-    }
 
     class GridSpace
     {
@@ -57,25 +38,38 @@ namespace GridSpace
 
         public void Generate()
         {
-            string[] map = {
-            "Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras",
-            "Gras, Wall, Wall, Wall, Wall, Road, Wall, Wall, Wall, Wall, Gras",
-            "Gras, Wall, Road, Road, Road, Road, Road, Road, Road, Wall, Gras",
-            "Gras, Wall, Road, Shop, Shop, Road, Shop, Shop, Road, Wall, Gras",
-            "Gras, Wall, Road, Shop, Shop, Road, Shop, Shop, Road, Wall, Gras",
-            "Road, Road, Road, Road, Road, Null, Road, Road, Road, Road, Road",
-            "Gras, Wall, Road, Shop, Shop, Road, Shop, Shop, Road, Wall, Gras",
-            "Gras, Wall, Road, Shop, Shop, Road, Shop, Shop, Road, Wall, Gras",
-            "Gras, Wall, Road, Road, Road, Road, Road, Road, Road, Wall, Gras",
-            "Gras, Wall, Wall, Wall, Wall, Road, Wall, Wall, Wall, Wall, Gras",
-            "Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras"
-                       };
-            int x = -6;
-            int y = 5;
+            string[] map = 
+            {
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Wall, Wall, Wall, Wall, Road, Wall, Wall, Wall, Wall, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Wall, Road, Road, Road, Road, Road, Road, Road, Wall, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Wall, Road, Shop, Shop, Road, Shop, Shop, Road, Wall, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Wall, Road, Shop, Shop, Road, Shop, Shop, Road, Wall, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Road, Road, Road, Road, Road, Road, Road, Road, Road, Road, Road, Null, Road, Road, Road, Road, Road, Road, Road, Road, Road, Road, Road",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Wall, Road, Shop, Shop, Road, Shop, Shop, Road, Wall, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Wall, Road, Shop, Shop, Road, Shop, Shop, Road, Wall, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Wall, Road, Road, Road, Road, Road, Road, Road, Wall, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Wall, Wall, Wall, Wall, Road, Wall, Wall, Wall, Wall, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
+                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras"
+            };
+            int x = -12;
+            int y = 12;
 
             for (int i = 0; i < map.Length; i++)
             {
-                x = -6;
+                x = -12;
                 string[] parts = map[i].Split(',');
                 foreach (string part in parts)
                 {
@@ -167,10 +161,15 @@ namespace GridSpace
         {
             GridSpace gridspace = new GridSpace();
 
-            var file = new StreamReader("megagrid.json");
+            /*var file = new StreamReader("megagrid.json");
             Dictionary<string, string> useDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(file.ReadToEnd());
-            gridspace.grids = useDict;
-//            gridspace.Generate();
+            gridspace.grids = useDict;*/
+
+            
+            gridspace.Generate();
+            gridspace.SaveDictionary("megagrid.json");
+            return;
+
             //gridspace.ReadFromFolder();
 
             Grid GridMega = new Grid(768, 64, 768, 4);
@@ -185,7 +184,6 @@ namespace GridSpace
             }
         
 
-//            gridspace.SaveDictionary("megagrid.json");
         }
     }
 }
