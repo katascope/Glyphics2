@@ -39,7 +39,7 @@ namespace RasterLib.Language
             Glyph glyph = Glyphs.GetGlyph(id);
             if (glyph.Args != parts.Length - 1)
             {
-                if (glyph.Varargs == 0)
+                if (glyph.Varargs == 0 && glyph.glyph != GlyphId.String)
                 {
                     Console.WriteLine("Could not find in : " + line);
                     throw new RasterLibError(RasterLibErrorType.WrongArgumentCount, codeLine, line, "(Need " + glyph.Args + ", Found " + (parts.Length - 1) + ")");

@@ -404,8 +404,8 @@ namespace RasterLib.Language
                 new Glyph(GlyphId.Maze          , "Maze",               0,    6,  "# x y z X Z", "Generate maze (random seed=#, 0 for no seed) from xyz to XyZ" ),
 #endregion
                 new Glyph(GlyphId.End           , "End",                0,    0,  "","Ends script"),
-                new Glyph(GlyphId.Put           , "Put",                0,    4,  "t x y z","Renders an inline <x1> <y1> <z1>"),
-                new Glyph(GlyphId.PutGroup      , "PutGroup",           0,    5,  "t x y z","Renders an inline <x1> <y1> <z1> <id>"),
+                new Glyph(GlyphId.Put           , "Put",                0,    4,  "t x y z","Renders an inline <t> <x1> <y1> <z1>"),
+                new Glyph(GlyphId.PutGroup      , "PutGroup",           0,    5,  "t x y z #","Renders an inline <t> <x1> <y1> <z1> <id>"),
 
                 new Glyph(GlyphId.ScalePut      , "ScalePut",           0,    7,  "t x y z X Y Z","Renders a scaled inline <x1> <y1> <z1> <x2> <y2> <z2>"),
                 new Glyph(GlyphId.Wire          , "Wire",               0,    7,  "x y z X Y Z h","Draw a wire from <x1> <y1> <z1> to <x2> <y2> <z2>, with height <h>"),

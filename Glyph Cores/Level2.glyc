@@ -62,8 +62,7 @@ FillRect 1 1 54 14 15 54
 
 PenTex 0
 
-#Put Puzzle1 16 1 16
-Put GateAnd 27 1 22
+PutGroup GateAnd 27 1 22 0
 
 PenPhysics 5
 PenColorD4 127 127 255 255

@@ -40,36 +40,57 @@ namespace GridSpace
         {
             string[] map = 
             {
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Wall, Wall, Wall, Wall, Road, Wall, Wall, Wall, Wall, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Wall, Road, Road, Road, Road, Road, Road, Road, Wall, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Wall, Road, Shop, Shop, Road, Shop, Shop, Road, Wall, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Wall, Road, Shop, Shop, Road, Shop, Shop, Road, Wall, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Road, Road, Road, Road, Road, Road, Road, Road, Road, Road, Road, Null, Road, Road, Road, Road, Road, Road, Road, Road, Road, Road, Road",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Wall, Road, Shop, Shop, Road, Shop, Shop, Road, Wall, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Wall, Road, Shop, Shop, Road, Shop, Shop, Road, Wall, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Wall, Road, Road, Road, Road, Road, Road, Road, Wall, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Wall, Wall, Wall, Wall, Road, Wall, Wall, Wall, Wall, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras",
-                "Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Road, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras, Gras"
+              "Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean",
+              "Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean",
+              "Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean",
+              "Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean",
+              "Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean",
+              "Ocean, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Ocean, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach",
+              "Ocean, Ocean, Beach, Grass, Beach, Grass, Beach, Beach, Beach, Grass, Beach, Grass, Beach, Grass, Beach, Roads, Grass, Beach, Grass, Beach, Grass, Beach, Grass, Beach, Beach, Grass, Beach, Grass, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Beach, Roads, Roads, Roads, Beach, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Grass, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Beach, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Grass, Grass, Roads, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Roads, Grass, Grass, Roads, Grass, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Grass, Grass, Roads, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Roads, Grass, Grass, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Grass, Grass, Roads, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Roads, Grass, Grass, Roads, Grass, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Grass, Grass, Roads, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Roads, Grass, Grass, Roads, Grass, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Grass, Grass, Roads, Grass, Grass, Roads, Grass, Walls, Walls, Walls, Walls, Roads, Walls, Walls, Walls, Walls, Grass, Roads, Grass, Roads, Grass, Grass, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Grass, Grass, Roads, Grass, Grass, Roads, Grass, Walls, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Walls, Grass, Roads, Grass, Roads, Grass, Grass, Roads, Grass, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Grass, Grass, Roads, Grass, Grass, Roads, Grass, Walls, Roads, Nexus, Shops, Roads, Shops, Nexus, Roads, Walls, Grass, Roads, Grass, Roads, Grass, Grass, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Grass, Grass, Roads, Grass, Grass, Roads, Grass, Walls, Roads, Shops, Roads, Roads, Roads, Shops, Roads, Walls, Grass, Roads, Grass, Roads, Grass, Grass, Roads, Grass, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Cube, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Grass, Grass, Roads, Grass, Grass, Roads, Grass, Walls, Roads, Shops, Roads, Roads, Roads, Shops, Roads, Walls, Grass, Roads, Grass, Roads, Grass, Grass, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Grass, Grass, Roads, Grass, Grass, Roads, Grass, Walls, Roads, Nexus, Shops, Roads, Shops, Nexus, Roads, Walls, Grass, Roads, Grass, Roads, Grass, Grass, Roads, Grass, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Grass, Grass, Roads, Grass, Grass, Roads, Grass, Walls, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Walls, Grass, Roads, Grass, Roads, Grass, Grass, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Grass, Grass, Roads, Grass, Grass, Roads, Grass, Walls, Walls, Walls, Walls, Roads, Walls, Walls, Walls, Walls, Grass, Roads, Grass, Roads, Grass, Grass, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Grass, Grass, Roads, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Roads, Grass, Grass, Roads, Grass, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Grass, Grass, Roads, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Roads, Grass, Grass, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Grass, Grass, Roads, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Roads, Grass, Grass, Roads, Grass, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Grass, Grass, Roads, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Roads, Grass, Grass, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Grass, Grass, Roads, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Roads, Grass, Grass, Roads, Grass, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Grass, Grass, Roads, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Roads, Grass, Grass, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Roads, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Grass, Beach, Ocean, Ocean",
+              "Ocean, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Ocean, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach",
+              "Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean",
+              "Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean",
+              "Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean",
+              "Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean",
+              "Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean, Ocean",
             };
-            int x = -12;
-            int y = 12;
+
+            int x = -16;
+            int y = 21;
 
             for (int i = 0; i < map.Length; i++)
             {
-                x = -12;
+                x = -16;
                 string[] parts = map[i].Split(',');
                 foreach (string part in parts)
                 {
@@ -81,6 +102,28 @@ namespace GridSpace
                 }
                 y--;
                 Console.WriteLine();
+            }
+
+            for (int spike=1;spike<8;spike++)
+            {
+                var gsa = new GridSpaceAddress(0, spike, 0);
+                grids.Add(gsa.ToString(), "Cube");
+                Console.WriteLine(gsa);
+
+                gsa = new GridSpaceAddress(2, spike, 2);
+                grids.Add(gsa.ToString(), "Cube");
+                Console.WriteLine(gsa);
+                gsa = new GridSpaceAddress(-2, spike, 2);
+                grids.Add(gsa.ToString(), "Cube");
+                Console.WriteLine(gsa);
+                gsa = new GridSpaceAddress(-2, spike, -2);
+                grids.Add(gsa.ToString(), "Cube");
+                Console.WriteLine(gsa);
+                gsa = new GridSpaceAddress(2, spike, -2);
+                grids.Add(gsa.ToString(), "Cube");
+                Console.WriteLine(gsa);
+
+
             }
 
        /*     foreach (KeyValuePair<string, string> kvp in grids)

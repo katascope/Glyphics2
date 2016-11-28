@@ -69,8 +69,11 @@ namespace GraphicsLib
                 ca.SizeY = ds.Grid.SizeY;
                 ca.SizeZ = ds.Grid.SizeZ;
 
-                if (ds.SerializedRects != null)                    
+                if (ds.SerializedRects != null)
                     ca.SerializedRects = ds.SerializedRects.SerializedData;
+
+                if (ds.SerializedRectsMipMap != null)
+                    ca.SerializedRectsMipMapX16 = ds.SerializedRectsMipMap.SerializedData;
 
                 if (ds.GridIsometricLarge != null)
                 {

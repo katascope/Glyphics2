@@ -18,7 +18,9 @@ namespace Glynt
 
             string originalFolder = Directory.GetCurrentDirectory();
             Digest digest = GraphicsLib.Creators.DigestCreator.Create(originalFolder, digestOutputPath,
-                DownSolver.enables.DoRects
+                DownSolver.enables.All
+                //DownSolver.enables.DoRects | DownSolver.enables.DoRectsMipMap
+
                 //DownSolver.enables.RenderIsometricThumb | DownSolver.enables.DoRects
                 );
 

@@ -50,8 +50,19 @@ namespace RasterLib.Language
         public override string ToString()
         {
             string result = _glyph.Name;
-            for (int l = 0; l < _glyph.Args; l++)
+            int start = 0;
+            int end = _glyph.Args;
+
+            if (_glyph.glyph == GlyphId.PutGroup) { result += " " + _sargs[0]; start++; }
+            if (_glyph.glyph == GlyphId.Put) { result += " " + _sargs[0]; start++; }
+            if (_glyph.glyph == GlyphId.String) end--;
+
+            for (int l = start; l < end; l++)
                 result += " " + _args[l];
+
+            if (_glyph.glyph == GlyphId.String)
+                result += " " + _sargs[3];
+
             return result;
         }
     }

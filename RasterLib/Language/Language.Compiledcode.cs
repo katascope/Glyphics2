@@ -25,6 +25,7 @@ namespace RasterLib.Language
         public int triCount { get; set; }
 
         public string SerializedRects { get; set; }
+        public string SerializedRectsMipMapX16 { get; set; }
         public RasterLib.QuadList Quads { get; set; }
         public RasterLib.Triangles Triangles { get; set; }
 

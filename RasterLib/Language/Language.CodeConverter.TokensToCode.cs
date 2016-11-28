@@ -38,7 +38,9 @@ namespace RasterLib.Language
         {
             var tokenStrList = new List<string>();
             foreach (Token token in glyphTokens)
+            {
                 tokenStrList.Add(token.ToString());
+            }
             return tokenStrList;
         }
     }

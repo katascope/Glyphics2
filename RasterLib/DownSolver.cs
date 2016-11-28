@@ -34,7 +34,8 @@ namespace RasterLib
             DoPov = 256,
             DoStl = 512,
             DoCode = 1024,
-            DoDocs = 2048
+            DoDocs = 2048,
+            DoRectsMipMap = 4096
         };
         public enables enableFlags { get; set; }
 
@@ -51,6 +52,7 @@ namespace RasterLib
         public RectList Rects;
         public SerializedRects SerializedRects;
         public SerializedRects SerializedRectsLimit255;
+        public SerializedRects SerializedRectsMipMap;
         public QuadList Quads;
         public Triangles Triangles;
         public string JSON;
@@ -111,6 +113,13 @@ namespace RasterLib
                 Console.WriteLine("Exception " + ex);
             }
 
+            if ((enableFlags & enables.DoRectsMipMap) == enables.DoRectsMipMap)
+            {
+                Code codeSmaller = RasterLib.RasterApi.CodeToRescaledCode(inCode, 16, 16, 16);
+                Grid gridSmall = RasterLib.RasterApi.CodeToGrid(codeSmaller);
+                RectList rectsSmall = RasterLib.RasterApi.GridToRects(gridSmall);
+                SerializedRectsMipMap = RasterLib.RasterApi.RectsToSerializedRects(rectsSmall);
+            }
         }
 
         public void FromTokens(TokenList inTokens)

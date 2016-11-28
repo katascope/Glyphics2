@@ -316,30 +316,34 @@ public class GlyphicsMicroCore : MonoBehaviour
     }
     private static void GenerateMegaGridObjects()
     {
-        int spanX = 5;
-        int spanZ = 5;
+        int spanX = 25;
+        int spanY = 10;
+        int spanZ = 25;
         int GridX, GridY, GridZ;
 
-        for (int z = -spanZ; z <= spanZ; z++)
+        for (int y = 0; y <= spanY; y++)
         {
-            for (int x = -spanX; x <= spanX; x++)
+            for (int z = -spanZ; z <= spanZ; z++)
             {
-                AddLookup(x, 0, z);
-
-                GridX = x * 64;
-                GridY = 0;
-                GridZ = z * 64;
-                string gsa = CreateGridSpaceAddress(x, 0, z);
-                string gsaName;
-
-                if (GridSpaceAddress2Name.ContainsKey(gsa))
+                for (int x = -spanX; x <= spanX; x++)
                 {
-                    gsaName = GridSpaceAddress2Name[gsa];
-                    string srects;
-                    if (Name2Serialized.ContainsKey(gsaName))
+                    AddLookup(x, y, z);
+
+                    GridX = x * 64;
+                    GridY = y * 64;
+                    GridZ = z * 64;
+                    string gsa = CreateGridSpaceAddress(x, y, z);
+                    string gsaName;
+
+                    if (GridSpaceAddress2Name.ContainsKey(gsa))
                     {
-                        srects = Name2Serialized[gsaName];
-                        Glyphics.DecodeToGrid(srects, GridX, GridY, GridZ);
+                        gsaName = GridSpaceAddress2Name[gsa];
+                        string srects;
+                        if (Name2Serialized.ContainsKey(gsaName))
+                        {
+                            srects = Name2Serialized[gsaName];
+                            Glyphics.DecodeToGrid(srects, GridX, GridY, GridZ);
+                        }
                     }
                 }
             }
