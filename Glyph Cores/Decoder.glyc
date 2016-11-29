@@ -5,9 +5,9 @@ Size3D4 64 64 64
 
 #Blue color ground and white color BUG WITH COMMA PARSING
 PenColorD4 15 63 127 255
-FillRect 0 0 0 35 0 35
+FillRect 0 0 0 63 0 63
 PenColorD4 7 31 63 255
-Rect 0 0 0 35 0 35
+Rect 0 0 0 63 0 63
 
 #Inputs
 PenColorD4 255 127 0 255

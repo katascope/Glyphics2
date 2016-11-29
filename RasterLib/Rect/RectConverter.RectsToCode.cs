@@ -10,6 +10,7 @@ Redistribution and use in source and binary forms, with or without modification,
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DRect, INDRect, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #endregion
 using System.Text;
+using System.Collections.Generic;
 using RasterLib.Language;
 using RasterLib.Utility;
 using RasterLib;
@@ -21,12 +22,33 @@ namespace RasterLib
         //Converts a set of rectangles back into Glyphics codeString that can be modified/executed
         public static Code RectsToCode(RectList rects)
         {
+            IEnumerable<List<Rect>> superRects = SuperSortByProperties(rects);
+            string str = "";
+            string runStr = "";
+
+            bool mode2D = false;// RectsAre2D(rectSet);
+
             ulong rgba = 0x12345678;//Set to unlikely initial color, then detect changes
 
             var sb = new StringBuilder();
 
             string sizeStr = "Size3D4 " + (rects.Boundaries.Width + 1) + " " + (rects.Boundaries.Height + 1) + " " + (rects.Boundaries.Depth + 1);
             sb.Append(sizeStr);
+
+            foreach (List<Rect> rectList in superRects)
+            {
+                Rect rectfirst = rectList[0];
+                rgba = rectfirst.Properties.Rgba;
+                byte r, g, b, a;
+                Converter.Ulong2Rgba(rectfirst.Properties.Rgba, out r, out g, out b, out a);
+                string rgbaStr = ";PenColorD4 " + r + " " + g + " " + b + " " + a;
+                sb.Append(rgbaStr);
+                foreach (Rect rect in rectList)
+                {
+                    sb.Append(";FillRect " + rect.Pt1[0] + " " + rect.Pt1[1] + " " + rect.Pt1[2] + " " + (rect.Pt2[0]-1) + " " + (rect.Pt2[1]-1) + " " + (rect.Pt2[2]-1));
+                }
+            }
+            /*
 
             foreach (Rect rect in rects)
             {
@@ -35,12 +57,12 @@ namespace RasterLib
                     rgba = rect.Properties.Rgba;
                     byte r, g, b, a;
                     Converter.Ulong2Rgba(rect.Properties.Rgba, out r, out g, out b, out a);
-                    string rgbaStr = ";PenColorD4 " + r + " " + g + " " + b + " " + a;
+                    string rgbaStr = ";\nPenColorD4 " + r + " " + g + " " + b + " " + a;
                     sb.Append(rgbaStr);
                 }
                 sb.Append(";FillRect " + rect.Pt1[0] + " " + rect.Pt1[1] + " " + rect.Pt1[2] + " " + rect.Pt2[0] + " " + rect.Pt2[1] + " " + rect.Pt2[2]);
             }
-
+            */
             string codeStr = sb.ToString();
             return new Code(codeStr);
         }

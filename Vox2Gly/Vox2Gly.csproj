@@ -47,6 +47,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GraphicsLib\GraphicsLib.csproj">
+      <Project>{067b222f-b61e-4d8e-a6db-1f04d2190aa0}</Project>
+      <Name>GraphicsLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RasterLib\RasterLib.csproj">
+      <Project>{09a70f33-b743-4e80-a572-fb063df75422}</Project>
+      <Name>RasterLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
