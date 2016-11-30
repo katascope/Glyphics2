@@ -48,24 +48,24 @@ namespace GridSpace
               "Ocean, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Ocean, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach, Beach",
               "Ocean, Ocean, Beach, Vegas, Beach, Vegas, Beach, Beach, Beach, Vegas, Beach, Vegas, Beach, Vegas, Beach, Roads, Vegas, Beach, Vegas, Beach, Vegas, Beach, Vegas, Beach, Beach, Vegas, Beach, Vegas, Beach, Ocean, Ocean",
               "Ocean, Ocean, Beach, Beach, Roads, Roads, Roads, Beach, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Ocean, Ocean",
-              "Ocean, Ocean, Beach, Play, Levels, Play, Roads, Castle, Play, Ascent, Play, Ascent, Play, Ascent, Play, Roads, Play, Ascent, Play, Ascent, Play, Roads, Play, Ascent, Play, Play, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Levels, Roads, Roads, Castle, Roads, Ascent, Roads, Ascent, Roads, Ascent, Roads, Roads, Roads, Ascent, Roads, Ascent, Roads, Roads, Roads, Ascent, Roads, Roads, Roads, Beach, Beach, Ocean, Ocean",
               "Ocean, Ocean, Beach, Beach, Levels, Vegas, Roads, Castle, Vegas, Vegas, Vegas, Vegas, Vegas, Vegas, Vegas, Roads, Vegas, Vegas, Vegas, Vegas, Vegas, Roads, Vegas, Vegas, Vegas, Vegas, Roads, Beach, Beach, Ocean, Ocean",
               "Ocean, Ocean, Beach, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Beach, Ocean, Ocean",
               "Ocean, Ocean, Beach, Roads, Levels, Vegas, Roads, Castle, Vegas, Roads, Vegas, Vegas, Vegas, Vegas, Vegas, Roads, Vegas, Vegas, Vegas, Vegas, Vegas, Roads, Vegas, Roads, Vegas, Vegas, Roads, Vegas, Beach, Ocean, Ocean",
-              "Ocean, Ocean, Beach, Roads, Levels, First, Roads, Castle, First, Roads, First, First, First, First, First, Roads, First, First, First, First, First, Roads, First, Roads, First, First, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Levels, GridWall, Roads, Castle, GridWall, Roads, GridWall, GridWall, GridWall, GridWall, GridWall, Roads, GridWall, GridWall, GridWall, GridWall, GridWall, Roads, GridWall, Roads, GridWall, GridWall, Roads, Beach, Beach, Ocean, Ocean",
               "Ocean, Ocean, Beach, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Beach, Ocean, Ocean",
               "Ocean, Ocean, Beach, Roads, Levels, Vegas, Roads, Castle, Vegas, Roads, Vegas, Vegas, Vegas, Vegas, Vegas, Roads, Vegas, Vegas, Vegas, Vegas, Vegas, Roads, Vegas, Roads, Vegas, Vegas, Roads, Vegas, Beach, Ocean, Ocean",
               "Ocean, Ocean, Beach, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Beach, Ocean, Ocean",
-              "Ocean, Ocean, Beach, Roads, Levels, Vegas, Roads, Castle, Vegas, Roads, Vegas, Vegas, Vegas, Vegas, Vegas, Roads, Vegas, Vegas, Vegas, Vegas, Vegas, Roads, Vegas, Roads, Vegas, Vegas, Roads, Vegas, Beach, Ocean, Ocean",
-              "Ocean, Ocean, Beach, Roads, Levels, Vegas, Roads, Castle, Vegas, Roads, Vegas, Walls, Walls, Walls, Walls, Roads, Walls, Walls, Walls, Walls, Vegas, Roads, Vegas, Roads, Vegas, Vegas, Roads, Beach, Beach, Ocean, Ocean",
-              "Ocean, Ocean, Beach, Roads, Levels, Vegas, Roads, Castle, Vegas, Roads, Vegas, Walls, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Walls, Vegas, Roads, Vegas, Roads, Vegas, Vegas, Roads, Vegas, Beach, Ocean, Ocean",
-              "Ocean, Ocean, Beach, Roads, Levels, Vegas, Roads, Castle, Vegas, Roads, Vegas, Walls, Roads, Roads, Shops, Roads, Shops, Roads, Roads, Walls, Vegas, Roads, Vegas, Roads, Vegas, Vegas, Roads, Beach, Beach, Ocean, Ocean",
-              "Ocean, Ocean, Beach, Roads, Levels, Vegas, Roads, Castle, Vegas, Roads, Vegas, Walls, Roads, Shops, Roads, Roads, Roads, Shops, Roads, Walls, Vegas, Roads, Vegas, Roads, Vegas, Vegas, Roads, Vegas, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Levels, Decoder, Roads, Castle, Decoder, Roads, Decoder, Decoder, Decoder, Decoder, Decoder, Roads, Decoder, Decoder, Decoder, Decoder, Decoder, Roads, Decoder, Roads, Decoder, Decoder, Roads, Decoder, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Levels, Decoder, Roads, Castle, Decoder, Roads, Decoder, Pillar, Pillar, Pillar, Pillar, Roads, Pillar, Pillar, Pillar, Pillar, Decoder, Roads, Decoder, Roads, Decoder, Decoder, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Levels, Decoder, Roads, Castle, Decoder, Roads, Decoder, Pillar, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Pillar, Decoder, Roads, Decoder, Roads, Decoder, Decoder, Roads, Decoder, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Levels, Decoder, Roads, Castle, Decoder, Roads, Decoder, Pillar, Roads, Roads, Shops, Roads, Shops, Roads, Roads, Pillar, Decoder, Roads, Decoder, Roads, Decoder, Decoder, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Levels, Decoder, Roads, Castle, Decoder, Roads, Decoder, Pillar, Roads, Shops, Roads, Roads, Roads, Shops, Roads, Pillar, Decoder, Roads, Decoder, Roads, Decoder, Decoder, Roads, Decoder, Beach, Ocean, Ocean",
               "Ocean, Ocean, Beach, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Cube, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Ocean, Ocean",
-              "Ocean, Ocean, Beach, Roads, Levels, Vegas, Roads, Castle, Vegas, Roads, Vegas, Walls, Roads, Shops, Roads, Roads, Roads, Shops, Roads, Walls, Vegas, Roads, Vegas, Roads, Vegas, Vegas, Roads, Beach, Beach, Ocean, Ocean",
-              "Ocean, Ocean, Beach, Roads, Levels, Vegas, Roads, Castle, Vegas, Roads, Vegas, Walls, Roads, Roads, Shops, Roads, Shops, Roads, Roads, Walls, Vegas, Roads, Vegas, Roads, Vegas, Vegas, Roads, Vegas, Beach, Ocean, Ocean",
-              "Ocean, Ocean, Beach, Roads, Levels, Vegas, Roads, Castle, Vegas, Roads, Vegas, Walls, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Walls, Vegas, Roads, Vegas, Roads, Vegas, Vegas, Roads, Beach, Beach, Ocean, Ocean",
-              "Ocean, Ocean, Beach, Roads, Levels, Vegas, Roads, Castle, Vegas, Roads, Vegas, Walls, Walls, Walls, Walls, Roads, Walls, Walls, Walls, Walls, Vegas, Roads, Vegas, Roads, Vegas, Vegas, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Levels, Decoder, Roads, Castle, Decoder, Roads, Decoder, Pillar, Roads, Shops, Roads, Roads, Roads, Shops, Roads, Pillar, Decoder, Roads, Decoder, Roads, Decoder, Decoder, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Levels, Decoder, Roads, Castle, Decoder, Roads, Decoder, Pillar, Roads, Roads, Shops, Roads, Shops, Roads, Roads, Pillar, Decoder, Roads, Decoder, Roads, Decoder, Decoder, Roads, Decoder, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Levels, Decoder, Roads, Castle, Decoder, Roads, Decoder, Pillar, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Pillar, Decoder, Roads, Decoder, Roads, Decoder, Decoder, Roads, Beach, Beach, Ocean, Ocean",
+              "Ocean, Ocean, Beach, Roads, Levels, Decoder, Roads, Castle, Decoder, Roads, Decoder, Pillar, Pillar, Pillar, Pillar, Roads, Pillar, Pillar, Pillar, Pillar, Decoder, Roads, Decoder, Roads, Decoder, Decoder, Roads, Beach, Beach, Ocean, Ocean",
               "Ocean, Ocean, Beach, Roads, Levels, Vegas, Roads, Castle, Vegas, Roads, Vegas, Vegas, Vegas, Vegas, Vegas, Roads, Vegas, Vegas, Vegas, Vegas, Vegas, Roads, Vegas, Roads, Vegas, Vegas, Roads, Vegas, Beach, Ocean, Ocean",
               "Ocean, Ocean, Beach, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Beach, Ocean, Ocean",
               "Ocean, Ocean, Beach, Roads, Levels, Vegas, Roads, Castle, Vegas, Roads, Vegas, Vegas, Vegas, Vegas, Vegas, Roads, Vegas, Vegas, Vegas, Vegas, Vegas, Roads, Vegas, Roads, Vegas, Vegas, Roads, Beach, Beach, Ocean, Ocean",
@@ -107,20 +107,20 @@ namespace GridSpace
             for (int spike=1;spike<8;spike++)
             {
                 var gsa = new GridSpaceAddress(0, spike, 0);
-                grids.Add(gsa.ToString(), "Nexus");
+                grids.Add(gsa.ToString(), "Rings");
                 Console.WriteLine(gsa);
 
                 gsa = new GridSpaceAddress(2, spike, 2);
-                grids.Add(gsa.ToString(), "Nexus");
+                grids.Add(gsa.ToString(), "Rings");
                 Console.WriteLine(gsa);
                 gsa = new GridSpaceAddress(-2, spike, 2);
-                grids.Add(gsa.ToString(), "Nexus");
+                grids.Add(gsa.ToString(), "Rings");
                 Console.WriteLine(gsa);
                 gsa = new GridSpaceAddress(-2, spike, -2);
-                grids.Add(gsa.ToString(), "Nexus");
+                grids.Add(gsa.ToString(), "Rings");
                 Console.WriteLine(gsa);
                 gsa = new GridSpaceAddress(2, spike, -2);
-                grids.Add(gsa.ToString(), "Nexus");
+                grids.Add(gsa.ToString(), "Rings");
                 Console.WriteLine(gsa);
 
 

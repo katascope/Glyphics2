@@ -1,30 +1,26 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
-using GraphicsLib;
-using RasterApi;
-using RasterLib;
-
 //https://github.com/ephtracy/voxel-model/blob/master/MagicaVoxel-file-format-vox.txt
 
-namespace Vox2Gly
+namespace RasterLib
 {
-    class Voxel
+    public class VoxFile_VoxelSet
     {
-        public int X;
-        public int Y;
-        public int Z;
-        public int I;
-    }
-    class VoxelSet
-    {
-        public Voxel[] voxels;
-        public VoxelSet(int size)
+        public class VoxFile_Voxel
         {
-            voxels = new Voxel[size];
+            public int X;
+            public int Y;
+            public int Z;
+            public int I;
+        }
+
+        public VoxFile_Voxel[] voxels;
+        public VoxFile_VoxelSet(int size)
+        {
+            voxels = new VoxFile_Voxel[size];
             palette = default_palette;
         }
         public uint[] default_palette = {
@@ -47,50 +43,46 @@ namespace Vox2Gly
 };
         public uint[] alternate_palette = null;
         public uint[] palette = null;
-    }
-    class Program
-    {
-
-        static VoxelSet ReadVox(string filename)
+        public static VoxFile_VoxelSet ReadVox(string filename)
         {
-            Console.WriteLine(filename);
-            VoxelSet voxels = null;
+            //Console.WriteLine(filename);
+            VoxFile_VoxelSet voxels = null;
             byte[] bytes = File.ReadAllBytes(filename);
 
             if (bytes[0] != 'V' ||
                 bytes[1] != 'O' ||
                 bytes[2] != 'X')
             {
-                throw new Exception("VOX header missing from "+filename);
+                throw new Exception("VOX header missing from " + filename);
             }
             int versionNumber = bytes[4];//4 bytes
 
             int index = 8;
-            while (index < bytes.Length-4)
+            while (index < bytes.Length - 4)
             {
-                if (bytes[index+0] == 'M' &&
-                    bytes[index+1] == 'A' &&
-                    bytes[index+2] == 'I' &&
-                    bytes[index+3] == 'N')
+                if (bytes[index + 0] == 'M' &&
+                    bytes[index + 1] == 'A' &&
+                    bytes[index + 2] == 'I' &&
+                    bytes[index + 3] == 'N')
                 {
                     index += 4;
-                    Console.WriteLine("[MAIN]");
+                    Console.Write("[MAIN]");
                     int chunkContent = bytes[index++] + (bytes[index++] << 8) + (bytes[index++] << 16) + (bytes[index++] << 24);
                     int chunkChildren = bytes[index++] + (bytes[index++] << 8) + (bytes[index++] << 16) + (bytes[index++] << 24);
-                    Console.WriteLine("chunk content " + chunkContent + " children " + chunkChildren);
+                    //Console.WriteLine("chunk content " + chunkContent + " children " + chunkChildren);
                 }
-                else if (bytes[index+0] == 'P' &&
-                         bytes[index+1] == 'A' &&
-                         bytes[index+2] == 'C' &&
-                         bytes[index+3] == 'K')
+                else if (bytes[index + 0] == 'P' &&
+                         bytes[index + 1] == 'A' &&
+                         bytes[index + 2] == 'C' &&
+                         bytes[index + 3] == 'K')
                 {
                     index += 4;
-                    Console.WriteLine("[PACK]");
+                    Console.Write("[PACK]");
                     int chunkContent = bytes[index++] + (bytes[index++] << 8) + (bytes[index++] << 16) + (bytes[index++] << 24);
                     int chunkChildren = bytes[index++] + (bytes[index++] << 8) + (bytes[index++] << 16) + (bytes[index++] << 24);
-                    Console.WriteLine("chunk content " + chunkContent + " children " + chunkChildren);
+                    //Console.WriteLine("chunk content " + chunkContent + " children " + chunkChildren);
                     int numModels = bytes[index++] + (bytes[index++] << 8) + (bytes[index++] << 16) + (bytes[index++] << 24);
-                    Console.WriteLine("numModels " + numModels);
+                    Console.Write(" numModels " + numModels);
                 }
                 else if (bytes[index + 0] == 'S' &&
                          bytes[index + 1] == 'I' &&
@@ -98,14 +90,14 @@ namespace Vox2Gly
                          bytes[index + 3] == 'E')
                 {
                     index += 4;
-                    Console.WriteLine("[SIZE]");
+                    Console.Write("[SIZE]");
                     int chunkContent = bytes[index++] + (bytes[index++] << 8) + (bytes[index++] << 16) + (bytes[index++] << 24);
                     int chunkChildren = bytes[index++] + (bytes[index++] << 8) + (bytes[index++] << 16) + (bytes[index++] << 24);
-                    Console.WriteLine("chunk content " + chunkContent + " children " + chunkChildren);
+                    //Console.WriteLine("chunk content " + chunkContent + " children " + chunkChildren);
                     int sizeX = bytes[index++] + (bytes[index++] << 8) + (bytes[index++] << 16) + (bytes[index++] << 24);
                     int sizeY = bytes[index++] + (bytes[index++] << 8) + (bytes[index++] << 16) + (bytes[index++] << 24);
                     int sizeZ = bytes[index++] + (bytes[index++] << 8) + (bytes[index++] << 16) + (bytes[index++] << 24);
-                    Console.WriteLine("sxyz " + sizeX + "," + sizeY + "," + sizeZ);
+                    Console.Write(" sxyz " + sizeX + "," + sizeY + "," + sizeZ);
                 }
                 else if (bytes[index + 0] == 'X' &&
                          bytes[index + 1] == 'Y' &&
@@ -113,19 +105,20 @@ namespace Vox2Gly
                          bytes[index + 3] == 'I')
                 {
                     index += 4;
-                    Console.WriteLine("[XYZI]");
+                    Console.Write("[XYZI]");
                     int chunkContent = bytes[index++] + (bytes[index++] << 8) + (bytes[index++] << 16) + (bytes[index++] << 24);
                     int chunkChildren = bytes[index++] + (bytes[index++] << 8) + (bytes[index++] << 16) + (bytes[index++] << 24);
-                    Console.WriteLine("chunk content " + chunkContent + " children " + chunkChildren);
+                    //Console.WriteLine("chunk content " + chunkContent + " children " + chunkChildren);
 
                     int numVoxels = bytes[index++] + (bytes[index++] << 8) + (bytes[index++] << 16) + (bytes[index++] << 24);
-                    Console.WriteLine("numVoxels="+numVoxels);
+                    Console.Write(" voxels=" + numVoxels);
 
-                    voxels = new VoxelSet(numVoxels);
-                    
+                    voxels = new VoxFile_VoxelSet(numVoxels);
+
                     for (int vox = 0; vox < numVoxels; vox++)
                     {
-                        Voxel voxel = new Voxel() {                            
+                        VoxFile_Voxel voxel = new VoxFile_Voxel()
+                        {
                             X = bytes[index++],
                             Z = bytes[index++],
                             Y = bytes[index++],
@@ -140,14 +133,14 @@ namespace Vox2Gly
                          bytes[index + 3] == 'A')
                 {
                     index += 4;
-                    Console.WriteLine("[RGBA]");
+                    Console.Write("[RGBA]");
                     int chunkContent = bytes[index++] + (bytes[index++] << 8) + (bytes[index++] << 16) + (bytes[index++] << 24);
                     int chunkChildren = bytes[index++] + (bytes[index++] << 8) + (bytes[index++] << 16) + (bytes[index++] << 24);
-                    Console.WriteLine("chunk content " + chunkContent + " children " + chunkChildren);
+                    //Console.WriteLine("chunk content " + chunkContent + " children " + chunkChildren);
 
                     voxels.alternate_palette = new uint[256];
                     voxels.palette = voxels.alternate_palette;
-                    for (int i=0;i<256;i++)
+                    for (int i = 0; i < 256; i++)
                     {
                         voxels.alternate_palette[i] |= (uint)(bytes[index++] << 0);
                         voxels.alternate_palette[i] |= (uint)(bytes[index++] << 8);
@@ -161,37 +154,35 @@ namespace Vox2Gly
                          bytes[index + 3] == 'T')
                 {
                     index += 4;
-                    Console.WriteLine("[MATT]");
+                    Console.Write("[MATT]");
                     int chunkContent = bytes[index++] + (bytes[index++] << 8) + (bytes[index++] << 16) + (bytes[index++] << 24);
                     int chunkChildren = bytes[index++] + (bytes[index++] << 8) + (bytes[index++] << 16) + (bytes[index++] << 24);
-                    Console.WriteLine("chunk content " + chunkContent + " children " + chunkChildren);
+                    //Console.WriteLine("chunk content " + chunkContent + " children " + chunkChildren);
                     index += 4;//id
                     index += 4;//mat type
                     index += 4;// material weight
-                    
+
                     int propertyBits = bytes[index++] + (bytes[index++] << 8) + (bytes[index++] << 16) + (bytes[index++] << 24);
                     index += 4 * propertyBits;
                 }
 
-                Console.WriteLine(index);
+                //Console.Write(index+" ");
             }
 
-            Console.WriteLine("Read ok");
+            Console.WriteLine(" ok");
             return voxels;
         }
-        static void Main(string[] args)
+        public static void Vox2Glyc(string dirName, string name)
         {
-            VoxelSet voxels = null;
-            voxels = ReadVox("c:\\github\\glyphics2\\glyph cores\\Roads.vox");
-            //voxels = ReadVox("c:\\github\\glyphics2\\castle.vox");
-            //voxels = ReadVox("c:\\github\\glyphics2\\knight.vox");
-            //voxels = ReadVox(@"F:\MagicaVoxel-0.98\vox\ephtracy.vox");
+            Console.Write("Vox2Glyc converting: " + name + " ... ");
+            VoxFile_VoxelSet voxels = null;
+            voxels = ReadVox(dirName + name + ".vox");
 
             Grid grid = RasterLib.RasterApi.CreateGrid(64, 64, 64, 4);
 
-            for (int i=0;i<voxels.voxels.Length;i++)
+            for (int i = 0; i < voxels.voxels.Length; i++)
             {
-                Voxel voxel = voxels.voxels[i];
+                VoxFile_Voxel voxel = voxels.voxels[i];
                 CellProperties cp = new CellProperties();
 
                 byte r = (byte)voxel.I;
@@ -207,22 +198,12 @@ namespace Vox2Gly
                 grid.Plot(voxel.X, voxel.Y, voxel.Z, cp);
             }
 
-
-            //Render the 3D grid to a new 2D grid, in oblique view
-            Grid gridRendering = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(grid, 255, 255, 255, 255, 8, 8, "rendering");
-
-            //Just state the dRectory we are writing to.
-            const string outputFilenamePng = "test.png";
-            Console.WriteLine("\nOutput filename: {0}", outputFilenamePng);
-
-            //Finally save the oblique rendering out to a png file
-            GraphicsApi.SaveFlatPng(outputFilenamePng, gridRendering);
-
             RectList rects = RasterLib.RasterApi.GridToRects(grid);
             RasterLib.Language.Code code = RasterLib.RasterApi.RectsToCode(rects);
-            Console.WriteLine(code.codeString);
+            //Console.WriteLine(code.codeString);
 
-            RasterLib.RasterApi.CodeToGlyC(@"c:\github\glyphics2\glyph cores\Roads.glyc", "Roads,\n"+code.codeString);
+            RasterLib.RasterApi.CodeToGlyC(dirName + name + ".glyc", name + ",\n" + code.codeString);
         }
     }
 }
+

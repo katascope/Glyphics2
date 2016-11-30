@@ -166,6 +166,7 @@
     <Compile Include="Utility\GridCreator.cs" />
     <Compile Include="Utility\MathLerper.cs" />
     <Compile Include="Utility\MathTrigonometry.cs" />
+    <Compile Include="VoxFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Language\Language.Compiledcode.cs" />

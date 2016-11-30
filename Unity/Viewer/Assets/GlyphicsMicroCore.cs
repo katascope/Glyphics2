@@ -316,9 +316,9 @@ public class GlyphicsMicroCore : MonoBehaviour
     }
     private static void GenerateMegaGridObjects()
     {
-        int spanX = 22;
+        int spanX = 5;
         int spanY = 3;
-        int spanZ = 22;
+        int spanZ = 5;
         int GridX, GridY, GridZ;
 
         for (int y = 0; y <= spanY; y++)
