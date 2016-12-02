@@ -43,7 +43,13 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xaml" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WindowsBase" />
+    <Reference Include="YamlDotNet, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YamlDotNet.4.0.0\lib\net35\YamlDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeCompiler.cs" />
@@ -54,10 +60,24 @@
     <Compile Include="FileHandlers\FileGifWrite.cs" />
     <Compile Include="FileHandlers\FilePngRead.cs" />
     <Compile Include="FileHandlers\FilePngWrite.cs" />
+    <Compile Include="GlyToPov.cs" />
     <Compile Include="GraphicsApi.cs" />
+    <Compile Include="GridSpace.cs" />
+    <Compile Include="Module\IModule.cs" />
+    <Compile Include="Module\ModuleDigest.cs" />
+    <Compile Include="Module\ModuleDocumentation.cs" />
+    <Compile Include="Module\ModuleGenesis.cs" />
+    <Compile Include="Module\ModuleScratchPad.cs" />
+    <Compile Include="Module\ModuleVox2Gly.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderers.RendererOblique.cs" />
     <Compile Include="Renderers.RenderIsometricScaled.cs" />
+    <Compile Include="Scratch\ControlAnimator.cs" />
+    <Compile Include="Scratch\ControlStl.cs" />
+    <Compile Include="Scratch\ScratchControl.cs" />
+    <Compile Include="Scratch\ScratchLogic.cs" />
+    <Compile Include="Scratch\Svg2Gly.cs" />
+    <Compile Include="Scratch\WebColors2HexRGB.cs" />
     <Compile Include="Simulator.Simulation.cs" />
     <Compile Include="Simulator.SimulationModel.cs" />
   </ItemGroup>

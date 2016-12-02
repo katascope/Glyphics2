@@ -1,9 +1,0 @@
-Gras,
-
-Size3D4 64 64 64;Spawn 25 5 25;
-
-PenShape 1;
-PenColorD4 31 127 31 255;WallCube 1;
-
-PenColorD4 255 255 255 255;PenSize 1 2 1;Rect 0 0 0 31 0 31;Rect 0 0 32 31 0 63;Rect 32 0 0 63 0 31;Rect 32 0 32 63 0 63;Rect 16 0 16 48 0 48;
-

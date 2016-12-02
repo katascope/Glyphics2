@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using GraphicsLib;
+using GraphicsLib.Module;
 using RasterLib.Language;
 using RasterLib;
 
@@ -11,30 +12,16 @@ namespace Glynt
     {
         public static void Main()
         {
-            const string staticPreviewOutputPath = "\\GitHub\\Glyphics2\\Site\\Digest\\";
-            const string digestOutputPath = "\\GitHub\\Glyphics2\\Site\\Digest\\";
+            Modules plugins = new Modules();
 
+            //plugins.Add(new ModuleScratchPad("\\GitHub\\Glyphics2\\apps\\glynt\\Nexus.yml"));
+            //plugins.Add(new ModuleDocumentation("\\GitHub\\Glyphics2\\Site\\Documentation\\"));
+            plugins.Add(new ModuleVox2Gly("\\GitHub\\Glyphics2\\glyph cores\\"));
+            plugins.Add(new ModuleDigest("\\GitHub\\Glyphics2\\Site\\Digest\\", DownSolver.enables.DoRects));
+            //plugins.Add(new ModuleDigest("\\GitHub\\Glyphics2\\Site\\Digest\\", DownSolver.enables.RenderIsometricRegular | DownSolver.enables.RenderIsometricLarge));
+            plugins.Add(new ModuleGenesis("megagrid.json"));
 
-            string originalFolder = Directory.GetCurrentDirectory();
-
-            //Now do .vox files
-            Console.WriteLine("\nVOX files");
-            string[] infiles = Directory.GetFiles(originalFolder, "*.vox");
-
-            foreach (string infile in infiles)
-            {
-                string name = Path.GetFileNameWithoutExtension(infile);
-                VoxFile_VoxelSet.Vox2Glyc("\\github\\glyphics2\\glyph cores\\", name);
-            }
-
-            Console.WriteLine("Creating digest at " + digestOutputPath + "\n");
-            Digest digest = GraphicsLib.Creators.DigestCreator.Create(originalFolder, digestOutputPath,
-                //DownSolver.enables.All
-                DownSolver.enables.DoRects | DownSolver.enables.DoRectsMipMap
-
-                //DownSolver.enables.RenderIsometricThumb | DownSolver.enables.DoRects
-                );
-
-        }
+            plugins.Run();
+       }
     }
 }
