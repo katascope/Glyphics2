@@ -35,7 +35,8 @@ namespace RasterLib
             DoStl = 512,
             DoCode = 1024,
             DoDocs = 2048,
-            DoRectsMipMap = 4096
+            DoRectsMipMap = 4096,
+            QuickView = RenderIsometricRegular | DoRects | DoQuads | DoTriangles | DoScene
         };
         public enables enableFlags { get; set; }
 
@@ -70,10 +71,12 @@ namespace RasterLib
 
         public DownSolver() { }
         public DownSolver(Code inCode) { FromCode(inCode); }
+        public DownSolver(Code inCode, enables ef) { enableFlags = ef; FromCode(inCode); }
         public DownSolver(string filename, enables ef) { enableFlags = ef; FromFilename(filename); }
         public DownSolver(Codename inCodename) { codename = inCodename; }
         public DownSolver(TokenList inTokens) { FromTokens(inTokens); }
         public DownSolver(Grid inGrid) { FromGrid(inGrid); }
+        public DownSolver(Grid inGrid, enables ef) { enableFlags = ef; FromGrid(inGrid); }
         public DownSolver(RectList inRects) { FromRects(inRects); }
         public DownSolver(SerializedRects inSerializedRects) { FromSerializedRects(inSerializedRects); }
         public DownSolver(QuadList inQuads) { FromQuads(inQuads); }

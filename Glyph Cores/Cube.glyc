@@ -2,5 +2,5 @@ Cube,
 
 Size3D4 64 64 64
 
-PenColorD3 127 255 127
+PenColorD3 15 31 63
 FillRect 0 0 0 63 63 63

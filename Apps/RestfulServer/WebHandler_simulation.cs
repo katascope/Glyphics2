@@ -8,7 +8,6 @@ using RasterLib.Language;
 
 namespace WebServer
 {
-    
     class WebHandler_simulation : IWebHandler
     {
         public string GetResponse(string query)
@@ -19,42 +18,25 @@ namespace WebServer
             if (worldPart == null) return "";
             worldPart = WebUtility.UrlDecode(worldPart);
 
-            if (!Program.simulations.ContainsKey(worldPart))
-            {
-                CompiledCode ccode = Program.digest.FindByName(worldPart);
-                if (ccode == null) return "world not in digest";
-                string digestCode = ccode.minimalCode;
-                Code rasterCode = RasterLib.RasterApi.CreateCode(digestCode);
-                Grid grid = RasterLib.RasterApi.CodeToGrid(rasterCode);
-                RectList rects = RasterLib.RasterApi.GridToRects(grid);
+            string response = "";
+            GraphicsLib.Simulator.SimulationModel sim = Program.simulations.simulations[worldPart];
+            sim.IterateSimulation(worldPart);
 
-                GraphicsLib.Simulator.SimulationModel simModel = new GraphicsLib.Simulator.SimulationModel();
-                simModel.grid = grid;
-                simModel.rects = rects;
-                simModel.Build();
-                GraphicsLib.Simulator.Simulation simulation = new GraphicsLib.Simulator.Simulation();
-                //simModel.rects = RasterLib
-                Program.simulations.Add(worldPart, simModel);
+            int pid = 0;
+            foreach (Rect rect in sim.rects)
+            {
+                pid++;
+                if (rect.Properties.PhysicsId > 0)
+                {
+                    response += 
+                        pid+" "+
+                        rect.Properties.Rgba+" "+
+                        rect.Pt1[0]+","+rect.Pt1[1]+","+rect.Pt1[2]+":"+
+                        rect.Pt2[0]+","+rect.Pt2[1]+","+rect.Pt2[2]+"\n";
+                }
             }
 
-            //can assume it exists here
-                GraphicsLib.Simulator.SimulationModel sim = Program.simulations[worldPart];
-                //GraphicsLib.Simulator.Simulation.RunSimulation(sim);
-            
-            sim.IterateSimulation();
-
-
-                string response = "=";
-                for (int i = 0; i < sim.circuitIds.Length; i++)
-                    response += sim.circuitIds[i] + " ";
-
-                response += RasterLib.RasterApi.RectsToSerializedRects(sim.rects);
-
-                return response;
-
-//            worldPart = WebUtility.UrlDecode(worldPart);
-  //          string response = "<title>Ping Pong</title><body>Ping, Pong, Ping Pong"+worldPart+"</body>";
-            //return response;
+            return response;
         }
     }
 }

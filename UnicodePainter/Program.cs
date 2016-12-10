@@ -14,9 +14,17 @@ namespace UnicodePainter
 {
     class Program
     {
-        //✴️⚫️⚪️
-        //✴️⚫️⚪️
-        static string zodiac = "✴️⚫️⚪️\u2648\uFE0F\u2649\uFE0F\u264A\uFE0F\u264B\uFE0F\u264C\uFE0F\u264D\uFE0F\u264E\uFE0F\u264F\uFE0F\u2650\uFE0F\u2651\uFE0F\u2652\uFE0F\u2653\uFE0F";
+        //✴️⚪️⚫⬜⬛
+        //⬛️ ⬜️ ◼️ ◻️ ◾️ ◽️
+        //static string zodiac = "▖▗▘▙▚▛▜▝▞▟";
+        string binZodiac = "▗▖";
+        //static string zodiac = "▖▚▙▜";
+
+        static string zodiac = "✶✷✸✹";
+
+        //static string zodiac = "░▒▓";
+        //"▢▣▤▥▦▧▨▩";
+        //static string zodiac = "✴️⚫️⚪️\u2648\uFE0F\u2649\uFE0F\u264A\uFE0F\u264B\uFE0F\u264C\uFE0F\u264D\uFE0F\u264E\uFE0F\u264F\uFE0F\u2650\uFE0F\u2651\uFE0F\u2652\uFE0F\u2653\uFE0F";
         //static string zodiac = "\u2648\uFE0F\u2649\uFE0F\u264A\uFE0F\u264B\uFE0F\u264C\uFE0F\u264D\uFE0F\u264E\uFE0F\u264F\uFE0F\u2650\uFE0F\u2651\uFE0F\u2652\uFE0F\u2653\uFE0F";
         static List<ulong> rgbV = new List<ulong>();
         static string Rgb2UnicodeChar(byte r, byte g, byte b)
@@ -32,12 +40,20 @@ namespace UnicodePainter
             {
                 ulong rgb = rgbV[i];
                 byte r2, g2, b2, a2;
+
                 RasterLib.RasterApi.Ulong2Rgba(rgb, out r2, out g2, out b2, out a2);
+
+                //greyscale conversion
+                byte lum = (byte)((r2 + g2 + b2) / 3);
+                r2 = g2 = b2 = lum;
+                r = g = b = (byte)((r + g + b) / 3);
+
                     
                     double distance = Math.Sqrt((int)((int)r2 - r) * (int)((int)r2 - r) +
                                                 (int)((int)g2 - g) * (int)((int)g2 - g) +
                                                 (int)((int)b2 - b) * (int)((int)b2 - b));
-                    
+
+               
                 double h2, s2, l2;
                 RasterLib.Utility.Converter.Rgb2Hsl(r2, g2, b2, out h2, out s2, out l2);
 
@@ -53,25 +69,32 @@ namespace UnicodePainter
                 }
             }
 
-            return "" + zodiac[minIndex * 2 + 0] + zodiac[minIndex * 2 + 1];
+            return "" + zodiac[minIndex * 1 + 0];// +zodiac[minIndex * 2 + 1];
         }
         [STAThread]
         static void Main(string[] args)
         {
 
-            for (int i=0;i<zodiac.Length;i+=2)
-            {
-                Console.WriteLine("{0:X}, {1:X} ",(uint)zodiac[i], (uint)zodiac[i+1]);
-            }
+            //for (int i=0;i<zodiac.Length;i+=2)
+            //s{
+              //  Console.WriteLine("{0:X}, {1:X} ",(uint)zodiac[i], (uint)zodiac[i+1]);
+            //}
 
             byte[] unicodeBytes = Encoding.Unicode.GetBytes(zodiac);
 
 //♈️ ♉️ ♊️ ♋️ ♌️ ♍️ ♎️ ♏️ ♐️ ♑️ ♒️ ♓️
 
-            //rgbV.Add(RasterLib.RasterApi.Rgba2Ulong(0, 0, 0, 0));
-            rgbV.Add(RasterLib.RasterApi.Rgba2Ulong(0, 0, 0, 0));
-            rgbV.Add(RasterLib.RasterApi.Rgba2Ulong(255,255,255,255));
+            int bands = zodiac.Length;
+            for (int i = 0; i < bands;i++ )
+            {
+                byte v = (byte)(i * (255/bands));
+                rgbV.Add(RasterLib.RasterApi.Rgba2Ulong(v,v,v, 255));
+            }
 
+              //  rgbV.Add(RasterLib.RasterApi.Rgba2Ulong(0, 0, 0, 0));
+            //rgbV.Add(RasterLib.RasterApi.Rgba2Ulong(0, 0, 0, 0));
+            //rgbV.Add(RasterLib.RasterApi.Rgba2Ulong(255,255,255,255));
+            /*
             for (int i = 0; i < 360; i += 30)
             {
                 ulong rgb = RasterLib.Utility.Converter.Hsl2Rgb(i, 100, 49);
@@ -79,9 +102,9 @@ namespace UnicodePainter
                 RasterLib.RasterApi.Ulong2Rgba(rgb, out r, out g, out b, out a);
                 Console.WriteLine("hue "+i + " - rgb " + r + "," + g + "," + b + "," + a);
                 rgbV.Add(rgb);
-            }
+            }*/
 
-            Grid gridIn = GraphicsApi.PngToGrid("c:\\github\\shield.png");
+            Grid gridIn = GraphicsApi.PngToGrid("c:\\github\\blackwatch.png");
 
             string str = "";
             using (var file = new System.IO.StreamWriter("testUnicode.txt", false, Encoding.Unicode))
@@ -108,3 +131,5 @@ namespace UnicodePainter
         }        
     }
 }
+
+    

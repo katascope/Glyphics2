@@ -23,13 +23,13 @@ namespace GraphicsLib.Simulator
 
         static void DisplayGrid(Grid grid, Avatar _avatar)
         {
+            Thread.Sleep(50);
             _frameCount++;
             string desc = RasterLib.RasterApi.Renderer.GridTo3DDescription(grid, (int)_avatar.x, (int)_avatar.y, (int)_avatar.z);
             Console.Clear();
-            Console.Write(desc + " Frame=" + _frameCount + " Avatar=" + _avatar.x + "," + _avatar.y + "," + _avatar.z);
-            Thread.Sleep(50);
-        }
-        public static void RunSimulation(SimulationModel model)
+            Console.Write( desc + " Frame=" + _frameCount + " Avatar=" + _avatar.x + "," + _avatar.y + "," + _avatar.z);
+        } 
+        public static void RunSimulation(SimulationModel model, string name)
         {
             Avatar _avatar = new Avatar();
             char _lastKey = ' ';
@@ -55,8 +55,15 @@ namespace GraphicsLib.Simulator
                     }
                 }
                 BoundaryInhibit(model.grid, _avatar);
-                // DisplayGrid(model.grid);
-                model.IterateSimulation();
+                
+                IPainter painter = RasterLib.RasterApi.Painter;
+                GridContext gridContext = new GridContext();
+                gridContext.Grid = model.grid;
+                painter.DrawClear(gridContext);
+                RasterLib.RasterApi.Renderer.RenderRectsToGrid(model.rects, model.grid);
+                DisplayGrid(model.grid, _avatar);
+                Console.Write("\n{0} ", name);
+                model.IterateSimulation(name);
             }
         }
     }

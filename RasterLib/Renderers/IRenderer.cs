@@ -19,6 +19,9 @@ namespace RasterLib
         //Renders a list of Rects to an Grid
         void RenderRectsToGrid(RectList rects, Grid grid);
 
+        //Renders a list of Rects to an Grid
+        void RenderRectsToGrid(RectList rects, Grid grid, int ox, int oy, int oz);
+
         //Renders Grid to a new Grid using isometric cell sprites
         Grid RenderIsometricCellsScaled(Grid grid, byte bgR, byte bgG, byte bgB, byte bgA, int cellWidth, int cellHeight, string title = "");
 

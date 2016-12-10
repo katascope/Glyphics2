@@ -11,6 +11,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #endregion
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using RasterLib;
 
 namespace RasterLib
@@ -286,9 +287,15 @@ namespace RasterLib
             AssignCircuitIdsToGates(graph, rects, touchGraph, circuitIds);
             if (verbose) DisplayCircuitIds(circuitIds);
 
+            if (verbose) Console.WriteLine("\nRemoving duplicate entries");
+            for (int i = 0; i < circuitIds.Count;i++ )
+                circuitIds[i] = circuitIds[i].Distinct().ToList();            
+            if (verbose) DisplayCircuitIds(circuitIds);
+
             //6) Assign circuit ID's to rects
             if (verbose) Console.WriteLine("\nAssigning to rects");
             AssignCircuitIdsToRects(rects, touchGraph, circuitIds);
+
             if (verbose) DisplayRectCircuits(rects);
         }
     }

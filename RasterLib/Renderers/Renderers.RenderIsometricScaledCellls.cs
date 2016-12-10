@@ -192,7 +192,7 @@ namespace RasterLib.Renderers
 
             int maxSize = (grid.SizeX > grid.SizeZ) ? grid.SizeX : grid.SizeZ;
             int ix = (int)(maxSize * cellSizeX * 2.2);
-            int iy = (int)(maxSize * cellSizeY * 2.2);
+            int iy = (int)(maxSize * cellSizeY * 1.2);//1.6);
             Grid grid2 = new Grid(ix, iy, 1, grid.Bpp);
 
             GridContext bgc = new GridContext(grid2) { Pen = { Rgba = RasterLib.RasterApi.Rgba2Ulong(bgR, bgG, bgB, bgA) } };

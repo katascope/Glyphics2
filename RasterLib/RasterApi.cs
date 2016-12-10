@@ -88,6 +88,13 @@ namespace RasterLib
         //Rect(s)-To
         public static Code RectsToCode(RectList rectSet) { if (rectSet == null) return null; return RectConverter.RectsToCode(rectSet); }
         public static Rect RectsToBoundaries(RectList rectSet) { if (rectSet == null) return null; return rectSet.Boundaries; }
+        public static Grid RectsToGrid(RectList rectSet)
+        {
+            Rect rect = RasterLib.RasterApi.RectsToBoundaries(rectSet);
+            Grid grid = new Grid((int)rect.Pt2[0], (int)rect.Pt2[1], (int)rect.Pt2[2], 4);
+            RasterLib.RasterApi.Renderer.RenderRectsToGrid(rectSet, grid);
+            return grid;
+        }
 
         public static SerializedRects CreateSerializedRects(string serialized) { return new SerializedRects(serialized); }
         public static SerializedRects RectsToSerializedRects(RectList rectSet) { return RectConverter.RectsToSerializedRects(rectSet); }

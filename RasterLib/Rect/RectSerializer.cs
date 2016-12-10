@@ -153,6 +153,7 @@ namespace RasterLib
         //Serialize a set of rectangles(RectList) to SerializedRects
         public static SerializedRects RectsToSerializedRects(RectList rectSet)
         {
+            GridConverter.BuildCircuit(rectSet, false);
             var sb = new StringBuilder();
 
             bool mode2D = false;// RectsAre2D(rectSet);
@@ -171,6 +172,7 @@ namespace RasterLib
                 foreach (Rect rect in rectList)
                 {
                     string rectSerialized = Transcode64.SerializeRectPointsToString(rect, 1, mode2D);
+                    rectSerialized += SerializeCircuitProperties(rectList[0].Properties);
                     sb.Append(rectSerialized);
                 }
             }
@@ -279,6 +281,7 @@ namespace RasterLib
                         }
                 }
             }
+            GridConverter.BuildCircuit(rects,false);
             return rects;
         }
     }

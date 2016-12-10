@@ -37,5 +37,26 @@ namespace RasterLib.Renderers
                 painter.DrawFastFillRect(bgc, (int)rect.Pt1[0], (int)rect.Pt1[1], (int)rect.Pt1[2], (int)rect.Pt2[0] - inclusiveOffset, (int)rect.Pt2[1] - inclusiveOffset, (int)rect.Pt2[2] - inclusiveOffset);
             }
         }
+
+        //Render a set of rects into a grid as little filled 3d rectangles
+        public void RenderRectsToGrid(RectList rects, Grid grid, int ox, int oy, int oz)
+        {
+            if (rects == null || grid == null) return;
+
+            GridContext bgc = new GridContext(grid);
+            IPainter painter = new CPainter();
+
+            //Draw background
+            //painter.DrawFastFillRect(bgc, 0, 0, 0, bgc.Grid.SizeX, bgc.Grid.SizeY, bgc.Grid.SizeZ);
+
+            //Then draw each triangle, adjusting for inclusive numbering
+            const int inclusiveOffset = 1;
+            foreach (Rect rect in rects)
+            {
+                bgc.Pen.SetColor(rect.Properties.Rgba);
+                painter.DrawFastFillRect(bgc, ox + (int)rect.Pt1[0], oy + (int)rect.Pt1[1], oz + (int)rect.Pt1[2],
+                    ox + (int)rect.Pt2[0] - inclusiveOffset, oy + (int)rect.Pt2[1] - inclusiveOffset, oz + (int)rect.Pt2[2] - inclusiveOffset);
+            }
+        }
     }
 }

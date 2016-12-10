@@ -47,7 +47,8 @@ ImgMirrorX
 ";
             textBoxMain.Text = codeString;
 
-            _hc = new DownSolver("..\\..\\..\\..\\Glyph Cores\\default.gly", DownSolver.enables.None);
+            _hc = new DownSolver("..\\..\\..\\..\\Glyph Cores\\default.gly", 
+                DownSolver.enables.QuickView);
 
             foreach (Code code in _hc.Codes)
             {
@@ -117,7 +118,7 @@ ImgMirrorX
             //codeString = RasterApi.CodeToRescaledCode(codeString, 64, 64, 64);
 
 
-            _hc = new DownSolver(code);
+            _hc = new DownSolver(code, DownSolver.enables.QuickView);
             UpdateDisplay();
         }
 
@@ -125,7 +126,7 @@ ImgMirrorX
         {
             string strCode = textBoxMain.Text.Replace(";;",";");
             Code code =RasterLib.RasterApi.CreateCode(strCode);
-            _hc = new DownSolver(code);
+            _hc = new DownSolver(code, DownSolver.enables.QuickView);
             UpdateDisplay();
         }
 
@@ -137,7 +138,7 @@ ImgMirrorX
                 Triangles triangles =RasterLib.RasterApi.StlToTriangles(resultName);
                 Grid grid =RasterLib.RasterApi.CreateGrid(16, 16, 16, 4);
                 RasterLib.RasterApi.Renderer.RenderTrianglesToGrid(triangles, grid);
-                _hc = new DownSolver(grid);
+                _hc = new DownSolver(grid,DownSolver.enables.QuickView);
                 UpdateDisplay();
             }
         }
@@ -147,14 +148,13 @@ ImgMirrorX
             string resultName = FileIo.GetSaveAsFilename("Save a PNG Image File", "PNG Image|*.png|All files (*.*)|*.*");
             if (resultName != null)
             {
-                _hc = new DownSolver(resultName, DownSolver.enables.None);
-                UpdateDisplay();
+                //_hc = new DownSolver(code, DownSolver.enables.QuickView);
+                //UpdateDisplay();
             }
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _hc = new DownSolver();
             UpdateDisplay();
         }
 
@@ -188,7 +188,7 @@ ImgMirrorX
 
 //                strCode = strCode.Replace(';','\n');
                 Code code =RasterLib.RasterApi.CreateCode(strCode);
-                _hc = new DownSolver(code);
+                _hc = new DownSolver(code, DownSolver.enables.QuickView);
                 UpdateDisplay();
             }
         }

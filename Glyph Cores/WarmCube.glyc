@@ -1,0 +1,2 @@
+WarmCube,
+Size3D4 64 64 64;PenColorD4 0 0 68 255;FillRect 2 0 1 40 0 41;FillRect 0 2 1 0 42 41;FillRect 2 2 1 40 42 41;FillRect 42 2 1 42 42 41;FillRect 2 44 1 40 44 41;FillRect 9 46 7 33 61 7;FillRect 9 46 35 33 61 35;PenColorD4 238 238 238 255;FillRect 1 1 0 41 1 42;FillRect 1 2 0 1 42 42;FillRect 41 2 0 41 42 42;FillRect 1 43 0 41 43 42;FillRect 8 45 8 34 62 34;PenColorD4 119 119 119 255;FillRect 2 2 0 40 42 0;FillRect 2 2 42 40 42 42;FillRect 7 46 9 7 61 33;FillRect 35 46 9 35 61 33;FillRect 9 63 9 33 63 33
