@@ -104,7 +104,7 @@ namespace UnicodePainter
                 rgbV.Add(rgb);
             }*/
 
-            Grid gridIn = GraphicsApi.PngToGrid("c:\\github\\blackwatch.png");
+            Grid gridIn = GraphicsApi.PngToGrid("c:\\github\\moredots.png");
 
             string str = "";
             using (var file = new System.IO.StreamWriter("testUnicode.txt", false, Encoding.Unicode))

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "2b90f7cd-6c39-4da8-8910-7ec0b0254385",
+    "name": "god",
+    "passwordHash": "e53311da4989643a1453d19aa5571b88acfcea6ac9d6dcc25ad2fed914fe6574",
+    "avatarGridName": "whatev",
+    "userPrivilege": 1
+  },
+  {
+    "id": "90e9e60a-150f-4d50-bbc9-66534429de32",
+    "name": "Jane Doe",
+    "passwordHash": "7b455522c3d21ff7a139a4a3cf3078b68eb6c4e5bb0cbe5f598b3679cab34dca",
+    "avatarGridName": "whatev",
+    "userPrivilege": 1
+  }
+]

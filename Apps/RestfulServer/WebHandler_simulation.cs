@@ -19,7 +19,7 @@ namespace WebServer
             worldPart = WebUtility.UrlDecode(worldPart);
 
             string response = "";
-            GraphicsLib.Simulator.SimulationModel sim = Program.simulations.simulations[worldPart];
+            GraphicsLib.Simulator.SimulationModel sim = WebServer.simulations.simulations[worldPart];
             sim.IterateSimulation(worldPart);
 
             int pid = 0;

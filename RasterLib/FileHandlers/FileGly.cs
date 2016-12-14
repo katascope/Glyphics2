@@ -55,7 +55,7 @@ namespace RasterLib
         }
 
         //Read and return series of Glyphics codeString from a file
-        public static string GlyCToCode(string filename)
+        public static string ReadGlyc(string filename)
         {
             string codeString = "";
             using (var file = new System.IO.StreamReader(filename))

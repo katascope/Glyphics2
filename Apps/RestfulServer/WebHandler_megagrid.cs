@@ -15,11 +15,8 @@ namespace WebServer
             GridSpaceAddress gsa;
             if ((gsa = GridSpaceAddress.TryParse(data)) != null)
             {
-                if (Program.megagridAddressDictionary.ContainsKey(gsa.ToString()))
-                {
-                    string worldName = Program.megagridAddressDictionary[gsa.ToString()];
-                    return worldName;
-                }
+                string worldName = WebServer.gridspace.GetName(gsa.ToString());
+                return "" + worldName;
             }
             return "";
         }

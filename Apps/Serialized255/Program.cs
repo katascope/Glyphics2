@@ -43,7 +43,7 @@ namespace Serialized255
             Directory.SetCurrentDirectory("\\GitHub\\Glyphics2\\glyph cores\\");                        
 
             string glycFilename = "c:\\github\\glyphics2\\glyph cores\\GateTimer.glyc";
-            string codeString = RasterLib.RasterApi.GlyCToCode(glycFilename).Replace(';', '\n');
+            string codeString = RasterLib.RasterApi.ReadGlyc(glycFilename).Replace(';', '\n');
             
             RectList rects = Pivot.ToRects(codeString);
             RasterLib.RasterApi.BuildCircuit(rects, true);

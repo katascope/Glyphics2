@@ -14,7 +14,7 @@ namespace Simulator
         {
             string name = "GateTimer";
             string glycFilename = "c:\\github\\glyphics2\\glyph cores\\"+name+".glyc";
-            string codeString = RasterLib.RasterApi.GlyCToCode(glycFilename).Replace(';', '\n');
+            string codeString = RasterLib.RasterApi.ReadGlyc(glycFilename).Replace(';', '\n');
 
             Grid grid = Pivot.ToGrid(codeString);
             RectList rects = Pivot.ToRects(grid);

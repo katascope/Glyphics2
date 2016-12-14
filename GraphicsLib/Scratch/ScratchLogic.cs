@@ -101,7 +101,7 @@ namespace ScratchPad.Scratch
             }
             else if (ctl.FileNameInCode != null)
             {
-                string codeString =RasterLib.RasterApi.GlyCToCode(ctl.FileNameInCode).Replace(';', '\n');
+                string codeString =RasterLib.RasterApi.ReadGlyc(ctl.FileNameInCode).Replace(';', '\n');
 
                 Code code =RasterLib.RasterApi.CreateCode(codeString);
                 Console.WriteLine("Code: {0}\n", codeString);

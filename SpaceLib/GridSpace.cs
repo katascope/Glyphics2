@@ -1,4 +1,15 @@
-﻿using System;
+﻿#region Copyright
+/*Copyright (c) 2015, Katascope
+All rights reserved.
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DRect, INDRect, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
+#endregion
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,9 +22,33 @@ namespace SpaceLib
     public class GridSpace
     {
         public Dictionary<string, string> grids { get; set; }
+        public Dictionary<string, DateTime> updateTimes { get; set; }
+
+        public void SetName(string addr, string name)
+        {
+            if (grids.ContainsKey(addr))
+            {
+                grids[addr] = name;
+                updateTimes[addr] = DateTime.Now;
+            }
+            else
+            {
+                grids.Add(addr, name);
+                updateTimes.Add(addr, DateTime.Now);
+            }
+        }
+
+        public string GetName(string addr)
+        {
+            if (grids.ContainsKey(addr))
+                return grids[addr];
+            return null;
+        }
+
         public GridSpace()
         {
             grids = new Dictionary<string, string>();
+            updateTimes = new Dictionary<string, DateTime>();
         }
 
         public void SaveDictionary(string filename)
@@ -59,9 +94,9 @@ namespace SpaceLib
               "Bounds, Ocean, Beach, Roads, Cells, Roads, Roads, Cells, Roads, HighRoad, Roads, WarmCube, Cells, Cells, Cells, Roads, Cells, Cells, Cells, WarmCube, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Beach, Ocean, Bounds",
               "Bounds, Ocean, Beach, Roads, Cells, Roads, Roads, Cells, Roads, HighRoad, Roads, Cells, Hexa, Hexa, Hexa, Hexa, Hexa, Hexa, Hexa, Cells, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Ocean, Bounds",
               "Bounds, Ocean, Beach, Roads, Cells, Roads, Roads, Cells, Roads, HighRoad, Roads, Cells, Hexa, DataPillar, DataGate, Hexa, DataGate, DataPillar, Hexa, Cells, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Beach, Ocean, Bounds",
-              "Bounds, Ocean, Beach, Roads, Cells, Roads, Roads, Cells, Roads, HighRoad, Roads, Cells, Hexa, DataGate, Prototypes, Timer, Hexa, DataGate, Prototypes, Cells, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Ocean, Bounds",
-              "Bounds, Ocean, Beach, Roads, Roads, Roads, Roads, Roads, Roads, HighRoad, Roads, Roads, Hexa, Timer, Hexa, GateTimer, Hexa, Timer, Hexa, DataGate, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Ocean, Bounds",
-              "Bounds, Ocean, Beach, Roads, Cells, Roads, Roads, Cells, Roads, HighRoad, Roads, Cells, Hexa, DataGate, Prototypes, Timer, Hexa, Prototypes, Hexa, Cells, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Beach, Ocean, Bounds",
+              "Bounds, Ocean, Beach, Roads, Cells, Roads, Roads, Cells, Roads, HighRoad, Roads, Cells, Hexa, DataGate, Prototypes, Hexa, Hexa, DataGate, Prototypes, Cells, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Ocean, Bounds",
+              "Bounds, Ocean, Beach, Roads, Roads, Roads, Roads, Roads, Roads, HighRoad, Roads, Roads, Hexa, Hexa, Hexa, GateTimer, Hexa, Hexa, Hexa, DataGate, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Ocean, Bounds",
+              "Bounds, Ocean, Beach, Roads, Cells, Roads, Roads, Cells, Roads, HighRoad, Roads, Cells, Hexa, DataGate, Prototypes, Hexa, Hexa, Prototypes, Hexa, Cells, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Beach, Ocean, Bounds",
               "Bounds, Ocean, Beach, Roads, Cells, Roads, Roads, Cells, Roads, HighRoad, Roads, Cells, Hexa, DataPillar, DataGate, Hexa, DataGate, DataPillar, Hexa, Cells, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Ocean, Bounds",
               "Bounds, Ocean, Beach, Roads, Cells, Roads, Roads, Cells, Roads, HighRoad, Roads, Cells, Hexa, Hexa, Hexa, Hexa, Hexa, Hexa, Hexa, Cells, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Beach, Ocean, Bounds",
               "Bounds, Ocean, Beach, Roads, Cells, Roads, Roads, Cells, Roads, HighRoad, Roads, WarmCube, Cells, Cells, Cells, Roads, Cells, Cells, Cells, WarmCube, Roads, Roads, Roads, Roads, Roads, Roads, Roads, Beach, Beach, Ocean, Bounds",

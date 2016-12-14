@@ -9,7 +9,6 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DRect, INDRect, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #endregion
-
 using RasterLib.Language;
 using RasterLib.Painters;
 using RasterLib.Renderers;
@@ -99,6 +98,7 @@ namespace RasterLib
         public static SerializedRects CreateSerializedRects(string serialized) { return new SerializedRects(serialized); }
         public static SerializedRects RectsToSerializedRects(RectList rectSet) { return RectConverter.RectsToSerializedRects(rectSet); }
         public static RectList SerializedRectsToRects(SerializedRects serializedRects) { return RectConverter.SerializedRectsToRects(serializedRects); }
+        //public static RectList SerializedRectsToRects(string serializedRects) { return RectConverter.SerializedRectsToRects(new SerializedRects(serializedRects)); }
         public static SerializedRects RectsToSerializedRectsLimit255(RectList rectSet) { return new SerializedRects(RectConverter.SerializeLimit255(rectSet)); }
 
         //Translates hex data in string format to byte array
@@ -132,7 +132,7 @@ namespace RasterLib
         //File IO for GLY Glyphics files
         public static bool CodesToGly(string filename, CodeList codes) { return GlyphicsFile.CodesToGly(filename, codes); }
         public static CodeList GlyToCodes(string filename) { return GlyphicsFile.GlyToCodes(filename); }
-        public static string GlyCToCode(string filename) { return GlyphicsFile.GlyCToCode(filename); }
+        public static string ReadGlyc(string filename) { return GlyphicsFile.ReadGlyc(filename); }
         public static bool CodeToGlyC(string filename, string code) { return GlyphicsFile.CodeToGlyC(filename, code); }
 
         public static bool LoadArchetypes(string filename) { return GlyphicsFile.LoadArchetypes(filename); }

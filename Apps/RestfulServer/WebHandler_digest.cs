@@ -12,7 +12,7 @@ namespace WebServer
         public string GetResponse(string query)
         {
             StringBuilder sb = new StringBuilder(); 
-            foreach (CompiledCode ccode in Program.digest.codes)
+            foreach (CompiledCode ccode in WebServer.digest.codes)
             {
                 sb.Append(ccode.name + "<br>\n");
             }

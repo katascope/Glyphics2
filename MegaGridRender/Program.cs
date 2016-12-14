@@ -127,7 +127,6 @@ namespace MegaGridRender
             Console.WriteLine("Saving final grid.");
             GraphicsApi.SaveFlatPng("\\github\\glyphics2\\megagrid_iso.png", renderedGrid);
 
-
             Console.WriteLine("Rendering mega grid.");
             Grid grid = RenderFlatGrid(gsa2names, name2rects, rangeX, rangeY, rangeZ);
             

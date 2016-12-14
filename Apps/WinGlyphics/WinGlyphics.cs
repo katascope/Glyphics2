@@ -178,7 +178,7 @@ ImgMirrorX
             if (filename != null && filename.Length > 1)
             {
                 //filename = @"C:\Github\Glyphics2\Glyph Cores\Game.glyc";
-                string strCode =RasterLib.RasterApi.GlyCToCode(filename);
+                string strCode =RasterLib.RasterApi.ReadGlyc(filename);
 
 
                 textBoxMain.Text = strCode;// strCode.Split('*')[0];

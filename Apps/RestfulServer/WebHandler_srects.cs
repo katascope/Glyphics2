@@ -12,7 +12,7 @@ namespace WebServer
         public string GetResponse(string query)
         {
             string name = query.Substring(1, query.Length - 1);
-            CompiledCode code = Program.digest.FindByName(name);
+            CompiledCode code = WebServer.digest.FindByName(name);
             if (code == null) return "";
             return code.SerializedRects;
         }

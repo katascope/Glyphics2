@@ -19,12 +19,11 @@ namespace ServerTests
             SpaceLib.MegaGridClient client = new MegaGridClient("http://localhost:3838");
             string name = client.RequestNameAtGSA(gsa);
             Console.WriteLine("\nGrid at (0,0,0) = '{0}'", name);
-            string serializedRectsStr = client.RequestRects(name);
             
+            string serializedRectsStr = client.RequestRects(name);            
             Console.WriteLine("\nSerialized rects\n" + serializedRectsStr);
-            SerializedRects serializedRects = new SerializedRects(serializedRectsStr);
-            RectList rects = RasterLib.RasterApi.SerializedRectsToRects(serializedRects);
-            RasterLib.RasterApi.BuildCircuit(rects,true);
+
+            RectList rects = Pivot.ToRects(serializedRectsStr);
             Console.WriteLine("\nRects\n" + rects);
 
             while (true)

@@ -90,7 +90,7 @@ namespace RasterLib
 
             if (filename.ToUpper().Contains(".GLYC"))
             {
-                code = new Code(RasterLib.RasterApi.GlyCToCode(filename));
+                code = new Code(RasterLib.RasterApi.ReadGlyc(filename));
                 //code = Codes.GetCode(0);
                 FromCode(code);
             }

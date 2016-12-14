@@ -30,11 +30,40 @@ namespace WebServer
             string query = context.Request.Url.Query;
             Console.WriteLine("url={0} : Query={1}", url, query);
 
-            if (responseHandlers.ContainsKey(url))
+            string[] parts = url.Trim('/').Split('/');
+
+            if (parts[0] == "api" && parts.Length > 2)
             {
-                IWebHandler wh = responseHandlers[url];
-                QuickResponse(context, wh.GetResponse(query));
-                return true;
+                string fullname = parts[0] + "/" + parts[1];
+                if (responseHandlers.ContainsKey(fullname))
+                {
+                    IWebHandler wh = responseHandlers[fullname];
+                    QuickResponse(context, wh.GetResponse(parts[2] + query));
+                    return true;
+                }
+            }
+            else if (parts[0] == "api" && parts.Length > 1)
+            {
+                string fullname = parts[0] + "/" + parts[1];
+                if (responseHandlers.ContainsKey(fullname))
+                {
+                     IWebHandler wh = responseHandlers[fullname];
+                    QuickResponse(context, wh.GetResponse(query));
+                    return true;
+                }
+            }
+            else if (parts[0] == "ping")
+            {
+                if (responseHandlers.ContainsKey(url))
+                {
+                    IWebHandler wh = responseHandlers[url];
+                    QuickResponse(context, wh.GetResponse(query));
+                    return true;
+                }
+            }
+            else
+            {
+                QuickResponse(context, "failed ");
             }
             return false;
         }

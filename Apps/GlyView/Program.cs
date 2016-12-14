@@ -49,7 +49,7 @@ namespace GlyView
                 if (args[i] == "-sg") options.displaySceneGraph = true;
                 if (args[i] == "-ci") options.displayCircuit = true;
             }
-            string codeString = RasterLib.RasterApi.GlyCToCode(filename);
+            string codeString = RasterLib.RasterApi.ReadGlyc(filename);
             Code code = new Code(codeString);
             if (options.displayCode) Console.WriteLine("Code: "+codeString);
 

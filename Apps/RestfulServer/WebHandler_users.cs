@@ -13,7 +13,7 @@ namespace WebServer
         {
             string response = "";
 
-            foreach (User user in Program.users.users)
+            foreach (User user in WebServer.users.users)
             {
                 response += user.name + " privs=(" + user.userPrivilege + ")<br>\n";
             }

@@ -6,6 +6,7 @@ using System.Net;
 using System.Web;
 using System.IO;
 using System.Threading;
+using SpaceLib;
 using RasterLib;
 
 namespace SimulationObserver
@@ -33,19 +34,45 @@ namespace SimulationObserver
 
         static void Main(string[] args)
         {
-            const string URL = "http://localhost:3838/api/simulation?Timer";
+            const string URL = "http://localhost:3838/api/simulation?GateTimer";
             //Connect to simulation server and display grid
 
-            while (true)
+            bool done = false;
+            int x = 0;
+            int y = 0;
+            int z = 0;
+            char _lastKey = ' ';
+            SpaceLib.MegaGridClient client = new MegaGridClient("http://localhost:3838");
+            while (!done)
             {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    _lastKey = key.KeyChar;
+
+                    if (_lastKey == 27) done = true;
+
+                    switch (_lastKey)
+                    {
+                        case 'a': x--; break;
+                        case 'd': x++; break;
+                        case 'w': z++; break;
+                        case 's': z--; break;
+                        case 'e': y++; break;
+                        case 'q': y--; break;
+                    }
+                }
+
+                GridSpaceAddress gsa = new GridSpaceAddress(x, y, z);
+                string name = client.RequestNameAtGSA(gsa);
+                string rectsStr = client.RequestRects(name);
+                SerializedRects srects = new SerializedRects(rectsStr);
+                Console.WriteLine(srects.SerializedData);
+                //RectList rects = Pivot.ToRects(srects);
+                //Console.WriteLine(rects);
                 try
                 {
-                    string response = RequestData(URL);
-
-                    SerializedRects srects = new SerializedRects(response);
-                    RectList rects = RasterLib.RasterApi.SerializedRectsToRects(srects);
-
-                    //Console.WriteLine(rects);
+                    string response = RequestData("http://localhost:3838/api/simulation?" + name);
                     Console.Out.WriteLine(response);
                 }
                 catch (Exception e)
@@ -55,7 +82,7 @@ namespace SimulationObserver
                 }
 
                 Thread.Sleep(1000);
-                Console.Write(".");
+                Console.WriteLine("GSA: " + gsa.ToString() + " = '" + name + "'");
             }
         }
     }
