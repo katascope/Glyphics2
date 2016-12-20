@@ -1,0 +1,10 @@
+FileNameInImage: C:\Github\Ornyx.png
+FileNameOutIsometric: \github\glyphics2\OrnyxIsometric.png
+IsometricCellWidth: 8
+IsometricCellHeight: 8
+IsometricBgRgba:
+- 0
+- 0
+- 0
+- 255
+FileNameOutOrthogonal: \github\glyphics2\OrnyxOrtho.png

@@ -59,7 +59,7 @@ namespace WebServer
         //static public Dictionary<string, string> megagridAddressDictionary;
         static public GridSpace gridspace = new GridSpace();
         static public Users users = new Users();
-
+        static public string megagrid_name = "\\github\\glyphics2\\glyph cores\\megagrid_clear.json";
         static void Main()
         {
             string rootFolder = Directory.GetCurrentDirectory();
@@ -70,7 +70,7 @@ namespace WebServer
             plugins.Add(new ModuleDigest("\\GitHub\\Glyphics2\\Site\\Digest\\", DownSolver.enables.DoRects));
             //plugins.Add(new ModuleGenesis("megagrid.json"));
             
-            //plugins.Run();
+            plugins.Run();
 
             Directory.SetCurrentDirectory(rootFolder);
 
@@ -96,7 +96,7 @@ namespace WebServer
             var file = new StreamReader(webfolder+"\\Digest\\digest.json");
             digest = JsonConvert.DeserializeObject<Digest>(file.ReadToEnd());
 
-            file = new StreamReader(@"C:\Github\Glyphics2\Glyph Cores\megagrid.json");
+            file = new StreamReader(megagrid_name);
             gridspace.grids = JsonConvert.DeserializeObject<Dictionary<string, string>>(file.ReadToEnd());
             file.Close();
             simulations = new Simulations(gridspace.grids, digest);

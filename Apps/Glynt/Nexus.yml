@@ -1,4 +1,5 @@
-FileNameInCode: C:\Github\Glyphics2\Glyph Cores\PrintableNexus.glyc
+#FileNameInCode: C:\Github\Glyphics2\Glyph Cores\PrintableNexus.glyc
+FileNameInImage: C:\Github\Glyphics2\
 #FileNameInStl: ..\..\archquad.stl
 #FileNamesInStlLibrary:
 #- ..\..\cube_ascii.stl

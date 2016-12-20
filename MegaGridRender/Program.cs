@@ -62,20 +62,23 @@ namespace MegaGridRender
                 }
             }
 
-            for (int y = 0; y < grid.SizeY; y++)
+            for (int y = 0; y < grid.SizeY/2; y++)
             {
-                for (int x = 0; x < grid.SizeX; x++)
+                for (int x = 0; x < grid.SizeX/2; x++)
                 {
-                    CellProperties cp = grid.GetProperty(x, y, 0);
-                    if (cp.Rgba > 0)
-                        targetGrid.Plot(x + ox, y + oy, 0, cp);
+                    CellProperties cp1 = grid.GetProperty(x*2, y*2, 0);
+                    CellProperties cp2 = grid.GetProperty(x * 2+1, y * 2, 0);
+                    if (cp1.Rgba > 0)
+                        targetGrid.Plot(x + ox, y + oy, 0, cp1);
+                    if (cp2.Rgba > 0)
+                        targetGrid.Plot(x + ox, y + oy, 0, cp2);
                 }
             }
         }
         static Grid RenderFlatGrid(Dictionary<string, string> gsa2names, Dictionary<string, RectList> name2rects, int rangeX, int rangeY, int rangeZ)
         {
-            int width = rangeX * 64*2;
-            int height = rangeZ * 64 *2;
+            int width = rangeX * 64;
+            int height = rangeZ * 64;
             Grid grid = RasterLib.RasterApi.CreateGrid(width, height, 1, 4);
 
             IPainter painter = RasterLib.RasterApi.Painter;
@@ -96,7 +99,7 @@ namespace MegaGridRender
                             Grid tempGrid = new Grid(64, 64, 64, 4);
                             RasterLib.RasterApi.Renderer.RenderRectsToGrid(cellRects, tempGrid, 0, 0, 0);
 
-                            BirdsEye(tempGrid, grid, (x + rangeX) * 64, (z + rangeZ) * 64);
+                            BirdsEye(tempGrid, grid, (x + rangeX) * 64/2, (z + rangeZ) * 64/2);
                         }
                     }
                 }
@@ -109,9 +112,9 @@ namespace MegaGridRender
 
         static void Main(string[] args)
         {
-            int rangeX = 15;
+            int rangeX = 32;
             int rangeY = 1;
-            int rangeZ = 15;
+            int rangeZ = 25;
 
             SpaceLib.MegaGridClient client = new MegaGridClient("http://localhost:3838");
             Dictionary<string, string> gsa2names = client.GetNames(rangeX, rangeY, rangeZ);
@@ -119,13 +122,13 @@ namespace MegaGridRender
             Console.WriteLine("Names and Rectangles resolved.");
 
             Console.WriteLine("Rendering net grid");
-            Grid netGrid = RenderNetGrid(gsa2names, name2rects, rangeX, rangeY, rangeZ);
+            //Grid netGrid = RenderNetGrid(gsa2names, name2rects, rangeX, rangeY, rangeZ);
             
             Console.WriteLine("Rendering isometric net grid.");
-            Grid renderedGrid = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(netGrid, 204, 204, 238, 0, 1, 1, "MegaGrid");
+  //          Grid renderedGrid = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(netGrid, 204, 204, 238, 0, 1, 1, "MegaGrid");
             
             Console.WriteLine("Saving final grid.");
-            GraphicsApi.SaveFlatPng("\\github\\glyphics2\\megagrid_iso.png", renderedGrid);
+//            GraphicsApi.SaveFlatPng("\\github\\glyphics2\\megagrid_iso.png", renderedGrid);
 
             Console.WriteLine("Rendering mega grid.");
             Grid grid = RenderFlatGrid(gsa2names, name2rects, rangeX, rangeY, rangeZ);

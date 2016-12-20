@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Nexus.yml" />
+    <None Include="Ornyx.yml" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

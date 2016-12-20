@@ -40,7 +40,8 @@ namespace SpaceLib.Module
             Console.WriteLine("======================= Genesis ========================");
             SpaceLib.GridSpace gridspace = new SpaceLib.GridSpace();
             gridspace.Generate();
-            gridspace.SaveDictionary("megagrid.json"); return false;
+            gridspace.SaveDictionary(outputPath);
+            return false;
         }
     }
 }

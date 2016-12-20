@@ -39,7 +39,7 @@ namespace WebServer
             {
                 string gsaStr = gsa.ToString();
                 WebServer.gridspace.SetName(gsaStr, name); 
-                WebServer.gridspace.SaveDictionary("\\github\\glyphics2\\glyph cores\\megagrid.json");
+                WebServer.gridspace.SaveDictionary(WebServer.megagrid_name);
                 return "OK";
             }
             return "";

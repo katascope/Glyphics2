@@ -70,7 +70,7 @@ namespace SpaceLib
             }
         }
 
-        public void Generate()
+        public void GenerateOld()
         {
             string[] map = 
             {
@@ -177,6 +177,23 @@ namespace SpaceLib
             y = Convert.ToInt32(parts[1], 16);
             z = Convert.ToInt32(parts[2], 16);
             return "";
+        }
+
+        public void Generate()
+        {
+            int MX = 127;
+            int MY = 127;
+            Dictionary<string, string> additions = new Dictionary<string, string>();
+
+            for (int y = -MY; y < MY; y++)
+            {
+                for (int x = -MX; x < MX; x++)
+                {
+                    GridSpaceAddress gsa = new GridSpaceAddress(x,0,y);
+                    SetName(gsa.ToString(),"Grid");
+                    Console.WriteLine(gsa.ToString() + " - " + x + "," + y);
+                }
+            }
         }
     }
 }

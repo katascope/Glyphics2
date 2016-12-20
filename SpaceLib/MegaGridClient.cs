@@ -114,10 +114,10 @@ namespace SpaceLib
                         {
                             Console.WriteLine(x + "," + y + "," + z + " = '" + name + "'");
                             gsa2names.Add(gsa.ToString(), name);
-                            //Thread.Sleep(25);
                         }
                     }
                 }
+                Thread.Sleep(25);
             }
             return gsa2names;
         }

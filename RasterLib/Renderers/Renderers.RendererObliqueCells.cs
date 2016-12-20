@@ -122,7 +122,7 @@ namespace RasterLib.Renderers
 
             const int cellSize = 12;
             int ix = grid.SizeX * cellSize;
-            int iy = grid.SizeY * cellSize;
+            int iy = grid.SizeZ * cellSize;// +grid.SizeY * cellSize;
             Grid grid2 = new Grid(ix, iy, 1, grid.Bpp);
 
             GridContext bgc = new GridContext(grid2) { Pen = { Rgba = RasterLib.RasterApi.Rgba2Ulong(255, 255, 255, 255) } };

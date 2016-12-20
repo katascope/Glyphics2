@@ -87,8 +87,8 @@ namespace ScratchPad.Scratch
             {
                 Grid gridImg = GraphicsApi.FileToGrid(ctl.FileNameInImage);
                 GridContext gc = new GridContext(gridImg);
-               RasterLib.RasterApi.Painter.FlipY(gc);
-                int div = 15;
+                RasterLib.RasterApi.Painter.FlipY(gc);
+                int div = 63;// 31;// 15;
                 grid =RasterLib.RasterApi.CreateGrid(gridImg.SizeX, 255 / div + 1, gridImg.SizeY, 4);
 
                 Console.WriteLine("Extruding");
