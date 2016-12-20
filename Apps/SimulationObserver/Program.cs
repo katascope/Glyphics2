@@ -34,7 +34,7 @@ namespace SimulationObserver
 
         static void Main(string[] args)
         {
-            const string URL = "http://localhost:3838/api/simulation?GateTimer";
+            //const string URL = "http://localhost:3838/api/simulation?GateTimer";
             //Connect to simulation server and display grid
 
             bool done = false;

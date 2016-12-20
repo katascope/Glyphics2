@@ -23,10 +23,7 @@ namespace RasterLib
         public static Code RectsToCode(RectList rects)
         {
             IEnumerable<List<Rect>> superRects = SuperSortByProperties(rects);
-            string str = "";
-            string runStr = "";
-
-            bool mode2D = false;// RectsAre2D(rectSet);
+            //bool mode2D = false;// RectsAre2D(rectSet);
 
             ulong rgba = 0x12345678;//Set to unlikely initial color, then detect changes
 

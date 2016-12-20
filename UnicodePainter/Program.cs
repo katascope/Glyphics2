@@ -17,7 +17,7 @@ namespace UnicodePainter
         //✴️⚪️⚫⬜⬛
         //⬛️ ⬜️ ◼️ ◻️ ◾️ ◽️
         //static string zodiac = "▖▗▘▙▚▛▜▝▞▟";
-        string binZodiac = "▗▖";
+        //string binZodiac = "▗▖";
         //static string zodiac = "▖▚▙▜";
 
         static string zodiac = "✶✷✸✹";

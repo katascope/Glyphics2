@@ -111,7 +111,7 @@ namespace MinimalDecoder
             char state = ' ';
             byte shapeId = 0;
             byte textureId = 0;
-            ulong rgba = 0;
+            //ulong rgba = 0;
             byte groupId = 0;
             char mode = CharRects3D;
 

@@ -113,10 +113,6 @@ namespace RasterLib.Language
                     }
                     if (!(t._glyph.glyph == GlyphId.PutGroup || t._glyph.glyph == GlyphId.Put || t._glyph.glyph == GlyphId.String))
                         RescaleGlyphToken(ref token, scaleX, scaleY, scaleZ);
-                    else {
-                        int foo;
-                        foo = 1;
-                    }
                 }
             }
             catch (Exception ex)
