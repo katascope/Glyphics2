@@ -4,9 +4,10 @@ node {
 
     stage('Build') { 
 	 echo 'Building' 
+	 sh 'msbuild Transcendental.sln'
     }
     stage('Test') {
-	 echo 'echo Testing'
+	 echo 'echo Testing : disabled'
     }
     stage('Deploy') {
         if (currentBuild.result == 'SUCCESS') {
