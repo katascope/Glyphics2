@@ -4,6 +4,7 @@ node {
 
     stage('Build') { 
 	 echo 'Building' 
+	 bat 'nuget Restore Transcendental.sln'
 	 bat '\"c:\\program files (x86)\\msbuild\\12.0\\bin\\msbuild\" Transcendental.sln'
     }
     stage('Test') {
