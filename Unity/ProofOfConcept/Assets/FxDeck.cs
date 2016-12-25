@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace FXSystem
+namespace FxLib
 {
-    class FxDeck
+    public class FxDeck
     {
         public List<FxSet> fxSets = new List<FxSet>();
 

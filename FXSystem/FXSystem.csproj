@@ -41,15 +41,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FxChannel.cs" />
-    <Compile Include="FxDeck.cs" />
-    <Compile Include="FxSet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FxLib\FxLib.csproj">
+      <Project>{81a1dfbe-1504-4e5b-b32d-5acf79e2cd4d}</Project>
+      <Name>FxLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GraphicsLib\GraphicsLib.csproj">
+      <Project>{067b222f-b61e-4d8e-a6db-1f04d2190aa0}</Project>
+      <Name>GraphicsLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RasterLib\RasterLib.csproj">
+      <Project>{09a70f33-b743-4e80-a572-fb063df75422}</Project>
+      <Name>RasterLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SpaceLib\SpaceLib.csproj">
+      <Project>{e4625715-e827-45eb-92a6-9bc0e4f57731}</Project>
+      <Name>SpaceLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -45,8 +45,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Fx.cs" />
+     <Compile Include="Assets\FxChannel.cs" />
+     <Compile Include="Assets\FxDeck.cs" />
+     <Compile Include="Assets\FxEphemeral.cs" />
+     <Compile Include="Assets\FxMixer.cs" />
+     <Compile Include="Assets\FxSet.cs" />
+     <Compile Include="Assets\FxStream.cs" />
+     <Compile Include="Assets\Lerper.cs" />
+     <Compile Include="Assets\Muxer.cs" />
      <Compile Include="Assets\SmoothMouseLook.cs" />
      <Compile Include="Assets\SpectrumAudio.cs" />
+     <Compile Include="Assets\TestThing.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>F:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

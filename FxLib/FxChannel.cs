@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FXSystem
+namespace FxLib
 {
-    class FxChannel
+    public class FxChannel
     {
         public int _id = 0;
         public int _active = 0;
@@ -39,6 +39,14 @@ namespace FXSystem
             _id = Convert.ToInt32(parts[0]);
             _state = Convert.ToInt32(parts[1]);
             _mode = Convert.ToInt32(parts[2]);
+        }
+        public void Mux(float mux, FxChannel A, FxChannel B)
+        {
+            _id = Lerper.Lerp1D(mux, A._id, B._id);
+            _active = Lerper.Lerp1D(mux, A._active, B._active);
+            _state = Lerper.Lerp1D(mux, A._state, B._state);
+            _mode = Lerper.Lerp1D(mux, A._mode, B._mode);
+            _velocity = Lerper.Lerp1D(mux, A._velocity, B._velocity);
         }
     }
 }

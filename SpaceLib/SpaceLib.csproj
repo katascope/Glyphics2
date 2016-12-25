@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="GridSpace.cs" />
     <Compile Include="GridSpaceAddress.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="MegaGridClient.cs" />
     <Compile Include="Module\IModule.cs" />
     <Compile Include="Module\ModuleDigest.cs" />

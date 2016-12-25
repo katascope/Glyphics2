@@ -37,8 +37,8 @@ public class SmoothMouseLook : MonoBehaviour
 
         transform.Rotate(0, x, 0);
         transform.Translate(0, 0, z);
-        if (Input.GetKey("escape"))
-            Application.Quit();
+//        if (Input.GetKey("escape"))
+  //          Application.Quit();
 
         if (axes == RotationAxes.MouseXAndY)
         {

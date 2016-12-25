@@ -5,12 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FXSystem
+namespace FxLib
 {
-    class FxSet
+    public class FxSet
     {
         int numChannels = 0;
         public FxChannel[] fxChannels;
+        public FxEphemerals ephemerals = new FxEphemerals();
+
         private void initChannels()
         {
             fxChannels = new FxChannel[numChannels];
@@ -40,7 +42,16 @@ namespace FXSystem
                 sb.Append(fxChannels[channel]);
                 sb.Append(" ");
             }
+
+            
+
             return sb.ToString();
+        }
+        public void Mux(float mux, FxSet A, FxSet B)
+        {
+            for (int i = 0; i < numChannels;i++ )
+                fxChannels[i].Mux(mux, A.fxChannels[i], B.fxChannels[i]);
+            ephemerals.Mux(mux, A.ephemerals, B.ephemerals);   
         }
     }
 }
