@@ -4,7 +4,7 @@ node {
 
     stage('Build') { 
 	 echo 'Building' 
-	 sh 'msbuild Transcendental.sln'
+	 bat 'msbuild Transcendental.sln'
     }
     stage('Test') {
 	 echo 'echo Testing : disabled'
