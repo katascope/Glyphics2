@@ -32,6 +32,8 @@ public class SmoothMouseLook : MonoBehaviour
 
     void Update()
     {
+
+        return;
         var x = Input.GetAxis("Horizontal") * Time.deltaTime * 1500.0f;
         var z = Input.GetAxis("Vertical") * Time.deltaTime * 30.0f;
 

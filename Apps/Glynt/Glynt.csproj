@@ -62,10 +62,6 @@
       <Project>{09a70f33-b743-4e80-a572-fb063df75422}</Project>
       <Name>RasterLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\SpaceLib\SpaceLib.csproj">
-      <Project>{e4625715-e827-45eb-92a6-9bc0e4f57731}</Project>
-      <Name>SpaceLib</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

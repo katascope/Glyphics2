@@ -387,8 +387,8 @@ public class GlyphicsMicroCore : MonoBehaviour
         AddLookup(0, 0, -1);
         AddLookup(1, 0, -1);*/
 
-        Glyphics.DestroyObjects();
-        GenerateMegaGridObjects();
+        //Glyphics.DestroyObjects();
+        //GenerateMegaGridObjects();
 
         //Glyphics.DestroyObjects();
         //Glyphics.DecodeToGrid(srects, 0, 0, 0);
@@ -412,6 +412,12 @@ public class GlyphicsMicroCore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey("escape"))
+            Application.Quit();
+
+        Glyphics.DestroyObjects();
+        Glyphics.DecodeToGrid(Glyphics.HttpGet("http://localhost:3838/api/srects?PrintableNexus"), 0, 0, 0);
+        return;
         if (Input.GetKeyDown("1"))
         {
             Glyphics.DestroyObjects();

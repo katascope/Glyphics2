@@ -1,20 +1,20 @@
 [
   {
-    "id": "54bd9712-185c-4140-88b9-2fac151a62c9",
+    "id": "34e9188a-7159-48dc-829c-946a416c1461",
     "name": "root",
     "passwordHash": "f0d2599461876de8e01392f2d9a66654e673dbb6cc1e58b38aaccbe1c9f6826f",
     "avatarGridName": "AvatarRoot",
     "userPrivilege": 65535
   },
   {
-    "id": "8ba1ef81-0763-46b0-b7e4-03ac08ba5ba1",
+    "id": "2f184497-fd9e-4752-9719-d35e2c983cd8",
     "name": "bad",
     "passwordHash": "1c1deebc7db28344dbc06e80e2b53c1aec644a7a68a4b104fc99e4e92c2622ce",
     "avatarGridName": "AvatarPlayer",
     "userPrivilege": 0
   },
   {
-    "id": "9c65be1c-e9a0-42d1-a8cc-c0cbda6b1e93",
+    "id": "7a2f18e3-b510-468a-b3d8-c6ea04dff33e",
     "name": "nari",
     "passwordHash": "e51788292ebe1ccaa8573da68fddad2ac02bdae390cfc47b28249595b73d5edf",
     "avatarGridName": "AvatarPlayer",

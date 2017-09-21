@@ -83,7 +83,7 @@ ImgMirrorZ
 ";
 
             //Then render that to triangles
-            string dir = "C:\\Github\\Glyphics2\\stllibrary\\";
+            string dir = "C:\\Github\\Glyphics2\\Stl Files\\";
             Console.WriteLine("Creating triangle library");
 
             TrianglesList trianglesList = RasterLib.RasterApi.CreateTrianglesList();
