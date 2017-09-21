@@ -34,6 +34,16 @@ namespace RasterLib
         public float[] TexCoords2 { get; private set; }
         public float[] TexCoords3 { get; private set; }
 
+        public override string ToString()
+        {
+            string str = "";
+            str += Vertex1[0] + "," + Vertex1[1] + "," + Vertex1[2] +" : ";
+            str += Vertex2[0] + "," + Vertex2[1] + "," + Vertex2[2] + " : ";
+            str += Vertex3[0] + "," + Vertex3[1] + "," + Vertex3[2] + " : ";
+            return str;
+        }
+        
+
         //Basic constructor
         public Triangle()
         {

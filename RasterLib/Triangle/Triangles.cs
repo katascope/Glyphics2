@@ -142,12 +142,12 @@ namespace RasterLib
 
                 foreach (Triangle triangle in _triangleArray)
                 {
-                    double minX = Min(triangle.Vertex1[0], triangle.Vertex2[0], triangle.Vertex2[0]);
-                    double maxX = Max(triangle.Vertex1[0], triangle.Vertex2[0], triangle.Vertex2[0]);
-                    double minY = Min(triangle.Vertex1[1], triangle.Vertex2[1], triangle.Vertex2[1]);
-                    double maxY = Max(triangle.Vertex1[1], triangle.Vertex2[1], triangle.Vertex2[1]);
-                    double minZ = Min(triangle.Vertex1[2], triangle.Vertex2[2], triangle.Vertex2[2]);
-                    double maxZ = Max(triangle.Vertex1[2], triangle.Vertex2[2], triangle.Vertex2[2]);
+                    double minX = Min(triangle.Vertex1[0], triangle.Vertex2[0], triangle.Vertex3[0]);
+                    double maxX = Max(triangle.Vertex1[0], triangle.Vertex2[0], triangle.Vertex3[0]);
+                    double minY = Min(triangle.Vertex1[1], triangle.Vertex2[1], triangle.Vertex3[1]);
+                    double maxY = Max(triangle.Vertex1[1], triangle.Vertex2[1], triangle.Vertex3[1]);
+                    double minZ = Min(triangle.Vertex1[2], triangle.Vertex2[2], triangle.Vertex3[2]);
+                    double maxZ = Max(triangle.Vertex1[2], triangle.Vertex2[2], triangle.Vertex3[2]);
                     if (minX < rect.Pt1[0]) rect.Pt1[0] = minX;
                     if (maxX > rect.Pt2[0]) rect.Pt2[0] = maxX;
                     if (minY < rect.Pt1[1]) rect.Pt1[1] = minY;
@@ -284,7 +284,6 @@ namespace RasterLib
             foreach (Triangle triangle in _triangleArray)
             {
                 sb.Append("[");
-                sb.Append("(" + triangle.Normal[0] + "," + triangle.Normal[1] + "," + triangle.Normal[2] + ") ");
                 sb.Append("/");
                 sb.Append("(" + triangle.Vertex1[0] + "," + triangle.Vertex1[1] + "," + triangle.Vertex1[2] + ") ,");
                 sb.Append("(" + triangle.Vertex2[0] + "," + triangle.Vertex2[1] + "," + triangle.Vertex2[2] + ") ,");
@@ -294,7 +293,9 @@ namespace RasterLib
                     sb.Append("/");
                     sb.Append(triangle.Properties);
                 }
-                sb.Append("]\r\n");
+                sb.Append("]");
+                sb.Append("(" + triangle.Normal[0] + "," + triangle.Normal[1] + "," + triangle.Normal[2] + ") ");
+                sb.Append("\r\n");
             }
             return sb.ToString();
         }

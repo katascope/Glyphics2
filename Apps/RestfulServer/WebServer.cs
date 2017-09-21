@@ -60,14 +60,17 @@ namespace WebServer
         static public GridSpace gridspace = new GridSpace();
         static public Users users = new Users();
         static public string megagrid_name = "\\github\\glyphics2\\glyph cores\\megagrid_clear.json";
+        static public string digestOutputPath = "\\GitHub\\Glyphics2\\Site\\Digest\\";
+        static public string coreFolder = "\\GitHub\\Glyphics2\\glyph cores\\";
         static void Main()
         {
             string rootFolder = Directory.GetCurrentDirectory();
-            Directory.SetCurrentDirectory("\\GitHub\\Glyphics2\\glyph cores\\");
+            Directory.SetCurrentDirectory(coreFolder);
+
             Console.WriteLine("Refreshing inputs");
             Modules plugins = new Modules();
-            plugins.Add(new ModuleVox2Gly("\\GitHub\\Glyphics2\\glyph cores\\"));
-            plugins.Add(new ModuleDigest("\\GitHub\\Glyphics2\\Site\\Digest\\", DownSolver.enables.DoRects));
+            plugins.Add(new ModuleVox2Gly(coreFolder));
+            plugins.Add(new ModuleDigest(digestOutputPath, DownSolver.enables.DoRects));
             //plugins.Add(new ModuleGenesis("megagrid.json"));
             
             plugins.Run();
@@ -75,6 +78,9 @@ namespace WebServer
             Directory.SetCurrentDirectory(rootFolder);
 
             Console.WriteLine("Restful Glyphic Server");
+            Console.WriteLine("Enabling file change tracking");
+            FileChangeTracker.Run(coreFolder, "*.glyc");
+
             string webfolder = @"C:\Github\Glyphics2\Site\";
 
             WebResponder.responseHandlers.Add("ping",              new WebHandler_ping());
