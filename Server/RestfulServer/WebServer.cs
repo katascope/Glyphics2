@@ -61,7 +61,9 @@ namespace WebServer
         static public Users users = new Users();
         static public string megagrid_name = "\\github\\glyphics2\\glyph cores\\megagrid_clear.json";
         static public string digestOutputPath = "\\GitHub\\Glyphics2\\Site\\Digest\\";
-        static public string coreFolder = "\\GitHub\\Glyphics2\\glyph cores\\";
+        //static public string coreFolder = "\\GitHub\\Glyphics2\\glyph cores\\";
+        static public string coreFolder = "\\GitHub\\Glyphics2\\Crawler\\";
+
         static void Main()
         {
             string rootFolder = Directory.GetCurrentDirectory();
@@ -84,6 +86,7 @@ namespace WebServer
             string webfolder = @"C:\Github\Glyphics2\Site\";
 
             WebResponder.responseHandlers.Add("ping",              new WebHandler_ping());
+            WebResponder.responseHandlers.Add("api/id2name",       new WebHandler_id2name());
             WebResponder.responseHandlers.Add("api/code2srects",   new WebHandler_code2srects());
             WebResponder.responseHandlers.Add("api/simulation",    new WebHandler_simulation());
             WebResponder.responseHandlers.Add("api/digest",        new WebHandler_digest());
@@ -102,10 +105,11 @@ namespace WebServer
             var file = new StreamReader(webfolder+"\\Digest\\digest.json");
             digest = JsonConvert.DeserializeObject<Digest>(file.ReadToEnd());
 
-            file = new StreamReader(megagrid_name);
+            /*file = new StreamReader(megagrid_name);
             gridspace.grids = JsonConvert.DeserializeObject<Dictionary<string, string>>(file.ReadToEnd());
             file.Close();
             simulations = new Simulations(gridspace.grids, digest);
+            */
             users.ReadFromFile(webfolder + "users.json");
 
             //create server with auto assigned port
@@ -114,7 +118,7 @@ namespace WebServer
             if (myServer != null)
                 while (true)
                 {
-                    simulations.Simulate();
+                    //simulations.Simulate();
                     Thread.Sleep(500);
                 }
         }

@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{6F6ECE90-F9E8-B50F-82CE-BEAD04AA6BA0}") = "Chronospace", "Assembly-CSharp.csproj", "{56E6BAE8-BDE0-7E19-328D-95D83F941195}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56E6BAE8-BDE0-7E19-328D-95D83F941195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56E6BAE8-BDE0-7E19-328D-95D83F941195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56E6BAE8-BDE0-7E19-328D-95D83F941195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56E6BAE8-BDE0-7E19-328D-95D83F941195}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Example.cs" />
     <Compile Include="FileChangeTracker.cs" />
+    <Compile Include="id2name.cs" />
     <Compile Include="IWebHandler.cs" />
     <Compile Include="WebServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -354,6 +354,7 @@ public class GlyphicsMicroCore : MonoBehaviour
     }
     void Start()
     {
+        Debug.Log("Loading");
         string url = "http://localhost:3838/api/";
         Glyphics.DecodeToGrid(nexusSerialized, 0,0,0);
 
