@@ -1,0 +1,25 @@
+Home,
+
+Size3D4 64 64 64
+
+PenColorD3 127 255 127
+PenSize 1 2 1
+WallCube 1
+
+#Wall
+PenColorD3 127 127 127
+FillRect 2 2 2 61 15 61
+#Hollow
+PenColorD4 0 0 0 0
+FillRect 4 2 4 59 15 59
+#Floor
+PenColorD3 63 31 63
+FillRect 3 1 3 60 1 60
+
+#Exit
+PenWorld 2
+PenSize 1 1 1
+PenColorD4 255 127 31 255
+FillRect 29 2 60 34 10 63
+
+

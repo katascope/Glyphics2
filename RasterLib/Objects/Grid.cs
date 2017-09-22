@@ -126,7 +126,7 @@ namespace RasterLib
         }
 
         //Plot a set of cell properties at xyz
-        public void Plot(int x, int y, int z, ulong rgba, byte physics, byte shape, byte texture, byte group)
+        public void Plot(int x, int y, int z, ulong rgba, byte physics, byte shape, byte texture, byte group, ulong world)
         {
             if (!InRange(x, y, z)) return;
             long offsetTrack = (z * _size2D) + (y * _sizeX) + (x);
@@ -138,7 +138,7 @@ namespace RasterLib
             {
                 _properties[offsetTrack].TrackId = _trackId;
             }
-            SetProperties(offsetTrack, texture, shape, group, physics);
+            SetProperties(offsetTrack, texture, shape, group, physics, world);
         }
 
         public void Plot(int x, int y, int z, CellProperties cp)
@@ -151,7 +151,7 @@ namespace RasterLib
             {
                 _properties[offsetTrack].TrackId = _trackId;
             }
-            SetProperties(offsetTrack, cp.TextureId, cp.ShapeId, cp.GroupId, cp.PhysicsId);
+            SetProperties(offsetTrack, cp.TextureId, cp.ShapeId, cp.GroupId, cp.PhysicsId, cp.WorldId);
         }
 
         public void Plot(int x, int y, int z, Pen pen)
@@ -166,16 +166,17 @@ namespace RasterLib
             {
                 _properties[offsetTrack].TrackId = _trackId;
             }
-            SetProperties(offsetTrack, pen.TextureByte, pen.ShapeByte, pen.GroupByte, pen.PhysicsByte);
+            SetProperties(offsetTrack, pen.TextureByte, pen.ShapeByte, pen.GroupByte, pen.PhysicsByte, pen.World);
         }
 
         //Set the properties at a specific offset
-        private void SetProperties(long offsetTrack, byte texture, byte shape, byte group, byte physics)
+        private void SetProperties(long offsetTrack, byte texture, byte shape, byte group, byte physics, ulong world)
         {
             _properties[offsetTrack].TextureId = texture;
             _properties[offsetTrack].ShapeId = shape;
             _properties[offsetTrack].GroupId = group;
             _properties[offsetTrack].PhysicsId = physics;
+            _properties[offsetTrack].WorldId = world;
         }
 
         //Copy rgba values from another grid

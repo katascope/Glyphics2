@@ -28,6 +28,7 @@ namespace RasterLib
         public const char CharGroup = '|';
         public const char CharPhysics = '^';
         public const char CharCircuit = '%';
+        public const char CharWorld = '_'; //not !@
 
         //Search through a list of list of rects
         private static List<Rect> FindListInLists(IEnumerable<List<Rect>> rects, BigInteger unifiedValue)
@@ -88,6 +89,15 @@ namespace RasterLib
             {
                 str += "" + CharGroup;
                 str += Transcode64.To64(properties.GroupId);
+            }
+
+            if (properties.WorldId > 0)
+            {
+                str += "" + CharWorld;
+                str += Transcode64.To64((byte)((properties.WorldId >> 24) & 0xFF));
+                str += Transcode64.To64((byte)((properties.WorldId >> 16) & 0xFF));
+                str += Transcode64.To64((byte)((properties.WorldId >> 8) & 0xFF));
+                str += Transcode64.To64((byte)((properties.WorldId >> 0) & 0xFF));
             }
 
             return str;
@@ -190,6 +200,7 @@ namespace RasterLib
             byte textureId = 0;
             ulong rgba = 0;
             byte groupId = 0;
+            ulong worldid = 0;
             string serial = serializedRects.SerializedData;
             char mode = CharRects3D;
 
@@ -201,6 +212,7 @@ namespace RasterLib
                 if (serial[i] == CharGroup) state = CharGroup;
                 if (serial[i] == CharLimit255) state = CharLimit255;
                 if (serial[i] == CharCircuit) state = CharCircuit;
+                if (serial[i] == CharWorld) state = CharWorld;
                 switch (state)
                 {
                     case CharGroup:
@@ -241,6 +253,7 @@ namespace RasterLib
                             rect.Properties.ShapeId = shapeId;
                             rect.Properties.TextureId = textureId;
                             rect.Properties.GroupId = groupId;
+                            rect.Properties.WorldId = worldid;
                             rects.AddRect(rect);
                             break;
                         }
@@ -264,6 +277,7 @@ namespace RasterLib
                             rect.Properties.ShapeId = shapeId;
                             rect.Properties.TextureId = textureId;
                             rect.Properties.GroupId = groupId;
+                            rect.Properties.WorldId = worldid;
                             rects.AddRect(rect);
                             break;
                         }
@@ -278,6 +292,19 @@ namespace RasterLib
                             rects.GetRect(rects.Count - 1).Properties.PhysicsId = pid;
                             rects.GetRect(rects.Count - 1).Properties.CircuitIds.Add(cid);
                             state = mode;
+                            break;
+                        }
+                    case CharWorld://Reading World ID
+                        {
+                            i++;
+                            int v4 = Transcode64.From64(serial[i++]);
+                            int v3 = Transcode64.From64(serial[i++]);
+                            int v2 = Transcode64.From64(serial[i++]);
+                            int v1 = Transcode64.From64(serial[i++]);
+
+                            worldid = (ulong)((v4 << 24) | (v3 << 16) | (v2 << 8) | v1 );
+                            state = mode;
+
                             break;
                         }
                 }

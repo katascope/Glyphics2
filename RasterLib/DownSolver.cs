@@ -139,13 +139,15 @@ namespace RasterLib
             int scale;
             if (Grid.SizeX > 128)
                 scale = 1;
-            else
-                scale = (int)((256) / (float)(Grid.SizeX ) * 1.3) & 254 ;
+            else                
+                //scale = (int)((256) / (float)(Grid.SizeX) * 1.3) & 254;
+                scale = (int)((256) / (float)(Grid.SizeX) *1.8) & 254;
+            //scale = 12;
 
             if ((enableFlags & enables.RenderIsometricThumb) == enables.RenderIsometricThumb)
                 GridIsometricThumb = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(Grid, 0, 0, 0, 0, 1, 1, "Render Isometric (Thumbnail) ");
             if ((enableFlags & enables.RenderIsometricRegular) == enables.RenderIsometricRegular)
-                GridIsometric = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(Grid, 0, 0, 0, 0, scale, scale, "Render Isometric (Regular) ");
+                GridIsometric = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(Grid, 31, 31, 31, 0, scale, scale, "Render Isometric (Regular) ");
             if ((enableFlags & enables.RenderIsometricLarge) == enables.RenderIsometricLarge)
                 GridIsometricLarge = RasterLib.RasterApi.Renderer.RenderIsometricCellsScaled(Grid, 0, 0, 0, 0, 8, 8, "Render Isometric (Large) ");
 

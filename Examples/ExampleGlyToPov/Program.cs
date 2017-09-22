@@ -3,7 +3,7 @@ using RasterLib;
 using RasterLib.Language;
 using GraphicsLib;
 
-namespace GlyToPov
+namespace ExampleGlyToPov
 {
     class GlyToPov
     {

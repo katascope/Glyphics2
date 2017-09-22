@@ -40,6 +40,7 @@ namespace RasterLib
             Properties.TextureId = newProperties.TextureId;
             Properties.GroupId = newProperties.GroupId;
             Properties.PhysicsId = newProperties.PhysicsId;
+            Properties.WorldId = newProperties.WorldId;
         }
         
         //Set dimensions of Rect

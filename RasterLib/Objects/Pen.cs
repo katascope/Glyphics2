@@ -42,6 +42,7 @@ namespace RasterLib
         public byte TextureByte { get; set; }
         public byte GroupByte { get; set; }
         public byte PhysicsByte { get; set; }
+        public byte World { get; set; }
 
         public Pen() { HatchX = HatchY = HatchZ = Width = Height = Depth = 1; CalculateBorders(); }
         public void SetSize(int w, int h, int d) { Width = w; Height = h; Depth = d; CalculateBorders(); }
@@ -58,6 +59,7 @@ namespace RasterLib
         public void SetTexture(byte val){TextureByte = val;}
         public void SetGroup(byte val){GroupByte = val;}
         public void SetPhysics(byte val){PhysicsByte = val;}
+        public void SetWorld(byte val) {World = val; }
 
         //Calculate out the dimensions of the pen
         public void CalculateBorders()

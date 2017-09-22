@@ -30,7 +30,8 @@ namespace RasterLib.Painters
                             bgc.Pen.PhysicsByte,
                             bgc.Pen.ShapeByte,
                             bgc.Pen.TextureByte,
-                            bgc.Pen.GroupByte);
+                            bgc.Pen.GroupByte,
+                            bgc.Pen.World);
         }
     }
 }

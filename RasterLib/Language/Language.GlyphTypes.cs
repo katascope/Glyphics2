@@ -68,6 +68,7 @@ namespace RasterLib.Language
         PenTex     ,
         PenGroup   ,
         PenPhysics ,
+        PenWorld   ,
 
         Scissor    ,
         Clear      ,
@@ -262,6 +263,7 @@ namespace RasterLib.Language
                 new Glyph(GlyphId.PenTex    ,     "PenTex",             0,    1,  "#", ""),
                 new Glyph(GlyphId.PenGroup  ,     "PenGroup",           0,    1,  "#", "<group id>"), 
                 new Glyph(GlyphId.PenPhysics,     "PenPhysics",         0,    1,  "#", "<Affect-NoAffect> <Damage-NoDamage> <Radar-NoRadar> <Sticky>"), 
+                new Glyph(GlyphId.PenWorld  ,     "PenWorld",           0,    1,  "#", "<world, 4 bytes>"), 
 
                 new Glyph(GlyphId.Scissor ,       "Scissor",            0,    6,  "x y z X Y Z", "Set Grid Scissor <x1> <y1> <z1> <x2> <y2> <z2>"), 
                 new Glyph(GlyphId.Clear   ,       "Clear",              0,    0,  "", "Clear entire grid" ),

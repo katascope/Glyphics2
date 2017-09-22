@@ -72,6 +72,7 @@ namespace RasterLib.Language
                 case GlyphId.PenTex: bgc.Pen.SetTexture((byte)args[0]); return;
                 case GlyphId.PenGroup: bgc.Pen.SetGroup((byte)args[0]); return;
                 case GlyphId.PenPhysics: bgc.Pen.SetPhysics((byte)args[0]); return;
+                case GlyphId.PenWorld: bgc.Pen.SetWorld((byte)args[0]); return;
 
                 case GlyphId.Plot: Painter.DrawPen(bgc, args[0], args[1], args[2]); return;
                 case GlyphId.Clear: Painter.DrawClear(bgc); return;

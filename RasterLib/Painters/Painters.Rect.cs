@@ -41,7 +41,7 @@ namespace RasterLib.Painters
             for (int z = z1; z <= z2; z++)
                 for (int y = y1; y <= y2; y++)
                     for (int x = x1; x <= x2; x++)
-                        bgc.Grid.Plot(x, y, z, bgc.Pen.Rgba, bgc.Pen.PhysicsByte, bgc.Pen.ShapeByte, bgc.Pen.TextureByte, bgc.Pen.GroupByte);
+                        bgc.Grid.Plot(x, y, z, bgc.Pen.Rgba, bgc.Pen.PhysicsByte, bgc.Pen.ShapeByte, bgc.Pen.TextureByte, bgc.Pen.GroupByte, bgc.Pen.World);
         }
 
         //Draw a 3d hollow rectangle

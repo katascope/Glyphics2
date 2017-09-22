@@ -25,9 +25,12 @@ namespace Glynt
         {
             Modules plugins = new Modules();
 
-            plugins.Add(new ModuleDocumentation("\\GitHub\\Glyphics2\\Site\\Documentation\\"));
-            plugins.Add(new ModuleVox2Gly("\\GitHub\\Glyphics2\\glyph cores\\"));
+            plugins.Add(new ModuleVox2Gly("\\GitHub\\Glyphics2\\Crawler\\"));
             plugins.Add(new ModuleDigest("\\GitHub\\Glyphics2\\Site\\Digest\\", DownSolver.enables.RenderIsometricRegular|DownSolver.enables.DoRects));// | DownSolver.enables.RenderIsometricLarge));
+
+            //plugins.Add(new ModuleDocumentation("\\GitHub\\Glyphics2\\Site\\Documentation\\"));
+            //plugins.Add(new ModuleVox2Gly("\\GitHub\\Glyphics2\\glyph cores\\"));            
+            //plugins.Add(new ModuleDigest("\\GitHub\\Glyphics2\\Site\\Digest\\", DownSolver.enables.RenderIsometricRegular|DownSolver.enables.DoRects));// | DownSolver.enables.RenderIsometricLarge));
 
             //plugins.Add(new ModuleScratchPad("\\GitHub\\Glyphics2\\apps\\glynt\\Ornyx.yml"));
             //plugins.Add(new ModuleDigest("\\GitHub\\Glyphics2\\Site\\Digest\\", DownSolver.enables.DoRects));

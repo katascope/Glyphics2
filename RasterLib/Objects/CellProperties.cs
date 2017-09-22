@@ -89,6 +89,7 @@ namespace RasterLib
         public byte GroupId { get; set; }
         //public byte CircuitId { get; set; }
         public List<int> CircuitIds { get; set; }
+        public ulong WorldId { get; set; }
 
         //For Rectangles
         //TranslationOffset
@@ -130,6 +131,7 @@ namespace RasterLib
             ShapeId = 0;
             PhysicsId = 0;
             GroupId = 0;
+            WorldId = 0;
         }
 
         //Copy properties from src to self
@@ -143,6 +145,7 @@ namespace RasterLib
             ShapeId = src.ShapeId;
             PhysicsId = src.PhysicsId;
             GroupId = src.GroupId;
+            WorldId = src.WorldId;
             CalcUnified();
         }
 
@@ -163,6 +166,7 @@ namespace RasterLib
                   && (TextureId == asCell.TextureId)
                   && (ShapeId == asCell.ShapeId)
                   && (GroupId == asCell.GroupId)
+                  && (WorldId == asCell.WorldId)
                   );
         }
 
@@ -175,6 +179,7 @@ namespace RasterLib
             ShapeId   = (byte)MathLerper.ThresholdAb(mux, propsA.ShapeId, propsB.ShapeId);
             PhysicsId = (byte)MathLerper.ThresholdAb(mux, propsA.PhysicsId, propsB.PhysicsId);
             GroupId   = (byte)MathLerper.ThresholdAb(mux, propsA.GroupId, propsB.GroupId);
+            WorldId   = (ulong)MathLerper.ThresholdAb(mux, propsA.WorldId, propsB.WorldId);
             CalcUnified();
         }
 
@@ -198,6 +203,7 @@ namespace RasterLib
                 + ",shp " + ShapeId
                 + ",grp " + GroupId 
                 + ",phy "+ PhysicsId
+                + ",wrld " + WorldId
                 + circuitDescription
                 + ")";
         }
@@ -211,6 +217,7 @@ namespace RasterLib
             unifiedValue |= (ulong)(TextureId) << 40;
             unifiedValue |= (ulong)(GroupId) << 48;
             unifiedValue |= (ulong)(PhysicsId) << 56;
+            unifiedValue |= (ulong)(PhysicsId) << 64;
 
             if (CircuitIds != null && CircuitIds.Count > 0)
             {
@@ -219,7 +226,7 @@ namespace RasterLib
                 {
                     sum = sum * circuitid * 10;
                 }
-                unifiedValue |= (ulong)(sum) << 64;
+                unifiedValue |= (ulong)(sum) << 72;
             }
 
             return unifiedValue;

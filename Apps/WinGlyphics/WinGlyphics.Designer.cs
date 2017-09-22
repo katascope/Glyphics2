@@ -86,7 +86,7 @@
             this.editToolStripMenuItem});
             this.menuMain.Location = new System.Drawing.Point(0, 0);
             this.menuMain.Name = "menuMain";
-            this.menuMain.Size = new System.Drawing.Size(1481, 24);
+            this.menuMain.Size = new System.Drawing.Size(1685, 24);
             this.menuMain.TabIndex = 0;
             this.menuMain.Text = "menuStrip1";
             // 
@@ -279,7 +279,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(296, 61);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(776, 784);
+            this.pictureBox1.Size = new System.Drawing.Size(977, 881);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -287,7 +287,7 @@
             // 
             // textBoxSerializedRects
             // 
-            this.textBoxSerializedRects.Location = new System.Drawing.Point(1075, 70);
+            this.textBoxSerializedRects.Location = new System.Drawing.Point(1279, 72);
             this.textBoxSerializedRects.Multiline = true;
             this.textBoxSerializedRects.Name = "textBoxSerializedRects";
             this.textBoxSerializedRects.ReadOnly = true;
@@ -307,7 +307,7 @@
             // labelSerializedRects
             // 
             this.labelSerializedRects.AutoSize = true;
-            this.labelSerializedRects.Location = new System.Drawing.Point(1078, 54);
+            this.labelSerializedRects.Location = new System.Drawing.Point(1282, 56);
             this.labelSerializedRects.Name = "labelSerializedRects";
             this.labelSerializedRects.Size = new System.Drawing.Size(83, 13);
             this.labelSerializedRects.TabIndex = 5;
@@ -316,7 +316,7 @@
             // labelSerializedRectsLimit255
             // 
             this.labelSerializedRectsLimit255.AutoSize = true;
-            this.labelSerializedRectsLimit255.Location = new System.Drawing.Point(1075, 174);
+            this.labelSerializedRectsLimit255.Location = new System.Drawing.Point(1279, 176);
             this.labelSerializedRectsLimit255.Name = "labelSerializedRectsLimit255";
             this.labelSerializedRectsLimit255.Size = new System.Drawing.Size(130, 13);
             this.labelSerializedRectsLimit255.TabIndex = 6;
@@ -324,7 +324,7 @@
             // 
             // textBoxSerializedRectsLimit255
             // 
-            this.textBoxSerializedRectsLimit255.Location = new System.Drawing.Point(1078, 190);
+            this.textBoxSerializedRectsLimit255.Location = new System.Drawing.Point(1282, 192);
             this.textBoxSerializedRectsLimit255.Multiline = true;
             this.textBoxSerializedRectsLimit255.Name = "textBoxSerializedRectsLimit255";
             this.textBoxSerializedRectsLimit255.ReadOnly = true;
@@ -362,7 +362,7 @@
             // labelRects
             // 
             this.labelRects.AutoSize = true;
-            this.labelRects.Location = new System.Drawing.Point(1078, 273);
+            this.labelRects.Location = new System.Drawing.Point(1282, 275);
             this.labelRects.Name = "labelRects";
             this.labelRects.Size = new System.Drawing.Size(35, 13);
             this.labelRects.TabIndex = 11;
@@ -370,7 +370,7 @@
             // 
             // textBoxRects
             // 
-            this.textBoxRects.Location = new System.Drawing.Point(1078, 289);
+            this.textBoxRects.Location = new System.Drawing.Point(1282, 291);
             this.textBoxRects.Multiline = true;
             this.textBoxRects.Name = "textBoxRects";
             this.textBoxRects.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -380,7 +380,7 @@
             // labelQuads
             // 
             this.labelQuads.AutoSize = true;
-            this.labelQuads.Location = new System.Drawing.Point(1078, 384);
+            this.labelQuads.Location = new System.Drawing.Point(1282, 386);
             this.labelQuads.Name = "labelQuads";
             this.labelQuads.Size = new System.Drawing.Size(38, 13);
             this.labelQuads.TabIndex = 13;
@@ -388,7 +388,7 @@
             // 
             // textBoxQuads
             // 
-            this.textBoxQuads.Location = new System.Drawing.Point(1081, 400);
+            this.textBoxQuads.Location = new System.Drawing.Point(1285, 402);
             this.textBoxQuads.Multiline = true;
             this.textBoxQuads.Name = "textBoxQuads";
             this.textBoxQuads.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -398,7 +398,7 @@
             // labelTriangles
             // 
             this.labelTriangles.AutoSize = true;
-            this.labelTriangles.Location = new System.Drawing.Point(1081, 509);
+            this.labelTriangles.Location = new System.Drawing.Point(1285, 511);
             this.labelTriangles.Name = "labelTriangles";
             this.labelTriangles.Size = new System.Drawing.Size(50, 13);
             this.labelTriangles.TabIndex = 15;
@@ -406,7 +406,7 @@
             // 
             // textBoxTriangles
             // 
-            this.textBoxTriangles.Location = new System.Drawing.Point(1081, 525);
+            this.textBoxTriangles.Location = new System.Drawing.Point(1285, 527);
             this.textBoxTriangles.Multiline = true;
             this.textBoxTriangles.Name = "textBoxTriangles";
             this.textBoxTriangles.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -416,7 +416,7 @@
             // labelIndexedTriangles
             // 
             this.labelIndexedTriangles.AutoSize = true;
-            this.labelIndexedTriangles.Location = new System.Drawing.Point(1081, 636);
+            this.labelIndexedTriangles.Location = new System.Drawing.Point(1285, 638);
             this.labelIndexedTriangles.Name = "labelIndexedTriangles";
             this.labelIndexedTriangles.Size = new System.Drawing.Size(91, 13);
             this.labelIndexedTriangles.TabIndex = 17;
@@ -424,7 +424,7 @@
             // 
             // textBoxIndexedTriangles
             // 
-            this.textBoxIndexedTriangles.Location = new System.Drawing.Point(1081, 652);
+            this.textBoxIndexedTriangles.Location = new System.Drawing.Point(1285, 654);
             this.textBoxIndexedTriangles.Multiline = true;
             this.textBoxIndexedTriangles.Name = "textBoxIndexedTriangles";
             this.textBoxIndexedTriangles.ReadOnly = true;
@@ -435,7 +435,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1078, 759);
+            this.label1.Location = new System.Drawing.Point(1282, 761);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 19;
@@ -443,7 +443,7 @@
             // 
             // textBoxJSON
             // 
-            this.textBoxJSON.Location = new System.Drawing.Point(1081, 775);
+            this.textBoxJSON.Location = new System.Drawing.Point(1285, 777);
             this.textBoxJSON.Multiline = true;
             this.textBoxJSON.Name = "textBoxJSON";
             this.textBoxJSON.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -452,7 +452,7 @@
             // 
             // buttonCopyTriangles
             // 
-            this.buttonCopyTriangles.Location = new System.Drawing.Point(1178, 631);
+            this.buttonCopyTriangles.Location = new System.Drawing.Point(1382, 633);
             this.buttonCopyTriangles.Name = "buttonCopyTriangles";
             this.buttonCopyTriangles.Size = new System.Drawing.Size(99, 23);
             this.buttonCopyTriangles.TabIndex = 21;
@@ -462,7 +462,7 @@
             // 
             // buttonCopySerialized255
             // 
-            this.buttonCopySerialized255.Location = new System.Drawing.Point(1211, 162);
+            this.buttonCopySerialized255.Location = new System.Drawing.Point(1415, 164);
             this.buttonCopySerialized255.Name = "buttonCopySerialized255";
             this.buttonCopySerialized255.Size = new System.Drawing.Size(75, 25);
             this.buttonCopySerialized255.TabIndex = 22;
@@ -474,7 +474,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1481, 952);
+            this.ClientSize = new System.Drawing.Size(1685, 952);
             this.Controls.Add(this.buttonCopySerialized255);
             this.Controls.Add(this.buttonCopyTriangles);
             this.Controls.Add(this.textBoxJSON);

@@ -107,17 +107,12 @@ ImgMirrorX
         private void comboBoxGly_SelectedIndexChanged(object sender, EventArgs e)
         {
             string strCode = comboBoxGly.Text;
-
-
             textBoxMain.Text = strCode.Split('*')[0];
-
             textBoxMain.Text = textBoxMain.Text.Replace(";", "\r\n");
 
             Code code =RasterLib.RasterApi.CreateCode(strCode);
 
             //codeString = RasterApi.CodeToRescaledCode(codeString, 64, 64, 64);
-
-
             _hc = new DownSolver(code, DownSolver.enables.QuickView);
             UpdateDisplay();
         }

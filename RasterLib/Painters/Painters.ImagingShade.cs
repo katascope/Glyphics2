@@ -44,7 +44,7 @@ namespace RasterLib.Painters
                             u = Converter.Rgba2Ulong(r, g, b, a);
                         }
 
-                        grid.Plot(x, y, z, u, 0, grid.GetProperty(x, y, z).ShapeId, grid.GetProperty(x, y, z).TextureId, 0);
+                        grid.Plot(x, y, z, u, 0, grid.GetProperty(x, y, z).ShapeId, grid.GetProperty(x, y, z).TextureId, 0, 0);
                     }
                 }
             }

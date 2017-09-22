@@ -1,0 +1,2 @@
+Shield,
+Size3D4 16 16 1;PenColorD4 136 136 136 255;FillRect 7 0 0 7 0 0;FillRect 6 1 0 7 1 0;FillRect 5 2 0 7 2 0;FillRect 4 3 0 6 3 0;FillRect 8 3 0 8 6 0;FillRect 3 4 0 6 6 0;FillRect 3 7 0 7 8 0;FillRect 3 9 0 4 9 0;FillRect 3 10 0 3 10 0;PenColorD4 119 119 119 255;FillRect 8 0 0 8 0 0;FillRect 8 1 0 9 1 0;FillRect 8 2 0 10 2 0;FillRect 7 3 0 7 6 0;FillRect 9 3 0 11 3 0;FillRect 9 4 0 12 6 0;FillRect 8 7 0 12 8 0;FillRect 11 9 0 12 9 0;FillRect 12 10 0 12 10 0

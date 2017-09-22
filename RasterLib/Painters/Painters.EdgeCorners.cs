@@ -190,7 +190,7 @@ namespace RasterLib.Painters
                         {
                             CornerType cornerType = CalculateShapeX(grid, x, y, z);
                             int shape = (int)cornerType;
-                            grid.Plot(x, y, z, u, 0, (byte)shape, grid.GetProperty(x, y, z).TextureId, 0);
+                            grid.Plot(x, y, z, u, 0, (byte)shape, grid.GetProperty(x, y, z).TextureId, 0, 0);
                         }
                     }
                 }
@@ -234,7 +234,7 @@ namespace RasterLib.Painters
                              */
                             CornerType cornerType = CalculateShape(grid, x, y, z);
                             int shape = (int)cornerType;
-                            grid.Plot(x, y, z, u, 0, (byte)shape, grid.GetProperty(x, y, z).TextureId, 0);
+                            grid.Plot(x, y, z, u, 0, (byte)shape, grid.GetProperty(x, y, z).TextureId, 0, 0);
                         }
                     }
                 }

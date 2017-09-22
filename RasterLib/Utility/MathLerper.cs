@@ -39,6 +39,12 @@ namespace RasterLib.Utility
             return (mux < 0.5) ? a : b;
         }
 
+        //Treshold instead of interpolate two ULONG
+        public static ulong ThresholdAb(double mux, ulong a, ulong b)
+        {
+            return (mux < 0.5) ? a : b;
+        }
+
         //Interpolate two RGBA values encoded as ulongs
         public static ulong LerpRgba(double mux, ulong v1, ulong v2)
         {

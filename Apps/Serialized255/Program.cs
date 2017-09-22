@@ -39,10 +39,13 @@ namespace Serialized255
         [STAThread]
         static void Main(string[] args)
         {
-            Console.WriteLine("Serialized 255");
-            Directory.SetCurrentDirectory("\\GitHub\\Glyphics2\\glyph cores\\");                        
+            string folder = "\\GitHub\\Glyphics2\\crawler\\";
+            string filename = "Girl.glyc";
 
-            string glycFilename = "c:\\github\\glyphics2\\glyph cores\\GateTimer.glyc";
+            Console.WriteLine("Serialized 255");
+            Directory.SetCurrentDirectory(folder);                        
+
+            string glycFilename = folder + filename;
             string codeString = RasterLib.RasterApi.ReadGlyc(glycFilename).Replace(';', '\n');
             
             RectList rects = Pivot.ToRects(codeString);

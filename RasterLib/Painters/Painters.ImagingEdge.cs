@@ -41,7 +41,7 @@ namespace RasterLib.Painters
                             if (axis == 2)
                                 if (((grid.GetRgba(x, y, z + 1) == 0) && (grid.GetRgba(x, y, z - 1) != 0)) || ((grid.GetRgba(x, y, z + 1) != 0) && (grid.GetRgba(x, y, z - 1) == 0)))
                                     u = Converter.Rgba2Ulong(ri, gi, bi, ai);
-                            grid.Plot(x, y, z, u, bgc.Pen.PhysicsByte, grid.GetProperty(x, y, z).ShapeId, grid.GetProperty(x, y, z).TextureId, 0);//bgc.Pen.shape_byte, bgc.Pen.texture_byte);
+                            grid.Plot(x, y, z, u, bgc.Pen.PhysicsByte, grid.GetProperty(x, y, z).ShapeId, grid.GetProperty(x, y, z).TextureId, 0, bgc.Pen.World);//bgc.Pen.shape_byte, bgc.Pen.texture_byte);
                         }
                     }
                 }
